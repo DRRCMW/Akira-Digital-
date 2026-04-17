@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Akira Digital</title>
+<meta name="description" content="Terms of Service for Akira Digital. The terms and conditions governing our web design and digital services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#080807;
+  --gold:#C9941A;
+  --gold2:#F0B429;
+  --white:#FAFAF8;
+  --gray:#A8A49E;
+  --line:rgba(255,255,255,0.08);
+  --r:4px;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+  line-height:1.7;
+}
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:.5;
+}
+a{color:var(--gold);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:100;
+  padding:1.25rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,8,7,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;letter-spacing:.1em;
+  text-decoration:none;
+}
+.nav-logo span{color:var(--gold);}
+.back-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:13px;font-weight:500;color:var(--gray);
+  letter-spacing:.04em;
+  transition:color .2s;
+  text-decoration:none;
+}
+.back-btn:hover{color:var(--white);text-decoration:none;}
+.back-btn svg{transition:transform .2s;}
+.back-btn:hover svg{transform:translateX(-3px);}
+
+/* PAGE HERO */
+.page-hero{
+  padding:5rem 2rem 4rem;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(to bottom, rgba(201,148,26,.04), transparent);
+}
+.page-hero .container{max-width:760px;margin:0 auto;}
+.page-label{
+  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.page-label::before{content:'';width:24px;height:1px;background:var(--gold);}
+.page-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3rem,6vw,5rem);
+  line-height:1;
+  margin-bottom:1rem;
+}
+.page-meta{font-size:13px;color:var(--gray);}
+
+/* CONTENT */
+.content{padding:4rem 2rem 6rem;}
+.content .container{max-width:760px;margin:0 auto;}
+
+.content h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.8rem;letter-spacing:.04em;
+  color:var(--white);
+  margin:2.5rem 0 .75rem;
+  padding-top:2.5rem;
+  border-top:1px solid var(--line);
+}
+.content h2:first-child{margin-top:0;border-top:none;padding-top:0;}
+
+.content h3{
+  font-size:15px;font-weight:600;
+  color:var(--white);
+  margin:1.5rem 0 .5rem;
+}
+.content p{
+  font-size:15px;color:var(--gray);
+  margin-bottom:1rem;
+  line-height:1.8;
+}
+.content ul,.content ol{
+  margin:0 0 1rem 1.25rem;
+}
+.content li{
+  font-size:15px;color:var(--gray);
+  margin-bottom:.4rem;
+  line-height:1.7;
+}
+.content li::marker{color:var(--gold);}
+
+.highlight-box{
+  background:rgba(201,148,26,.06);
+  border:1px solid rgba(201,148,26,.2);
+  border-radius:8px;
+  padding:1.25rem 1.5rem;
+  margin:1.5rem 0;
+}
+.highlight-box p{margin:0;color:var(--white);font-size:14px;}
+
+.warning-box{
+  background:rgba(229,97,78,.06);
+  border:1px solid rgba(229,97,78,.25);
+  border-radius:8px;
+  padding:1.25rem 1.5rem;
+  margin:1.5rem 0;
+}
+.warning-box p{margin:0;color:#e5c9c5;font-size:14px;}
+
+/* FOOTER */
+footer{
+  background:#060605;
+  padding:2rem;
+  border-top:1px solid var(--line);
+}
+.footer-inner{
+  max-width:760px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.footer-links a{font-size:12px;color:var(--gray);transition:color .2s;}
+.footer-links a:hover{color:var(--white);text-decoration:none;}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.2);}
+
+@media(max-width:600px){
+  nav{padding:1rem 1.25rem;}
+  .page-hero{padding:3rem 1.25rem 2.5rem;}
+  .content{padding:2.5rem 1.25rem 4rem;}
+  .footer-inner{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="nav-logo">AKIRA <span>DIGITAL</span></a>
+  <a href="/index.html" class="back-btn">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-label">Legal</div>
+    <h1 class="page-title">Terms of Service</h1>
+    <p class="page-meta">Last updated: April 17, 2026 &nbsp;·&nbsp; Effective: April 17, 2026</p>
+  </div>
+</div>
+
+<div class="content">
+  <div class="container">
+
+    <div class="highlight-box">
+      <p>These Terms of Service ("Terms") govern your use of Akira Digital's website and services. By engaging Akira Digital for web design or related services, you agree to these Terms. Please read them carefully before proceeding.</p>
+    </div>
+
+    <h2>1. Services Provided</h2>
+    <p>Akira Digital ("we," "us," "our") provides professional web design, web development, and related digital services including but not limited to:</p>
+    <ul>
+      <li>Custom website design and development</li>
+      <li>Website maintenance and care plan services</li>
+      <li>SEO setup and optimization</li>
+      <li>Google Business Profile setup</li>
+      <li>Lead generation strategy and implementation</li>
+    </ul>
+    <p>The specific scope of services for each project will be outlined in a separate proposal or statement of work provided prior to project commencement.</p>
+
+    <h2>2. Project Agreements and Scope</h2>
+
+    <h3>Proposals and Statements of Work</h3>
+    <p>Before work begins, Akira Digital will provide a written proposal outlining the scope of work, deliverables, timeline, and pricing. The project is deemed accepted and begins upon receipt of full payment.</p>
+
+    <h3>Changes to Scope</h3>
+    <p>Any additions or changes to the agreed-upon scope of work ("scope creep") will require a written change order and may result in additional charges and/or timeline adjustments. We will always communicate additional costs before proceeding with out-of-scope work.</p>
+
+    <h3>Client Responsibilities</h3>
+    <p>To complete your project on time, you agree to:</p>
+    <ul>
+      <li>Provide all necessary content, images, and materials within 5 business days of project kickoff</li>
+      <li>Respond to design drafts and revision requests within 5 business days</li>
+      <li>Designate a single point of contact for project communications</li>
+      <li>Ensure you have the rights to all content and materials you provide to us</li>
+    </ul>
+    <p>Delays caused by client non-responsiveness or late content delivery may extend the project timeline and do not constitute a breach by Akira Digital.</p>
+
+    <h2>3. Payment Terms</h2>
+
+    <h3>Full Payment Required Upfront</h3>
+    <p>Full payment for all services is required before any work begins. No design, development, or project work will be started until payment has been received and confirmed in full. This applies to all packages — Starter, Growth, Authority, and the Care Plan setup fee (if applicable).</p>
+
+    <h3>Care Plan Monthly Billing</h3>
+    <p>For the ongoing Care Plan (monthly maintenance), payment is due on the monthly billing date before services for that period are rendered. Services will not be performed for any period in which payment has not been received.</p>
+
+    <h3>Late or Failed Payments</h3>
+    <p>If a scheduled Care Plan payment fails or is not received, services will be paused until the outstanding balance is settled. Akira Digital reserves the right to suspend or terminate ongoing services for non-payment.</p>
+
+    <h3>Accepted Payment Methods</h3>
+    <p>We accept payments via Stripe (credit/debit card, ACH bank transfer). Payment links will be provided with each invoice. Stripe's own terms of service apply to all payment transactions.</p>
+
+    <h2>4. Revisions</h2>
+    <p>Each project package includes a specified number of revision rounds as stated in your proposal:</p>
+    <ul>
+      <li><strong>Starter Website:</strong> 2 revision rounds</li>
+      <li><strong>Growth Website:</strong> 3 revision rounds</li>
+      <li><strong>Authority Package:</strong> Unlimited revisions within scope</li>
+    </ul>
+    <p>A "revision round" means a single consolidated list of changes submitted at one time. Additional revision rounds beyond what is included will be billed at $75/hour. A revision does not include new features, new pages, or changes to the fundamental design direction — these are treated as scope changes.</p>
+
+    <h2>5. Timeline and Delivery</h2>
+    <p>We commit to delivering a first draft of your website within the timeframe specified in your proposal (typically 10 business days for Starter projects). This timeline begins from the later of: (a) receipt of full payment, or (b) receipt of all required client materials.</p>
+    <p>We are not liable for delays caused by third-party services, client delays, force majeure events, or circumstances outside our reasonable control.</p>
+
+    <h2>6. Intellectual Property and Ownership</h2>
+
+    <h3>Ownership Upon Payment</h3>
+    <p>Upon receipt of full payment, you own the final website design and all custom code created specifically for your project. Ownership transfers completely — we retain no claim to the work product.</p>
+
+    <h3>Third-Party Assets</h3>
+    <p>Websites may include third-party assets such as stock photos, fonts, icons, or plugins. These are subject to their own licensing terms. We will inform you of any third-party licenses that require ongoing payments or have usage restrictions.</p>
+
+    <h3>Portfolio Rights</h3>
+    <p>Unless you explicitly request otherwise in writing, we reserve the right to display your completed website in our portfolio and use it in marketing materials as an example of our work.</p>
+
+    <h3>Pre-Payment Work</h3>
+    <p>All design concepts, mockups, and code remain the property of Akira Digital until full payment is received. We reserve the right to reuse design elements if a project is cancelled after payment is refunded per the refund policy below.</p>
+
+    <h2>7. Confidentiality</h2>
+    <p>We will keep confidential any proprietary business information you share with us in the course of your project. We will not disclose your confidential information to third parties without your consent, except as required by law or to provide the services (e.g., sharing information with hosting providers as necessary).</p>
+
+    <h2>8. Care Plan (Monthly Maintenance)</h2>
+
+    <h3>Service Scope</h3>
+    <p>The Care Plan includes up to 2 hours of content updates per month, security monitoring, daily backups, SEO health reports, and priority support as described in your service agreement.</p>
+
+    <h3>Billing and Cancellation</h3>
+    <p>The Care Plan is billed monthly on a recurring basis. Either party may cancel the Care Plan with 30 days written notice. You will continue to have access to services through the end of the paid period.</p>
+
+    <h3>Unused Hours</h3>
+    <p>Unused maintenance hours do not roll over to the following month.</p>
+
+    <h2>9. Refund Policy</h2>
+
+    <h3>All Sales Are Final</h3>
+    <p>Because full payment is required before work begins, all payments are non-refundable once a project has been initiated. By submitting payment, you confirm that you have reviewed and agreed to the project scope and these Terms.</p>
+
+    <h3>Cancellation Before Work Begins</h3>
+    <p>If you cancel your project in writing within 24 hours of payment and before any design or development work has commenced, we will issue a full refund. After the 24-hour window, no refund is available as work will have begun.</p>
+
+    <h3>Care Plan</h3>
+    <p>Monthly Care Plan payments are non-refundable for the current billing period. Cancellation takes effect at the end of the current paid month.</p>
+
+    <h3>Exceptions</h3>
+    <p>If Akira Digital is unable to deliver the agreed-upon services due to circumstances on our end, we will work with you on a fair resolution, which may include a partial or full refund at our discretion.</p>
+
+    <h2>10. Warranties and Disclaimers</h2>
+
+    <h3>Our Warranty</h3>
+    <p>We warrant that all work will be performed professionally and that the final website will function as described in the project scope. We will fix any bugs or technical errors in the delivered work at no charge within 30 days of launch (or 60 days for Growth, 90 days for Authority).</p>
+
+    <h3>No Guarantee of Results</h3>
+    <div class="warning-box">
+      <p>While we design websites with conversion and SEO in mind, Akira Digital does not guarantee specific business results such as increased revenue, a particular number of leads, or specific search engine rankings. Results depend on many factors outside our control including market conditions, competition, and your business operations.</p>
+    </div>
+
+    <h3>Third-Party Services</h3>
+    <p>We are not responsible for the performance, uptime, or changes to third-party services used in conjunction with your website (e.g., hosting providers, Google Analytics, CRM platforms, payment processors).</p>
+
+    <h2>11. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, Akira Digital's total liability to you for any claim arising out of or relating to these Terms or our services shall not exceed the total amount paid by you to us in the three months preceding the claim.</p>
+    <p>In no event shall Akira Digital be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities, even if we have been advised of the possibility of such damages.</p>
+
+    <h2>12. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless Akira Digital and its owners, employees, and agents from any claims, liabilities, damages, and expenses (including reasonable attorney's fees) arising from: (a) your use of our services; (b) content or materials you provide to us; (c) your violation of these Terms; or (d) your violation of any third party's rights.</p>
+
+    <h2>13. Termination</h2>
+    <p>Either party may terminate a project engagement with written notice. In the event of termination:</p>
+    <ul>
+      <li>All payments made are non-refundable once work has commenced (see Refund Policy)</li>
+      <li>You will be invoiced for all work completed up to the termination date at a pro-rated rate</li>
+      <li>Ownership of completed work transfers to you once full payment has been confirmed and no refund has been issued</li>
+      <li>Akira Digital reserves the right to terminate immediately if you engage in abusive, threatening, or unlawful behavior</li>
+    </ul>
+
+    <h2>14. Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts located in Texas.</p>
+
+    <h2>15. Dispute Resolution</h2>
+    <p>Before initiating formal legal proceedings, both parties agree to attempt to resolve any dispute through good-faith negotiation. If negotiation fails, disputes will be submitted to binding arbitration under the rules of the American Arbitration Association, with proceedings held in Texas. The prevailing party in any arbitration may be entitled to recover reasonable attorney's fees.</p>
+
+    <h2>16. Entire Agreement</h2>
+    <p>These Terms, together with any signed proposal or statement of work, constitute the entire agreement between you and Akira Digital with respect to the subject matter herein and supersede all prior or contemporaneous communications, whether oral or written.</p>
+
+    <h2>17. Modifications to These Terms</h2>
+    <p>We reserve the right to update these Terms at any time. Material changes will be communicated via email or prominently posted on our website. Continued use of our services after changes take effect constitutes acceptance of the revised Terms. For active projects, the Terms in effect at the time of project initiation apply for the duration of that project.</p>
+
+    <h2>18. Contact Us</h2>
+    <p>Questions about these Terms? Reach out:</p>
+    <ul>
+      <li><strong>Business:</strong> Akira Digital</li>
+      <li><strong>Email:</strong> <a href="mailto:contact@akiradigital.net">contact@akiradigital.net</a></li>
+      <li><strong>Phone:</strong> <a href="tel:+19725590881">(972) 559-0881</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;">AKIRA <span style="color:var(--gold);">DIGITAL</span></div>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+    <div class="footer-copy">© 2026 Akira Digital. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
