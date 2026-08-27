@@ -1,1357 +1,1285 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akira Digital — We Build Websites That Win Business</title>
-<meta name="description" content="Akira Digital builds high-converting websites for local home service businesses and law firms. Starting at $1,000. Results guaranteed.">
-  <link rel="canonical" href="https://akiradigital.net/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Akira Digital">
-  <meta property="og:title" content="Akira Digital | We Build Websites That Win Business">
-  <meta property="og:description" content="High-converting websites for local home service businesses and law firms. Starting at $1,000.">
-  <meta property="og:url" content="https://akiradigital.net/">
-  <meta property="og:image" content="https://akiradigital.net/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Akira Digital, We Build Websites That Win Business">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Akira Digital | We Build Websites That Win Business">
-  <meta name="twitter:description" content="High-converting websites for local home service businesses and law firms. Starting at $1,000.">
-  <meta name="twitter:image" content="https://akiradigital.net/og-image.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://akiradigital.net/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="https://akiradigital.net/favicon-512.png">
-  <link rel="apple-touch-icon" href="https://akiradigital.net/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --black:#080807;
-  --ink:#111110;
-  --gold:#C9941A;
-  --gold2:#F0B429;
-  --goldlight:#FFF3D6;
-  --white:#FAFAF8;
-  --gray:#A8A49E;
-  --line:rgba(255,255,255,0.08);
-  --r:4px;
-}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--black);
-  color:var(--white);
-  overflow-x:hidden;
-}
-
-/* NOISE OVERLAY */
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events:none;
-  z-index:9999;
-  opacity:.5;
-}
-
-/* TYPOGRAPHY */
-h1,h2,h3,.display{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;line-height:1;}
-a{color:inherit;text-decoration:none;}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:1.25rem 2rem;
-  display:flex;align-items:center;justify-content:space-between;
-  background:rgba(8,8,7,.85);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-}
-.nav-logo{
-  display:flex;align-items:center;
-  font-family:'Bebas Neue',sans-serif;
-  font-size:2rem;
-  letter-spacing:.1em;
-  text-decoration:none;
-  line-height:1;
-}
-.nl-akira{color:#ffffff;font-weight:700;}
-.nl-digital{color:var(--gold);font-weight:700;}
-.nav-links{display:flex;align-items:center;gap:2rem;}
-.nav-links a{font-size:13px;font-weight:500;color:var(--gray);transition:color .2s;letter-spacing:.04em;text-transform:uppercase;}
-.nav-links a:hover{color:var(--white);}
-.nav-cta{
-  padding:.55rem 1.25rem;
-  background:var(--gold);
-  color:var(--black)!important;
-  font-size:12px;font-weight:600;
-  border-radius:var(--r);
-  letter-spacing:.06em;text-transform:uppercase;
-  transition:background .2s;
-}
-.nav-cta:hover{background:var(--gold2);}
-.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
-.nav-toggle span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .3s;}
-
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;justify-content:center;
-  padding:5rem 2rem 4rem;
-  position:relative;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    linear-gradient(to bottom, rgba(8,8,7,.82) 0%, rgba(8,8,7,.75) 60%, rgba(8,8,7,.92) 100%),
-    url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1920&q=85') center/cover no-repeat;
-}
-.hero-grid{
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-  background-size:60px 60px;
-  mask-image:radial-gradient(ellipse 80% 60% at 60% 40%, black 0%, transparent 80%);
-}
-.hero-eyebrow{
-  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:1.25rem;
-  display:flex;align-items:center;gap:.75rem;
-  justify-content:center;
-}
-.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
-.hero-title{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(3rem,8vw,7rem);
-  font-weight:800;
-  font-style:italic;
-  line-height:1;
-  letter-spacing:-.01em;
-  margin-bottom:1.5rem;
-  text-transform:none;
-  text-align:center;
-}
-.hero-title .gold{color:var(--gold);}
-.hero-bottom{
-  display:flex;flex-direction:column;align-items:center;
-  flex-wrap:wrap;gap:1.5rem;
-  text-align:center;
-}
-.hero-desc{font-size:16px;color:var(--gray);line-height:1.7;max-width:620px;text-align:center;}
-.hero-desc b{color:var(--white);font-weight:500;}
-.hero-actions{display:flex;flex-direction:column;align-items:center;gap:1rem;}
-.btn-primary{
-  display:inline-flex;align-items:center;gap:.6rem;
-  padding:.9rem 2rem;
-  background:var(--gold);color:var(--black);
-  font-size:13px;font-weight:600;
-  border-radius:var(--r);
-  letter-spacing:.06em;text-transform:uppercase;
-  transition:all .2s;
-  white-space:nowrap;
-}
-.btn-primary:hover{background:var(--gold2);transform:translateY(-1px);}
-.btn-primary svg{transition:transform .2s;}
-.btn-primary:hover svg{transform:translateX(3px);}
-.btn-ghost{
-  display:inline-flex;align-items:center;gap:.6rem;
-  padding:.9rem 2rem;
-  background:transparent;color:var(--white);
-  font-size:13px;font-weight:600;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:var(--r);
-  letter-spacing:.06em;text-transform:uppercase;
-  transition:all .2s;
-  white-space:nowrap;
-}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-.hero-stat-row{display:flex;gap:2.5rem;justify-content:center;}
-.hero-stat{text-align:center;}
-.hero-stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--gold);line-height:1;}
-.hero-stat-l{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
-.scroll-indicator{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);
-  animation:bounce 2s ease-in-out infinite;
-}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
-.scroll-indicator::after{content:'';width:1px;height:32px;background:linear-gradient(to bottom, var(--gray), transparent);}
-
-/* TICKER */
-.ticker{
-  background:var(--gold);
-  padding:.65rem 0;
-  overflow:hidden;
-  border-top:1px solid var(--gold2);
-  border-bottom:1px solid rgba(0,0,0,.2);
-}
-.ticker-inner{
-  display:flex;
-  animation:ticker 25s linear infinite;
-  white-space:nowrap;
-}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ticker-item{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1.1rem;
-  letter-spacing:.1em;
-  color:var(--black);
-  padding:0 2rem;
-  display:flex;align-items:center;gap:.75rem;
-}
-.ticker-dot{width:5px;height:5px;border-radius:50%;background:rgba(0,0,0,.3);}
-
-/* SECTION BASE */
-section{padding:6rem 2rem;}
-.container{max-width:1100px;margin:0 auto;}
-.section-label{
-  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1rem;
-  display:flex;align-items:center;gap:.6rem;
-}
-.section-label::before{content:'';width:24px;height:1px;background:var(--gold);}
-.section-title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(2.5rem,5vw,4.5rem);
-  line-height:1;
-  margin-bottom:1.25rem;
-}
-.section-title .gold{color:var(--gold);}
-.section-sub{font-size:16px;color:var(--gray);line-height:1.7;max-width:540px;}
-
-/* PROBLEM SECTION */
-.problem{background:#0D0D0B;}
-.problem-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
-  align-items:center;
-}
-.problem-points{display:flex;flex-direction:column;gap:1.25rem;margin-top:2rem;}
-.problem-point{
-  display:flex;gap:1rem;align-items:flex-start;
-  padding:1.1rem 1.25rem;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:var(--r);
-  background:rgba(255,255,255,.02);
-  transition:border-color .2s;
-}
-.problem-point:hover{border-color:rgba(201,148,26,.3);}
-.pp-icon{
-  width:36px;height:36px;border-radius:var(--r);
-  background:rgba(201,148,26,.1);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;font-size:16px;
-}
-.pp-title{font-size:14px;font-weight:600;color:var(--white);margin-bottom:3px;}
-.pp-desc{font-size:13px;color:var(--gray);line-height:1.5;}
-.problem-visual{
-  position:relative;
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:2rem;
-  overflow:hidden;
-}
-.problem-visual::before{
-  content:'';
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse at 50% 0%, rgba(201,148,26,.08), transparent 60%);
-}
-.search-mockup{position:relative;z-index:1;}
-.search-bar{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:4px;
-  padding:.75rem 1rem;
-  font-size:13px;color:var(--gray);
-  margin-bottom:1.25rem;
-  display:flex;align-items:center;gap:.5rem;
-}
-.search-result{
-  padding:.9rem 1rem;
-  border-radius:4px;
-  margin-bottom:.75rem;
-  border-left:3px solid transparent;
-}
-.search-result.competitor{
-  background:rgba(255,255,255,.04);
-  border-left-color:rgba(255,255,255,.15);
-}
-.search-result.yours{
-  background:rgba(201,148,26,.08);
-  border-left-color:var(--gold);
-}
-.sr-title{font-size:14px;font-weight:500;color:var(--white);margin-bottom:2px;}
-.sr-url{font-size:11px;color:var(--gold);}
-.sr-desc{font-size:12px;color:var(--gray);margin-top:3px;line-height:1.4;}
-.sr-badge{
-  display:inline-block;font-size:9px;font-weight:700;
-  padding:1px 6px;border-radius:99px;
-  background:var(--gold);color:var(--black);
-  margin-left:.4rem;vertical-align:middle;
-  text-transform:uppercase;letter-spacing:.05em;
-}
-.no-site-badge{
-  background:rgba(192,57,43,.15);
-  border:1px solid rgba(192,57,43,.3);
-  border-radius:var(--r);
-  padding:.6rem .85rem;
-  font-size:12px;color:#E5614E;
-  margin-top:1rem;
-  text-align:center;
-}
-
-/* NICHES */
-.niches-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-  border-radius:8px;overflow:hidden;
-  margin-top:3rem;
-}
-.niche{
-  background:var(--black);
-  padding:2rem;
-  transition:background .2s;
-  cursor:default;
-}
-.niche:hover{background:#111110;}
-.niche-icon{font-size:1.9rem;margin-bottom:.75rem;}
-.niche-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.04em;color:var(--white);margin-bottom:.4rem;}
-.niche-desc{font-size:13px;color:var(--gray);line-height:1.6;}
-.niche-stat{
-  margin-top:1rem;padding-top:1rem;
-  border-top:1px solid var(--line);
-  font-size:11px;color:var(--gold);
-  letter-spacing:.04em;
-  display:flex;align-items:center;gap:.4rem;
-}
-.niche-stat::before{content:'';width:16px;height:1px;background:var(--gold);}
-
-/* SERVICES */
-.services{background:#0D0D0B;}
-.services-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
-  margin-top:3rem;
-}
-.service-card{
-  padding:2rem;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:rgba(255,255,255,.02);
-  position:relative;overflow:hidden;
-  transition:border-color .3s, transform .3s;
-}
-.service-card::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:1px;
-  background:linear-gradient(to right, transparent, var(--gold), transparent);
-  opacity:0;transition:opacity .3s;
-}
-.service-card:hover{border-color:rgba(201,148,26,.3);transform:translateY(-2px);}
-.service-card:hover::before{opacity:1;}
-.service-card.featured{
-  background:linear-gradient(135deg, rgba(201,148,26,.08), rgba(201,148,26,.03));
-  border-color:rgba(201,148,26,.25);
-}
-.service-card.featured::before{opacity:1;}
-.sc-badge{
-  display:inline-block;font-size:10px;font-weight:700;
-  padding:2px 8px;border-radius:99px;
-  background:var(--gold);color:var(--black);
-  letter-spacing:.06em;text-transform:uppercase;
-  margin-bottom:1rem;
-}
-.sc-price{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:2.5rem;color:var(--gold);line-height:1;
-  margin-bottom:.25rem;
-}
-.sc-period{font-size:12px;color:var(--gray);}
-.sc-title{font-size:17px;font-weight:600;color:var(--white);margin:1rem 0 .5rem;}
-.sc-desc{font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:1.25rem;}
-.sc-features{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem;}
-.sc-feat{display:flex;align-items:flex-start;gap:.5rem;font-size:13px;color:var(--gray);}
-.sc-feat::before{content:'✓';color:var(--gold);font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px;}
-.sc-cta{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--gold);
-  transition:gap .2s;
-}
-.sc-cta:hover{gap:.75rem;}
-
-/* PROCESS */
-.process-steps{
-  display:grid;grid-template-columns:repeat(5,1fr);
-  gap:0;
-  margin-top:3.5rem;
-  position:relative;
-}
-.process-steps::before{
-  content:'';
-  position:absolute;
-  top:28px;left:10%;right:10%;
-  height:1px;
-  background:linear-gradient(to right, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
-  opacity:.3;
-}
-.process-step{
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;padding:0 .5rem;
-  position:relative;
-}
-.ps-num{
-  width:56px;height:56px;border-radius:50%;
-  background:var(--black);
-  border:1px solid rgba(201,148,26,.3);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--gold);
-  margin-bottom:1rem;
-  position:relative;z-index:1;
-  transition:all .3s;
-}
-.process-step:hover .ps-num{background:var(--gold);color:var(--black);}
-.ps-title{font-size:13px;font-weight:600;color:var(--white);margin-bottom:.4rem;}
-.ps-desc{font-size:12px;color:var(--gray);line-height:1.5;}
-
-/* WHY */
-.why-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;
-  margin-top:3rem;
-}
-.why-card{
-  padding:1.5rem;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:rgba(255,255,255,.015);
-  transition:all .25s;
-  display:flex;
-  flex-direction:column;
-}
-.why-card:hover{border-color:rgba(201,148,26,.25);background:rgba(201,148,26,.03);}
-.wc-icon{font-size:1.4rem;margin-bottom:.75rem;}
-.wc-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:.4rem;}
-.wc-desc{font-size:13px;color:var(--gray);line-height:1.6;}
-
-/* RESULTS ROW */
-.results-row{
-  display:flex;overflow:hidden;gap:1px;
-  background:var(--line);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.result-item{
-  flex:1;min-width:0;
-  padding:2rem;background:var(--black);
-  text-align:center;
-}
-.ri-number{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:3rem;color:var(--gold);line-height:1;
-  margin-bottom:.25rem;
-}
-.ri-label{font-size:12px;color:var(--gray);letter-spacing:.04em;}
-
-/* PRICING */
-.pricing{background:#0D0D0B;}
-.pricing-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-  border-radius:8px;overflow:hidden;
-  margin-top:3rem;
-}
-.pricing-card{
-  background:var(--black);
-  padding:2rem 1.5rem;
-  display:flex;flex-direction:column;
-  transition:background .2s;
-}
-.pricing-card:hover{background:#0f0f0e;}
-.pricing-card.hot{
-  background:rgba(201,148,26,.05);
-  position:relative;
-}
-.pricing-card.hot::before{
-  content:'MOST POPULAR';
-  position:absolute;top:0;left:50%;transform:translateX(-50%);
-  font-size:9px;font-weight:700;letter-spacing:.12em;
-  background:var(--gold);color:var(--black);
-  padding:3px 12px;border-radius:0 0 4px 4px;
-}
-.pc-phase{font-size:10px;font-weight:600;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
-.pc-price{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--white);line-height:1;margin-bottom:.15rem;}
-.pc-period{font-size:12px;color:var(--gray);margin-bottom:.75rem;}
-.pc-name{font-size:15px;font-weight:600;color:var(--white);margin-bottom:.4rem;}
-.pc-desc{font-size:12px;color:var(--gray);line-height:1.55;margin-bottom:1.25rem;}
-.pc-features{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.5rem;flex:1;}
-.pc-feat{font-size:12px;color:var(--gray);display:flex;align-items:flex-start;gap:.4rem;}
-.pc-feat::before{content:'✓';color:var(--gold);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
-.pc-btn{
-  display:block;text-align:center;
-  padding:.7rem;
-  font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
-  border-radius:var(--r);
-  transition:all .2s;
-  border:1px solid rgba(201,148,26,.3);
-  color:var(--gold);
-}
-.pc-btn:hover{background:var(--gold);color:var(--black);border-color:var(--gold);}
-.pc-btn.solid{background:var(--gold);color:var(--black);border-color:var(--gold);}
-.pc-btn.solid:hover{background:var(--gold2);}
-
-/* CTA SECTION */
-.cta-section{
-  position:relative;overflow:hidden;
-  padding:8rem 2rem;text-align:center;
-  background:var(--black);
-}
-.cta-section::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,148,26,.1), transparent 70%);
-}
-.cta-section .section-label{justify-content:center;}
-.cta-section .section-label::before{display:none;}
-.cta-big{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3rem,8vw,7rem);
-  line-height:1;letter-spacing:.02em;
-  margin-bottom:1.5rem;
-  position:relative;
-}
-.cta-big .gold{color:var(--gold);}
-.cta-sub{font-size:16px;color:var(--gray);max-width:460px;margin:0 auto 2.5rem;line-height:1.7;}
-.cta-actions{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;}
-.cta-guarantee{
-  margin-top:1.5rem;font-size:12px;color:var(--gray);
-  display:flex;align-items:center;justify-content:center;gap:.4rem;
-}
-
-/* CONTACT */
-.contact-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
-  align-items:start;
-}
-.contact-form{display:flex;flex-direction:column;gap:1rem;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.form-field{display:flex;flex-direction:column;gap:.35rem;}
-.form-field label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);}
-.form-field input,.form-field select,.form-field textarea{
-  font-family:'DM Sans',sans-serif;
-  font-size:14px;color:var(--white);
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:var(--r);
-  padding:.75rem 1rem;
-  outline:none;
-  transition:border-color .2s;
-  width:100%;
-}
-.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold);}
-.form-field select{appearance:none;cursor:pointer;}
-.form-field textarea{resize:vertical;min-height:100px;}
-.form-field input::placeholder,.form-field textarea::placeholder{color:rgba(255,255,255,.2);}
-.form-submit{
-  padding:1rem 2rem;
-  background:var(--gold);color:var(--black);
-  font-family:'DM Sans',sans-serif;
-  font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  border:none;border-radius:var(--r);cursor:pointer;
-  transition:background .2s;
-  width:100%;
-}
-.form-submit:hover{background:var(--gold2);}
-.contact-info{display:flex;flex-direction:column;gap:1.5rem;}
-.ci-item{display:flex;gap:1rem;align-items:flex-start;}
-.ci-icon{
-  width:42px;height:42px;border-radius:var(--r);
-  background:rgba(201,148,26,.1);border:1px solid rgba(201,148,26,.2);
-  display:flex;align-items:center;justify-content:center;
-  font-size:18px;flex-shrink:0;
-}
-.ci-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:.2rem;}
-.ci-value{font-size:15px;font-weight:500;color:var(--white);}
-.ci-value a{color:var(--gold);}
-
-/* FOOTER */
-footer{
-  background:#060605;
-  padding:3rem 2rem;
-  border-top:1px solid var(--line);
-}
-.footer-inner{
-  max-width:1100px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1.5rem;
-}
-.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.06em;}
-.footer-logo span{color:var(--gold);}
-.footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
-.footer-links a{font-size:12px;color:var(--gray);transition:color .2s;letter-spacing:.04em;}
-.footer-links a:hover{color:var(--white);}
-.footer-copy{font-size:12px;color:rgba(255,255,255,.2);}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-.fade-up{opacity:0;animation:fadeUp .7s ease forwards;}
-.delay-1{animation-delay:.1s;}
-.delay-2{animation-delay:.2s;}
-.delay-3{animation-delay:.3s;}
-.delay-4{animation-delay:.4s;}
-
-/* PORTFOLIO SECTION */
-#portfolio iframe{pointer-events:none;}
-#portfolio .iframe-wrap{position:relative;}
-#portfolio .iframe-wrap:hover iframe{pointer-events:auto;}
-
-/* MOBILE */
-@media(max-width:768px){
-  nav{padding:1rem 1.25rem;}
-  .nav-links{display:none;}
-  .nav-toggle{display:flex;}
-  .nav-links.open{
-    display:flex;flex-direction:column;
-    position:fixed;inset:0;top:60px;
-    background:var(--black);
-    padding:2rem;gap:1.5rem;
-    z-index:99;
-  }
-  .nav-links.open a{font-size:1.1rem;}
-  .hero{padding:0 1.25rem 4rem;}
-  .hero-title{font-size:clamp(2.5rem,10vw,5rem);}
-  .hero-bottom{flex-direction:column;align-items:center;}
-  .hero-actions{align-items:center;}
-  .hero-stat-row{gap:1.5rem;}
-  section{padding:4rem 1.25rem;}
-  .problem-grid,.contact-grid{grid-template-columns:1fr;}
-  .niches-grid,.services-grid,.pricing-grid{grid-template-columns:1fr;}
-  .why-grid{grid-template-columns:1fr;}
-  .process-steps{grid-template-columns:1fr;gap:1.5rem;}
-  .process-steps::before{display:none;}
-  .results-row{flex-wrap:wrap;}
-  .result-item{min-width:50%;}
-  .form-row{grid-template-columns:1fr;}
-  .footer-inner{flex-direction:column;text-align:center;}
-  .footer-links{justify-content:center;}
-  #portfolio .portfolio-grid{grid-template-columns:1fr!important;}
-  #portfolio .portfolio-grid>div:last-child{display:none;}
-}
-
-select option{color:#000!important;background:#fff!important;}
-select{color:#fff;}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./resources.js"></script>
+<script src="./support.js"></script>
 </head>
 <body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Design Agency for Local Businesses | Akira Digital</title>
+<meta name="description" content="Akira Digital is a web design agency for local service businesses — custom, mobile-first websites built to rank locally and convert. Packages from $1,000. Book a free call.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://akiradigital.net/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0a0a0c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Akira Digital">
+<meta property="og:title" content="Web Design Agency for Local Businesses | Akira Digital">
+<meta property="og:description" content="Custom web design and development for businesses of every kind — trades, law firms, clinics, studios, retail and B2B. Built to rank locally and turn visitors into booked jobs. Packages from $1,000.">
+<meta property="og:url" content="https://akiradigital.net/">
+<meta property="og:image" content="https://akiradigital.net/laptop-photo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web Design Agency for Local Businesses | Akira Digital">
+<meta name="twitter:description" content="Custom websites for local service businesses. Built to rank locally and convert. Packages from $1,000.">
+<meta name="twitter:image" content="https://akiradigital.net/laptop-photo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "Organization"],
+      "@id": "https://akiradigital.net/#organization",
+      "name": "Akira Digital",
+      "alternateName": "Akira Digital Web Design Agency",
+      "description": "Web design agency building custom, conversion-focused websites for businesses of every kind \u2014 trades and home services, law firms, clinics, studios, retail, nonprofits and B2B.",
+      "url": "https://akiradigital.net/",
+      "logo": "https://akiradigital.net/favicon.svg",
+      "image": "https://akiradigital.net/laptop-photo.png",
+      "priceRange": "$500–$5,000+",
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "knowsAbout": ["Web design", "Web development", "Local SEO", "Conversion rate optimization", "Mobile-first design"],
+      "slogan": "We build websites that win business.",
+      "makesOffer": [
+        { "@type": "Offer", "name": "Starter Website", "price": "1000", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Custom 3-page website design and development", "serviceType": "Web design" } },
+        { "@type": "Offer", "name": "Growth Website", "price": "2500", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Lead-generating 5-page website with analytics and call tracking", "serviceType": "Web design" } },
+        { "@type": "Offer", "name": "Authority Package", "price": "5000", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Full brand refresh with local SEO and Google Ads landing pages", "serviceType": "Web design" } },
+        { "@type": "Offer", "name": "Care Plan", "price": "300", "priceCurrency": "USD", "itemOffered": { "@type": "Service", "name": "Monthly website maintenance, security, and SEO health reporting", "serviceType": "Website maintenance" } },
+        { "@type": "Offer", "name": "Design Day (Half Day)", "price": "500", "priceCurrency": "USD", "url": "https://buy.stripe.com/5kQ00lfzgcXB6yYdWFfw408", "itemOffered": { "@type": "Service", "name": "Half-day (4 hours) focused design working session", "serviceType": "Web design" } },
+        { "@type": "Offer", "name": "Design Day (Full Day)", "price": "1000", "priceCurrency": "USD", "url": "https://buy.stripe.com/14AcN79aSg9N6yY9Gpfw407", "itemOffered": { "@type": "Service", "name": "Full-day (8 hours) focused design working session", "serviceType": "Web design" } }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://akiradigital.net/#website",
+      "url": "https://akiradigital.net/",
+      "name": "Akira Digital",
+      "publisher": { "@id": "https://akiradigital.net/#organization" },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Service",
+      "name": "Custom web design for local businesses",
+      "serviceType": "Web design agency services",
+      "provider": { "@id": "https://akiradigital.net/#organization" },
+      "audience": { "@type": "BusinessAudience", "name": "Small and mid-sized businesses of any industry \u2014 including trades and home services, law firms, dental and medical practices, med spas, fitness studios, restaurants, real estate, retail, nonprofits, consultants and B2B" },
+      "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "1000", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1000", "priceCurrency": "USD", "valueAddedTaxIncluded": false } }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Archivo+Black&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  :root {
+    --ak-bg-rgb: 247,243,234; --ak-bg2-rgb: 239,232,216; --ak-surface-rgb: 255,255,255;
+    --ak-ink-rgb: 33,29,23; --ak-secondary-rgb: 110,101,88; --ak-border-rgb: 28,25,18;
+    --ak-accent-rgb: 155,59,84; --ak-accent2-rgb: 184,80,107; --ak-accent3-rgb: 184,80,107; --ak-accent4-rgb: 155,59,84; --ak-accent4-text-rgb: 155,59,84;
+    --ak-hero-font: 'Bodoni Moda', Georgia, serif;
+  }
+  body { margin: 0; background: rgb(var(--ak-bg-rgb)); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; transition: background .3s ease, color .3s ease; }
+  a { color: rgb(var(--ak-accent-rgb)); text-decoration: none; transition: color .2s ease; }
+  a:hover { color: rgb(var(--ak-accent2-rgb)); }
+  ::selection { background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); }
+  input, textarea, select, button { font-family: inherit; }
+  input:focus, textarea:focus, select:focus { border-color: rgb(var(--ak-accent-rgb)) !important; }
+  :focus-visible { outline: 2px solid rgb(var(--ak-accent-rgb)); outline-offset: 3px; }
+  @media (max-width: 1020px) { [data-studio-grid] { grid-template-columns: minmax(0, 1fr) !important; } [data-work-grid] { grid-template-columns: minmax(0, 1fr) !important; } }
+  @media (max-width: 760px) { [data-live-cards] { grid-template-columns: minmax(0, 1fr) !important; } }
+  @media (max-width: 1180px) { [data-steps-grid] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
+  @media (max-width: 760px) { [data-steps-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+  @media (max-width: 520px) { [data-steps-grid] { grid-template-columns: minmax(0, 1fr) !important; } }
+  @keyframes akRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes akFade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes akScan { 0% { transform: translateY(-10%); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(1100%); opacity: 0; } }
+  @keyframes akTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes akBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes akDrift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(2%, -3%); } }
+  @keyframes akNudge { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+  @keyframes akGlowPulse { 0%, 100% { box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4); } 50% { box-shadow: 0 0 34px rgba(var(--ak-accent4-rgb),.5); } }
+  @keyframes akBlobA { 0%, 100% { transform: translate(-6%, -4%) scale(1); } 33% { transform: translate(8%, 6%) scale(1.18); } 66% { transform: translate(-2%, 10%) scale(.92); } }
+  @keyframes akBlobB { 0%, 100% { transform: translate(5%, 6%) scale(1.05); } 40% { transform: translate(-9%, -6%) scale(.9); } 70% { transform: translate(4%, -10%) scale(1.2); } }
+  @keyframes akBlobC { 0%, 100% { transform: translate(0, 8%) scale(.95); } 50% { transform: translate(-8%, -8%) scale(1.15); } }
+  @keyframes akTextSweep { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+  @keyframes akSheen { 0% { transform: translateX(-120%) skewX(-18deg); opacity: 0; } 12% { opacity: .5; } 40% { opacity: 0; } 100% { transform: translateX(320%) skewX(-18deg); opacity: 0; } }
+  @keyframes akWords {
+    0%, 18% { transform: translateY(0); }
+    23%, 41% { transform: translateY(-20%); }
+    46%, 64% { transform: translateY(-40%); }
+    69%, 87% { transform: translateY(-60%); }
+    92%, 100% { transform: translateY(-80%); }
+  }
+  @keyframes akHaloPulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
+  @keyframes akHaloPulse { 0%, 100% { opacity: .5; transform: translate(-50%,-50%) scale(1); } 50% { opacity: .85; transform: translate(-50%,-50%) scale(1.08); } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
+</style>
+</helmet>
 
-<!-- NAV -->
-<nav>
-  <a href="#home" class="nav-logo"><span class="nl-akira">AKIRA</span><span class="nl-digital">&nbsp;DIGITAL</span></a>
-  <div class="nav-links" id="navLinks">
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#process">Process</a>
-    <a href="#results">Results</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="nav-cta">Get Started</a>
-  </div>
-  <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
+<div style="position: relative; overflow-x: hidden; background: rgb(var(--ak-bg-rgb));">
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div style="position:relative;z-index:1;max-width:1100px;margin:0 auto;width:100%;text-align:center;">
-    <div class="hero-eyebrow fade-up">Web Design Agency — Home Services &amp; Law Firms</div>
-    <h1 class="hero-title fade-up delay-1">
-      We Build <span class="gold">Websites</span><br>
-      That Win <span class="gold">Business</span>
-    </h1>
-    <div class="hero-bottom">
-      <p class="hero-desc fade-up delay-2">
-        Local businesses lose <b>thousands of dollars every month</b> to competitors with better websites. We fix that. Professional, high-converting sites starting at <b>$1,000</b>.
-      </p>
-      <div class="hero-actions fade-up delay-3">
-        <div class="hero-stat-row">
-          <div class="hero-stat">
-            <div class="hero-stat-n">100%</div>
-            <div class="hero-stat-l">Custom-Built</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-n">$1K</div>
-            <div class="hero-stat-l">Starting Price</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-n">4×</div>
-            <div class="hero-stat-l">More Leads</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;">
-          <a href="#contact" class="btn-primary">
-            Start Your Project
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#pricing" class="btn-ghost">See Pricing</a>
-        </div>
-      </div>
+  
+
+  <div id="ak-cursor-glow" style="position: fixed; top: 0; left: 0; width: 340px; height: 340px; margin: -170px 0 0 -170px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.16), rgba(var(--ak-accent4-rgb),.08) 45%, transparent 70%); filter: blur(20px); pointer-events: none; opacity: 0; transition: opacity .3s ease; z-index: 9998; will-change: transform;"></div>
+  <div id="ak-cursor-ring" style="position: fixed; top: 0; left: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 1.5px solid rgba(var(--ak-accent-rgb),.9); box-shadow: 0 0 14px rgba(var(--ak-accent-rgb),.55), inset 0 0 10px rgba(var(--ak-accent-rgb),.25); pointer-events: none; opacity: 0; transition: opacity .3s ease, width .22s ease, height .22s ease, margin .22s ease, border-color .22s ease, background .22s ease; z-index: 9999; will-change: transform;"></div>
+
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 800; min-height: 4.4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; padding: 1rem clamp(1.25rem, 4vw, 3rem); background: rgba(var(--ak-bg-rgb),.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);">
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(var(--ak-accent-rgb),.55) 25%, rgba(var(--ak-accent4-rgb),.55) 55%, rgba(201,148,26,.4) 80%, transparent);"></div>
+
+    <a href="#top" style="position: relative; display: inline-flex; align-items: center; gap: .6rem;">
+      <span style="display: grid; place-items: center; width: 30px; height: 30px; border-radius: 7px; background: linear-gradient(140deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); box-shadow: 0 0 18px rgba(var(--ak-accent-rgb),.45); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .78rem; letter-spacing: -.02em; color: rgb(var(--ak-bg-rgb));">AD</span>
+      <span style="display: inline-flex; align-items: baseline; gap: .3rem;">
+        <span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: .06em; color: rgb(var(--ak-ink-rgb));">AKIRA</span>
+        <span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: .06em; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 40%, rgb(201,148,26) 70%, rgb(var(--ak-accent-rgb))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: akTextSweep 8s linear infinite;">DIGITAL</span>
+      </span>
+    </a>
+
+    <div style="position: relative; display: flex; align-items: center; gap: clamp(.5rem, 1.6vw, 1.4rem);">
+      <a href="#preview" style="padding: .45rem .2rem; font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Preview</a>
+      <a href="#work" style="padding: .45rem .2rem; font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--ak-accent4-text-rgb)), rgb(var(--ak-accent3-rgb))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Work</a>
+      <a href="#process" style="padding: .45rem .2rem; font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--ak-accent3-rgb)), rgb(201,148,26)); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Process</a>
+      <a href="#pricing" style="padding: .45rem .2rem; font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(201,148,26), rgb(var(--ak-accent-rgb))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Pricing</a>
+
+      <span style="display: inline-flex; align-items: center; gap: .45rem; margin-left: .3rem; padding: .35rem .7rem; border-radius: 99px; border: 1px solid rgba(var(--ak-accent3-rgb),.4); background: rgba(var(--ak-accent3-rgb),.1); white-space: nowrap;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(var(--ak-accent3-rgb)); box-shadow: 0 0 8px rgb(var(--ak-accent3-rgb)); animation: akHaloPulseDot 2s ease-in-out infinite;"></span>
+        <span style="font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">Taking projects</span>
+      </span>
+
+      <a href="#contact" style="position: relative; overflow: hidden; padding: .7rem 1.3rem; border-radius: 6px; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .76rem; letter-spacing: .08em; white-space: nowrap; box-shadow: 0 0 20px rgba(var(--ak-accent-rgb),.35); transition: all .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 32px rgba(var(--ak-accent-rgb),.6); color: rgb(var(--ak-bg-rgb));">BOOK FREE CALL</a>
     </div>
-  </div>
-  <div class="scroll-indicator">Scroll</div>
-</section>
+  </nav>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-inner">
-    <div class="ticker-item"><span>Plumbers</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>HVAC Companies</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Electricians</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Roofers</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Law Firms</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>General Contractors</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Pest Control</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Landscaping</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Personal Injury Attorneys</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Cleaning Services</span><div class="ticker-dot"></div></div>
-    <!-- Duplicate for seamless loop -->
-    <div class="ticker-item"><span>Plumbers</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>HVAC Companies</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Electricians</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Roofers</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Law Firms</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>General Contractors</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Pest Control</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Landscaping</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Personal Injury Attorneys</span><div class="ticker-dot"></div></div>
-    <div class="ticker-item"><span>Cleaning Services</span><div class="ticker-dot"></div></div>
-  </div>
-</div>
+  <section id="top" style="position: relative; min-height: 100svh; display: flex; align-items: center; padding: 9rem clamp(1.25rem, 4vw, 3rem) 5rem; overflow: hidden;">
 
-<!-- PROBLEM -->
-<section class="problem" id="problem">
-  <div class="container">
-    <div class="problem-grid">
+    <div style="position: absolute; inset: 0; background-image: url('laptop-photo.png'); background-size: cover; background-position: center 35%; pointer-events: none; z-index: 0;"></div>
+    <div style="position: absolute; inset: 0; background: rgba(6,6,6,.82); pointer-events: none; z-index: 0;"></div>
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(var(--ak-border-rgb),.035) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--ak-border-rgb),.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);"></div>
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(var(--ak-accent-rgb),.13), transparent 70%); animation: akDrift 18s ease-in-out infinite;"></div>
+
+    <div style="position: absolute; top: -10%; left: -8%; width: 46vw; height: 46vw; max-width: 720px; max-height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.4), transparent 65%); filter: blur(90px); pointer-events: none; z-index: 0; animation: akBlobA 22s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: -14%; right: -10%; width: 42vw; height: 42vw; max-width: 660px; max-height: 660px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent4-rgb),.36), transparent 65%); filter: blur(100px); pointer-events: none; z-index: 0; animation: akBlobB 27s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: 30%; right: 22%; width: 26vw; height: 26vw; max-width: 420px; max-height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent3-rgb),.22), transparent 65%); filter: blur(110px); pointer-events: none; z-index: 0; animation: akBlobC 19s ease-in-out infinite;"></div>
+
+    <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;">
+      <div style="position: absolute; top: 0; bottom: 0; width: 22%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.07), transparent); animation: akSheen 9s ease-in-out infinite;"></div>
+    </div>
+
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, rgba(0,0,0,.55)); pointer-events: none; z-index: 0;"></div>
+
+    <div style="position: relative; z-index: 1; width: 100%; max-width: 900px; margin: 0 auto; text-align: center;">
+
       <div>
-        <div class="section-label">The Problem</div>
-        <h2 class="section-title">Your competitors are stealing your customers <span class="gold">right now</span></h2>
-        <p class="section-sub">87% of customers research a business online before calling. If your website is outdated — or you don't have one — those customers are calling someone else.</p>
-        <div class="problem-points">
-          <div class="problem-point">
-            <div class="pp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-            <div><div class="pp-title">Invisible to Google</div><div class="pp-desc">Without a website, you don't exist online. Every search for your services sends potential customers to competitors.</div></div>
-          </div>
-          <div class="problem-point">
-            <div class="pp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/></svg></div>
-            <div><div class="pp-title">Not Mobile Friendly</div><div class="pp-desc">Over 70% of local searches happen on phones. An outdated site sends customers straight to competitors with better mobile experiences.</div></div>
-          </div>
-          <div class="problem-point">
-            <div class="pp-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-            <div><div class="pp-title">Losing Jobs Daily</div><div class="pp-desc">Every day without a professional website is money left on the table. One new client from your site covers the entire cost.</div></div>
-          </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: .75rem; margin-bottom: 1.8rem; animation: akFade .8s ease both;">
+          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent-rgb));"></span>
+          <span style="display: inline-flex; align-items: baseline; gap: .4em; font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;">
+            <span style="color: rgb(var(--ak-secondary-rgb));">More</span>
+            <span style="display: inline-block; height: 1.3em; overflow: hidden; text-align: left; min-width: 8.5em;">
+              <span style="display: block; animation: akWords 13s cubic-bezier(.7,0,.3,1) infinite;">
+                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent-rgb));">phone calls</span>
+                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent4-text-rgb));">booked jobs</span>
+                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent3-rgb));">new customers</span>
+                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(201,148,26);">revenue</span>
+                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent-rgb));">phone calls</span>
+              </span>
+            </span>
+          </span>
+          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent-rgb));"></span>
         </div>
-      </div>
-      <div class="problem-visual">
-        <div class="search-mockup">
-          <div class="search-bar">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <span>plumber near me emergency service</span>
-          </div>
-          <div class="search-result competitor">
-            <div class="sr-title">City Plumbing Co. — Fast &amp; Reliable</div>
-            <div class="sr-url">cityplumbing.com</div>
-            <div class="sr-desc">24/7 emergency service. Licensed &amp; insured. Book online. 200+ reviews.</div>
-          </div>
-          <div class="search-result yours">
-            <div class="sr-title">Your Business<span class="sr-badge">With Akira</span></div>
-            <div class="sr-url">yourbusiness.com</div>
-            <div class="sr-desc">Professional, fast-loading, optimized to rank and convert visitors into paying customers.</div>
-          </div>
-          <div class="search-result competitor" style="opacity:.5;">
-            <div class="sr-title">Metro Plumbing Services</div>
-            <div class="sr-url">metroplumbing.net</div>
-            <div class="sr-desc">Quality service at fair prices.</div>
-          </div>
-          <div class="no-site-badge">❌ Without a website you're not on this list at all</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- NICHES -->
-<section id="niches" style="padding:5rem 2rem;">
-  <div class="container">
-    <div class="section-label">Who We Serve</div>
-    <h2 class="section-title">Built specifically for <span class="gold">your industry</span></h2>
-    <div class="niches-grid">
-      <div class="niche">
-        <div class="niche-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <div class="niche-title">Home Services</div>
-        <div class="niche-desc">Plumbers, HVAC, electricians, roofers, general contractors, pest control, landscaping, painters, and more.</div>
-        <div class="niche-stat">4× more calls with a professional site</div>
-      </div>
-      <div class="niche">
-        <div class="niche-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="niche-title">Law Firms</div>
-        <div class="niche-desc">Personal injury, family law, criminal defense, and immigration attorneys who need to convert website visitors into consultations.</div>
-        <div class="niche-stat">Higher trust, more qualified leads</div>
-      </div>
-      <div class="niche">
-        <div class="niche-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <div class="niche-title">Health &amp; Wellness</div>
-        <div class="niche-desc">Dental offices, chiropractors, med spas, physical therapists. Patients search online first — be where they look.</div>
-        <div class="niche-stat">Online booking drives more appointments</div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div style="position: relative;">
+          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 70%; height: 120%; border-radius: 50%; background: radial-gradient(ellipse, rgba(var(--ak-accent-rgb),.28), transparent 65%); filter: blur(60px); pointer-events: none; animation: akHaloPulse 7s ease-in-out infinite;"></div>
+          <h1 style="position: relative; margin: 0 0 1.75rem; font-family: var(--ak-hero-font); font-style: italic; font-weight: 800; font-size: clamp(3rem, 7.2vw, 6.4rem); line-height: .95; letter-spacing: -.02em; text-wrap: balance;">
+            <span style="display: block; animation: akRise .8s ease both;">We build websites</span>
+            <span style="display: block; animation: akRise .8s ease .12s both;">that <span style="color: rgb(var(--ak-accent-rgb)); text-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.55);">win</span> <span style="background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 25%, rgb(201,148,26) 50%, rgb(var(--ak-accent3-rgb)) 75%, rgb(var(--ak-accent-rgb))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: akTextSweep 9s linear infinite;">business.</span></span>
+          </h1>
+        </div>
 
-<!-- RESULTS ROW -->
-<div class="results-row" id="results">
-  <div class="result-item">
-    <div class="ri-number">$1K</div>
-    <div class="ri-label">Starting Price</div>
-  </div>
-  <div class="result-item">
-    <div class="ri-number">100%</div>
-    <div class="ri-label">Mobile Responsive</div>
-  </div>
-  <div class="result-item">
-    <div class="ri-number">$0</div>
-    <div class="ri-label">Platform Lock-In Fees</div>
-  </div>
-  <div class="result-item">
-    <div class="ri-number">4×</div>
-    <div class="ri-label">Avg. Lead Increase</div>
-  </div>
-</div>
+        <p style="max-width: 40rem; margin: 0 auto 1.2rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); text-wrap: pretty; animation: akRise .8s ease .2s both;">
+          Akira Digital is a <strong style="font-weight: 700; color: rgb(var(--ak-ink-rgb));">web design agency for businesses that live or die by their local reputation</strong> — trades and home services, law firms, clinics and med spas, studios, restaurants, and plenty that don't fit a category.
+        </p>
+        <p style="max-width: 34rem; margin: 0 auto 2.4rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty; animation: akRise .8s ease .24s both;">
+          Customers check you out online before they ever call. If what they find looks dated, they call someone else. We design, write and build the site that keeps them — mobile-first, fast, and tuned for local search. Packages from $1,000.
+        </p>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-label">What We Deliver</div>
-    <h2 class="section-title">Every site is built to <span class="gold">generate leads</span></h2>
-    <p class="section-sub">Not just look good. Every website we build is engineered to turn visitors into phone calls and booked jobs.</p>
-    <div class="services-grid">
-      <div class="service-card featured">
-        <div class="sc-badge">Most Popular</div>
-        <div class="sc-price">$1,000</div>
-        <div class="sc-period">One-time project fee</div>
-        <div class="sc-title">Starter Website</div>
-        <div class="sc-desc">Perfect for businesses with no website or an outdated one. Everything you need to start showing up online and getting calls.</div>
-        <div class="sc-features">
-          <div class="sc-feat">Up to 3 custom pages</div>
-          <div class="sc-feat">Mobile responsive design</div>
-          <div class="sc-feat">Contact form + email delivery</div>
-          <div class="sc-feat">Google Business Profile setup</div>
-          <div class="sc-feat">Basic SEO foundation</div>
-          <div class="sc-feat">2 rounds of revisions</div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; animation: akRise .8s ease .34s both;">
+          <a href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1rem 1.8rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); animation: akGlowPulse 3s ease-in-out infinite; color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4);">BOOK A FREE CALL →</a>
+          <a href="#preview" style="display: inline-flex; align-items: center; padding: 1rem 1.8rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">SEE YOUR WEBSITE DESIGN FIRST</a>
         </div>
-        <a href="#contact" class="sc-cta">
-          Get Started
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+
       </div>
-      <div class="service-card">
-        <div class="sc-badge" style="background:rgba(201,148,26,.15);color:var(--gold);">Growth Package</div>
-        <div class="sc-price">$2,500</div>
-        <div class="sc-period">One-time project fee</div>
-        <div class="sc-title">Lead Gen Website</div>
-        <div class="sc-desc">For businesses ready to scale. Full lead capture system, analytics, and optimization built for maximum ROI.</div>
-        <div class="sc-features">
-          <div class="sc-feat">Everything in Starter</div>
-          <div class="sc-feat">Up to 5 custom pages</div>
-          <div class="sc-feat">Lead capture + CRM integration</div>
-          <div class="sc-feat">Google Analytics 4 setup</div>
-          <div class="sc-feat">Call tracking number</div>
-          <div class="sc-feat">Speed optimization</div>
-        </div>
-        <a href="#contact" class="sc-cta">
-          Get Started
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+
+    </div>
+
+    <a href="#problem" style="position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); font-size: .6rem; letter-spacing: .24em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); animation: akNudge 2s ease-in-out infinite;">Scroll</a>
+  </section>
+
+  <div style="border-top: 1px solid rgba(var(--ak-accent-rgb),.25); border-bottom: 1px solid rgba(var(--ak-accent-rgb),.25); background: rgb(var(--ak-bg2-rgb)); overflow: hidden; padding: .85rem 0;">
+    <div style="display: flex; width: max-content; animation: akTicker 28s linear infinite;">
+      <div style="display: flex; gap: 2.5rem; padding-right: 2.5rem; font-family: 'Archivo', sans-serif; font-size: 1.05rem; letter-spacing: .14em; color: rgb(var(--ak-accent-rgb)); white-space: nowrap;">
+        <span>MORE CALLS</span><span>◆</span><span>MORE BOOKED JOBS</span><span>◆</span><span>MORE CUSTOMERS</span><span>◆</span><span>PREMIUM CRAFT</span><span>◆</span><span>NO PLATFORM LOCK-IN</span><span>◆</span><span>BUILT TO CONVERT</span><span>◆</span><span>YOU OWN EVERYTHING</span><span>◆</span>
       </div>
-      <div class="service-card">
-        <div class="sc-badge" style="background:rgba(255,255,255,.06);color:var(--gray);">Monthly</div>
-        <div class="sc-price" style="font-size:2rem;">$300<span style="font-size:1.2rem;">/mo</span></div>
-        <div class="sc-period">Recurring · Cancel anytime</div>
-        <div class="sc-title">Care Plan</div>
-        <div class="sc-desc">Keep your site fast, secure, and always updated. Monthly maintenance so you never have to think about your website.</div>
-        <div class="sc-features">
-          <div class="sc-feat">Monthly content updates</div>
-          <div class="sc-feat">Security monitoring</div>
-          <div class="sc-feat">Daily automated backups</div>
-          <div class="sc-feat">Monthly SEO health report</div>
-          <div class="sc-feat">Priority 24hr support</div>
-        </div>
-        <a href="#contact" class="sc-cta">
-          Get Started
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="service-card">
-        <div class="sc-badge" style="background:rgba(255,255,255,.04);color:var(--gray);">Premium</div>
-        <div class="sc-price">$5K+</div>
-        <div class="sc-period">One-time · Custom timeline</div>
-        <div class="sc-title">Authority Package</div>
-        <div class="sc-desc">For established businesses ready to dominate their market. Full rebrand, advanced SEO, and Google Ads integration.</div>
-        <div class="sc-features">
-          <div class="sc-feat">Everything in Growth</div>
-          <div class="sc-feat">8-10 custom pages</div>
-          <div class="sc-feat">Full brand refresh</div>
-          <div class="sc-feat">Google Ads landing pages</div>
-          <div class="sc-feat">Local SEO dominance strategy</div>
-        </div>
-        <a href="#contact" class="sc-cta">
-          Let's Talk
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <div style="display: flex; gap: 2.5rem; padding-right: 2.5rem; font-family: 'Archivo', sans-serif; font-size: 1.05rem; letter-spacing: .14em; color: rgb(var(--ak-accent-rgb)); white-space: nowrap;" aria-hidden="true">
+        <span>MORE CALLS</span><span>◆</span><span>MORE BOOKED JOBS</span><span>◆</span><span>MORE CUSTOMERS</span><span>◆</span><span>PREMIUM CRAFT</span><span>◆</span><span>NO PLATFORM LOCK-IN</span><span>◆</span><span>BUILT TO CONVERT</span><span>◆</span><span>YOU OWN EVERYTHING</span><span>◆</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- PROCESS -->
-<section id="process" style="padding:6rem 2rem;background:var(--black);">
-  <div class="container">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">Here's how it <span class="gold">works</span>.</h2>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="ps-num">01</div>
-        <div class="ps-title">Discovery Call</div>
-        <div class="ps-desc">Free 15-min call. We learn your business, goals, and what you need.</div>
-      </div>
-      <div class="process-step">
-        <div class="ps-num">02</div>
-        <div class="ps-title">Proposal + Payment</div>
-        <div class="ps-desc">You receive a detailed scope. Full payment upfront kicks off the project.</div>
-      </div>
-      <div class="process-step">
-        <div class="ps-num">03</div>
-        <div class="ps-title">Design + Build</div>
-        <div class="ps-desc">We design and build your site, then deliver your first draft for review.</div>
-      </div>
-      <div class="process-step">
-        <div class="ps-num">04</div>
-        <div class="ps-title">Revisions</div>
-        <div class="ps-desc">You review, request changes. We refine until it's exactly right.</div>
-      </div>
-      <div class="process-step">
-        <div class="ps-num">05</div>
-        <div class="ps-title">Launch
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:3px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+  <section id="problem" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb));">
+    <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(2.5rem, 6vw, 6rem); align-items: center;">
+      <div data-reveal="" style="animation: akRise .7s ease both;">
+        <div style="display: flex; align-items: center; gap: .75rem; margin-bottom: 1.4rem;">
+          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
+          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">The Problem</span>
         </div>
-        <div class="ps-desc">Site goes live. You start getting calls.</div>
+        <h2 style="margin: 0 0 1.5rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: .98; letter-spacing: .01em;">
+          Your competitors are taking your customers <span style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .82em; color: rgb(var(--ak-accent-rgb));">right now</span>
+        </h2>
+        <p style="margin: 0 0 2.4rem; max-width: 32rem; font-size: 1rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">
+          87% of people research a business online before they call. When your site is dated — or missing — you never even make the shortlist. It happens quietly, every day, and nothing on your end tells you it's happening.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: .7rem;">
+          <sc-for list="{{ problems }}" as="p" hint-placeholder-count="3">
+            <div style="display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.1rem 1.2rem; border-radius: 8px; border: 1px solid {{ p.soft }}; background: linear-gradient(110deg, {{ p.soft }}, rgba(255,255,255,.012) 60%); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;" style-hover="transform: translateX(6px); border-color: {{ p.hue }}; box-shadow: 0 0 28px {{ p.soft }};">
+              <div style="flex: 0 0 auto; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1; color: {{ p.hue }}; padding-top: .1rem;">{{ p.n }}</div>
+              <div>
+                <div style="font-family: 'Archivo', sans-serif; font-size: 1.2rem; letter-spacing: .05em; color: rgb(var(--ak-ink-rgb)); margin-bottom: .3rem;">{{ p.t }}</div>
+                <div style="font-size: .88rem; line-height: 1.65; color: rgb(var(--ak-secondary-rgb)); max-width: 28rem; text-wrap: pretty;">{{ p.d }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- WHY -->
-<section style="background:#0D0D0B;padding:6rem 2rem;">
-  <div class="container">
-    <div class="section-label">Why Akira Digital</div>
-    <h2 class="section-title">We're not a <span class="gold">template shop</span></h2>
-    <p class="section-sub">Every site is custom-built for your business, your market, and your customers.</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <div class="wc-title">Fast Turnaround</div>
-        <div class="wc-desc">Most agencies take 6 to 12 weeks. We move fast and keep the process tight, so you're online and getting calls in a fraction of the time.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <div class="wc-title">Built for Your Niche</div>
-        <div class="wc-desc">We specialize in home services and law firms. We know what converts in your industry and build every site with that knowledge.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/></svg></div>
-        <div class="wc-title">Mobile-First Design</div>
-        <div class="wc-desc">70% of your customers search on their phones. Every site we build looks and performs perfectly on every device.</div>
-      </div>
-      <div class="why-card">
-        <div class="wc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-        <div class="wc-title">SEO Built In</div>
-        <div class="wc-desc">Fast load times, clean code, proper meta tags, and local SEO setup from day one. Your site starts ranking immediately.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTFOLIO / SAMPLE SITE -->
-<section id="portfolio" style="padding:6rem 2rem;background:#111;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c9941a;margin-bottom:.65rem;display:flex;align-items:center;gap:.6rem;"><span style="width:24px;height:1px;background:#c9941a;display:inline-block;"></span>See Our Work</div>
-    <div class="portfolio-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
-      <div>
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);line-height:.95;margin-bottom:1rem;">A site built to<br><span style="color:#c9941a;">win business</span></h2>
-        <p style="font-size:15px;color:#888;line-height:1.75;margin-bottom:1.5rem;">Atlanta Pro Plumbing — a full lead-generating website built as a live sample. Fast, mobile-first, and designed to convert visitors into booked jobs. This is the quality you get with Akira Digital.</p>
-        <div style="display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem;">
-          <div style="display:flex;align-items:center;gap:.65rem;font-size:14px;color:#bbb;"><span style="width:6px;height:6px;border-radius:50%;background:#c9941a;flex-shrink:0;display:inline-block;"></span>Mobile-first, fully responsive</div>
-          <div style="display:flex;align-items:center;gap:.65rem;font-size:14px;color:#bbb;"><span style="width:6px;height:6px;border-radius:50%;background:#c9941a;flex-shrink:0;display:inline-block;"></span>Lead capture form above the fold</div>
-          <div style="display:flex;align-items:center;gap:.65rem;font-size:14px;color:#bbb;"><span style="width:6px;height:6px;border-radius:50%;background:#c9941a;flex-shrink:0;display:inline-block;"></span>SEO-optimized from day one</div>
-          <div style="display:flex;align-items:center;gap:.65rem;font-size:14px;color:#bbb;"><span style="width:6px;height:6px;border-radius:50%;background:#c9941a;flex-shrink:0;display:inline-block;"></span>Click-to-call, built to convert</div>
-        </div>
-        <a href="https://atlanta-pro-plumbing.vercel.app/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;padding:1rem 2rem;background:#c9941a;color:#000;font-weight:700;font-size:15px;border-radius:8px;text-decoration:none;">
-          View Live Sample Site
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="iframe-wrap" style="border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 64px rgba(0,0,0,.5);position:relative;">
-        <iframe
-          src="https://atlanta-pro-plumbing.vercel.app/"
-          title="Atlanta Pro Plumbing — Live Sample Site"
-          style="width:100%;height:420px;border:none;display:block;"
-          loading="lazy"
-          scrolling="no"
-        ></iframe>
-        <div class="iframe-overlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0);transition:background .25s;">
-          <a href="https://atlanta-pro-plumbing.vercel.app/" target="_blank" rel="noopener" class="iframe-btn" style="padding:.9rem 1.75rem;background:#c9941a;color:#000;font-weight:700;border-radius:8px;text-decoration:none;opacity:0;transition:opacity .25s;">View Full Site</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="container">
-    <div class="section-label">Pricing</div>
-    <h2 class="section-title">Simple, <span class="gold">transparent</span> pricing</h2>
-    <p class="section-sub">No hidden fees. No surprises. One price includes everything listed.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pc-phase">Starter</div>
-        <div class="pc-price">$1,000</div>
-        <div class="pc-period">One-time payment</div>
-        <div class="pc-name">Starter Website</div>
-        <div class="pc-desc">For businesses with no website or one that's hurting rather than helping.</div>
-        <div class="pc-features">
-          <div class="pc-feat">3 custom pages</div>
-          <div class="pc-feat">Mobile responsive</div>
-          <div class="pc-feat">Contact form</div>
-          <div class="pc-feat">Google Business setup</div>
-          <div class="pc-feat">Basic SEO</div>
-          <div class="pc-feat">2 revision rounds</div>
-          <div class="pc-feat">30-day support</div>
-        </div>
-        <a href="https://buy.stripe.com/28EaEZaeWf5J0aA3i1fw405" class="pc-btn" target="_blank" rel="noopener">Get Started</a>
-      </div>
-      <div class="pricing-card hot">
-        <div class="pc-phase">Growth</div>
-        <div class="pc-price">$2,500</div>
-        <div class="pc-period">One-time payment</div>
-        <div class="pc-name">Growth Website</div>
-        <div class="pc-desc">For businesses ready to generate consistent leads and track ROI from their website.</div>
-        <div class="pc-features">
-          <div class="pc-feat">Everything in Starter</div>
-          <div class="pc-feat">5 custom pages</div>
-          <div class="pc-feat">Lead capture system</div>
-          <div class="pc-feat">Google Analytics 4</div>
-          <div class="pc-feat">Call tracking</div>
-          <div class="pc-feat">Speed optimization</div>
-          <div class="pc-feat">60-day support</div>
-        </div>
-        <a href="https://buy.stripe.com/fZuaEZfzgaPtf5ug4Nfw406" class="pc-btn solid" target="_blank" rel="noopener">Get Started</a>
-      </div>
-      <div class="pricing-card">
-        <div class="pc-phase">Authority</div>
-        <div class="pc-price">$5,000+</div>
-        <div class="pc-period">Custom quote</div>
-        <div class="pc-name">Authority Package</div>
-        <div class="pc-desc">For established businesses ready to own their local market online.</div>
-        <div class="pc-features">
-          <div class="pc-feat">Everything in Growth</div>
-          <div class="pc-feat">8-10 custom pages</div>
-          <div class="pc-feat">Full brand refresh</div>
-          <div class="pc-feat">Google Ads pages</div>
-          <div class="pc-feat">Competitor analysis</div>
-          <div class="pc-feat">Local SEO dominance</div>
-          <div class="pc-feat">90-day support</div>
-        </div>
-        <a href="https://buy.stripe.com/cNieVf86O8Hlg9y6udfw403" class="pc-btn" target="_blank" rel="noopener">Let's Talk</a>
-      </div>
-      <div class="pricing-card">
-        <div class="pc-phase">Monthly</div>
-        <div class="pc-price">$300</div>
-        <div class="pc-period">Per month · Cancel anytime</div>
-        <div class="pc-name">Care Plan</div>
-        <div class="pc-desc">Keep your site fast, secure, and up to date without lifting a finger.</div>
-        <div class="pc-features">
-          <div class="pc-feat">Monthly updates (2 hrs)</div>
-          <div class="pc-feat">Security monitoring</div>
-          <div class="pc-feat">Daily backups</div>
-          <div class="pc-feat">SEO health report</div>
-          <div class="pc-feat">Priority support</div>
-          <div class="pc-feat">Uptime monitoring</div>
-          <div class="pc-feat">30-day cancel notice</div>
-        </div>
-        <a href="https://buy.stripe.com/28E3cx3Qy0aPbTi7yhfw402" class="pc-btn" target="_blank" rel="noopener">Add On</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div style="position:relative;z-index:1;">
-    <div class="section-label" style="justify-content:center;">Ready to Start?</div>
-    <div class="cta-big">
-      Stop Losing <span class="gold">Customers</span><br>
-      To Competitors
-    </div>
-    <p class="cta-sub">Book a free 15-minute call. We'll show you exactly what your site would look like and what results to expect — no obligation.</p>
-    <div class="cta-actions">
-      <a href="#contact" class="btn-primary">
-        Book Free Call
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="cta-guarantee">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      No commitment · Free consultation · Sites built to convert
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" style="padding:6rem 2rem;background:#0D0D0B;">
-  <div class="container">
-    <div class="section-label">Get Started</div>
-    <h2 class="section-title" style="margin-bottom:3rem;">Tell us about <span class="gold">your business</span></h2>
-    <div class="contact-grid">
-      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="69bdeb74-7f08-458c-8758-c29d3d129f91">
-        <input type="hidden" name="subject" value="New Client Inquiry — Akira Digital">
-        <input type="hidden" name="from_name" value="Akira Digital Website">
-        <input type="hidden" name="redirect" value="false">
-        <div class="form-row">
-          <div class="form-field">
-            <label>Your Name *</label>
-            <input type="text" name="name" placeholder="John Smith" required>
+      <div data-reveal="" style="animation: akRise .7s ease both;">
+        <div style="border: 1px solid rgba(var(--ak-border-rgb),.12); border-radius: 6px; background: rgb(var(--ak-surface-rgb)); box-shadow: 0 24px 64px rgba(0,0,0,.5); overflow: hidden;">
+          <div style="padding: .8rem 1rem; border-bottom: 1px solid rgba(var(--ak-border-rgb),.08); background: rgb(var(--ak-surface-rgb)); display: flex; align-items: center; gap: .7rem;">
+            <div style="flex: 1; padding: .45rem .8rem; border-radius: 99px; background: rgba(var(--ak-border-rgb),.06); font-size: .78rem; color: rgb(var(--ak-secondary-rgb));">emergency plumber near me</div>
+            <div style="font-size: .7rem; color: rgb(var(--ak-secondary-rgb));">Google</div>
           </div>
-          <div class="form-field">
-            <label>Business Name *</label>
-            <input type="text" name="business" placeholder="Smith Plumbing" required>
+          <div style="padding: 1rem 1.25rem 1.35rem;">
+            <div style="display: flex; align-items: center; gap: .5rem; margin-bottom: 1rem; padding: .25rem; border-radius: 99px; border: 1px solid rgba(var(--ak-border-rgb),.1); background: rgba(255,255,255,.02);">
+              <button type="button" onClick="{{ serpToggle }}" style="flex: 1; padding: .5rem .8rem; border: 0; border-radius: 99px; cursor: pointer; font-size: .64rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; background: {{ serpTabABg }}; color: {{ serpTabA }}; transition: background .25s ease, color .25s ease;">Today</button>
+              <button type="button" onClick="{{ serpToggle }}" style="flex: 1; padding: .5rem .8rem; border: 0; border-radius: 99px; cursor: pointer; font-size: .64rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; background: {{ serpTabBBg }}; color: {{ serpTabB }}; transition: background .25s ease, color .25s ease;">With Akira</button>
+            </div>
+
+            <div style="position: relative; height: 416px;">
+              <sc-for list="{{ serpRows }}" as="r" hint-placeholder-count="4">
+                <div style="height: 92px; box-sizing: border-box; margin-bottom: 12px; padding: .8rem 1rem; border-radius: 6px; overflow: hidden; display: flex; gap: .8rem; background: {{ r.bg }}; border: {{ r.border }}; box-shadow: {{ r.glow }}; opacity: {{ r.op }}; transform: {{ r.dy }}; transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .35s ease, box-shadow .35s ease, background .35s ease, border-color .35s ease; transition-delay: {{ r.delay }};">
+                  <div style="flex: 0 0 auto; width: 1.5rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.1rem; line-height: 1.2; color: {{ r.rankHue }};">{{ r.rank }}</div>
+                  <div style="min-width: 0;">
+                    <div style="font-size: .68rem; color: {{ r.rankHue }}; margin-bottom: .15rem;">{{ r.domain }}</div>
+                    <div style="font-size: .95rem; color: {{ r.titleHue }}; margin-bottom: .2rem;">{{ r.title }}</div>
+                    <div style="font-size: .76rem; color: rgb(var(--ak-secondary-rgb)); line-height: 1.45;">{{ r.desc }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: .6rem; font-size: .78rem; color: {{ serpFootHue }}; transition: color .3s ease;">
+              <span style="width: 7px; height: 7px; border-radius: 99px; background: {{ serpFootHue }}; animation: akBlink 1.6s ease-in-out infinite;"></span>
+              <span>{{ serpFoot }}</span>
+            </div>
+            <div style="margin-top: .55rem; font-size: .72rem; color: rgb(var(--ak-secondary-rgb));">{{ searchCount }} searches like this since you opened the page.</div>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-field">
-            <label>Phone *</label>
-            <input type="tel" name="phone" placeholder="(555) 000-0000" required>
-          </div>
-          <div class="form-field">
-            <label>Email *</label>
-            <input type="email" name="email" placeholder="john@business.com" required>
-          </div>
-        </div>
-        <div class="form-field">
-          <label>Business Type *</label>
-          <select name="type" required>
-            <option value="">Select your industry...</option>
-            <option>Plumber</option>
-            <option>HVAC Company</option>
-            <option>Electrician</option>
-            <option>Roofer</option>
-            <option>General Contractor</option>
-            <option>Landscaping / Lawn Care</option>
-            <option>Pest Control</option>
-            <option>Cleaning Service</option>
-            <option>Law Firm / Attorney</option>
-            <option>Dental Practice</option>
-            <option>Other Home Service</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>Do you currently have a website?</label>
-          <select name="website">
-            <option>No website at all</option>
-            <option>Yes but it needs a full rebuild</option>
-            <option>Yes but it needs updates</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>What package are you interested in?</label>
-          <select name="package" id="packageSelect">
-            <option>Starter — $1,000</option>
-            <option>Growth — $2,500</option>
-            <option>Authority — $5,000+</option>
-            <option>Monthly Care Plan — $300/mo</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>Anything else we should know?</label>
-          <textarea name="message" placeholder="Tell us about your goals, timeline, or any specific features you need..."></textarea>
-        </div>
-        <button type="submit" class="form-submit" id="formSubmit">Send Message — We'll Respond Within 24 Hours</button>
-      </form>
-      <div class="contact-info">
-        <div class="ci-item">
-          <div class="ci-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preview" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg-rgb)); position: relative; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(var(--ak-accent-rgb),.08), transparent 70%);"></div>
+    <div style="position: relative; max-width: 1250px; margin: 0 auto;">
+      <div data-reveal="" style="animation: akRise .7s ease both; text-align: center; margin-bottom: 3.5rem;">
+        <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb)); margin-bottom: 1rem;">◆ Free website design preview ◆</div>
+        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">
+          Type your business name. <span style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; color: rgb(var(--ak-accent-rgb));">Watch it appear.</span>
+        </h2>
+        <p style="max-width: 34rem; margin: 0 auto; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">A rough sketch, not the real thing — but it's the same idea we start every project with. Change it and the page updates as you type.</p>
+      </div>
+
+      <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-bottom: 2rem;">
+        <span style="align-self: center; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-right: .3rem;">Start from</span>
+        <sc-for list="{{ presetChips }}" as="p" hint-placeholder-count="5">
+          <button type="button" onClick="{{ p.pick }}" style="padding: .5rem .95rem; border-radius: 99px; cursor: pointer; white-space: nowrap; font-size: .72rem; font-weight: 600; letter-spacing: .06em; background: {{ p.bg }}; border: 1px solid {{ p.border }}; color: {{ p.color }}; transition: all .18s ease;" style-hover="transform: translateY(-2px); color: rgb(var(--ak-ink-rgb));">{{ p.label }}</button>
+        </sc-for>
+      </div>
+
+      <div data-reveal="" data-studio-grid="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: minmax(0, 330px) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 1.4rem; padding: 1.5rem; border: 1px solid rgba(var(--ak-border-rgb),.1); border-radius: 8px; background: rgba(255,255,255,.02);">
+          <label style="display: block;">
+            <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">Business name</span>
+            <input type="text" value="{{ bizName }}" onChange="{{ onBizName }}" placeholder="{{ phName }}" style="width: 100%; box-sizing: border-box; padding: .8rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.035); border: 1px solid rgba(var(--ak-border-rgb),.14); border-radius: 4px; outline: none; transition: border-color .2s ease;">
+          </label>
+          <label style="display: block;">
+            <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">What you sell</span>
+            <input type="text" value="{{ bizWhat }}" onChange="{{ onBizWhat }}" placeholder="{{ phWhat }}" style="width: 100%; box-sizing: border-box; padding: .8rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.035); border: 1px solid rgba(var(--ak-border-rgb),.14); border-radius: 4px; outline: none; transition: border-color .2s ease;">
+          </label>
+          <label style="display: block;">
+            <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">City</span>
+            <input type="text" value="{{ bizCity }}" onChange="{{ onBizCity }}" placeholder="{{ phCity }}" style="width: 100%; box-sizing: border-box; padding: .8rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.035); border: 1px solid rgba(var(--ak-border-rgb),.14); border-radius: 4px; outline: none; transition: border-color .2s ease;">
+          </label>
           <div>
-            <div class="ci-label">Phone</div>
-            <div class="ci-value"><a href="tel:+19725590881">(972) 559-0881</a></div>
+            <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">Accent</span>
+            <div style="display: flex; flex-wrap: wrap; gap: .6rem;">
+              <sc-for list="{{ swatches }}" as="s" hint-placeholder-count="5">
+                <button type="button" onClick="{{ s.pick }}" aria-label="{{ s.label }}" style="width: 34px; height: 34px; border-radius: 4px; cursor: pointer; background: {{ s.hex }}; border: 1px solid {{ s.ring }}; transform: {{ s.lift }}; transition: transform .18s ease, border-color .18s ease;" style-hover="transform: translateY(-3px) scale(1.06);"></button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">Type pairing</span>
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem;">
+              <sc-for list="{{ pairChips }}" as="p" hint-placeholder-count="4">
+                <button type="button" onClick="{{ p.pick }}" style="text-align: left; padding: .6rem .7rem; border-radius: 6px; cursor: pointer; background: {{ p.bg }}; border: 1px solid {{ p.border }}; color: {{ p.color }}; transition: all .18s ease;" style-hover="transform: translateY(-2px);">
+                  <span style="display: block; font-family: {{ p.font }}; font-size: 1.05rem; line-height: 1.1;">{{ p.label }}</span>
+                  <span style="display: block; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; opacity: .65; margin-top: .25rem;">{{ p.note }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem;">
+            <div style="min-width: 0;">
+              <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">Hero layout</span>
+              <div style="display: flex; gap: .3rem;">
+                <sc-for list="{{ layoutChips }}" as="l" hint-placeholder-count="3">
+                  <button type="button" onClick="{{ l.pick }}" style="flex: 1 1 0; min-width: 0; padding: .5rem .2rem; border-radius: 6px; cursor: pointer; font-size: .55rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: {{ l.bg }}; border: 1px solid {{ l.border }}; color: {{ l.color }}; transition: all .18s ease;" style-hover="transform: translateY(-2px);">{{ l.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="min-width: 0;">
+              <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">Surface</span>
+              <div style="display: flex; gap: .3rem; padding: .2rem; border-radius: 6px; border: 1px solid rgba(var(--ak-border-rgb),.12);">
+                <button type="button" onClick="{{ setDark }}" style="flex: 1 1 0; min-width: 0; padding: .42rem .2rem; border: 0; border-radius: 4px; cursor: pointer; font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: {{ modeDarkBg }}; color: {{ modeDarkColor }}; transition: all .2s ease;">Dark</button>
+                <button type="button" onClick="{{ setLight }}" style="flex: 1 1 0; min-width: 0; padding: .42rem .2rem; border: 0; border-radius: 4px; cursor: pointer; font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: {{ modeLightBg }}; color: {{ modeLightColor }}; transition: all .2s ease;">Light</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: .6rem;">
+            <button type="button" onClick="{{ shuffle }}" style="padding: .8rem 1rem; border-radius: 4px; cursor: pointer; background: transparent; border: 1px dashed rgba(var(--ak-border-rgb),.28); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: .95rem; letter-spacing: .1em; transition: all .18s ease;" style-hover="border-color: rgb(0,255,200); color: rgb(0,255,200); transform: translateY(-1px);">SURPRISE ME ⟳</button>
+            <a href="#contact" style="display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px);">BUILD ME THE REAL ONE →</a>
           </div>
         </div>
-        <div class="ci-item">
-          <div class="ci-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div>
-            <div class="ci-label">Email</div>
-            <div class="ci-value" style="user-select:all;">
-              <a href="mailto:contact@akiradigital.net">contact@akiradigital.net</a>
+
+        <div>
+        <div style="padding: 14px 14px 16px; border-radius: 16px; border: 1px solid rgba(var(--ak-border-rgb),.14); background: linear-gradient(180deg, #1b1b20, #101014); box-shadow: 0 40px 90px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.06);">
+        <div style="border: 1px solid rgba(var(--ak-border-rgb),.12); border-radius: 6px; background: rgb(var(--ak-surface-rgb)); overflow: hidden;">
+          <div style="display: flex; align-items: center; gap: .55rem; padding: .7rem .9rem; border-bottom: 1px solid rgba(var(--ak-border-rgb),.08); background: rgb(var(--ak-surface-rgb));">
+            <span style="width: 9px; height: 9px; border-radius: 99px; background: #FF5F57;"></span>
+            <span style="width: 9px; height: 9px; border-radius: 99px; background: #FEBC2E;"></span>
+            <span style="width: 9px; height: 9px; border-radius: 99px; background: #28C840;"></span>
+            <div style="flex: 1; margin-left: .6rem; padding: .3rem .7rem; border-radius: 3px; background: rgba(var(--ak-border-rgb),.045); font-size: .68rem; color: rgb(var(--ak-secondary-rgb)); white-space: nowrap; overflow: hidden;">{{ liveDomain }}</div>
+          </div>
+          <div style="background: {{ pvSurface }}; transition: background .35s ease;">
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem clamp(1rem, 2.5vw, 2rem); border-bottom: 1px solid {{ pvLine }};">
+              <div style="font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; color: {{ pvInk }};">{{ liveName }}</div>
+              <div style="display: flex; align-items: center; gap: 1.2rem;">
+                <span style="font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: {{ pvSub }};">Services</span>
+                <span style="font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: {{ pvSub }};">Reviews</span>
+                <span style="padding: .4rem .85rem; border-radius: 3px; font-size: .68rem; font-weight: 700; letter-spacing: .08em; color: {{ pvBtnInk }}; background: {{ accentHex }};">CALL NOW</span>
+              </div>
+            </div>
+            <div style="padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 2.5vw, 2rem); display: flex; flex-direction: column; align-items: {{ pvAlign }}; text-align: {{ pvText }};">
+              <div style="font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; margin-bottom: .8rem; color: {{ accentHex }};">{{ liveEyebrow }}</div>
+              <div style="font-family: {{ pvFont }}; font-style: {{ pvStyle }}; font-weight: {{ pvWeight }}; letter-spacing: {{ pvTrack }}; font-size: {{ pvSize }}; line-height: 1.04; color: {{ pvInk }}; max-width: {{ pvMaxW }}; margin-bottom: 1.1rem; transition: color .35s ease;">{{ liveHeadline }}</div>
+              <div style="font-size: .92rem; line-height: 1.65; color: {{ pvSub }}; max-width: 42ch; margin-bottom: 1.8rem;">{{ liveSub }}</div>
+              <div style="display: flex; flex-wrap: wrap; gap: .7rem; justify-content: {{ pvAlign }};">
+                <span style="padding: .7rem 1.3rem; border-radius: 3px; font-family: 'Archivo', sans-serif; font-size: .95rem; letter-spacing: .08em; color: {{ pvBtnInk }}; background: {{ accentHex }};">{{ liveCta }}</span>
+                <span style="padding: .7rem 1.3rem; border-radius: 3px; border: 1px solid {{ pvLine }}; font-family: 'Archivo', sans-serif; font-size: .95rem; letter-spacing: .08em; color: {{ pvInk }};">{{ livePhone }}</span>
+              </div>
+            </div>
+            <div data-live-cards="" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; padding: 1px 0 0;">
+              <sc-for list="{{ liveCards }}" as="c" hint-placeholder-count="3">
+                <div style="padding: 1.4rem clamp(1rem, 2vw, 1.5rem); border: 1px solid {{ pvLine }};">
+                  <div style="font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .06em; color: {{ pvInk }}; margin-bottom: .4rem;">{{ c.t }}</div>
+                  <div style="font-size: .78rem; line-height: 1.55; color: {{ pvSub }};">{{ c.d }}</div>
+                </div>
+              </sc-for>
             </div>
           </div>
         </div>
-        <div class="ci-item">
-          <div class="ci-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div>
-            <div class="ci-label">Response Time</div>
-            <div class="ci-value">Within 24 hours · Mon–Sat</div>
-          </div>
         </div>
-        <div class="ci-item">
-          <div class="ci-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
-          <div>
-            <div class="ci-label">Project Kickoff</div>
-            <div class="ci-value">Within 48 hours of payment</div>
-          </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 104px; height: 26px; background: linear-gradient(180deg, #1b1b20, #14141a); border-left: 1px solid rgba(var(--ak-border-rgb),.1); border-right: 1px solid rgba(var(--ak-border-rgb),.1);"></div>
+          <div style="width: 240px; height: 11px; border-radius: 0 0 99px 99px; background: linear-gradient(180deg, #22222a, #0f0f13); box-shadow: 0 14px 30px rgba(0,0,0,.5);"></div>
         </div>
-        <div style="margin-top:1rem;padding:1.25rem;background:rgba(201,148,26,.06);border:1px solid rgba(201,148,26,.15);border-radius:8px;">
-          <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:.4rem;">Free 15-Minute Strategy Call</div>
-          <div style="font-size:13px;color:var(--gray);line-height:1.6;">Book a call and we'll show you exactly what your website would look like, what keywords you'd rank for, and how many leads to expect. Zero pressure, zero obligation.</div>
+        </div>
+
+        <div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center;">
+          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(138,43,255); border: 1px solid rgba(138,43,255,.4);">Type · {{ specPair }}</span>
+          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(0,255,200); border: 1px solid rgba(0,255,200,.4);">Layout · {{ specLayout }}</span>
+          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(255,20,147); border: 1px solid rgba(255,20,147,.4);">Accent · {{ specAccent }}</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">AKIRA <span>DIGITAL</span></div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
+  <section id="work" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb));">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <div data-reveal="" style="animation: akRise .7s ease both; text-align: center; margin-bottom: 3.5rem;">
+        <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb)); margin-bottom: 1rem;">◆ Web design portfolio ◆</div>
+        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">
+          Not a screenshot — the <span style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; color: rgb(var(--ak-accent-rgb));">real site</span>
+        </h2>
+        <p style="max-width: 36rem; margin: 0 auto; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">Atlanta Pro Plumbing is running live below, in a real browser, on both screens at once. Scroll it, click it, resize it. That's the standard.</p>
+      </div>
+
+      <div data-reveal="" data-work-grid="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, .85fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: end;">
+        <div>
+          <div style="display: flex; align-items: center; gap: .6rem; margin-bottom: .9rem;">
+            <span style="width: 7px; height: 7px; border-radius: 99px; background: rgb(0,255,200); animation: akBlink 1.6s ease-in-out infinite;"></span>
+            <span style="font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(0,255,200);">Live right now, in your browser</span>
+          </div>
+          <div style="padding: 14px 14px 16px; border-radius: 16px; border: 1px solid rgba(var(--ak-border-rgb),.14); background: linear-gradient(180deg, #1b1b20, #101014); box-shadow: 0 40px 90px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.06);">
+            <div style="border: 1px solid rgba(var(--ak-border-rgb),.12); border-radius: 6px; overflow: hidden; background: rgb(var(--ak-surface-rgb));">
+              <div style="display: flex; align-items: center; gap: .55rem; padding: .7rem .9rem; border-bottom: 1px solid rgba(var(--ak-border-rgb),.08); background: rgb(var(--ak-surface-rgb));">
+                <span style="width: 9px; height: 9px; border-radius: 99px; background: #FF5F57;"></span>
+                <span style="width: 9px; height: 9px; border-radius: 99px; background: #FEBC2E;"></span>
+                <span style="width: 9px; height: 9px; border-radius: 99px; background: #28C840;"></span>
+                <div style="flex: 1; margin-left: .6rem; padding: .3rem .7rem; border-radius: 3px; background: rgba(var(--ak-border-rgb),.045); font-size: .68rem; color: rgb(var(--ak-secondary-rgb));">atlanta-pro-plumbing.vercel.app</div>
+              </div>
+              <iframe src="https://atlanta-pro-plumbing.vercel.app/" title="Atlanta Pro Plumbing — live client site" loading="lazy" style="display: block; width: 100%; height: 600px; border: 0; background: #fff;"></iframe>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 104px; height: 26px; background: linear-gradient(180deg, #1b1b20, #14141a); border-left: 1px solid rgba(var(--ak-border-rgb),.1); border-right: 1px solid rgba(var(--ak-border-rgb),.1);"></div>
+            <div style="width: 240px; height: 11px; border-radius: 0 0 99px 99px; background: linear-gradient(180deg, #22222a, #0f0f13); box-shadow: 0 14px 30px rgba(0,0,0,.5);"></div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="width: 284px; max-width: 100%; height: 614px; border: 8px solid #E3DAC4; border-radius: 28px; overflow: hidden; background: #000; box-shadow: 0 24px 64px rgba(0,0,0,.6); align-self: center;">
+            <iframe src="https://atlanta-pro-plumbing.vercel.app/" title="Atlanta Pro Plumbing on mobile" loading="lazy" scrolling="no" style="display: block; width: 390px; height: 844px; border: 0; background: #fff; transform: scale(.727); transform-origin: top left;"></iframe>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: .5rem;">
+            <sc-for list="{{ workPoints }}" as="w" hint-placeholder-count="4">
+              <div style="display: flex; gap: .6rem; align-items: baseline; padding: .7rem .85rem; border-radius: 6px; font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); border: 1px solid {{ w.soft }}; background: linear-gradient(110deg, {{ w.soft }}, rgba(255,255,255,.012) 65%); transition: transform .2s ease, border-color .2s ease;" style-hover="transform: translateX(5px); border-color: {{ w.hue }};">
+                <span style="color: {{ w.hue }}; font-size: .7rem;">◆</span><span>{{ w.t }}</span>
+              </div>
+            </sc-for>
+            <a href="https://atlanta-pro-plumbing.vercel.app/" target="_blank" rel="noopener" style="margin-top: .6rem; display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.2); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(0,255,200); color: rgb(0,255,200); transform: translateY(-1px);">OPEN THE FULL SITE →</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-copy">© 2026 Akira Digital. All rights reserved.</div>
-  </div>
-</footer>
+  </section>
 
-<script>
-// Mobile nav toggle
-function toggleNav() {
-  var links = document.getElementById('navLinks');
-  links.classList.toggle('open');
-}
+  <section id="process" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg-rgb));">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <div data-reveal="" style="animation: akRise .7s ease both; margin-bottom: 3.5rem; max-width: 46rem;">
+        <div style="display: flex; align-items: center; gap: .75rem; margin-bottom: 1.2rem;">
+          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent3-rgb));"></span>
+          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">How our web design process works</span>
+        </div>
+        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">From first call to <span style="display: inline-block; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; background: linear-gradient(100deg, rgb(255,20,147), rgb(138,43,255) 45%, rgb(0,255,200)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">launch.</span></h2>
+        <p style="margin: 0 0 1.4rem; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">You work directly with the team building your site. No account managers, no ticket queue, no handoffs.</p>
+        <div style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; border-radius: 4px; background: rgb(0,255,200); color: #0a0a0c; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five steps, one team</div>
+      </div>
+      <div data-reveal="" data-steps-grid="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .8rem; align-items: stretch;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+          <div style="position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 1.6rem 1.35rem 1.7rem; border-radius: 8px; border: 1px solid {{ s.soft }}; background: linear-gradient(160deg, {{ s.soft }}, rgba(255,255,255,.015) 60%); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;" style-hover="transform: translateY(-4px); border-color: {{ s.hue }}; box-shadow: 0 0 34px {{ s.soft }}, 0 16px 40px rgba(0,0,0,.45);">
+            <div style="position: absolute; right: .8rem; bottom: .3rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 3.6rem; line-height: .8; color: {{ s.hue }}; opacity: .08; pointer-events: none;">{{ s.n }}</div>
+            <div style="position: relative; display: flex; align-items: center; gap: .5rem; margin-bottom: 1.1rem;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.9rem; line-height: 1; color: {{ s.hue }};">{{ s.n }}</span>
+              <span style="padding: .2rem .5rem; border-radius: 99px; font-size: .56rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: {{ s.hue }}; border: 1px solid {{ s.hue }};">{{ s.tag }}</span>
+            </div>
+            <div style="position: relative; font-family: 'Archivo', sans-serif; font-size: 1.2rem; letter-spacing: .05em; color: rgb(var(--ak-ink-rgb)); margin-bottom: .5rem;">{{ s.t }}</div>
+            <div style="position: relative; font-size: .85rem; line-height: 1.65; color: rgb(var(--ak-secondary-rgb));">{{ s.d }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
 
-// Close nav on link click
-document.querySelectorAll('#navLinks a').forEach(function(a) {
-  a.addEventListener('click', function() {
-    document.getElementById('navLinks').classList.remove('open');
-  });
-});
+  <section style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb));">
+    <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center;">
+      <div data-reveal="" style="animation: akRise .7s ease both;">
+        <div style="display: flex; align-items: center; gap: .75rem; margin-bottom: 1.2rem;">
+          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
+          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Why Akira Digital</span>
+        </div>
+        <h2 style="margin: 0 0 1.5rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">Designed like it <span style="display: inline-block; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; background: linear-gradient(100deg, rgb(255,20,147), rgb(138,43,255) 45%, rgb(0,255,200)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">matters</span></h2>
+        <div style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; margin-bottom: 1.4rem; border-radius: 4px; background: rgb(255,20,147); color: #0a0a0c; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five things a template can't do</div>
+        <p style="margin: 0 0 1.4rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); max-width: 32rem; text-wrap: pretty;">Akira Digital designs, writes, and builds every site in-house — one team, one set of hands on the type and the code.</p>
+        <p style="margin: 0 0 2rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); max-width: 32rem; text-wrap: pretty;">No junior handoff, no template dressed up to look expensive. And when it's done you get the source, not a subscription — so your designer, or the next one, can keep building on it.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: .9rem;">
+          <a href="#contact" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">TALK TO OUR TEAM →</a>
+          <a href="#work" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid transparent; color: rgb(var(--ak-secondary-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-border-rgb),.18);">SEE THE WORK</a>
+        </div>
+      </div>
+      <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-direction: column; gap: .85rem;">
+        <sc-for list="{{ whys }}" as="w" hint-placeholder-count="5">
+          <div style="position: relative; overflow: hidden; display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: clamp(.9rem, 2vw, 1.6rem); padding: 1.5rem 1.6rem; border-radius: 8px; border: 1px solid {{ w.soft }}; background: linear-gradient(110deg, {{ w.soft }}, rgba(255,255,255,.015) 55%); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;" style-hover="transform: translateX(6px) translateY(-2px); border-color: {{ w.hue }}; box-shadow: 0 0 34px {{ w.soft }}, 0 16px 40px rgba(0,0,0,.45);">
+            <div style="position: absolute; right: 1rem; bottom: .35rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 4.4rem; line-height: .8; color: {{ w.hue }}; opacity: .09; pointer-events: none;">{{ w.n }}</div>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: .55rem;">
+              <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.9rem; line-height: 1; color: {{ w.hue }};">{{ w.n }}</div>
+              <span style="padding: .2rem .5rem; border-radius: 99px; font-size: .56rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: {{ w.hue }}; border: 1px solid {{ w.hue }};">{{ w.k }}</span>
+            </div>
+            <div style="position: relative;">
+              <div style="font-family: 'Archivo', sans-serif; font-size: 1.2rem; letter-spacing: .05em; color: rgb(var(--ak-ink-rgb)); margin-bottom: .5rem;">{{ w.t }}</div>
+              <div style="font-size: .88rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb)); max-width: 34rem; text-wrap: pretty;">{{ w.d }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
 
-// Scroll-triggered fade-in for cards
-var observer = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1 });
+  <section id="pricing" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg-rgb));">
+    <div style="max-width: 1400px; margin: 0 auto;">
+      <div data-reveal="" style="animation: akRise .7s ease both; text-align: center; margin-bottom: 3.5rem;">
+        <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: 1rem;">◆ Web design pricing ◆</div>
+        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">One price. <span style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; color: rgb(var(--ak-accent-rgb));">Everything listed.</span></h2>
+        <p style="max-width: 34rem; margin: 0 auto; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">No hidden fees, no surprise invoices, no platform tax. You own the site and the domain outright.</p>
+      </div>
 
-document.querySelectorAll('.niche,.service-card,.why-card,.pricing-card,.process-step,.problem-point,.result-item').forEach(function(el) {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
-});
+      <div data-reveal="" style="animation: akRise .7s ease both; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.6rem;">
+        <span style="font-size: .64rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); white-space: nowrap;">Website packages</span>
+        <span style="flex: 1; height: 1px; background: linear-gradient(to right, rgba(var(--ak-border-rgb),.25), transparent);"></span>
+      </div>
 
-// Active nav highlight on scroll
-var sections = document.querySelectorAll('section[id], div[id="results"]');
-var navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
-window.addEventListener('scroll', function() {
-  var scrollY = window.pageYOffset;
-  sections.forEach(function(sec) {
-    if (sec.offsetTop - 120 <= scrollY && sec.offsetTop + sec.offsetHeight > scrollY) {
-      navLinks.forEach(function(a) {
-        a.style.color = '';
-        if (a.getAttribute('href') === '#' + sec.id) {
-          a.style.color = '#fff';
-        }
-      });
-    }
-  });
-});
+      <div data-reveal="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1.5rem; align-items: stretch; margin-bottom: 4.5rem;">
+        <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="4">
+          <div style="padding: {{ t.pad }}; border: {{ t.border }}; border-radius: 6px; background: {{ t.bg }}; box-shadow: {{ t.glow }}; transform: {{ t.scale }}; z-index: {{ t.z }}; position: relative; display: flex; flex-direction: column; transition: transform .2s ease;">
+            <div style="position: absolute; left: 0; right: 0; top: 0; height: {{ t.toplineH }}; background: {{ t.topline }};"></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.4rem;">
+              <span style="font-size: .64rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: {{ t.hue }};">{{ t.tier }}</span>
+              <span style="font-size: .58rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: {{ t.badgeColor }};">{{ t.badge }}</span>
+            </div>
+            <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: {{ t.priceSize }}; line-height: 1; color: {{ t.hue }}; margin-bottom: .3rem;">{{ t.price }}</div>
+            <div style="font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: 1.4rem;">{{ t.cadence }}</div>
+            <div style="font-family: 'Archivo', sans-serif; font-size: 1.35rem; letter-spacing: .05em; color: rgb(var(--ak-ink-rgb)); margin-bottom: .6rem;">{{ t.title }}</div>
+            <div style="font-size: .85rem; line-height: 1.6; color: rgb(var(--ak-secondary-rgb)); margin-bottom: 1.6rem;">{{ t.desc }}</div>
+            <div style="display: flex; flex-direction: column; gap: .55rem; margin-bottom: 2rem; flex: 1;">
+              <sc-for list="{{ t.features }}" as="f" hint-placeholder-count="6">
+                <div style="display: flex; gap: .6rem; align-items: baseline; font-size: .84rem; color: rgb(var(--ak-ink-rgb));">
+                  <span style="color: {{ t.hue }}; font-size: .7rem;">◆</span><span>{{ f }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <a href="{{ t.href }}" target="{{ t.target }}" rel="noopener" style="display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; background: {{ t.ctaBg }}; border: 1px solid {{ t.ctaBorder }}; color: {{ t.ctaColor }}; font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="transform: translateY(-1px); border-color: rgb(var(--ak-accent-rgb));">{{ t.cta }}</a>
+          </div>
+        </sc-for>
+      </div>
 
-// Portfolio iframe hover overlay
-var iframeWrap = document.querySelector('.iframe-wrap');
-var iframeOverlay = document.querySelector('.iframe-overlay');
-var iframeBtn = document.querySelector('.iframe-btn');
-if (iframeWrap && iframeOverlay && iframeBtn) {
-  iframeWrap.addEventListener('mouseenter', function() {
-    iframeOverlay.style.background = 'rgba(0,0,0,.45)';
-    iframeBtn.style.opacity = '1';
-  });
-  iframeWrap.addEventListener('mouseleave', function() {
-    iframeOverlay.style.background = 'rgba(0,0,0,0)';
-    iframeBtn.style.opacity = '0';
-  });
-}
+      <div data-reveal="" style="animation: akRise .7s ease both; position: relative; border-radius: 10px; padding: 2px; margin-bottom: 4.5rem; background: linear-gradient(115deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 35%, rgb(201,148,26) 65%, rgb(var(--ak-accent3-rgb))); box-shadow: 0 0 60px rgba(var(--ak-accent-rgb),.28), 0 24px 60px rgba(0,0,0,.4);">
+        <div style="border-radius: 8px; background: linear-gradient(150deg, rgba(var(--ak-accent-rgb),.14), rgba(var(--ak-accent4-rgb),.08) 45%, rgba(201,148,26,.1)), rgb(var(--ak-bg-rgb)); padding: clamp(1.75rem, 4vw, 3rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(1.75rem, 4vw, 3.5rem); align-items: center;">
 
-// Web3Forms contact form submission
-(function() {
-  var form = document.getElementById('contactForm');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var btn = document.getElementById('formSubmit');
-    var orig = btn.innerHTML;
-    btn.innerHTML = 'Sending…';
-    btn.disabled = true;
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(d) {
-      if (d.success) {
-        form.innerHTML = '<div style="text-align:center;padding:3rem 2rem;color:#4ade80;font-size:1rem;line-height:1.8;border:1px solid rgba(74,222,128,.2);border-radius:8px;background:rgba(74,222,128,.04);">✓ Message received!<br><span style="color:#888;font-size:.9rem;">We\'ll be in touch within 24 hours.</span></div>';
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .8rem; border-radius: 99px; background: rgba(201,148,26,.16); border: 1px solid rgba(201,148,26,.5); margin-bottom: 1.2rem;">
+              <span style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(201,148,26);">Not a website? Book a day</span>
+            </div>
+            <h3 style="margin: 0 0 .9rem; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 700; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height: 1;">The <span style="background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 55%, rgb(201,148,26)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Design Day</span></h3>
+            <p style="margin: 0 0 1.5rem; max-width: 32rem; font-size: .98rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">Book our time directly and point it at whatever needs designing. No scoping call, no project timeline — you get a focused working session and the files we produce in it.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: .5rem;">
+              <sc-for list="{{ designChips }}" as="c" hint-placeholder-count="7">
+                <span style="padding: .4rem .8rem; border-radius: 99px; font-size: .78rem; color: {{ c.hue }}; border: 1px solid {{ c.hue }}; background: rgba(255,255,255,.03);">{{ c.label }}</span>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: .9rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: .9rem;">
+              <a href="https://buy.stripe.com/5kQ00lfzgcXB6yYdWFfw408" target="_blank" rel="noopener" style="display: block; padding: 1.4rem 1.2rem; border-radius: 8px; border: 1px solid rgba(201,148,26,.45); background: linear-gradient(160deg, rgba(201,148,26,.14), rgba(201,148,26,.03)); text-align: center; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;" style-hover="transform: translateY(-2px); border-color: rgba(201,148,26,.85); box-shadow: 0 0 26px rgba(201,148,26,.35);">
+                <div style="font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(201,148,26); margin-bottom: .5rem;">Half day</div>
+                <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 2.6rem; line-height: 1; color: rgb(201,148,26);">$500</div>
+                <div style="font-size: .72rem; color: rgb(var(--ak-secondary-rgb)); margin-top: .35rem;">4 hours</div>
+                <div style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(201,148,26); margin-top: .8rem;">Book with Stripe →</div>
+              </a>
+              <a href="https://buy.stripe.com/14AcN79aSg9N6yY9Gpfw407" target="_blank" rel="noopener" style="display: block; padding: 1.4rem 1.2rem; border-radius: 8px; border: 2px solid rgb(var(--ak-accent-rgb)); background: linear-gradient(160deg, rgba(var(--ak-accent-rgb),.2), rgba(var(--ak-accent4-rgb),.06)); box-shadow: 0 0 30px rgba(var(--ak-accent-rgb),.3); text-align: center; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 40px rgba(var(--ak-accent-rgb),.55);">
+                <div style="font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: .5rem;">Full day</div>
+                <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 2.6rem; line-height: 1; color: rgb(var(--ak-accent-rgb));">$1,000</div>
+                <div style="font-size: .72rem; color: rgb(var(--ak-secondary-rgb)); margin-top: .35rem;">8 hours</div>
+                <div style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-top: .8rem;">Book with Stripe →</div>
+              </a>
+            </div>
+            <a href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 6px; background: transparent; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.18); font-family: 'Archivo', sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; transition: all .15s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent-rgb),.55);">Prefer to talk first? Book a call →</a>
+            <div style="text-align: center; font-size: .7rem; color: rgb(var(--ak-secondary-rgb));">Buy several days at once — book once per day, or reach out and we'll block the time out for you.</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="" style="animation: akRise .7s ease both; max-width: 1000px; margin: 0 auto; border: 1px solid rgba(var(--ak-accent-rgb),.25); border-radius: 4px; background: linear-gradient(135deg, rgba(var(--ak-accent-rgb),.08), rgba(var(--ak-accent-rgb),.02)); position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(to right, transparent, rgb(var(--ak-accent-rgb)), transparent);"></div>
+        <div style="padding: clamp(1.75rem, 4vw, 2.75rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: clamp(1.5rem, 4vw, 3rem); align-items: start;">
+          <div>
+            <div style="font-size: .66rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: .8rem;">Not sure which one</div>
+            <h3 style="margin: 0 0 1.6rem; font-family: 'Archivo', sans-serif; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 400; letter-spacing: .02em; line-height: 1;">Build your quote</h3>
+
+            <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .7rem;">How many pages</div>
+            <div style="display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.6rem;">
+              <sc-for list="{{ sizeOptions }}" as="o" hint-placeholder-count="3">
+                <button type="button" onClick="{{ o.pick }}" style="padding: .7rem 1.1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; text-align: left; background: {{ o.bg }}; border: 1px solid {{ o.border }}; color: {{ o.color }}; transition: all .15s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb));">
+                  <span style="display: block; font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .05em;">{{ o.label }}</span>
+                  <span style="display: block; font-size: .7rem; color: rgb(var(--ak-secondary-rgb)); margin-top: .15rem;">{{ o.note }}</span>
+                </button>
+              </sc-for>
+            </div>
+
+            <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .7rem;">Add-ons</div>
+            <div style="display: flex; flex-wrap: wrap; gap: .6rem;">
+              <sc-for list="{{ addonOptions }}" as="a" hint-placeholder-count="4">
+                <button type="button" onClick="{{ a.pick }}" style="display: flex; align-items: center; gap: .6rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ a.bg }}; border: 1px solid {{ a.border }}; color: {{ a.color }}; transition: all .15s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb));">
+                  <span style="color: {{ a.tick }};">◆</span><span>{{ a.label }}</span><span style="color: rgb(var(--ak-secondary-rgb)); font-size: .78rem;">{{ a.priceLabel }}</span>
+                </button>
+              </sc-for>
+            </div>
+
+            <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin: 1.6rem 0 .7rem;">Add a design day</div>
+            <div style="display: flex; flex-wrap: wrap; gap: .6rem;">
+              <sc-for list="{{ designHourOptions }}" as="d" hint-placeholder-count="3">
+                <button type="button" onClick="{{ d.pick }}" style="display: flex; align-items: center; gap: .5rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ d.bg }}; border: 1px solid {{ d.border }}; color: {{ d.color }}; transition: all .15s ease;" style-hover="border-color: rgb(201,148,26);">
+                  <span>{{ d.label }}</span><span style="color: rgb(201,148,26); font-size: .78rem;">{{ d.priceLabel }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="border: 1px solid rgba(var(--ak-border-rgb),.14); border-radius: 4px; background: rgba(var(--ak-bg-rgb),.72); padding: 1.6rem;">
+            <div style="font-size: .64rem; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .6rem;">Your estimate</div>
+            <div style="font-family: 'Archivo', sans-serif; font-size: 3.4rem; line-height: 1; color: rgb(var(--ak-accent-rgb));">{{ quoteTotal }}</div>
+            <div style="font-size: .75rem; color: rgb(var(--ak-secondary-rgb)); margin-bottom: 1.2rem;">{{ quoteMonthly }}</div>
+            <div style="height: 1px; background: rgba(var(--ak-border-rgb),.12); margin-bottom: 1.2rem;"></div>
+            <div style="display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1.5rem;">
+              <sc-for list="{{ quoteLines }}" as="l" hint-placeholder-count="2">
+                <div style="display: flex; justify-content: space-between; gap: 1rem; font-size: .82rem; color: rgb(var(--ak-ink-rgb));">
+                  <span>{{ l.label }}</span><span style="color: rgb(var(--ak-secondary-rgb));">{{ l.amount }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <a href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px);">SEND ME THIS QUOTE →</a>
+            <div style="margin-top: .8rem; font-size: .68rem; line-height: 1.5; color: rgb(var(--ak-secondary-rgb)); text-align: center;">An estimate, not an invoice. We confirm scope on the call.</div>
+          </div>
+        </div>
+      </div>
+    <div id="ak-grain" style="position: fixed; inset: 0; pointer-events: none; z-index: 700; opacity: .55; left: -85px; top: 10px"></div></div>
+  </section>
+
+  <section style="position: relative; padding: clamp(5rem, 10vw, 8rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb)); overflow: hidden; text-align: center;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(var(--ak-accent-rgb),.12), transparent 70%);"></div>
+    <div data-reveal="" style="animation: akRise .7s ease both; position: relative; max-width: 780px; margin: 0 auto;">
+      <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb)); margin-bottom: 1.4rem;">◆ Ready to start ◆</div>
+      <h2 style="margin: 0 0 1.4rem; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1; letter-spacing: -.01em;">Stop losing customers to competitors.</h2>
+      <p style="margin: 0 0 2.4rem; font-size: 1.05rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">Book a free web design consultation. We'll show you what your site would look like, what you'd rank for, and what to expect. No pitch, no obligation.</p>
+      <a href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1.1rem 2.2rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.3rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 28px rgba(var(--ak-accent-rgb),.45);">BOOK FREE CALL →</a>
+      <div style="margin-top: 1.4rem; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb));">◆ No commitment ◆ No sales pitch ◆ Straight answers</div>
+    </div>
+  </section>
+
+  <section id="contact" style="position: relative; padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg-rgb)); overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(var(--ak-accent-rgb),.1), transparent 70%); pointer-events: none;"></div>
+    <div style="position: relative; max-width: 820px; margin: 0 auto;">
+      <div data-reveal="" style="animation: akRise .7s ease both;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: .75rem; margin-bottom: 1.3rem;">
+          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
+          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Get started</span>
+          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
+        </div>
+        <h2 style="margin: 0 0 1.1rem; text-align: center; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.02; letter-spacing: -.01em;">Tell us about your business</h2>
+        <p style="margin: 0 auto 3rem; max-width: 34rem; text-align: center; font-size: 1rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">A few lines is plenty. We read every message ourselves and reply with straight answers — plus a free call if you want one.</p>
+
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 3rem 2rem; border: 1px solid rgba(var(--ak-accent-rgb),.3); border-radius: 4px; background: linear-gradient(135deg, rgba(var(--ak-accent-rgb),.08), rgba(var(--ak-accent-rgb),.02)); text-align: center;">
+            <div style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: 2.4rem; color: rgb(var(--ak-accent-rgb)); margin-bottom: .6rem;">Got it.</div>
+            <p style="margin: 0; color: rgb(var(--ak-ink-rgb));">We'll read it ourselves and reply with straight answers.</p>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1.15rem; padding: clamp(1.75rem, 4vw, 3rem); border: 1px solid rgba(var(--ak-border-rgb),.14); border-radius: 8px; background: rgba(var(--ak-border-rgb),.03); box-shadow: 0 30px 70px rgba(0,0,0,.35); position: relative; overflow: hidden;">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;">
+            <div style="position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(to right, transparent, rgb(var(--ak-accent-rgb)), transparent); grid-column: span 2;"></div>
+            <label style="display: block;">
+              <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">Your name</span>
+              <input name="name" type="text" required="" placeholder="Jane Smith" autocomplete="name" style="width: 100%; box-sizing: border-box; padding: .85rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;" style-focus="box-shadow: 0 0 0 3px rgba(var(--ak-accent-rgb),.18);">
+            </label>
+            <label style="display: block;">
+              <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">Business name</span>
+              <input name="business" type="text" required="" placeholder="Brightside Plumbing" autocomplete="organization" style="width: 100%; box-sizing: border-box; padding: .85rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;" style-focus="box-shadow: 0 0 0 3px rgba(var(--ak-accent-rgb),.18);">
+            </label>
+            <label style="display: block;">
+              <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">Email</span>
+              <input name="email" type="email" required="" placeholder="jane@brightside.com" autocomplete="email" style="width: 100%; box-sizing: border-box; padding: .85rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;" style-focus="box-shadow: 0 0 0 3px rgba(var(--ak-accent-rgb),.18);">
+            </label>
+            <label style="display: block;">
+              <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">Phone</span>
+              <input name="phone" type="tel" placeholder="(555) 867-5309" autocomplete="tel" style="width: 100%; box-sizing: border-box; padding: .85rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;" style-focus="box-shadow: 0 0 0 3px rgba(var(--ak-accent-rgb),.18);">
+            </label>
+            <label style="display: block; grid-column: span 2;">
+              <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">Where you are today</span>
+              <select name="status" style="width: 100%; box-sizing: border-box; padding: .85rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none;">
+                <option style="background: rgb(var(--ak-surface-rgb));">No website at all</option>
+                <option style="background: rgb(var(--ak-surface-rgb));">Have one — it needs a full rebuild</option>
+                <option style="background: rgb(var(--ak-surface-rgb));">Have one — it just needs updates</option>
+                <option style="background: rgb(var(--ak-surface-rgb));">Not sure yet</option>
+              </select>
+            </label>
+            <label style="display: block; grid-column: span 2;">
+              <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">What do you want the site to do</span>
+              <textarea name="message" placeholder="More booked jobs. Right now people call the shop down the street." style="width: 100%; box-sizing: border-box; min-height: 120px; resize: vertical; padding: .85rem 1rem; font-size: .95rem; line-height: 1.6; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;" style-focus="box-shadow: 0 0 0 3px rgba(var(--ak-accent-rgb),.18);"></textarea>
+            </label>
+            <button type="submit" style="grid-column: span 2; padding: 1rem 1.5rem; border: 0; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .08em; cursor: pointer; box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.3); transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 32px rgba(var(--ak-accent-rgb),.45);">SEND MY PROJECT DETAILS</button>
+          </form>
+        </sc-if>
+      </div>
+
+      <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem 2rem; margin-top: 1.8rem;">
+        <div style="display: flex; align-items: baseline; gap: .5rem; font-size: .8rem; color: rgb(var(--ak-secondary-rgb));">
+          <span style="color: rgb(var(--ak-accent-rgb)); font-size: .68rem;">◆</span><span>We answer our own inbox, Mon–Sat</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: .5rem; font-size: .8rem; color: rgb(var(--ak-secondary-rgb));">
+          <span style="color: rgb(var(--ak-accent3-rgb)); font-size: .68rem;">◆</span><span>No commitment, no sales pitch</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: .5rem; font-size: .8rem; color: rgb(var(--ak-secondary-rgb));">
+          <span style="color: rgb(var(--ak-accent4-text-rgb)); font-size: .68rem;">◆</span><span>Free consultation call included</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="position: relative; overflow: hidden; padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 4vw, 3rem) 0; background: rgb(var(--ak-bg2-rgb));">
+    <div style="position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(var(--ak-accent-rgb),.6) 25%, rgba(var(--ak-accent4-rgb),.6) 55%, rgba(201,148,26,.45) 80%, transparent);"></div>
+    <div style="position: absolute; bottom: -34%; left: 50%; width: 70vw; height: 60vw; max-width: 1000px; max-height: 640px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.2), rgba(var(--ak-accent4-rgb),.08) 45%, transparent 70%); filter: blur(90px); pointer-events: none;"></div>
+
+    <div style="position: absolute; left: 50%; bottom: -.18em; transform: translateX(-50%); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(4rem, 15vw, 13rem); line-height: .8; letter-spacing: -.03em; white-space: nowrap; color: rgba(var(--ak-ink-rgb),.035); pointer-events: none; user-select: none;">AKIRA DIGITAL</div>
+
+    <div style="position: relative; max-width: 1400px; margin: 0 auto;">
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(2rem, 5vw, 4rem); align-items: start; padding-bottom: clamp(2rem, 4vw, 3rem);">
+
+        <div>
+          <a href="#top" style="display: inline-flex; align-items: center; gap: .6rem; margin-bottom: 1.2rem;">
+            <span style="display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(140deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); box-shadow: 0 0 20px rgba(var(--ak-accent-rgb),.5); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .85rem; letter-spacing: -.02em; color: rgb(var(--ak-bg-rgb));">AD</span>
+            <span style="display: inline-flex; align-items: baseline; gap: .3rem;">
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 1.25rem; letter-spacing: .06em; color: rgb(var(--ak-ink-rgb));">AKIRA</span>
+              <span style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 1.25rem; letter-spacing: .06em; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 40%, rgb(201,148,26) 70%, rgb(var(--ak-accent-rgb))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: akTextSweep 8s linear infinite;">DIGITAL</span>
+            </span>
+          </a>
+          <p style="margin: 0 0 1.4rem; max-width: 24rem; font-size: .92rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">A web design agency for local service businesses. Custom website design, development and local SEO, built to turn visitors into paying customers. You own everything we build.</p>
+          <span style="display: inline-flex; align-items: center; gap: .45rem; padding: .35rem .75rem; border-radius: 99px; border: 1px solid rgba(var(--ak-accent3-rgb),.4); background: rgba(var(--ak-accent3-rgb),.1);">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(var(--ak-accent3-rgb)); box-shadow: 0 0 8px rgb(var(--ak-accent3-rgb)); animation: akHaloPulseDot 2s ease-in-out infinite;"></span>
+            <span style="font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">Taking projects</span>
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: 2rem;">
+          <div>
+            <div style="font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: 1rem;">Explore</div>
+            <div style="display: flex; flex-direction: column; gap: .7rem;">
+              <a href="#preview" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Free design preview</a>
+              <a href="#work" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Web design portfolio</a>
+              <a href="#process" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Our design process</a>
+              <a href="#pricing" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Web design pricing</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb)); margin-bottom: 1rem;">Legal</div>
+            <div style="display: flex; flex-direction: column; gap: .7rem;">
+              <a href="https://www.akiradigital.net/privacy.html" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Privacy Policy</a>
+              <a href="https://www.akiradigital.net/terms.html" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.1; margin-bottom: 1.2rem;">Ready to stop losing customers?</div>
+          <a href="#contact" style="display: inline-block; padding: .85rem 1.6rem; border-radius: 6px; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .85rem; letter-spacing: .08em; box-shadow: 0 0 22px rgba(var(--ak-accent-rgb),.35); transition: all .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.6); color: rgb(var(--ak-bg-rgb));">BOOK A FREE CALL →</a>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(1.5rem, 4vw, 3rem); padding: clamp(1.5rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(var(--ak-border-rgb),.1);">
+        <div>
+          <h2 style="margin: 0 0 .5rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">What we design — and anything adjacent</h2>
+          <p style="margin: 0 0 .9rem; max-width: 30rem; font-size: .78rem; line-height: 1.6; color: rgb(var(--ak-secondary-rgb));">A starting list, not a menu. If it lives on a screen or a page, ask us.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: .4rem;">
+            <sc-for list="{{ seoServices }}" as="s" hint-placeholder-count="12">
+              <span style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.12); transition: color .2s ease, border-color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent3-rgb),.5);">{{ s }}</span>
+            </sc-for>
+            <a href="#contact" style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-accent3-rgb)); border: 1px dashed rgba(var(--ak-accent3-rgb),.55); transition: all .2s ease;" style-hover="color: rgb(var(--ak-accent3-rgb)); border-style: solid; background: rgba(var(--ak-accent3-rgb),.08);">Something else? Ask →</a>
+          </div>
+        </div>
+        <div>
+          <h2 style="margin: 0 0 .5rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Industries we've built for</h2>
+          <p style="margin: 0 0 .9rem; max-width: 30rem; font-size: .78rem; line-height: 1.6; color: rgb(var(--ak-secondary-rgb));">We work with any business that needs to be found and chosen online — these are just the ones we've done most.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: .4rem;">
+            <sc-for list="{{ seoIndustries }}" as="i" hint-placeholder-count="22">
+              <span style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.12); transition: color .2s ease, border-color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent4-rgb),.5);">{{ i }}</span>
+            </sc-for>
+            <a href="#contact" style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-accent4-text-rgb)); border: 1px dashed rgba(var(--ak-accent4-rgb),.55); transition: all .2s ease;" style-hover="color: rgb(var(--ak-accent4-text-rgb)); border-style: solid; background: rgba(var(--ak-accent4-rgb),.08);">Not listed? Still yes →</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 1.5rem; padding: 1.3rem 0 1.5rem; border-top: 1px solid rgba(var(--ak-border-rgb),.1);">
+        <div style="font-size: .74rem; color: rgb(var(--ak-secondary-rgb));">© 2026 Akira Digital. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: .55rem; font-size: .74rem; color: rgb(var(--ak-secondary-rgb));">
+          <span style="color: rgb(var(--ak-accent-rgb));">◆</span><span>Built by Akira Digital</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;neonMode&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;heroFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Archivo Black&quot;,&quot;options&quot;:[&quot;Bodoni Moda&quot;,&quot;Space Grotesk&quot;,&quot;Archivo Black&quot;,&quot;Cormorant Garamond&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+  state = {
+    bizName: '', bizWhat: '', bizCity: '', accent: 'rgb(var(--ak-accent-rgb))',
+    size: 1, addons: { calls: false, seo: false, brand: false, care: false }, designHours: 0,
+    sent: false, serpFixed: false, searchTicks: 1,
+    preset: 0, pairing: 0, layout: 0, previewLight: false
+  };
+
+  PRESETS = [
+    { label: 'Plumber', name: 'Brightside Plumbing', what: 'Emergency plumbing, 24/7', city: 'Atlanta', accent: 'rgb(var(--ak-accent-rgb))', headline: 'The {city} team people call first.', cta: 'GET A FREE QUOTE' },
+    { label: 'Law firm', name: 'Vance & Roe', what: 'Personal injury representation', city: 'Charlotte', accent: '#C9941A', headline: 'When the insurer says no, call us.', cta: 'REQUEST A CASE REVIEW' },
+    { label: 'Dental', name: 'Northline Dental', what: 'Family and cosmetic dentistry', city: 'Denver', accent: '#3B9EDD', headline: 'Dentistry that runs on time.', cta: 'BOOK A CLEANING' },
+    { label: 'Med spa', name: 'Halo Aesthetics', what: 'Injectables and skin therapy', city: 'Scottsdale', accent: 'rgb(138,43,255)', headline: 'Results you can see in the mirror.', cta: 'BOOK A CONSULT' },
+    { label: 'Photographer', name: 'Ida Morrow', what: 'Weddings and editorial portraits', city: 'Savannah', accent: 'rgb(0,255,200)', headline: 'Pictures you will still love in twenty years.', cta: 'CHECK MY DATE' }
+  ];
+
+  PAIRINGS = [
+    { label: 'Editorial', note: 'Bodoni Moda + Archivo', display: "'Bodoni Moda', Georgia, serif", style: 'italic', weight: '800', track: '0em', size: 'clamp(1.8rem, 4vw, 3rem)' },
+    { label: 'Grotesk', note: 'Space Grotesk + Archivo', display: "'Space Grotesk', system-ui, sans-serif", style: 'normal', weight: '700', track: '-.02em', size: 'clamp(1.7rem, 3.7vw, 2.8rem)' },
+    { label: 'Heavy', note: 'Archivo Black + Archivo', display: "'Archivo Black', Impact, sans-serif", style: 'normal', weight: '400', track: '-.01em', size: 'clamp(1.6rem, 3.4vw, 2.6rem)' },
+    { label: 'Classic', note: 'Cormorant + Archivo', display: "'Cormorant Garamond', Georgia, serif", style: 'normal', weight: '700', track: '.01em', size: 'clamp(1.9rem, 4.2vw, 3.2rem)' }
+  ];
+
+  LAYOUTS = [
+    { label: 'Left', align: 'flex-start', text: 'left', maxw: '20ch', center: '0' },
+    { label: 'Centered', align: 'center', text: 'center', maxw: '24ch', center: 'auto' },
+    { label: 'Wide', align: 'flex-start', text: 'left', maxw: '34ch', center: '0' }
+  ];
+
+  SERP_STEP = 104;
+
+  FONT_STACKS = {
+    'Bodoni Moda': "'Bodoni Moda', Georgia, serif",
+    'Space Grotesk': "'Space Grotesk', system-ui, sans-serif",
+    'Archivo Black': "'Archivo Black', Impact, sans-serif",
+    'Cormorant Garamond': "'Cormorant Garamond', Georgia, serif"
+  };
+
+  applyTheme() {
+    const root = document.documentElement.style;
+    const neon = !!this.props.neonMode;
+    const vars = neon
+      ? { '--ak-bg-rgb': '10,10,12', '--ak-bg2-rgb': '18,18,20', '--ak-surface-rgb': '16,16,18',
+          '--ak-ink-rgb': '245,245,245', '--ak-secondary-rgb': '170,170,175', '--ak-border-rgb': '255,255,255',
+          '--ak-accent-rgb': '255,20,147', '--ak-accent2-rgb': '0,255,200',
+          '--ak-accent3-rgb': '57,255,20', '--ak-accent4-rgb': '138,43,255',
+          '--ak-accent4-text-rgb': '185,120,255' }
+      : { '--ak-bg-rgb': '247,243,234', '--ak-bg2-rgb': '239,232,216', '--ak-surface-rgb': '255,255,255',
+          '--ak-ink-rgb': '33,29,23', '--ak-secondary-rgb': '110,101,88', '--ak-border-rgb': '28,25,18',
+          '--ak-accent-rgb': '155,59,84', '--ak-accent2-rgb': '184,80,107',
+          '--ak-accent3-rgb': '184,80,107', '--ak-accent4-rgb': '155,59,84',
+          '--ak-accent4-text-rgb': '155,59,84' };
+    Object.entries(vars).forEach(([k, v]) => root.setProperty(k, v));
+    const heroKey = this.props.heroFont && this.FONT_STACKS[this.props.heroFont] ? this.props.heroFont : 'Bodoni Moda';
+    root.setProperty('--ak-hero-font', this.FONT_STACKS[heroKey]);
+  }
+
+  componentDidMount() {
+    this.applyTheme();
+    this.initGrain();
+    this.initCursor();
+    this.searchTimer = setInterval(() => this.setState(s => ({ searchTicks: s.searchTicks + 1 })), 2400);
+  }
+
+  initGrain() {
+    const el = document.getElementById('ak-grain');
+    if (!el) return;
+    // Built here, not in the template: the compiler camelCase-mangles SVG
+    // attribute names (viewBox, baseFrequency...) inside template markup.
+    const svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'>"
+      + "<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/></filter>"
+      + "<rect width='100%' height='100%' filter='url(#n)' opacity='0.04'/></svg>";
+    el.style.backgroundImage = 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")';
+  }
+
+  componentWillUnmount() {
+    if (this.searchTimer) clearInterval(this.searchTimer);
+    if (this.raf) cancelAnimationFrame(this.raf);
+    window.removeEventListener('mousemove', this.onMove);
+    window.removeEventListener('mouseover', this.onOver);
+    window.removeEventListener('mouseout', this.onOut);
+  }
+
+  initCursor() {
+    if (window.matchMedia('(hover: none)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const glow = document.getElementById('ak-cursor-glow');
+    const ring = document.getElementById('ak-cursor-ring');
+    if (!glow || !ring) return;
+
+    let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
+    let gx = tx, gy = ty, rx = tx, ry = ty;
+    let shown = false;
+
+    this.onMove = (e) => {
+      tx = e.clientX; ty = e.clientY;
+      if (!shown) { shown = true; glow.style.opacity = '1'; ring.style.opacity = '1'; }
+    };
+    this.onOut = (e) => {
+      if (e.relatedTarget === null) { shown = false; glow.style.opacity = '0'; ring.style.opacity = '0'; }
+    };
+    this.onOver = (e) => {
+      const t = e.target;
+      const interactive = t && t.closest && t.closest('a, button, input, textarea, select, [role="button"]');
+      if (interactive) {
+        ring.style.width = '56px'; ring.style.height = '56px'; ring.style.margin = '-28px 0 0 -28px';
+        ring.style.borderColor = 'rgba(var(--ak-accent3-rgb),.95)';
+        ring.style.background = 'rgba(var(--ak-accent3-rgb),.12)';
       } else {
-        btn.innerHTML = orig;
-        btn.disabled = false;
-        alert('Something went wrong. Please call (972) 559-0881');
+        ring.style.width = '34px'; ring.style.height = '34px'; ring.style.margin = '-17px 0 0 -17px';
+        ring.style.borderColor = 'rgba(var(--ak-accent-rgb),.9)';
+        ring.style.background = 'transparent';
       }
-    })
-    .catch(function() {
-      btn.innerHTML = orig;
-      btn.disabled = false;
-      alert('Something went wrong. Please call (972) 559-0881');
+    };
+
+    const tick = () => {
+      rx += (tx - rx) * 0.22; ry += (ty - ry) * 0.22;
+      gx += (tx - gx) * 0.07; gy += (ty - gy) * 0.07;
+      ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
+      glow.style.transform = 'translate3d(' + gx + 'px,' + gy + 'px,0)';
+      this.raf = requestAnimationFrame(tick);
+    };
+    tick();
+
+    window.addEventListener('mousemove', this.onMove, { passive: true });
+    window.addEventListener('mouseover', this.onOver, { passive: true });
+    window.addEventListener('mouseout', this.onOut, { passive: true });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.neonMode !== this.props.neonMode || prevProps.heroFont !== this.props.heroFont) this.applyTheme();
+  }
+
+  set = (k) => (e) => this.setState({ [k]: e.target.value });
+
+  money = (n) => '$' + n.toLocaleString('en-US');
+
+  renderVals() {
+    const preset = this.PRESETS[this.state.preset] || this.PRESETS[0];
+    const pair = this.PAIRINGS[this.state.pairing] || this.PAIRINGS[0];
+    const lay = this.LAYOUTS[this.state.layout] || this.LAYOUTS[0];
+    const light = !!this.state.previewLight;
+    const name = this.state.bizName.trim() || preset.name;
+    const what = this.state.bizWhat.trim() || preset.what;
+    const city = this.state.bizCity.trim() || preset.city;
+    const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '');
+    const accent = this.state.accent || preset.accent;
+
+    const SIZES = [
+      { label: '3 pages', note: 'Starter', price: 1000 },
+      { label: '5 pages', note: 'Growth', price: 2500 },
+      { label: '8–10 pages', note: 'Authority', price: 5000 }
+    ];
+    const ADDONS = [
+      { key: 'calls', label: 'Call tracking', price: 250 },
+      { key: 'seo', label: 'Local SEO push', price: 600 },
+      { key: 'brand', label: 'Brand refresh', price: 1200 },
+      { key: 'care', label: 'Care plan', price: 300, monthly: true }
+    ];
+
+    const DESIGN = [
+      { label: 'None', hours: 0, price: 0 },
+      { label: '4 hours', hours: 4, price: 500 },
+      { label: '8 hours', hours: 8, price: 1000 }
+    ];
+    const design = DESIGN[this.state.designHours] || DESIGN[0];
+
+    const size = SIZES[this.state.size];
+    let total = size.price;
+    const lines = [{ label: size.label + ' · ' + size.note, amount: this.money(size.price) }];
+    let monthly = 0;
+    ADDONS.forEach((a) => {
+      if (!this.state.addons[a.key]) return;
+      if (a.monthly) { monthly += a.price; lines.push({ label: a.label, amount: this.money(a.price) + '/mo' }); }
+      else { total += a.price; lines.push({ label: a.label, amount: '+ ' + this.money(a.price) }); }
     });
-  });
-})();
+
+    if (design.price) { total += design.price; lines.push({ label: 'Design day · ' + design.label, amount: '+ ' + this.money(design.price) }); }
+
+    const sel = (on) => ({
+      bg: on ? 'rgba(var(--ak-accent-rgb),.14)' : 'rgba(var(--ak-border-rgb),.035)',
+      border: on ? 'rgb(var(--ak-accent-rgb))' : 'rgba(var(--ak-border-rgb),.14)',
+      color: on ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))'
+    });
+
+    const fixed = !!this.state.serpFixed;
+
+    return {
+      serpFixed: fixed,
+      serpToggle: () => this.setState(s => ({ serpFixed: !s.serpFixed })),
+      serpLabel: fixed ? 'With a site we built' : 'Your search results today',
+      serpTabA: fixed ? 'rgb(var(--ak-secondary-rgb))' : 'rgb(var(--ak-ink-rgb))',
+      serpTabABg: fixed ? 'transparent' : 'rgba(255,20,147,.16)',
+      serpTabB: fixed ? '#0a0a0c' : 'rgb(var(--ak-secondary-rgb))',
+      serpTabBBg: fixed ? 'rgb(0,255,200)' : 'transparent',
+      serpFoot: fixed ? 'Same searcher. Different first result.' : "Right now, you're not on this list at all.",
+      serpFootHue: fixed ? 'rgb(0,255,200)' : 'rgb(255,20,147)',
+      searchCount: this.state.searchTicks,
+      serpRows: [
+        { domain: 'citysideplumbing.com', title: 'Cityside Plumbing — Fast & Reliable', desc: '24/7 emergency service. Licensed & insured. ★★★★★ 214 reviews.', rank: '1', mine: false },
+        { domain: 'metroplumbingco.net', title: 'Metro Plumbing Services', desc: 'Quality service at fair prices. Serving the metro area since 2009.', rank: '2', mine: false },
+        { domain: 'atlantadrainpros.com', title: 'Atlanta Drain Pros', desc: 'Drain cleaning, water heaters, same-day appointments.', rank: '3', mine: false },
+        { domain: 'yourbusiness.com', title: fixed ? 'Your business — first result, first call' : 'Your business — nowhere on page one', desc: fixed ? 'Loads in under a second, ranks locally, asks for the call on every screen.' : 'Buried past the fold, or no site for Google to rank at all.', rank: fixed ? '1' : '—', mine: true }
+      ].map((r, i) => {
+        const rise = fixed && r.mine;
+        const push = fixed && !r.mine;
+        return Object.assign({}, r, {
+          dy: rise ? 'translateY(' + (-3 * this.SERP_STEP) + 'px)' : (push ? 'translateY(' + this.SERP_STEP + 'px)' : 'none'),
+          op: r.mine ? (fixed ? '1' : '.45') : (fixed ? '.5' : '1'),
+          border: r.mine
+            ? (fixed ? '1px solid rgb(0,255,200)' : '1px dashed rgba(255,20,147,.5)')
+            : '1px solid rgba(var(--ak-border-rgb),.08)',
+          bg: r.mine
+            ? (fixed ? 'linear-gradient(120deg, rgba(0,255,200,.16), rgba(138,43,255,.08))' : 'rgba(255,20,147,.05)')
+            : 'rgba(255,255,255,.02)',
+          glow: r.mine && fixed ? '0 0 30px rgba(0,255,200,.35)' : 'none',
+          rank: fixed ? (r.mine ? '1' : String(i + 2)) : (r.mine ? '—' : String(i + 1)),
+          rankHue: r.mine ? (fixed ? 'rgb(0,255,200)' : 'rgb(255,20,147)') : 'rgb(var(--ak-secondary-rgb))',
+          titleHue: r.mine && fixed ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))',
+          delay: (i * 60) + 'ms'
+        });
+      }),
+
+      problems: [
+        { n: '01', hue: 'rgb(255,20,147)', soft: 'rgba(255,20,147,.12)', t: 'You never show up', d: 'No site, or a slow one, means Google has nothing to rank. Every search for what you do sends someone else the job.' },
+        { n: '02', hue: 'rgb(138,43,255)', soft: 'rgba(138,43,255,.12)', t: 'It breaks on a phone', d: 'Seven in ten local searches happen on a phone. A site that pinches and scrolls sideways loses the customer in four seconds.' },
+        { n: '03', hue: 'rgb(0,255,200)', soft: 'rgba(0,255,200,.12)', t: 'Nothing asks for the call', d: 'Most small-business sites describe the company and stop. No number in the corner, no form, no reason to act today.' }
+      ],
+
+      bizName: this.state.bizName,
+      bizWhat: this.state.bizWhat,
+      bizCity: this.state.bizCity,
+      onBizName: this.set('bizName'),
+      onBizWhat: this.set('bizWhat'),
+      onBizCity: this.set('bizCity'),
+      accentHex: accent,
+      swatches: ['rgb(var(--ak-accent-rgb))', 'rgb(138,43,255)', 'rgb(0,255,200)', '#C9941A', '#3B9EDD'].map((hex) => ({
+        hex, label: hex,
+        ring: accent === hex ? 'rgb(var(--ak-ink-rgb))' : 'rgba(var(--ak-border-rgb),.16)',
+        lift: accent === hex ? 'translateY(-3px) scale(1.06)' : 'none',
+        pick: () => this.setState({ accent: hex })
+      })),
+
+      presetChips: this.PRESETS.map((p, i) => {
+        const on = this.state.preset === i;
+        return {
+          label: p.label,
+          bg: on ? 'rgba(255,20,147,.16)' : 'rgba(255,255,255,.02)',
+          border: on ? 'rgb(255,20,147)' : 'rgba(var(--ak-border-rgb),.14)',
+          color: on ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))',
+          pick: () => this.setState({ preset: i, accent: p.accent, bizName: '', bizWhat: '', bizCity: '' })
+        };
+      }),
+      pairChips: this.PAIRINGS.map((p, i) => {
+        const on = this.state.pairing === i;
+        return {
+          label: p.label, note: p.note, font: p.display,
+          bg: on ? 'rgba(138,43,255,.16)' : 'rgba(255,255,255,.02)',
+          border: on ? 'rgb(138,43,255)' : 'rgba(var(--ak-border-rgb),.14)',
+          color: on ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))',
+          pick: () => this.setState({ pairing: i })
+        };
+      }),
+      layoutChips: this.LAYOUTS.map((l, i) => {
+        const on = this.state.layout === i;
+        return {
+          label: l.label,
+          bg: on ? 'rgba(0,255,200,.14)' : 'rgba(255,255,255,.02)',
+          border: on ? 'rgb(0,255,200)' : 'rgba(var(--ak-border-rgb),.14)',
+          color: on ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))',
+          pick: () => this.setState({ layout: i })
+        };
+      }),
+
+      modeLightBg: light ? 'rgb(0,255,200)' : 'transparent',
+      modeLightColor: light ? '#0a0a0c' : 'rgb(var(--ak-secondary-rgb))',
+      modeDarkBg: light ? 'transparent' : 'rgba(255,20,147,.16)',
+      modeDarkColor: light ? 'rgb(var(--ak-secondary-rgb))' : 'rgb(var(--ak-ink-rgb))',
+      setLight: () => this.setState({ previewLight: true }),
+      setDark: () => this.setState({ previewLight: false }),
+
+      shuffle: () => this.setState({
+        preset: Math.floor(Math.random() * this.PRESETS.length),
+        pairing: Math.floor(Math.random() * this.PAIRINGS.length),
+        layout: Math.floor(Math.random() * this.LAYOUTS.length),
+        accent: this.PRESETS[Math.floor(Math.random() * this.PRESETS.length)].accent,
+        bizName: '', bizWhat: '', bizCity: ''
+      }),
+
+      phName: preset.name,
+      phWhat: preset.what,
+      phCity: preset.city,
+      pvSurface: light ? '#FAF8F3' : 'rgb(var(--ak-surface-rgb))',
+      pvInk: light ? '#16151A' : 'rgb(var(--ak-ink-rgb))',
+      pvSub: light ? 'rgba(22,21,26,.62)' : 'rgb(var(--ak-secondary-rgb))',
+      pvLine: light ? 'rgba(22,21,26,.1)' : 'rgba(var(--ak-border-rgb),.07)',
+      pvBtnInk: light ? '#FAF8F3' : 'rgb(var(--ak-bg-rgb))',
+      pvFont: pair.display,
+      pvStyle: pair.style,
+      pvWeight: pair.weight,
+      pvTrack: pair.track,
+      pvSize: pair.size,
+      pvAlign: lay.align,
+      pvText: lay.text,
+      pvMaxW: lay.maxw,
+      pvCenter: lay.center,
+      specPair: pair.note,
+      specLayout: lay.label + ' hero',
+      specAccent: accent.indexOf('var(') > -1 ? 'brand accent' : accent,
+
+      liveName: name,
+      liveDomain: slug + '.com',
+      liveEyebrow: city + ' · ' + what,
+      liveHeadline: preset.headline.replace('{city}', city),
+      liveSub: what + '. Straight pricing, work that holds up, and someone who answers the phone.',
+      liveCta: preset.cta,
+      livePhone: '(555) 867-5309',
+      liveCards: [
+        { t: 'SAME-DAY SERVICE', d: 'Booked before noon, handled before dinner.' },
+        { t: 'UPFRONT PRICING', d: 'You approve the number before any work starts.' },
+        { t: 'LOCAL, NOT A CALL CENTER', d: 'Based in ' + city + '. You get a person, not a queue.' }
+      ],
+
+      workPoints: [
+        { t: 'Loads in under a second on 4G', hue: 'rgb(255,20,147)', soft: 'rgba(255,20,147,.12)' },
+        { t: 'Lead form above the fold', hue: 'rgb(138,43,255)', soft: 'rgba(138,43,255,.12)' },
+        { t: 'Tap-to-call on every screen', hue: 'rgb(0,255,200)', soft: 'rgba(0,255,200,.12)' },
+        { t: 'Local SEO wired in from day one', hue: 'rgb(201,148,26)', soft: 'rgba(201,148,26,.14)' }
+      ],
+
+      steps: [
+        { n: '01', hue: 'rgb(255,20,147)', soft: 'rgba(255,20,147,.12)', tag: 'Talk', t: 'Discovery call', d: 'A free call. What you sell, who buys it, what you want more of.' },
+        { n: '02', hue: 'rgb(138,43,255)', soft: 'rgba(138,43,255,.12)', tag: 'Scope', t: 'Written scope', d: 'Everything we are building, with the price on it. Nothing starts before you approve it.' },
+        { n: '03', hue: 'rgb(0,255,200)', soft: 'rgba(0,255,200,.12)', tag: 'Build', t: 'Design + build', d: 'We design and build the whole thing in-house, then send you the first draft.' },
+        { n: '04', hue: 'rgb(57,255,20)', soft: 'rgba(57,255,20,.12)', tag: 'Refine', t: 'Revisions', d: 'You mark up what you want changed. We refine until it reads right.' },
+        { n: '05', hue: 'rgb(201,148,26)', soft: 'rgba(201,148,26,.14)', tag: 'Ship', t: 'Launch', d: 'Site goes live on your domain. You own every file.' }
+      ],
+
+      whys: [
+        { n: '01', hue: 'rgb(255,20,147)', soft: 'rgba(255,20,147,.12)', k: 'Craft', t: 'DRAWN, NOT ASSEMBLED', d: 'Every page starts on a blank canvas — real type pairing, a real grid, spacing decided on purpose. No page builder, no theme with your logo dropped in.' },
+        { n: '02', hue: 'rgb(138,43,255)', soft: 'rgba(138,43,255,.12)', k: 'Type', t: 'A TYPE SYSTEM, NOT A FONT PICK', d: 'One display face, one text face, a scale that holds from a phone to a 27-inch screen. Headlines read like headlines at every size.' },
+        { n: '03', hue: 'rgb(0,255,200)', soft: 'rgba(0,255,200,.12)', k: 'Detail', t: 'THE SMALL STUFF IS THE WORK', d: 'Hover states, focus rings, empty states, the way a form behaves when someone fumbles it. Reduced motion respected. It feels finished because it is.' },
+        { n: '04', hue: 'rgb(57,255,20)', soft: 'rgba(57,255,20,.12)', k: 'Handoff', t: 'FILES YOU CAN ACTUALLY OPEN', d: 'Clean HTML and CSS, named components, no build step you cannot see. Your designer or your next developer can pick it straight up.' },
+        { n: '05', hue: 'rgb(201,148,26)', soft: 'rgba(201,148,26,.14)', k: 'Ownership', t: 'NOTHING HELD HOSTAGE', d: 'Your domain, your hosting, your source. No licence to renew, no platform tax, no ransom on the day you leave.' }
+      ],
+
+      tiers: [
+        { tier: 'Starter', hue: 'rgb(var(--ak-accent4-text-rgb))', pad: '2.25rem 1.75rem', border: '1px solid rgba(138,43,255,.35)', glow: '0 0 24px rgba(138,43,255,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: '', badgeColor: 'rgb(var(--ak-accent4-text-rgb))', price: '$1,000', cadence: 'One-time payment', title: 'Starter Website', desc: 'For businesses with no site, or one that is hurting more than helping.', features: ['3 custom pages', 'Mobile responsive', 'Contact form', 'Google Business setup', 'Basic SEO', '2 revision rounds', 'Post-launch support'], cta: 'GET STARTED', href: 'https://buy.stripe.com/28EaEZaeWf5J0aA3i1fw405', target: '_blank', bg: 'linear-gradient(160deg, rgba(138,43,255,.07), rgba(138,43,255,.015))', topline: 'linear-gradient(to right, transparent, rgb(138,43,255), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(138,43,255,.55)', ctaColor: 'rgb(var(--ak-accent4-text-rgb))' },
+        { tier: 'Growth', hue: 'rgb(255,20,147)', pad: 'clamp(2.5rem, 4vw, 3.25rem) 2rem', border: '2px solid rgb(255,20,147)', glow: '0 0 60px rgba(255,20,147,.45), 0 24px 60px rgba(0,0,0,.5)', scale: 'scale(1.05)', z: '2', toplineH: '4px', priceSize: '4rem', badge: '★ MOST POPULAR', badgeColor: 'rgb(255,20,147)', price: '$2,500', cadence: 'One-time payment', title: 'Growth Website', desc: 'For businesses ready to generate steady leads and track what they return.', features: ['Everything in Starter', '5 custom pages', 'Lead capture system', 'Google Analytics 4', 'Call tracking', 'Speed optimization', 'Extended post-launch support'], cta: 'GET STARTED', href: 'https://buy.stripe.com/fZuaEZfzgaPtf5ug4Nfw406', target: '_blank', bg: 'linear-gradient(160deg, rgba(255,20,147,.2), rgba(255,20,147,.05) 60%, rgba(138,43,255,.1))', topline: 'linear-gradient(to right, rgba(255,20,147,.2), rgb(255,20,147), rgba(255,20,147,.2))', ctaBg: 'rgb(255,20,147)', ctaBorder: 'rgb(255,20,147)', ctaColor: '#0a0a0c' },
+        { tier: 'Authority', hue: 'rgb(57,255,20)', pad: '2.25rem 1.75rem', border: '1px solid rgba(57,255,20,.35)', glow: '0 0 24px rgba(57,255,20,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: 'PREMIUM', badgeColor: 'rgb(57,255,20)', price: '$5,000+', cadence: 'Custom quote', title: 'Authority Package', desc: 'For established businesses ready to own their local market online.', features: ['Everything in Growth', '8–10 custom pages', 'Full brand refresh', 'Google Ads pages', 'Competitor analysis', 'Local SEO dominance', 'Priority post-launch support'], cta: "LET'S TALK", href: 'https://buy.stripe.com/cNieVf86O8Hlg9y6udfw403', target: '_blank', bg: 'linear-gradient(160deg, rgba(57,255,20,.07), rgba(57,255,20,.015))', topline: 'linear-gradient(to right, transparent, rgb(57,255,20), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(57,255,20,.55)', ctaColor: 'rgb(57,255,20)' },
+        { tier: 'Monthly', hue: 'rgb(0,255,200)', pad: '2.25rem 1.75rem', border: '1px solid rgba(0,255,200,.35)', glow: '0 0 24px rgba(0,255,200,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: 'ADD-ON', badgeColor: 'rgb(0,255,200)', price: '$300', cadence: 'Per month · cancel anytime', title: 'Care Plan', desc: 'Keep the site fast, secure, and current without lifting a finger.', features: ['Monthly updates', 'Security monitoring', 'Daily backups', 'SEO health report', 'Priority support', 'Uptime monitoring', '30-day cancel notice'], cta: 'ADD ON', href: 'https://buy.stripe.com/28E3cx3Qy0aPbTi7yhfw402', target: '_blank', bg: 'linear-gradient(160deg, rgba(0,255,200,.07), rgba(0,255,200,.015))', topline: 'linear-gradient(to right, transparent, rgb(0,255,200), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(0,255,200,.55)', ctaColor: 'rgb(0,255,200)' }
+      ],
+
+      designChips: ['Brand refresh', 'Sales pages', 'Landing pages', 'Dashboards', 'App screens', 'One-pagers', 'Print & collateral'].map((label, i) => ({
+        label,
+        hue: ['rgb(var(--ak-accent-rgb))', 'rgb(var(--ak-accent4-text-rgb))', 'rgb(var(--ak-accent3-rgb))', 'rgb(201,148,26)'][i % 4]
+      })),
+      designHourOptions: DESIGN.map((d, i) => Object.assign({}, d, sel(this.state.designHours === i), {
+        priceLabel: d.price ? '+' + this.money(d.price) : '',
+        pick: () => this.setState({ designHours: i })
+      })),
+
+      sizeOptions: SIZES.map((s, i) => Object.assign({}, s, sel(this.state.size === i), { pick: () => this.setState({ size: i }) })),
+      addonOptions: ADDONS.map((a) => {
+        const on = !!this.state.addons[a.key];
+        return Object.assign({}, a, sel(on), {
+          tick: on ? 'rgb(var(--ak-accent-rgb))' : 'rgba(255,255,255,.2)',
+          priceLabel: a.monthly ? '+$' + a.price + '/mo' : '+$' + a.price,
+          pick: () => this.setState((s) => ({ addons: Object.assign({}, s.addons, { [a.key]: !s.addons[a.key] }) }))
+        });
+      }),
+      quoteTotal: this.money(total),
+      quoteMonthly: monthly ? 'plus ' + this.money(monthly) + '/mo care plan' : 'one-time · custom-built',
+      quoteLines: lines,
+
+      seoServices: [
+        'Custom website design', 'Website redesign', 'Mobile-first development',
+        'Local SEO', 'Google Business Profile setup', 'Lead capture & forms',
+        'Landing pages for Google Ads', 'Site speed optimization', 'E-commerce & booking',
+        'Brand & identity design', 'Copywriting', 'Website care plans'
+      ],
+      seoIndustries: [
+        'Plumbers', 'HVAC', 'Electricians', 'Roofers', 'General contractors',
+        'Landscaping', 'Pest control', 'Cleaning services', 'Law firms',
+        'Dentists', 'Chiropractors', 'Med spas', 'Fitness studios', 'Restaurants',
+        'Real estate', 'Financial & insurance', 'Photographers', 'Event venues',
+        'Nonprofits', 'Consultants & B2B', 'Retail & e-commerce', 'Startups'
+      ],
+
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      onSubmit: (e) => {
+        e.preventDefault();
+        var form = e.target;
+        var fd = new FormData(form);
+
+        // Spam guard 1 — honeypot. Silently drop bots that fill hidden fields.
+        if ((fd.get('website') || '').toString().trim() !== '') {
+          this.setState({ sent: true });
+          return;
+        }
+
+        // Spam guard 2 — time-to-submit. Bots submit in under ~2s; humans take longer.
+        // Silently accept UI-wise but drop payload if suspicious.
+        var pageMountedAt = (window.__akMountedAt || Date.now());
+        var elapsedMs = Date.now() - pageMountedAt;
+        if (elapsedMs < 2000) {
+          this.setState({ sent: true });
+          return;
+        }
+
+        // Basic length sanity — reject payloads that far exceed a plausible human submission.
+        // (Additional server-side rate limiting is required in Make.com.)
+        var msg = (fd.get('message') || '').toString();
+        if (msg.length > 5000) {
+          this.setState({ sent: true });
+          return;
+        }
+
+        var payload = {
+          name: (fd.get('name') || '').toString().slice(0, 200),
+          business: (fd.get('business') || '').toString().slice(0, 200),
+          email: (fd.get('email') || '').toString().slice(0, 320),
+          phone: (fd.get('phone') || '').toString().slice(0, 40),
+          status: (fd.get('status') || '').toString().slice(0, 200),
+          message: msg.slice(0, 5000),
+          source: 'akiradigital.net',
+          submitted_at: new Date().toISOString(),
+          elapsed_ms: elapsedMs,
+          page_url: (typeof window !== 'undefined' ? window.location.href : ''),
+          user_agent: (typeof navigator !== 'undefined' ? navigator.userAgent : '')
+        };
+
+        // Optimistic UI — show "Got it." right away so a slow/failed POST doesn't leak status.
+        this.setState({ sent: true });
+        try {
+          fetch('https://contact.akiradigital.net/', {
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'omit',
+            keepalive: true,
+            referrerPolicy: 'strict-origin-when-cross-origin',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload)
+          }).catch(function (err) { try { console.error('[contact-form] submit failed:', err); } catch (e2) {} });
+        } catch (err) {
+          try { console.error('[contact-form] submit threw:', err); } catch (e2) {}
+        }
+      }
+    };
+  }
+}
 </script>
-<script>
-  // paste the entire file contents here
-</script>
-</body>
 </body>
 </html>

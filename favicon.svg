@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="ad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9B3B54"/>
+      <stop offset="1" stop-color="#B8506B"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="12" ry="12" fill="url(#ad)"/>
+  <text x="32" y="42" text-anchor="middle"
+        font-family="'Archivo Black', 'Archivo', Helvetica, Arial, sans-serif"
+        font-weight="900" font-size="30" letter-spacing="-1"
+        fill="#F7F3EA">AD</text>
+</svg>

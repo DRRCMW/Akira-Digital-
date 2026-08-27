@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Don't index legal boilerplate — noindex meta is set on these pages, but block from crawlers as belt-and-suspenders.
+Disallow: /privacy.html
+Disallow: /terms.html
+
+# Don't index internal well-known metadata
+Disallow: /.well-known/
+
+Sitemap: https://akiradigital.net/sitemap.xml
