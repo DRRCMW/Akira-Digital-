@@ -3,9 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./resources.js"></script>
-<script src="./support.js"></script>
-<!-- Akira Digital AI Assistant (in <head> + self-injected so the reactive body render can't strip it) -->
+<!-- Akira Digital AI Assistant — must run BEFORE the app framework (support.js) so its config isn't stripped by the client-side re-render -->
 <script>
   window.AKIRA_CHAT = {
     business: "Akira Digital",
@@ -19,12 +17,20 @@
     endpoint: "https://mercedes-akira-digital.vercel.app/api/chat"
   };
   (function(){
-    var s = document.createElement('script');
-    s.src = 'https://mercedes-akira-digital.vercel.app/akira-chat.js';
-    s.async = true;
-    (document.head || document.documentElement).appendChild(s);
+    function load(){
+      if (window.__akiraChatMounted) return;
+      var s = document.createElement('script');
+      s.src = 'https://mercedes-akira-digital.vercel.app/akira-chat.js';
+      s.async = true;
+      (document.head || document.documentElement).appendChild(s);
+    }
+    load();
+    document.addEventListener('DOMContentLoaded', load);
+    var n = 0, t = setInterval(function(){ if (window.__akiraChatMounted || ++n > 12) { clearInterval(t); return; } load(); }, 700);
   })();
 </script>
+<script src="./resources.js"></script>
+<script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
