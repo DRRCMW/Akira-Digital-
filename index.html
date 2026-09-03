@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./resources.js"></script>
 <script src="./support.js"></script>
+<!-- Akira Digital AI Assistant (in <head> + self-injected so the reactive body render can't strip it) -->
+<script>
+  window.AKIRA_CHAT = {
+    business: "Akira Digital",
+    client: "akira-digital",
+    area: "Los Angeles & remote — we work with clients anywhere in the U.S.",
+    hours: "Mon–Fri, 9am–6pm PT",
+    services: "custom websites, redesigns, local SEO, lead capture, branding & logo design, and 24/7 AI chat assistants",
+    accent: "#F0555F",
+    greeting: "Hey! 👋 Thanks for checking out Akira Digital. Looking for a quote, a demo of what we build, or a question about your website? I can help — and if you leave your info, we'll follow up fast.",
+    forwardToCC: true,
+    endpoint: "https://mercedes-akira-digital.vercel.app/api/chat"
+  };
+  (function(){
+    var s = document.createElement('script');
+    s.src = 'https://mercedes-akira-digital.vercel.app/akira-chat.js';
+    s.async = true;
+    (document.head || document.documentElement).appendChild(s);
+  })();
+</script>
 </head>
 <body>
 <x-dc>
@@ -1280,21 +1300,5 @@ class Component extends DCLogic {
   }
 }
 </script>
-
-<!-- Akira Digital AI Assistant -->
-<script>
-  window.AKIRA_CHAT = {
-    business: "Akira Digital",
-    client: "akira-digital",
-    area: "Los Angeles & remote — we work with clients anywhere in the U.S.",
-    hours: "Mon–Fri, 9am–6pm PT",
-    services: "custom websites, redesigns, local SEO, lead capture, branding & logo design, and 24/7 AI chat assistants",
-    accent: "#F0555F",
-    greeting: "Hey! 👋 Thanks for checking out Akira Digital. Looking for a quote, a demo of what we build, or have a question about your website? I can help — and if you leave your info, we'll follow up fast.",
-    forwardToCC: true,
-    endpoint: "https://mercedes-akira-digital.vercel.app/api/chat"
-  };
-</script>
-<script src="https://mercedes-akira-digital.vercel.app/akira-chat.js" async></script>
 </body>
 </html>
