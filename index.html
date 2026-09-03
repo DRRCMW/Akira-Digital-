@@ -714,6 +714,10 @@
               <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">Phone</span>
               <input name="phone" type="tel" placeholder="(555) 867-5309" autocomplete="tel" style="width: 100%; box-sizing: border-box; padding: .85rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;" style-focus="box-shadow: 0 0 0 3px rgba(var(--ak-accent-rgb),.18);">
             </label>
+            <label style="display: flex; gap: .7rem; align-items: flex-start; grid-column: span 2; font-size: .78rem; line-height: 1.55; color: rgb(var(--ak-secondary-rgb)); cursor: pointer;">
+              <input name="sms_consent" type="checkbox" value="yes" style="margin-top: .25rem; width: 16px; height: 16px; flex: 0 0 16px; accent-color: rgb(var(--ak-accent-rgb)); cursor: pointer;">
+              <span>Yes, text me about my request. By checking this box I agree to receive text messages from Akira Digital at the number above about my inquiry, free website review, and scheduling. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase. See our <a href="/privacy#sms" target="_blank" rel="noopener" style="color: rgb(var(--ak-accent-rgb));">Privacy Policy</a> and <a href="/terms#sms" target="_blank" rel="noopener" style="color: rgb(var(--ak-accent-rgb));">Terms</a>.</span>
+            </label>
             <label style="display: block; grid-column: span 2;">
               <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">Where you are today</span>
               <select name="status" style="width: 100%; box-sizing: border-box; padding: .85rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none;">
@@ -1253,6 +1257,10 @@ class Component extends DCLogic {
           business: (fd.get('business') || '').toString().slice(0, 200),
           email: (fd.get('email') || '').toString().slice(0, 320),
           phone: (fd.get('phone') || '').toString().slice(0, 40),
+          // A2P 10DLC consent record: only text this lead if sms_consent is true.
+          sms_consent: fd.get('sms_consent') === 'yes',
+          sms_consent_text: fd.get('sms_consent') === 'yes' ? 'Agreed to receive text messages from Akira Digital about their inquiry (msg frequency varies, msg & data rates may apply, STOP to cancel, HELP for help) via checkbox on akiradigital.net contact form.' : '',
+          sms_consent_at: fd.get('sms_consent') === 'yes' ? new Date().toISOString() : '',
           status: (fd.get('status') || '').toString().slice(0, 200),
           message: msg.slice(0, 5000),
           source: 'akiradigital.net',
