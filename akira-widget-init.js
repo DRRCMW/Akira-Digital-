@@ -6,6 +6,7 @@
 window.AKIRA_CHAT = {
   business: "Akira Digital",
   client: "akira-digital",
+  phone: "(972) 559-0881",
   area: "Los Angeles & remote — we work with clients anywhere in the U.S.",
   hours: "Mon-Fri, 9am-6pm PT",
   services: "custom websites, redesigns, local SEO, lead capture, branding & logo design, and 24/7 AI chat assistants",
