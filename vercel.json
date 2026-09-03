@@ -43,6 +43,12 @@
       ]
     },
     {
+      "source": "/(favicon\\.ico|favicon\\.svg|favicon-32\\.png|favicon-512\\.png|apple-touch-icon\\.png|ad-icon-192\\.png|ad-icon-256\\.png|site\\.webmanifest)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    },
+    {
       "source": "/robots.txt",
       "headers": [
         { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
