@@ -625,7 +625,7 @@
 
             <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .7rem;">Add-ons</div>
             <div style="display: flex; flex-wrap: wrap; gap: .6rem;">
-              <sc-for list="{{ addonOptions }}" as="a" hint-placeholder-count="4">
+              <sc-for list="{{ addonOptions }}" as="a" hint-placeholder-count="5">
                 <button type="button" onClick="{{ a.pick }}" style="display: flex; align-items: center; gap: .6rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ a.bg }}; border: 1px solid {{ a.border }}; color: {{ a.color }}; transition: all .15s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb));">
                   <span style="color: {{ a.tick }};">◆</span><span>{{ a.label }}</span><span style="color: rgb(var(--ak-secondary-rgb)); font-size: .78rem;">{{ a.priceLabel }}</span>
                 </button>
@@ -827,7 +827,7 @@
 class Component extends DCLogic {
   state = {
     bizName: '', bizWhat: '', bizCity: '', accent: 'rgb(var(--ak-accent-rgb))',
-    size: 1, addons: { calls: false, seo: false, brand: false, care: false }, designHours: 0,
+    size: 1, addons: { calls: false, seo: false, brand: false, logo: false, care: false }, designHours: 0,
     sent: false, serpFixed: false, searchTicks: 1,
     preset: 0, pairing: 0, layout: 0, previewLight: false
   };
@@ -981,6 +981,7 @@ class Component extends DCLogic {
       { key: 'calls', label: 'Call tracking', price: 250 },
       { key: 'seo', label: 'Local SEO push', price: 600 },
       { key: 'brand', label: 'Brand refresh', price: 1200 },
+      { key: 'logo', label: 'Logo design', price: 400 },
       { key: 'care', label: 'Care plan', price: 300, monthly: true }
     ];
 
