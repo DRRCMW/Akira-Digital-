@@ -269,6 +269,61 @@
   }
   @keyframes akHaloPulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
   @keyframes akHaloPulse { 0%, 100% { opacity: .5; transform: translate(-50%,-50%) scale(1); } 50% { opacity: .85; transform: translate(-50%,-50%) scale(1.08); } }
+  /* ---- Motion system ---- */
+  :root { --ak-ease-out: cubic-bezier(0.23, 1, 0.32, 1); --ak-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1); }
+  @property --ak-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+  @keyframes akSpin { to { --ak-angle: 360deg; } }
+  @keyframes akCardIn { from { opacity: 0; translate: 0 32px; filter: blur(8px); } to { opacity: 1; translate: 0 0; filter: none; } }
+  @keyframes akHeroIn { from { opacity: 0; translate: 0 .3em; filter: blur(16px); } to { opacity: 1; translate: 0 0; filter: none; } }
+  @keyframes akFlicker { 0% { opacity: 0; } 6% { opacity: 1; } 10% { opacity: .2; } 14% { opacity: 1; } 22% { opacity: .35; } 26%, 58% { opacity: 1; } 61% { opacity: .6; } 64%, 100% { opacity: 1; } }
+  @keyframes akStickerIn { 0% { opacity: 0; scale: .4; } 60% { opacity: 1; scale: 1.12; } 100% { opacity: 1; scale: 1; } }
+  @keyframes akGrowX { from { scale: 0 1; } to { scale: 1 1; } }
+
+  /* Reveal on scroll (only when JS confirms IntersectionObserver; otherwise content shows as before) */
+  html.ak-motion [data-reveal] { animation-duration: .9s !important; animation-timing-function: var(--ak-ease-out) !important; }
+  html.ak-motion [data-reveal]:not([data-in]) { animation-play-state: paused !important; }
+
+  html.ak-motion [data-stagger] > * { animation: akCardIn .9s var(--ak-ease-out) both; animation-play-state: paused; }
+  html.ak-motion [data-stagger][data-in] > * { animation-play-state: running; }
+  [data-stagger] > :nth-child(2) { animation-delay: 90ms; }
+  [data-stagger] > :nth-child(3) { animation-delay: 180ms; }
+  [data-stagger] > :nth-child(4) { animation-delay: 270ms; }
+  [data-stagger] > :nth-child(5) { animation-delay: 360ms; }
+  [data-stagger] > :nth-child(6) { animation-delay: 450ms; }
+
+  html.ak-motion [data-sticker] { animation: akStickerIn .7s var(--ak-ease-out) .35s both; animation-play-state: paused; }
+  html.ak-motion [data-in] [data-sticker] { animation-play-state: running; }
+
+  [data-shimmer] { animation: akTextSweep 6s linear infinite; }
+
+  /* Neon line drawn across the process steps */
+  [data-steps-grid] { position: relative; }
+  [data-steps-grid]::before { content: ''; position: absolute; left: 0; right: 0; top: -1.5rem; height: 2px; border-radius: 2px; transform-origin: left center; pointer-events: none;
+    background: linear-gradient(90deg, rgb(255,20,147), rgb(138,43,255), rgb(0,255,200), rgb(57,255,20), rgb(201,148,26));
+    box-shadow: 0 0 14px rgba(255,20,147,.55); }
+  html.ak-motion [data-steps-grid]::before { scale: 0 1; }
+  html.ak-motion [data-steps-grid][data-in]::before { animation: akGrowX 1.4s var(--ak-ease-in-out) .15s both; }
+
+  /* Most-popular tier: rotating neon ring */
+  [data-tiers] > :nth-child(2)::before { content: ''; position: absolute; inset: -2px; border-radius: 8px; padding: 2px; pointer-events: none;
+    background: conic-gradient(from var(--ak-angle), rgb(255,20,147), rgb(138,43,255), rgb(0,255,200), rgb(255,20,147));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+    animation: akSpin 5s linear infinite; }
+
+  /* Scroll progress under the nav */
+  [data-progress] { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; transform-origin: left center; scale: 0 1; pointer-events: none;
+    background: linear-gradient(90deg, rgb(255,20,147), rgb(138,43,255), rgb(0,255,200)); box-shadow: 0 0 10px rgba(255,20,147,.8); }
+  @supports (animation-timeline: scroll()) {
+    [data-progress] { animation: akGrowX linear both; animation-timeline: scroll(root); }
+  }
+
+  /* Pointer-only: spotlight inside cards */
+  @media (hover: hover) and (pointer: fine) {
+    [data-stagger] > * { position: relative; }
+    [data-stagger] > *::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s ease;
+      background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.09), transparent 50%); }
+    [data-stagger] > *:hover::after { opacity: 1; }
+  }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
 </style>
 </helmet>
@@ -280,8 +335,10 @@
   <div id="ak-cursor-glow" style="position: fixed; top: 0; left: 0; width: 340px; height: 340px; margin: -170px 0 0 -170px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.16), rgba(var(--ak-accent4-rgb),.08) 45%, transparent 70%); filter: blur(20px); pointer-events: none; opacity: 0; transition: opacity .3s ease; z-index: 9998; will-change: transform;"></div>
   <div id="ak-cursor-ring" style="position: fixed; top: 0; left: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 1.5px solid rgba(var(--ak-accent-rgb),.9); box-shadow: 0 0 14px rgba(var(--ak-accent-rgb),.55), inset 0 0 10px rgba(var(--ak-accent-rgb),.25); pointer-events: none; opacity: 0; transition: opacity .3s ease, width .22s ease, height .22s ease, margin .22s ease, border-color .22s ease, background .22s ease; z-index: 9999; will-change: transform;"></div>
 
-  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 800; min-height: 4.4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; padding: 1rem clamp(1.25rem, 4vw, 3rem); background: rgba(var(--ak-bg-rgb),.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);">
+  <nav data-nav="" style="position: fixed; top: 0; left: 0; right: 0; z-index: 800; min-height: 4.4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; padding: 1rem clamp(1.25rem, 4vw, 3rem); background: rgba(var(--ak-bg-rgb),.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);">
     <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(var(--ak-accent-rgb),.55) 25%, rgba(var(--ak-accent4-rgb),.55) 55%, rgba(201,148,26,.4) 80%, transparent);"></div>
+
+    <div data-progress="" aria-hidden="true"></div>
 
     <a href="#top" style="position: relative; display: inline-flex; align-items: center;">
       <img src="/ad-lockup.png" alt="Akira Digital" width="496" height="120" decoding="async" style="height: 40px; width: auto; display: block;">
@@ -342,8 +399,8 @@
         <div style="position: relative;">
           <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 70%; height: 120%; border-radius: 50%; background: radial-gradient(ellipse, rgba(var(--ak-accent-rgb),.28), transparent 65%); filter: blur(60px); pointer-events: none; animation: akHaloPulse 7s ease-in-out infinite;"></div>
           <h1 style="position: relative; margin: 0 0 1.75rem; font-family: var(--ak-hero-font); font-style: italic; font-weight: 800; font-size: clamp(3rem, 7.2vw, 6.4rem); line-height: .95; letter-spacing: -.02em; text-wrap: balance;">
-            <span style="display: block; animation: akRise .8s ease both;">We build websites</span>
-            <span style="display: block; animation: akRise .8s ease .12s both;">that <span style="color: rgb(var(--ak-accent-rgb)); text-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.55);">win</span> <span style="background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 25%, rgb(201,148,26) 50%, rgb(var(--ak-accent3-rgb)) 75%, rgb(var(--ak-accent-rgb))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: akTextSweep 9s linear infinite;">business.</span></span>
+            <span style="display: block; animation: akHeroIn 1.1s cubic-bezier(0.23, 1, 0.32, 1) both;">We build websites</span>
+            <span style="display: block; animation: akHeroIn 1.1s cubic-bezier(0.23, 1, 0.32, 1) .18s both;">that <span style="display: inline-block; color: rgb(var(--ak-accent-rgb)); text-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.55); animation: akFlicker 1.8s linear 1.1s both;">win</span> <span style="background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 25%, rgb(201,148,26) 50%, rgb(var(--ak-accent3-rgb)) 75%, rgb(var(--ak-accent-rgb))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: akTextSweep 9s linear infinite;">business.</span></span>
           </h1>
         </div>
 
@@ -390,7 +447,7 @@
         <p style="margin: 0 0 2.4rem; max-width: 32rem; font-size: 1rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">
           87% of people research a business online before they call. When your site is dated — or missing — you never even make the shortlist. It happens quietly, every day, and nothing on your end tells you it's happening.
         </p>
-        <div style="display: flex; flex-direction: column; gap: .7rem;">
+        <div data-stagger="" style="display: flex; flex-direction: column; gap: .7rem;">
           <sc-for list="{{ problems }}" as="p" hint-placeholder-count="3">
             <div style="display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.1rem 1.2rem; border-radius: 8px; border: 1px solid {{ p.soft }}; background: linear-gradient(110deg, {{ p.soft }}, rgba(255,255,255,.012) 60%); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;" style-hover="transform: translateX(6px); border-color: {{ p.hue }}; box-shadow: 0 0 28px {{ p.soft }};">
               <div style="flex: 0 0 auto; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.35rem; line-height: 1; color: {{ p.hue }}; padding-top: .1rem;">{{ p.n }}</div>
@@ -626,11 +683,11 @@
           <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent3-rgb));"></span>
           <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">How our web design process works</span>
         </div>
-        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">From first call to <span style="display: inline-block; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; background: linear-gradient(100deg, rgb(255,20,147), rgb(138,43,255) 45%, rgb(0,255,200)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">launch.</span></h2>
+        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">From first call to <span data-shimmer="" style="display: inline-block; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; background: linear-gradient(100deg, rgb(255,20,147), rgb(138,43,255) 30%, rgb(0,255,200) 60%, rgb(255,20,147)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">launch.</span></h2>
         <p style="margin: 0 0 1.4rem; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">You work directly with the team building your site. No account managers, no ticket queue, no handoffs.</p>
-        <div style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; border-radius: 4px; background: rgb(0,255,200); color: #0a0a0c; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five steps, one team</div>
+        <div data-sticker="" style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; border-radius: 4px; background: rgb(0,255,200); color: #0a0a0c; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five steps, one team</div>
       </div>
-      <div data-reveal="" data-steps-grid="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .8rem; align-items: stretch;">
+      <div data-reveal="" data-steps-grid="" data-stagger="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .8rem; align-items: stretch;">
         <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
           <div style="position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 1.6rem 1.35rem 1.7rem; border-radius: 8px; border: 1px solid {{ s.soft }}; background: linear-gradient(160deg, {{ s.soft }}, rgba(255,255,255,.015) 60%); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;" style-hover="transform: translateY(-4px); border-color: {{ s.hue }}; box-shadow: 0 0 34px {{ s.soft }}, 0 16px 40px rgba(0,0,0,.45);">
             <div style="position: absolute; right: .8rem; bottom: .3rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 3.6rem; line-height: .8; color: {{ s.hue }}; opacity: .08; pointer-events: none;">{{ s.n }}</div>
@@ -653,8 +710,8 @@
           <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
           <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Why Akira Digital</span>
         </div>
-        <h2 style="margin: 0 0 1.5rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">Designed like it <span style="display: inline-block; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; background: linear-gradient(100deg, rgb(255,20,147), rgb(138,43,255) 45%, rgb(0,255,200)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">matters</span></h2>
-        <div style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; margin-bottom: 1.4rem; border-radius: 4px; background: rgb(255,20,147); color: #0a0a0c; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five things a template can't do</div>
+        <h2 style="margin: 0 0 1.5rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">Designed like it <span data-shimmer="" style="display: inline-block; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; background: linear-gradient(100deg, rgb(255,20,147), rgb(138,43,255) 30%, rgb(0,255,200) 60%, rgb(255,20,147)); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">matters</span></h2>
+        <div data-sticker="" style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; margin-bottom: 1.4rem; border-radius: 4px; background: rgb(255,20,147); color: #0a0a0c; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five things a template can't do</div>
         <p style="margin: 0 0 1.4rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); max-width: 32rem; text-wrap: pretty;">Akira Digital designs, writes, and builds every site in-house — one team, one set of hands on the type and the code.</p>
         <p style="margin: 0 0 2rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); max-width: 32rem; text-wrap: pretty;">No junior handoff, no template dressed up to look expensive. And when it's done you get the source, not a subscription — so your designer, or the next one, can keep building on it.</p>
         <div style="display: flex; flex-wrap: wrap; gap: .9rem;">
@@ -662,7 +719,7 @@
           <a href="#work" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid transparent; color: rgb(var(--ak-secondary-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-border-rgb),.18);">SEE THE WORK</a>
         </div>
       </div>
-      <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-direction: column; gap: .85rem;">
+      <div data-reveal="" data-stagger="" style="animation: akRise .7s ease both; display: flex; flex-direction: column; gap: .85rem;">
         <sc-for list="{{ whys }}" as="w" hint-placeholder-count="5">
           <div style="position: relative; overflow: hidden; display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: clamp(.9rem, 2vw, 1.6rem); padding: 1.5rem 1.6rem; border-radius: 8px; border: 1px solid {{ w.soft }}; background: linear-gradient(110deg, {{ w.soft }}, rgba(255,255,255,.015) 55%); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;" style-hover="transform: translateX(6px) translateY(-2px); border-color: {{ w.hue }}; box-shadow: 0 0 34px {{ w.soft }}, 0 16px 40px rgba(0,0,0,.45);">
             <div style="position: absolute; right: 1rem; bottom: .35rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 4.4rem; line-height: .8; color: {{ w.hue }}; opacity: .09; pointer-events: none;">{{ w.n }}</div>
@@ -693,7 +750,7 @@
         <span style="flex: 1; height: 1px; background: linear-gradient(to right, rgba(var(--ak-border-rgb),.25), transparent);"></span>
       </div>
 
-      <div data-reveal="" data-rgrid="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1.5rem; align-items: stretch; margin-bottom: 4.5rem;">
+      <div data-reveal="" data-rgrid="" data-stagger="" data-tiers="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 1.5rem; align-items: stretch; margin-bottom: 4.5rem;">
         <sc-for list="{{ tiers }}" as="t" hint-placeholder-count="4">
           <div style="padding: {{ t.pad }}; border: {{ t.border }}; border-radius: 6px; background: {{ t.bg }}; box-shadow: {{ t.glow }}; transform: {{ t.scale }}; z-index: {{ t.z }}; position: relative; display: flex; flex-direction: column; transition: transform .2s ease;">
             <div style="position: absolute; left: 0; right: 0; top: 0; height: {{ t.toplineH }}; background: {{ t.topline }};"></div>
@@ -1052,6 +1109,7 @@ class Component extends DCLogic {
     this.applyTheme();
     this.initGrain();
     this.initCursor();
+    this.initMotion();
     this.searchTimer = setInterval(() => this.setState(s => ({ searchTicks: s.searchTicks + 1 })), 2400);
   }
 
@@ -1069,6 +1127,8 @@ class Component extends DCLogic {
   componentWillUnmount() {
     if (this.searchTimer) clearInterval(this.searchTimer);
     if (this.raf) cancelAnimationFrame(this.raf);
+    if (this.io) this.io.disconnect();
+    if (this.onPointer) window.removeEventListener('pointermove', this.onPointer);
     window.removeEventListener('mousemove', this.onMove);
     window.removeEventListener('mouseover', this.onOver);
     window.removeEventListener('mouseout', this.onOut);
@@ -1120,6 +1180,42 @@ class Component extends DCLogic {
     window.addEventListener('mouseout', this.onOut, { passive: true });
   }
 
+  initMotion() {
+    if (!('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('ak-motion');
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.setAttribute('data-in', '');
+        this.io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
+    document.querySelectorAll('[data-reveal], [data-stagger]').forEach((el) => this.io.observe(el));
+
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    this.onPointer = (e) => {
+      const t = e.target;
+      if (!t || !t.closest) return;
+      const card = t.closest('[data-stagger] > *');
+      if (card) {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      }
+      const btn = t.closest('a[href="#contact"]');
+      if (this.magBtn && this.magBtn !== btn) { this.magBtn.style.translate = '0px 0px'; this.magBtn = null; }
+      if (btn) {
+        const r = btn.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2);
+        const dy = e.clientY - (r.top + r.height / 2);
+        btn.style.translate = (dx * .18).toFixed(1) + 'px ' + (dy * .3).toFixed(1) + 'px';
+        this.magBtn = btn;
+      }
+    };
+    window.addEventListener('pointermove', this.onPointer, { passive: true });
+  }
   componentDidUpdate(prevProps) {
     if (prevProps.neonMode !== this.props.neonMode || prevProps.heroFont !== this.props.heroFont) this.applyTheme();
   }
