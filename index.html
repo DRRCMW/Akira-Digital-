@@ -269,7 +269,33 @@
   }
   @keyframes akHaloPulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
   @keyframes akHaloPulse { 0%, 100% { opacity: .5; transform: translate(-50%,-50%) scale(1); } 50% { opacity: .85; transform: translate(-50%,-50%) scale(1.08); } }
-  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
+  /* Motion tokens (shared by every motion section) */
+  :root {
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --dur-press: 120ms;
+    --dur-hover: 160ms;
+    --dur-reveal: 480ms;
+  }
+  /* Scroll-triggered reveals. Paused only after JS confirms IntersectionObserver, so no-JS still shows everything. */
+  html.ak-motion [data-reveal] { animation-duration: var(--dur-reveal) !important; animation-timing-function: var(--ease-out) !important; }
+  html.ak-motion [data-reveal]:not([data-in]) { animation-play-state: paused !important; }
+  /* Press feedback (individual scale property, so it composes with inline hover transforms) */
+  [data-press]:active { scale: .97; }
+  @supports not (scale: 1) { [data-press]:active { transform: scale(.97); } }
+  /* Touch-only screens fire :hover on tap; keep the colour/glow, drop the lift (beats the runtime's generated .scpN:hover rules). */
+  @media (hover: none) { html [class*="scp"]:hover { transform: none !important; } }
+  @media print { html.ak-motion [data-reveal] { animation: none !important; opacity: 1 !important; transform: none !important; } }
+  /* Reduced motion: loops end, movement goes, essential fades and colour feedback stay */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
+    html.ak-motion [data-reveal] { animation: akFade 200ms ease both !important; }
+    html.ak-motion [data-reveal]:not([data-in]) { animation-play-state: paused !important; }
+    [data-press]:active { scale: 1; }
+    [data-press] { transition-property: background, border-color, color, box-shadow !important; }
+    html [class*="scp"]:hover { transform: none !important; }
+    html { scroll-behavior: auto; }
+  }
 </style>
 </helmet>
 
@@ -298,7 +324,7 @@
         <span style="font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">Taking projects</span>
       </span>
 
-      <a href="tel:+19725590881" aria-label="Call Akira Digital on (972) 559-0881" style="display: inline-flex; align-items: center; gap: .5rem; padding: .65rem 1rem; min-height: 44px; box-sizing: border-box; border-radius: 6px; border: 1px solid rgba(var(--ak-accent-rgb),.45); background: rgba(var(--ak-accent-rgb),.08); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .76rem; letter-spacing: .04em; white-space: nowrap; transition: all .18s ease;" style-hover="border-color: rgba(var(--ak-accent-rgb),.9); background: rgba(var(--ak-accent-rgb),.16);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="ak-tel-num">(972) 559-0881</span></a> <a href="#contact" style="position: relative; overflow: hidden; padding: .7rem 1.3rem; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .76rem; letter-spacing: .08em; white-space: nowrap; box-shadow: 0 0 20px rgba(var(--ak-accent-rgb),.35); transition: all .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 32px rgba(var(--ak-accent-rgb),.6); color: rgb(var(--ak-bg-rgb));">BOOK FREE CALL</a>
+      <a data-press="" href="tel:+19725590881" aria-label="Call Akira Digital on (972) 559-0881" style="display: inline-flex; align-items: center; gap: .5rem; padding: .65rem 1rem; min-height: 44px; box-sizing: border-box; border-radius: 6px; border: 1px solid rgba(var(--ak-accent-rgb),.45); background: rgba(var(--ak-accent-rgb),.08); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .76rem; letter-spacing: .04em; white-space: nowrap; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgba(var(--ak-accent-rgb),.9); background: rgba(var(--ak-accent-rgb),.16);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="ak-tel-num">(972) 559-0881</span></a> <a data-press="" href="#contact" style="position: relative; overflow: hidden; padding: .7rem 1.3rem; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .76rem; letter-spacing: .08em; white-space: nowrap; box-shadow: 0 0 20px rgba(var(--ak-accent-rgb),.35); transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 32px rgba(var(--ak-accent-rgb),.6); color: rgb(var(--ak-bg-rgb));">BOOK FREE CALL</a>
     </div>
   </nav>
 
@@ -355,8 +381,8 @@
         </p>
 
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; animation: akRise .8s ease .34s both;">
-          <a href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1rem 1.8rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); animation: akGlowPulse 3s ease-in-out infinite; color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4);">BOOK A FREE CALL →</a>
-          <a href="#preview" style="display: inline-flex; align-items: center; padding: 1rem 1.8rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">SEE YOUR WEBSITE DESIGN FIRST</a>
+          <a data-press="" href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1rem 1.8rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); animation: akGlowPulse 3s ease-in-out infinite; color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4);">BOOK A FREE CALL →</a>
+          <a data-press="" href="#preview" style="display: inline-flex; align-items: center; padding: 1rem 1.8rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">SEE YOUR WEBSITE DESIGN FIRST</a>
         </div>
 
       </div>
@@ -453,7 +479,7 @@
       <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-bottom: 2rem;">
         <span style="align-self: center; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-right: .3rem;">Start from</span>
         <sc-for list="{{ presetChips }}" as="p" hint-placeholder-count="5">
-          <button type="button" onClick="{{ p.pick }}" style="padding: .5rem .95rem; border-radius: 99px; cursor: pointer; white-space: nowrap; font-size: .72rem; font-weight: 600; letter-spacing: .06em; background: {{ p.bg }}; border: 1px solid {{ p.border }}; color: {{ p.color }}; transition: all .18s ease;" style-hover="transform: translateY(-2px); color: rgb(var(--ak-ink-rgb));">{{ p.label }}</button>
+          <button data-press="" type="button" onClick="{{ p.pick }}" style="padding: .5rem .95rem; border-radius: 99px; cursor: pointer; white-space: nowrap; font-size: .72rem; font-weight: 600; letter-spacing: .06em; background: {{ p.bg }}; border: 1px solid {{ p.border }}; color: {{ p.color }}; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="transform: translateY(-2px); color: rgb(var(--ak-ink-rgb));">{{ p.label }}</button>
         </sc-for>
       </div>
 
@@ -484,7 +510,7 @@
             <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">Type pairing</span>
             <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem;">
               <sc-for list="{{ pairChips }}" as="p" hint-placeholder-count="4">
-                <button type="button" onClick="{{ p.pick }}" style="text-align: left; padding: .6rem .7rem; border-radius: 6px; cursor: pointer; background: {{ p.bg }}; border: 1px solid {{ p.border }}; color: {{ p.color }}; transition: all .18s ease;" style-hover="transform: translateY(-2px);">
+                <button data-press="" type="button" onClick="{{ p.pick }}" style="text-align: left; padding: .6rem .7rem; border-radius: 6px; cursor: pointer; background: {{ p.bg }}; border: 1px solid {{ p.border }}; color: {{ p.color }}; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="transform: translateY(-2px);">
                   <span style="display: block; font-family: {{ p.font }}; font-size: 1.05rem; line-height: 1.1;">{{ p.label }}</span>
                   <span style="display: block; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; opacity: .65; margin-top: .25rem;">{{ p.note }}</span>
                 </button>
@@ -497,22 +523,22 @@
               <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">Hero layout</span>
               <div style="display: flex; gap: .3rem;">
                 <sc-for list="{{ layoutChips }}" as="l" hint-placeholder-count="3">
-                  <button type="button" onClick="{{ l.pick }}" style="flex: 1 1 0; min-width: 0; padding: .5rem .2rem; border-radius: 6px; cursor: pointer; font-size: .55rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: {{ l.bg }}; border: 1px solid {{ l.border }}; color: {{ l.color }}; transition: all .18s ease;" style-hover="transform: translateY(-2px);">{{ l.label }}</button>
+                  <button data-press="" type="button" onClick="{{ l.pick }}" style="flex: 1 1 0; min-width: 0; padding: .5rem .2rem; border-radius: 6px; cursor: pointer; font-size: .55rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: {{ l.bg }}; border: 1px solid {{ l.border }}; color: {{ l.color }}; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="transform: translateY(-2px);">{{ l.label }}</button>
                 </sc-for>
               </div>
             </div>
             <div style="min-width: 0;">
               <span style="display: block; font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .55rem;">Surface</span>
               <div style="display: flex; gap: .3rem; padding: .2rem; border-radius: 6px; border: 1px solid rgba(var(--ak-border-rgb),.12);">
-                <button type="button" onClick="{{ setDark }}" style="flex: 1 1 0; min-width: 0; padding: .42rem .2rem; border: 0; border-radius: 4px; cursor: pointer; font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: {{ modeDarkBg }}; color: {{ modeDarkColor }}; transition: all .2s ease;">Dark</button>
-                <button type="button" onClick="{{ setLight }}" style="flex: 1 1 0; min-width: 0; padding: .42rem .2rem; border: 0; border-radius: 4px; cursor: pointer; font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: {{ modeLightBg }}; color: {{ modeLightColor }}; transition: all .2s ease;">Light</button>
+                <button data-press="" type="button" onClick="{{ setDark }}" style="flex: 1 1 0; min-width: 0; padding: .42rem .2rem; border: 0; border-radius: 4px; cursor: pointer; font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: {{ modeDarkBg }}; color: {{ modeDarkColor }}; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;">Dark</button>
+                <button data-press="" type="button" onClick="{{ setLight }}" style="flex: 1 1 0; min-width: 0; padding: .42rem .2rem; border: 0; border-radius: 4px; cursor: pointer; font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: {{ modeLightBg }}; color: {{ modeLightColor }}; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;">Light</button>
               </div>
             </div>
           </div>
 
           <div style="display: flex; flex-direction: column; gap: .6rem;">
-            <button type="button" onClick="{{ shuffle }}" style="padding: .8rem 1rem; border-radius: 4px; cursor: pointer; background: transparent; border: 1px dashed rgba(var(--ak-border-rgb),.28); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: .95rem; letter-spacing: .1em; transition: all .18s ease;" style-hover="border-color: rgb(0,255,200); color: rgb(0,255,200); transform: translateY(-1px);">SURPRISE ME ⟳</button>
-            <a href="#contact" style="display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px);">BUILD ME THE REAL ONE →</a>
+            <button data-press="" type="button" onClick="{{ shuffle }}" style="padding: .8rem 1rem; border-radius: 4px; cursor: pointer; background: transparent; border: 1px dashed rgba(var(--ak-border-rgb),.28); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: .95rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgb(0,255,200); color: rgb(0,255,200); transform: translateY(-1px);">SURPRISE ME ⟳</button>
+            <a data-press="" href="#contact" style="display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px);">BUILD ME THE REAL ONE →</a>
           </div>
         </div>
 
@@ -612,7 +638,7 @@
                 <span style="color: {{ w.hue }}; font-size: .7rem;">◆</span><span>{{ w.t }}</span>
               </div>
             </sc-for>
-            <a href="https://atlanta-pro-plumbing.vercel.app/" target="_blank" rel="noopener" style="margin-top: .6rem; display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.2); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(0,255,200); color: rgb(0,255,200); transform: translateY(-1px);">OPEN THE FULL SITE →</a>
+            <a data-press="" href="https://atlanta-pro-plumbing.vercel.app/" target="_blank" rel="noopener" style="margin-top: .6rem; display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.2); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgb(0,255,200); color: rgb(0,255,200); transform: translateY(-1px);">OPEN THE FULL SITE →</a>
           </div>
         </div>
       </div>
@@ -658,8 +684,8 @@
         <p style="margin: 0 0 1.4rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); max-width: 32rem; text-wrap: pretty;">Akira Digital designs, writes, and builds every site in-house — one team, one set of hands on the type and the code.</p>
         <p style="margin: 0 0 2rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); max-width: 32rem; text-wrap: pretty;">No junior handoff, no template dressed up to look expensive. And when it's done you get the source, not a subscription — so your designer, or the next one, can keep building on it.</p>
         <div style="display: flex; flex-wrap: wrap; gap: .9rem;">
-          <a href="#contact" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">TALK TO OUR TEAM →</a>
-          <a href="#work" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid transparent; color: rgb(var(--ak-secondary-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-border-rgb),.18);">SEE THE WORK</a>
+          <a data-press="" href="#contact" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">TALK TO OUR TEAM →</a>
+          <a data-press="" href="#work" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid transparent; color: rgb(var(--ak-secondary-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-border-rgb),.18);">SEE THE WORK</a>
         </div>
       </div>
       <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-direction: column; gap: .85rem;">
@@ -712,7 +738,7 @@
                 </div>
               </sc-for>
             </div>
-            <a href="{{ t.href }}" target="{{ t.target }}" rel="noopener" style="display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; background: {{ t.ctaBg }}; border: 1px solid {{ t.ctaBorder }}; color: {{ t.ctaColor }}; font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="transform: translateY(-1px); border-color: rgb(var(--ak-accent-rgb));">{{ t.cta }}</a>
+            <a data-press="" href="{{ t.href }}" target="{{ t.target }}" rel="noopener" style="display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; background: {{ t.ctaBg }}; border: 1px solid {{ t.ctaBorder }}; color: {{ t.ctaColor }}; font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="transform: translateY(-1px); border-color: rgb(var(--ak-accent-rgb));">{{ t.cta }}</a>
           </div>
         </sc-for>
       </div>
@@ -748,7 +774,7 @@
                 <div style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-top: .8rem;">Book with Stripe →</div>
               </a>
             </div>
-            <a href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 6px; background: transparent; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.18); font-family: 'Archivo', sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; transition: all .15s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent-rgb),.55);">Prefer to talk first? Book a call →</a>
+            <a data-press="" href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 6px; background: transparent; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.18); font-family: 'Archivo', sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent-rgb),.55);">Prefer to talk first? Book a call →</a>
             <div style="text-align: center; font-size: .7rem; color: rgb(var(--ak-secondary-rgb));">Buy several days at once — book once per day, or reach out and we'll block the time out for you.</div>
           </div>
         </div>
@@ -778,7 +804,7 @@
             <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .7rem;">How many pages</div>
             <div style="display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.6rem;">
               <sc-for list="{{ sizeOptions }}" as="o" hint-placeholder-count="3">
-                <button type="button" onClick="{{ o.pick }}" style="padding: .7rem 1.1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; text-align: left; background: {{ o.bg }}; border: 1px solid {{ o.border }}; color: {{ o.color }}; transition: all .15s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb));">
+                <button data-press="" type="button" onClick="{{ o.pick }}" style="padding: .7rem 1.1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; text-align: left; background: {{ o.bg }}; border: 1px solid {{ o.border }}; color: {{ o.color }}; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgb(var(--ak-accent-rgb));">
                   <span style="display: block; font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .05em;">{{ o.label }}</span>
                   <span style="display: block; font-size: .7rem; color: rgb(var(--ak-secondary-rgb)); margin-top: .15rem;">{{ o.note }}</span>
                 </button>
@@ -788,7 +814,7 @@
             <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .7rem;">Add-ons</div>
             <div style="display: flex; flex-wrap: wrap; gap: .6rem;">
               <sc-for list="{{ addonOptions }}" as="a" hint-placeholder-count="7">
-                <button type="button" onClick="{{ a.pick }}" style="display: flex; align-items: center; gap: .6rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ a.bg }}; border: 1px solid {{ a.border }}; color: {{ a.color }}; transition: all .15s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb));">
+                <button data-press="" type="button" onClick="{{ a.pick }}" style="display: flex; align-items: center; gap: .6rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ a.bg }}; border: 1px solid {{ a.border }}; color: {{ a.color }}; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgb(var(--ak-accent-rgb));">
                   <span style="color: {{ a.tick }};">◆</span><span>{{ a.label }}</span><span style="color: rgb(var(--ak-secondary-rgb)); font-size: .78rem;">{{ a.priceLabel }}</span>
                 </button>
               </sc-for>
@@ -797,7 +823,7 @@
             <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin: 1.6rem 0 .7rem;">Add a design day</div>
             <div style="display: flex; flex-wrap: wrap; gap: .6rem;">
               <sc-for list="{{ designHourOptions }}" as="d" hint-placeholder-count="3">
-                <button type="button" onClick="{{ d.pick }}" style="display: flex; align-items: center; gap: .5rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ d.bg }}; border: 1px solid {{ d.border }}; color: {{ d.color }}; transition: all .15s ease;" style-hover="border-color: rgb(201,148,26);">
+                <button data-press="" type="button" onClick="{{ d.pick }}" style="display: flex; align-items: center; gap: .5rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ d.bg }}; border: 1px solid {{ d.border }}; color: {{ d.color }}; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgb(201,148,26);">
                   <span>{{ d.label }}</span><span style="color: rgb(201,148,26); font-size: .78rem;">{{ d.priceLabel }}</span>
                 </button>
               </sc-for>
@@ -816,7 +842,7 @@
                 </div>
               </sc-for>
             </div>
-            <a href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px);">SEND ME THIS QUOTE →</a>
+            <a data-press="" href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px);">SEND ME THIS QUOTE →</a>
             <div style="margin-top: .8rem; font-size: .68rem; line-height: 1.5; color: rgb(var(--ak-secondary-rgb)); text-align: center;">An estimate, not an invoice. We confirm scope on the call.<br>Card, or Afterpay / Klarna at checkout if offered.</div>
           </div>
         </div>
@@ -830,7 +856,7 @@
       <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb)); margin-bottom: 1.4rem;">◆ Ready to start ◆</div>
       <h2 style="margin: 0 0 1.4rem; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1; letter-spacing: -.01em;">Stop losing customers to competitors.</h2>
       <p style="margin: 0 0 2.4rem; font-size: 1.05rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">Book a free web design consultation. We'll show you what your site would look like, what you'd rank for, and what to expect. No pitch, no obligation.</p>
-      <a href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1.1rem 2.2rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.3rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 28px rgba(var(--ak-accent-rgb),.45);">BOOK FREE CALL →</a>
+      <a data-press="" href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1.1rem 2.2rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.3rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 28px rgba(var(--ak-accent-rgb),.45);">BOOK FREE CALL →</a>
       <div style="margin-top: 1.4rem; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb));">◆ No commitment ◆ No sales pitch ◆ Straight answers</div>
     </div>
   </section>
@@ -891,7 +917,7 @@
               <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">What do you want the site to do</span>
               <textarea name="message" placeholder="More booked jobs. Right now people call the shop down the street." style="width: 100%; box-sizing: border-box; min-height: 120px; resize: vertical; padding: .85rem 1rem; font-size: .95rem; line-height: 1.6; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;" style-focus="box-shadow: 0 0 0 3px rgba(var(--ak-accent-rgb),.18);"></textarea>
             </label>
-            <button type="submit" style="grid-column: span 2; padding: 1rem 1.5rem; border: 0; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .08em; cursor: pointer; box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.3); transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 32px rgba(var(--ak-accent-rgb),.45);">SEND MY PROJECT DETAILS</button>
+            <button data-press="" type="submit" style="grid-column: span 2; padding: 1rem 1.5rem; border: 0; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .08em; cursor: pointer; box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.3); transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 32px rgba(var(--ak-accent-rgb),.45);">SEND MY PROJECT DETAILS</button>
           </form>
         </sc-if>
       </div>
@@ -953,7 +979,7 @@
 
         <div>
           <div style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.1; margin-bottom: 1.2rem;">Ready to stop losing customers?</div>
-          <a href="#contact" style="display: inline-block; padding: .85rem 1.6rem; border-radius: 6px; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .85rem; letter-spacing: .08em; box-shadow: 0 0 22px rgba(var(--ak-accent-rgb),.35); transition: all .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.6); color: rgb(var(--ak-bg-rgb));">BOOK A FREE CALL →</a>
+          <a data-press="" href="#contact" style="display: inline-block; padding: .85rem 1.6rem; border-radius: 6px; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .85rem; letter-spacing: .08em; box-shadow: 0 0 22px rgba(var(--ak-accent-rgb),.35); transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.6); color: rgb(var(--ak-bg-rgb));">BOOK A FREE CALL →</a>
         </div>
       </div>
 
@@ -965,7 +991,7 @@
             <sc-for list="{{ seoServices }}" as="s" hint-placeholder-count="12">
               <span style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.12); transition: color .2s ease, border-color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent3-rgb),.5);">{{ s }}</span>
             </sc-for>
-            <a href="#contact" style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-accent3-rgb)); border: 1px dashed rgba(var(--ak-accent3-rgb),.55); transition: all .2s ease;" style-hover="color: rgb(var(--ak-accent3-rgb)); border-style: solid; background: rgba(var(--ak-accent3-rgb),.08);">Something else? Ask →</a>
+            <a data-press="" href="#contact" style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-accent3-rgb)); border: 1px dashed rgba(var(--ak-accent3-rgb),.55); transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="color: rgb(var(--ak-accent3-rgb)); border-style: solid; background: rgba(var(--ak-accent3-rgb),.08);">Something else? Ask →</a>
           </div>
         </div>
         <div>
@@ -975,7 +1001,7 @@
             <sc-for list="{{ seoIndustries }}" as="i" hint-placeholder-count="22">
               <span style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.12); transition: color .2s ease, border-color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent4-rgb),.5);">{{ i }}</span>
             </sc-for>
-            <a href="#contact" style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-accent4-text-rgb)); border: 1px dashed rgba(var(--ak-accent4-rgb),.55); transition: all .2s ease;" style-hover="color: rgb(var(--ak-accent4-text-rgb)); border-style: solid; background: rgba(var(--ak-accent4-rgb),.08);">Not listed? Still yes →</a>
+            <a data-press="" href="#contact" style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-accent4-text-rgb)); border: 1px dashed rgba(var(--ak-accent4-rgb),.55); transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="color: rgb(var(--ak-accent4-text-rgb)); border-style: solid; background: rgba(var(--ak-accent4-rgb),.08);">Not listed? Still yes →</a>
           </div>
         </div>
       </div>
@@ -1052,6 +1078,7 @@ class Component extends DCLogic {
     this.applyTheme();
     this.initGrain();
     this.initCursor();
+    this.initReveals();
     this.searchTimer = setInterval(() => this.setState(s => ({ searchTicks: s.searchTicks + 1 })), 2400);
   }
 
@@ -1069,6 +1096,9 @@ class Component extends DCLogic {
   componentWillUnmount() {
     if (this.searchTimer) clearInterval(this.searchTimer);
     if (this.raf) cancelAnimationFrame(this.raf);
+    if (this.revealObserver) this.revealObserver.disconnect();
+    if (this.onRevealScroll) window.removeEventListener(this.revealSweepEvent, this.onRevealScroll);
+    clearTimeout(this.revealSweepTimer);
     window.removeEventListener('mousemove', this.onMove);
     window.removeEventListener('mouseover', this.onOver);
     window.removeEventListener('mouseout', this.onOut);
@@ -1120,6 +1150,36 @@ class Component extends DCLogic {
     window.addEventListener('mouseout', this.onOut, { passive: true });
   }
 
+  initReveals() {
+    if (!('IntersectionObserver' in window)) return;
+    document.documentElement.classList.add('ak-motion');
+    this.revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // Reveal when it enters, or immediately if the page loaded scrolled past it (anchor links, reloads).
+        if (!entry.isIntersecting && entry.boundingClientRect.bottom > 0) return;
+        entry.target.setAttribute('data-in', '');
+        this.revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => this.revealObserver.observe(el));
+    // A fast flick can carry an element from below to above the viewport without an intersection
+    // change, so sweep once scrolling settles (scrollend where supported, debounced scroll elsewhere).
+    this.revealSweep = () => {
+      document.querySelectorAll('[data-reveal]:not([data-in])').forEach((el) => {
+        if (el.getBoundingClientRect().bottom > 0) return;
+        el.setAttribute('data-in', '');
+        this.revealObserver.unobserve(el);
+      });
+    };
+    if ('onscrollend' in window) {
+      this.revealSweepEvent = 'scrollend';
+      this.onRevealScroll = this.revealSweep;
+    } else {
+      this.revealSweepEvent = 'scroll';
+      this.onRevealScroll = () => { clearTimeout(this.revealSweepTimer); this.revealSweepTimer = setTimeout(this.revealSweep, 150); };
+    }
+    window.addEventListener(this.revealSweepEvent, this.onRevealScroll, { passive: true });
+  }
   componentDidUpdate(prevProps) {
     if (prevProps.neonMode !== this.props.neonMode || prevProps.heroFont !== this.props.heroFont) this.applyTheme();
   }
