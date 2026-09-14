@@ -254,11 +254,13 @@
   @keyframes akBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
   @keyframes akDrift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(2%, -3%); } }
   @keyframes akNudge { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
-  @keyframes akGlowPulse { 0%, 100% { box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4); } 50% { box-shadow: 0 0 34px rgba(var(--ak-accent4-rgb),.5); } }
+  @keyframes akGlowA { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @keyframes akGlowB { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
   @keyframes akBlobA { 0%, 100% { transform: translate(-6%, -4%) scale(1); } 33% { transform: translate(8%, 6%) scale(1.18); } 66% { transform: translate(-2%, 10%) scale(.92); } }
   @keyframes akBlobB { 0%, 100% { transform: translate(5%, 6%) scale(1.05); } 40% { transform: translate(-9%, -6%) scale(.9); } 70% { transform: translate(4%, -10%) scale(1.2); } }
   @keyframes akBlobC { 0%, 100% { transform: translate(0, 8%) scale(.95); } 50% { transform: translate(-8%, -8%) scale(1.15); } }
-  @keyframes akTextSweep { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+  @keyframes akTextBreathe { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+  @keyframes akWordIn { from { opacity: 0; transform: translateY(.22em); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
   @keyframes akSheen { 0% { transform: translateX(-120%) skewX(-18deg); opacity: 0; } 12% { opacity: .5; } 40% { opacity: 0; } 100% { transform: translateX(320%) skewX(-18deg); opacity: 0; } }
   @keyframes akWords {
     0%, 18% { transform: translateY(0); }
@@ -282,6 +284,14 @@
   html.ak-motion [data-reveal]:not([data-in]) { animation-play-state: paused !important; }
   /* Press feedback (individual scale property, so it composes with inline hover transforms) */
   [data-press]:active { scale: .97; }
+  /* Hero CTA glow: same pink-to-purple pulse as before, as two composited layers crossfading opacity */
+  [data-glow] { position: relative; isolation: isolate; }
+  [data-glow]::before, [data-glow]::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1; animation: 3s ease-in-out infinite both; }
+  [data-glow]::before { box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4); animation-name: akGlowA; }
+  [data-glow]::after { box-shadow: 0 0 34px rgba(var(--ak-accent4-rgb),.5); animation-name: akGlowB; }
+  @media (hover: hover) and (pointer: fine) { [data-glow]:hover::before, [data-glow]:hover::after { animation: none; opacity: 0; } }
+  /* Hero ambient loops pause while the hero is off-screen */
+  [data-hero][data-offscreen] [data-ambient], [data-hero][data-offscreen] [data-glow]::before, [data-hero][data-offscreen] [data-glow]::after { animation-play-state: paused !important; }
   @supports not (scale: 1) { [data-press]:active { transform: scale(.97); } }
   /* Touch-only screens fire :hover on tap; keep the colour/glow, drop the lift (beats the runtime's generated .scpN:hover rules). */
   @media (hover: none) { html [class*="scp"]:hover { transform: none !important; } }
@@ -292,6 +302,7 @@
     html.ak-motion [data-reveal] { animation: akFade 200ms ease both !important; }
     html.ak-motion [data-reveal]:not([data-in]) { animation-play-state: paused !important; }
     [data-press]:active { scale: 1; }
+    [data-word] { animation: akFade 200ms ease both !important; }
     [data-press] { transition-property: background, border-color, color, box-shadow !important; }
     html [class*="scp"]:hover { transform: none !important; }
     html { scroll-behavior: auto; }
@@ -300,11 +311,6 @@
 </helmet>
 
 <div style="position: relative; overflow-x: hidden; background: rgb(var(--ak-bg-rgb));">
-
-  
-
-  <div id="ak-cursor-glow" style="position: fixed; top: 0; left: 0; width: 340px; height: 340px; margin: -170px 0 0 -170px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.16), rgba(var(--ak-accent4-rgb),.08) 45%, transparent 70%); filter: blur(20px); pointer-events: none; opacity: 0; transition: opacity .3s ease; z-index: 9998; will-change: transform;"></div>
-  <div id="ak-cursor-ring" style="position: fixed; top: 0; left: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 1.5px solid rgba(var(--ak-accent-rgb),.9); box-shadow: 0 0 14px rgba(var(--ak-accent-rgb),.55), inset 0 0 10px rgba(var(--ak-accent-rgb),.25); pointer-events: none; opacity: 0; transition: opacity .3s ease, width .22s ease, height .22s ease, margin .22s ease, border-color .22s ease, background .22s ease; z-index: 9999; will-change: transform;"></div>
 
   <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 800; min-height: 4.4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; padding: 1rem clamp(1.25rem, 4vw, 3rem); background: rgba(var(--ak-bg-rgb),.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);">
     <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(var(--ak-accent-rgb),.55) 25%, rgba(var(--ak-accent4-rgb),.55) 55%, rgba(201,148,26,.4) 80%, transparent);"></div>
@@ -328,32 +334,34 @@
     </div>
   </nav>
 
-  <section id="top" style="position: relative; min-height: 100svh; display: flex; align-items: center; padding: 9rem clamp(1.25rem, 4vw, 3rem) 5rem; overflow: hidden;">
+  <section id="top" data-hero="" style="position: relative; min-height: 100svh; display: flex; align-items: center; padding: 9rem clamp(1.25rem, 4vw, 3rem) 5rem; overflow: hidden;">
 
     <div style="position: absolute; inset: 0; background-image: url('laptop-photo.png'); background-size: cover; background-position: center 35%; pointer-events: none; z-index: 0;"></div>
     <div style="position: absolute; inset: 0; background: rgba(6,6,6,.82); pointer-events: none; z-index: 0;"></div>
     <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(var(--ak-border-rgb),.035) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--ak-border-rgb),.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);"></div>
-    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(var(--ak-accent-rgb),.13), transparent 70%); animation: akDrift 18s ease-in-out infinite;"></div>
+    <div data-ambient="" style="position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(var(--ak-accent-rgb),.13), transparent 70%); animation: akDrift 18s ease-in-out infinite;"></div>
 
-    <div style="position: absolute; top: -10%; left: -8%; width: 46vw; height: 46vw; max-width: 720px; max-height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.4), transparent 65%); filter: blur(90px); pointer-events: none; z-index: 0; animation: akBlobA 22s ease-in-out infinite;"></div>
-    <div style="position: absolute; bottom: -14%; right: -10%; width: 42vw; height: 42vw; max-width: 660px; max-height: 660px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent4-rgb),.36), transparent 65%); filter: blur(100px); pointer-events: none; z-index: 0; animation: akBlobB 27s ease-in-out infinite;"></div>
-    <div style="position: absolute; top: 30%; right: 22%; width: 26vw; height: 26vw; max-width: 420px; max-height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent3-rgb),.22), transparent 65%); filter: blur(110px); pointer-events: none; z-index: 0; animation: akBlobC 19s ease-in-out infinite;"></div>
+    <div data-ambient="" style="position: absolute; top: -10%; left: -8%; width: 46vw; height: 46vw; max-width: 720px; max-height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.4), transparent 65%); filter: blur(90px); pointer-events: none; z-index: 0; animation: akBlobA 22s ease-in-out infinite;"></div>
+    <div data-ambient="" style="position: absolute; bottom: -14%; right: -10%; width: 42vw; height: 42vw; max-width: 660px; max-height: 660px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent4-rgb),.36), transparent 65%); filter: blur(100px); pointer-events: none; z-index: 0; animation: akBlobB 27s ease-in-out infinite;"></div>
+    <div data-ambient="" style="position: absolute; top: 30%; right: 22%; width: 26vw; height: 26vw; max-width: 420px; max-height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent3-rgb),.22), transparent 65%); filter: blur(110px); pointer-events: none; z-index: 0; animation: akBlobC 19s ease-in-out infinite;"></div>
 
     <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;">
-      <div style="position: absolute; top: 0; bottom: 0; width: 22%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.07), transparent); animation: akSheen 9s ease-in-out infinite;"></div>
+      <div data-ambient="" style="position: absolute; top: 0; bottom: 0; width: 22%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.07), transparent); animation: akSheen 9s ease-in-out infinite;"></div>
     </div>
 
     <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, rgba(0,0,0,.55)); pointer-events: none; z-index: 0;"></div>
 
+    <div data-hero-halo="" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 520px; height: 520px; margin: -260px 0 0 -260px; border-radius: 50%; background: radial-gradient(circle, rgba(201,148,26,.10), rgba(var(--ak-accent-rgb),.07) 42%, transparent 70%); pointer-events: none; opacity: 0; transition: opacity 400ms var(--ease-out); z-index: 0;"></div>
+
     <div style="position: relative; z-index: 1; width: 100%; max-width: 900px; margin: 0 auto; text-align: center;">
 
       <div>
-        <div style="display: flex; align-items: center; justify-content: center; gap: .75rem; margin-bottom: 1.8rem; animation: akFade .8s ease both;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: .75rem; margin-bottom: 1.8rem; animation: akFade var(--dur-reveal) var(--ease-out) both;">
           <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent-rgb));"></span>
           <span style="display: inline-flex; align-items: baseline; gap: .4em; font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;">
             <span style="color: rgb(var(--ak-secondary-rgb));">More</span>
             <span style="display: inline-block; height: 1.3em; overflow: hidden; text-align: left; min-width: 8.5em;">
-              <span style="display: block; animation: akWords 13s cubic-bezier(.7,0,.3,1) infinite;">
+              <span data-ambient="" style="display: block; animation: akWords 13s cubic-bezier(.7,0,.3,1) infinite;">
                 <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent-rgb));">phone calls</span>
                 <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent4-text-rgb));">booked jobs</span>
                 <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent3-rgb));">new customers</span>
@@ -366,22 +374,22 @@
         </div>
 
         <div style="position: relative;">
-          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 70%; height: 120%; border-radius: 50%; background: radial-gradient(ellipse, rgba(var(--ak-accent-rgb),.28), transparent 65%); filter: blur(60px); pointer-events: none; animation: akHaloPulse 7s ease-in-out infinite;"></div>
+          <div data-ambient="" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 70%; height: 120%; border-radius: 50%; background: radial-gradient(ellipse, rgba(var(--ak-accent-rgb),.28), transparent 65%); filter: blur(60px); pointer-events: none; animation: akHaloPulse 7s ease-in-out infinite;"></div>
           <h1 style="position: relative; margin: 0 0 1.75rem; font-family: var(--ak-hero-font); font-style: italic; font-weight: 800; font-size: clamp(3rem, 7.2vw, 6.4rem); line-height: .95; letter-spacing: -.02em; text-wrap: balance;">
-            <span style="display: block; animation: akRise .8s ease both;">We build websites</span>
-            <span style="display: block; animation: akRise .8s ease .12s both;">that <span style="color: rgb(var(--ak-accent-rgb)); text-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.55);">win</span> <span style="background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 25%, rgb(201,148,26) 50%, rgb(var(--ak-accent3-rgb)) 75%, rgb(var(--ak-accent-rgb))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: akTextSweep 9s linear infinite;">business.</span></span>
+            <span style="display: block;"><span data-word="" style="display: inline-block; animation: akWordIn var(--dur-reveal) var(--ease-out) 0ms both;">We</span> <span data-word="" style="display: inline-block; animation: akWordIn var(--dur-reveal) var(--ease-out) 60ms both;">build</span> <span data-word="" style="display: inline-block; animation: akWordIn var(--dur-reveal) var(--ease-out) 120ms both;">websites</span></span>
+            <span style="display: block;"><span data-word="" style="display: inline-block; animation: akWordIn var(--dur-reveal) var(--ease-out) 180ms both;">that</span> <span data-word="" style="display: inline-block; animation: akWordIn var(--dur-reveal) var(--ease-out) 240ms both; color: rgb(var(--ak-accent-rgb)); text-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.55);">win</span> <span data-word="" data-ambient="" style="display: inline-block; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 25%, rgb(201,148,26) 50%, rgb(var(--ak-accent3-rgb)) 75%, rgb(var(--ak-accent-rgb))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: akWordIn var(--dur-reveal) var(--ease-out) 300ms both, akTextBreathe 8s var(--ease-in-out) 780ms infinite alternate;">business.</span></span>
           </h1>
         </div>
 
-        <p style="max-width: 40rem; margin: 0 auto 1.2rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); text-wrap: pretty; animation: akRise .8s ease .2s both;">
+        <p style="max-width: 40rem; margin: 0 auto 1.2rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); text-wrap: pretty; animation: akRise var(--dur-reveal) var(--ease-out) 360ms both;">
           Akira Digital is a <strong style="font-weight: 700; color: rgb(var(--ak-ink-rgb));">web design agency for businesses that live or die by their local reputation</strong> — trades and home services, law firms, clinics and med spas, studios, restaurants, and plenty that don't fit a category.
         </p>
-        <p style="max-width: 34rem; margin: 0 auto 2.4rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty; animation: akRise .8s ease .24s both;">
+        <p style="max-width: 34rem; margin: 0 auto 2.4rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty; animation: akRise var(--dur-reveal) var(--ease-out) 420ms both;">
           Customers check you out online before they ever call. If what they find looks dated, they call someone else. We design, write and build the site that keeps them — mobile-first, fast, and tuned for local search. Packages from $1,000.
         </p>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; animation: akRise .8s ease .34s both;">
-          <a data-press="" href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1rem 1.8rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); animation: akGlowPulse 3s ease-in-out infinite; color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4);">BOOK A FREE CALL →</a>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; animation: akRise var(--dur-reveal) var(--ease-out) 480ms both;">
+          <a data-press="" data-glow="" href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1rem 1.8rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4);">BOOK A FREE CALL →</a>
           <a data-press="" href="#preview" style="display: inline-flex; align-items: center; padding: 1rem 1.8rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: transform var(--dur-hover) var(--ease-out), scale var(--dur-press) var(--ease-out), background var(--dur-hover) ease, border-color var(--dur-hover) ease, color var(--dur-hover) ease, box-shadow var(--dur-hover) ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">SEE YOUR WEBSITE DESIGN FIRST</a>
         </div>
 
@@ -389,7 +397,7 @@
 
     </div>
 
-    <a href="#problem" style="position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); font-size: .6rem; letter-spacing: .24em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); animation: akNudge 2s ease-in-out infinite;">Scroll</a>
+    <a href="#problem" data-ambient="" style="position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); font-size: .6rem; letter-spacing: .24em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); animation: akNudge 2s ease-in-out infinite;">Scroll</a>
   </section>
 
   <div style="border-top: 1px solid rgba(var(--ak-accent-rgb),.25); border-bottom: 1px solid rgba(var(--ak-accent-rgb),.25); background: rgb(var(--ak-bg2-rgb)); overflow: hidden; padding: .85rem 0;">
@@ -1077,7 +1085,7 @@ class Component extends DCLogic {
   componentDidMount() {
     this.applyTheme();
     this.initGrain();
-    this.initCursor();
+    this.initHero();
     this.initReveals();
     this.searchTimer = setInterval(() => this.setState(s => ({ searchTicks: s.searchTicks + 1 })), 2400);
   }
@@ -1095,61 +1103,70 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     if (this.searchTimer) clearInterval(this.searchTimer);
-    if (this.raf) cancelAnimationFrame(this.raf);
     if (this.revealObserver) this.revealObserver.disconnect();
     if (this.onRevealScroll) window.removeEventListener(this.revealSweepEvent, this.onRevealScroll);
     clearTimeout(this.revealSweepTimer);
-    window.removeEventListener('mousemove', this.onMove);
-    window.removeEventListener('mouseover', this.onOver);
-    window.removeEventListener('mouseout', this.onOut);
+    if (this.heroObserver) this.heroObserver.disconnect();
+    if (this.haloRaf) cancelAnimationFrame(this.haloRaf);
+    clearTimeout(this.heroArmTimer);
+    if (this.onHeroScroll) window.removeEventListener('scroll', this.onHeroScroll);
+    if (this.heroEl && this.onHeroMove) {
+      this.heroEl.removeEventListener('pointermove', this.onHeroMove);
+      this.heroEl.removeEventListener('pointerleave', this.onHeroLeave);
+    }
   }
 
-  initCursor() {
-    if (window.matchMedia('(hover: none)').matches) return;
+  initHero() {
+    const hero = document.querySelector('[data-hero]');
+    if (!hero) return;
+    this.heroEl = hero;
+
+    // Pause the hero's ambient loops while it is off-screen.
+    if ('IntersectionObserver' in window) {
+      // Armed after the entrance (last word + copy finish by ~1s), so a load that starts
+      // scrolled past the hero can never freeze the headline mid-reveal.
+      this.heroObserver = new IntersectionObserver(([entry]) => {
+        this.heroVisible = entry.isIntersecting;
+        if (!this.heroArmed) return;
+        if (entry.isIntersecting) hero.removeAttribute('data-offscreen');
+        else hero.setAttribute('data-offscreen', '');
+      });
+      this.heroObserver.observe(hero);
+      this.heroArmTimer = setTimeout(() => {
+        this.heroArmed = true;
+        if (this.heroVisible === false) hero.setAttribute('data-offscreen', '');
+      }, 1200);
+    }
+
+    // Warm halo that trails the pointer inside the hero only. The native cursor stays.
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const glow = document.getElementById('ak-cursor-glow');
-    const ring = document.getElementById('ak-cursor-ring');
-    if (!glow || !ring) return;
+    const halo = hero.querySelector('[data-hero-halo]');
+    if (!halo) return;
 
-    let tx = window.innerWidth / 2, ty = window.innerHeight / 2;
-    let gx = tx, gy = ty, rx = tx, ry = ty;
-    let shown = false;
-
-    this.onMove = (e) => {
-      tx = e.clientX; ty = e.clientY;
-      if (!shown) { shown = true; glow.style.opacity = '1'; ring.style.opacity = '1'; }
+    let tx = 0, ty = 0, x = 0, y = 0, placed = false;
+    const step = () => {
+      x += (tx - x) * 0.12;
+      y += (ty - y) * 0.12;
+      halo.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0)';
+      // Stop the loop once the halo has caught up, so nothing runs while the pointer rests.
+      this.haloRaf = (Math.abs(tx - x) > 0.5 || Math.abs(ty - y) > 0.5) ? requestAnimationFrame(step) : null;
     };
-    this.onOut = (e) => {
-      if (e.relatedTarget === null) { shown = false; glow.style.opacity = '0'; ring.style.opacity = '0'; }
+    this.onHeroMove = (e) => {
+      const r = hero.getBoundingClientRect();
+      tx = e.clientX - r.left;
+      ty = e.clientY - r.top;
+      if (!placed) { x = tx; y = ty; placed = true; }
+      halo.style.opacity = '1';
+      if (!this.haloRaf) this.haloRaf = requestAnimationFrame(step);
     };
-    this.onOver = (e) => {
-      const t = e.target;
-      const interactive = t && t.closest && t.closest('a, button, input, textarea, select, [role="button"]');
-      if (interactive) {
-        ring.style.width = '56px'; ring.style.height = '56px'; ring.style.margin = '-28px 0 0 -28px';
-        ring.style.borderColor = 'rgba(var(--ak-accent3-rgb),.95)';
-        ring.style.background = 'rgba(var(--ak-accent3-rgb),.12)';
-      } else {
-        ring.style.width = '34px'; ring.style.height = '34px'; ring.style.margin = '-17px 0 0 -17px';
-        ring.style.borderColor = 'rgba(var(--ak-accent-rgb),.9)';
-        ring.style.background = 'transparent';
-      }
-    };
-
-    const tick = () => {
-      rx += (tx - rx) * 0.22; ry += (ty - ry) * 0.22;
-      gx += (tx - gx) * 0.07; gy += (ty - gy) * 0.07;
-      ring.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)';
-      glow.style.transform = 'translate3d(' + gx + 'px,' + gy + 'px,0)';
-      this.raf = requestAnimationFrame(tick);
-    };
-    tick();
-
-    window.addEventListener('mousemove', this.onMove, { passive: true });
-    window.addEventListener('mouseover', this.onOver, { passive: true });
-    window.addEventListener('mouseout', this.onOut, { passive: true });
+    this.onHeroLeave = () => { halo.style.opacity = '0'; placed = false; };
+    // A scroll with a resting pointer would leave the halo detached, so fade it until the next move.
+    this.onHeroScroll = () => { if (placed) this.onHeroLeave(); };
+    window.addEventListener('scroll', this.onHeroScroll, { passive: true });
+    hero.addEventListener('pointermove', this.onHeroMove, { passive: true });
+    hero.addEventListener('pointerleave', this.onHeroLeave, { passive: true });
   }
-
   initReveals() {
     if (!('IntersectionObserver' in window)) return;
     document.documentElement.classList.add('ak-motion');
