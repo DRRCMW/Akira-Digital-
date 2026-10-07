@@ -466,6 +466,34 @@
     .akx-hero-ctas .akx-btn, .akx-note .akx-btn { width: 100%; }
   }
   @media (max-width: 780px) { .akx-hero-badge { display: inline-flex; } }
+
+  /* ---------- industries (photo cards) ---------- */
+  @keyframes akxSpin { to { transform: rotate(360deg); } }
+  .akx-ind-sec { overflow: hidden; background: radial-gradient(ellipse 50% 34% at 82% 6%, rgba(var(--akx-pink),.2), transparent 70%), radial-gradient(ellipse 40% 26% at 0% 0%, rgba(var(--akx-coral),.12), transparent 70%), rgb(var(--ak-bg-rgb)); }
+  .akx-ind-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .akx-ind-h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); line-height: 1.06; text-wrap: initial; }
+  .akx-ind-art { position: relative; padding: 2% 9% 6% 2%; }
+  .akx-ring { position: absolute; z-index: 3; right: -3%; top: -13%; width: 25%; aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(circle, rgba(10,10,12,.92) 58%, rgba(10,10,12,0) 72%); }
+  .akx-ring-txt { position: absolute; inset: 0; animation: akxSpin 26s linear infinite; }
+  .akx-ring-txt span { position: absolute; left: 50%; top: 0; height: 50%; transform-origin: 50% 100%; font-size: clamp(.42rem, .78vw, .62rem); font-weight: 700; letter-spacing: 0; color: rgb(var(--akx-pink)); text-shadow: 0 0 10px rgba(var(--akx-pink),.7); }
+  .akx-ring img { width: 46%; height: auto; border-radius: 50%; box-shadow: 0 0 22px rgba(var(--akx-pink),.4); }
+  .akx-ind-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .akx-icard, a.akx-icard { position: relative; display: block; aspect-ratio: 16 / 11; overflow: hidden; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: #111114; color: #fff; isolation: isolate; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .akx-icard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.95) brightness(.96); transition: transform .5s ease, filter .3s ease; z-index: -2; }
+  .akx-icard::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10,10,12,0) 30%, rgba(10,10,12,.7) 62%, rgba(10,10,12,.96) 100%); }
+  .akx-icard:hover { transform: translateY(-4px); border-color: rgba(var(--akx-pink),.75); box-shadow: 0 20px 48px rgba(0,0,0,.55), 0 0 34px rgba(var(--akx-pink),.24); color: #fff; }
+  .akx-icard:hover img { transform: scale(1.05); filter: saturate(1.02) brightness(1.04); }
+  .akx-icard-body { position: absolute; left: 1.3rem; right: 4.6rem; bottom: 1.2rem; display: flex; flex-direction: column; align-items: flex-start; }
+  .akx-icard-body svg { width: 26px; height: 26px; margin-bottom: .55rem; color: #fff; }
+  .akx-icard-t { font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 1.12rem; line-height: 1.2; margin-bottom: .3rem; }
+  .akx-icard-s { font-size: .86rem; line-height: 1.45; color: rgba(255,255,255,.8); text-wrap: pretty; }
+  .akx-icard-go { position: absolute; right: 1.2rem; bottom: 1.2rem; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(var(--akx-pink),.85); background: rgba(10,10,12,.5); font-size: 1rem; color: #fff; transition: background .25s ease, transform .25s ease; }
+  .akx-icard:hover .akx-icard-go { background: var(--akx-grad); transform: translateX(3px); }
+  .akx-ind-cta { margin-top: 1.4rem; padding: clamp(1.6rem, 3vw, 2.4rem) clamp(1.4rem, 3vw, 2.6rem); border-radius: 14px; border: 1px solid rgba(var(--akx-pink),.35); background: radial-gradient(ellipse 60% 140% at 100% 50%, rgba(var(--akx-pink),.3), transparent 70%), linear-gradient(100deg, rgba(var(--akx-coral),.1), rgba(255,255,255,.02)); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.4rem 2.5rem; }
+  .akx-ind-cta-h { margin: 0 0 .6rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.1; letter-spacing: -.02em; color: #fff; }
+  .akx-ind-cta p { margin: 0; max-width: 40rem; font-size: .98rem; line-height: 1.65; color: rgba(255,255,255,.82); }
+  @media (max-width: 1020px) { .akx-ind-top { grid-template-columns: minmax(0, 1fr); } .akx-ind-art { max-width: 560px; } .akx-ind-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .akx-ind-grid { grid-template-columns: minmax(0, 1fr); } .akx-icard { aspect-ratio: 16 / 10; } .akx-ind-cta .akx-btn { width: 100%; } }
 </style>
 </head>
 <body>
@@ -862,50 +890,139 @@
     </div>
   </section>
 
-  <section id="industries" class="akx-sec">
+  <section id="industries" class="akx-sec akx-ind-sec">
     <div class="akx-wrap">
-      <div class="akx-head">
-        <span class="akx-eyebrow">Industries</span>
-        <h2 class="akx-h2">Industries we <span class="akx-grad">design for</span></h2>
-        <p class="akx-p" style="margin-bottom: 0;">Every industry wins a customer differently. A plumber needs the phone to ring tonight. A med spa needs someone to feel comfortable booking a consultation. Here's how the approach shifts.</p>
+      <div class="akx-ind-top">
+        <div>
+          <span class="akx-eyebrow">Industries</span>
+          <h2 class="akx-h2 akx-ind-h2">Different businesses.<br>Different customers.<br><span class="akx-grad">Smarter websites.</span></h2>
+          <p class="akx-p" style="max-width: 34rem; margin-bottom: 0; color: rgba(255,255,255,.86);">Every industry has its own customers, goals, and challenges. We design websites and local SEO around the people you're trying to reach, so more visitors turn into calls, bookings, and quote requests.</p>
+        </div>
+        <div class="akx-ind-art" aria-hidden="true">
+          <div class="akx-laptop">
+            <div class="akx-laptop-screen"><div class="akx-site" style="font-family: 'Cormorant Garamond', Georgia, serif; color: #ffffff;"><img class="akx-site-photo" src="/concepts/havenwood-custom-homes.jpg" alt="Home builder website concept showing a modern house lit up at dusk" width="1000" height="625" decoding="async" loading="lazy"><div class="akx-site-shade" style="background: linear-gradient(90deg, rgba(16,18,26,.93) 0%, rgba(16,18,26,.68) 46%, rgba(16,18,26,.04) 100%);"></div><div class="akx-site-bar"><span class="akx-site-logo">Havenwood<small>Custom Homes</small></span><span class="akx-site-nav"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></span><span class="akx-site-pill" style="background: #ECC98A; color: #1b1a16;">Get in Touch</span></div><div class="akx-site-body"><div class="akx-site-h">Thoughtful Homes. Lasting Value.</div><div class="akx-site-sub">Custom homes. Renovations. Additions.</div><span class="akx-site-cta" style="background: #ECC98A; color: #1b1a16;">Start Your Project →</span></div></div></div>
+            <div class="akx-laptop-base"></div>
+          </div>
+          <div class="akx-ring"><div class="akx-ring-txt"><span style="transform: translateX(-50%) rotate(0.00deg);">S</span><span style="transform: translateX(-50%) rotate(9.00deg);">T</span><span style="transform: translateX(-50%) rotate(18.00deg);">R</span><span style="transform: translateX(-50%) rotate(27.00deg);">A</span><span style="transform: translateX(-50%) rotate(36.00deg);">T</span><span style="transform: translateX(-50%) rotate(45.00deg);">E</span><span style="transform: translateX(-50%) rotate(54.00deg);">G</span><span style="transform: translateX(-50%) rotate(63.00deg);">Y</span><span style="transform: translateX(-50%) rotate(72.00deg);"> </span><span style="transform: translateX(-50%) rotate(81.00deg);">·</span><span style="transform: translateX(-50%) rotate(90.00deg);"> </span><span style="transform: translateX(-50%) rotate(99.00deg);">D</span><span style="transform: translateX(-50%) rotate(108.00deg);">E</span><span style="transform: translateX(-50%) rotate(117.00deg);">S</span><span style="transform: translateX(-50%) rotate(126.00deg);">I</span><span style="transform: translateX(-50%) rotate(135.00deg);">G</span><span style="transform: translateX(-50%) rotate(144.00deg);">N</span><span style="transform: translateX(-50%) rotate(153.00deg);"> </span><span style="transform: translateX(-50%) rotate(162.00deg);">·</span><span style="transform: translateX(-50%) rotate(171.00deg);"> </span><span style="transform: translateX(-50%) rotate(180.00deg);">S</span><span style="transform: translateX(-50%) rotate(189.00deg);">E</span><span style="transform: translateX(-50%) rotate(198.00deg);">O</span><span style="transform: translateX(-50%) rotate(207.00deg);"> </span><span style="transform: translateX(-50%) rotate(216.00deg);">·</span><span style="transform: translateX(-50%) rotate(225.00deg);"> </span><span style="transform: translateX(-50%) rotate(234.00deg);">D</span><span style="transform: translateX(-50%) rotate(243.00deg);">E</span><span style="transform: translateX(-50%) rotate(252.00deg);">V</span><span style="transform: translateX(-50%) rotate(261.00deg);">E</span><span style="transform: translateX(-50%) rotate(270.00deg);">L</span><span style="transform: translateX(-50%) rotate(279.00deg);">O</span><span style="transform: translateX(-50%) rotate(288.00deg);">P</span><span style="transform: translateX(-50%) rotate(297.00deg);">M</span><span style="transform: translateX(-50%) rotate(306.00deg);">E</span><span style="transform: translateX(-50%) rotate(315.00deg);">N</span><span style="transform: translateX(-50%) rotate(324.00deg);">T</span><span style="transform: translateX(-50%) rotate(333.00deg);"> </span><span style="transform: translateX(-50%) rotate(342.00deg);">·</span><span style="transform: translateX(-50%) rotate(351.00deg);"> </span></div><img src="/ad-icon-256.png" alt="" width="256" height="256" loading="lazy" decoding="async"></div>
+        </div>
       </div>
-      <div class="akx-grid4">
-        <article class="akx-tile akx-ind">
-          <h3 class="akx-h3">Plumber web design</h3>
-          <p>Emergency service, a phone number that stays in reach, service areas, and quick quote requests.</p>
-        </article>
-        <article class="akx-tile akx-ind">
-          <h3 class="akx-h3">HVAC web design</h3>
-          <p>Repairs and new installs on separate paths, with seasonal tune-ups and maintenance plans where people look for them.</p>
-        </article>
-        <article class="akx-tile akx-ind">
-          <h3 class="akx-h3">Electrician web design</h3>
-          <p>Safety and licensing details up front, with residential and commercial work clearly split.</p>
-        </article>
-        <article class="akx-tile akx-ind">
-          <h3 class="akx-h3">Med spa web design</h3>
-          <p>Treatment pages that educate, visuals that feel calm and credible, and an easy consultation request.</p>
-        </article>
-        <article class="akx-tile akx-ind">
-          <h3 class="akx-h3">Law firm web design</h3>
-          <p>Practice areas people can scan quickly, attorney background, and a consultation form that feels private.</p>
-        </article>
-        <article class="akx-tile akx-ind">
-          <h3 class="akx-h3">Cleaning company web design</h3>
-          <p>Simple quote requests, recurring service options, and clear residential and commercial pages.</p>
-        </article>
-        <article class="akx-tile akx-ind">
-          <h3 class="akx-h3">Landscaping web design</h3>
-          <p>Project photos that do the selling, with design, build, and maintenance each explained on their own.</p>
-        </article>
-        <article class="akx-tile akx-ind">
-          <h3 class="akx-h3">Restaurant web design</h3>
-          <p>Menu, hours, location, and reservations, all easy to reach from a phone.</p>
-        </article>
+      <div class="akx-ind-grid">
+        <a class="akx-icard" href="#contact" aria-label="Home Services: start a project">
+          <img src="/industries/home-services.jpg" alt="Web design for home service businesses, shown with a service van" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.500 6.500a4 4 0 0 0-5.300 5.300L3.500 17.500 6.500 20.500l5.700-5.700a4 4 0 0 0 5.300-5.300l-2.600 2.600-2.400-.600-.600-2.400z"/></svg>
+            <span class="akx-icard-t">Home Services</span>
+            <span class="akx-icard-s">Plumbing, HVAC, electrical, and more.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Health &amp; Wellness: start a project">
+          <img src="/industries/health-wellness.jpg" alt="Web design for health and wellness businesses, shown with a spa treatment room" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5c2 2.500 2 6 0 9-2-3-2-6.500 0-9z"/><path d="M4.500 10c3 .300 5.500 2 7.500 4-3 .800-6-.300-7.500-4z"/><path d="M19.500 10c-3 .300-5.500 2-7.500 4 3 .800 6-.300 7.500-4z"/><path d="M5 18h14"/></svg>
+            <span class="akx-icard-t">Health &amp; Wellness</span>
+            <span class="akx-icard-s">Med spas, fitness studios, chiropractors, and more.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Professional Services: start a project">
+          <img src="/industries/professional-services.jpg" alt="Web design for professional service firms, shown with a conference room" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v16M7 20h10M5 7h14"/><path d="M5 7l-2.500 6a2.500 2.500 0 0 0 5 0z"/><path d="M19 7l-2.500 6a2.500 2.500 0 0 0 5 0z"/></svg>
+            <span class="akx-icard-t">Professional Services</span>
+            <span class="akx-icard-s">Law firms, consultants, accountants, and more.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Cleaning &amp; Maintenance: start a project">
+          <img src="/industries/cleaning-maintenance.jpg" alt="Web design for cleaning companies, shown with a gloved hand wiping a table" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 9h5l1 11H8z"/><path d="M10 9V5h4"/><path d="M14 5h3M18 3v0M19.500 5.500v0M18 8v0"/></svg>
+            <span class="akx-icard-t">Cleaning &amp; Maintenance</span>
+            <span class="akx-icard-s">Residential and commercial cleaning companies.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Restaurants &amp; Hospitality: start a project">
+          <img src="/industries/restaurants-hospitality.jpg" alt="Web design for restaurants and hospitality, shown with a plated dish" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3v8M4 3v4a2 2 0 0 0 4 0V3M6 11v10"/><path d="M17 3c-2 1.500-3 4-3 7h3zM17 3v18"/></svg>
+            <span class="akx-icard-t">Restaurants &amp; Hospitality</span>
+            <span class="akx-icard-s">Restaurants, cafes, bars, and event venues.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Construction &amp; Remodeling: start a project">
+          <img src="/industries/construction-remodeling.jpg" alt="Web design for construction and remodeling companies, shown with a modern home at dusk" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-5h4v5"/></svg>
+            <span class="akx-icard-t">Construction &amp; Remodeling</span>
+            <span class="akx-icard-s">General contractors, remodelers, and specialty trades.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Landscaping &amp; Outdoor: start a project">
+          <img src="/industries/landscaping-outdoor.jpg" alt="Web design for landscaping and outdoor businesses, shown with a backyard fire pit" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-12 13"/><path d="M5 19c2-4 5-7 9-9"/></svg>
+            <span class="akx-icard-t">Landscaping &amp; Outdoor</span>
+            <span class="akx-icard-s">Landscapers, outdoor living, and pool services.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Automotive: start a project">
+          <img src="/industries/automotive.jpg" alt="Web design for automotive businesses, shown with a car headlight" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 16v-3l2-5h14l2 5v3"/><path d="M3 16h18v2h-3v-2M6 16v2H3"/><circle cx="7" cy="13" r="1"/><circle cx="17" cy="13" r="1"/></svg>
+            <span class="akx-icard-t">Automotive</span>
+            <span class="akx-icard-s">Auto shops, detailing, and specialty services.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Real Estate: start a project">
+          <img src="/industries/real-estate.jpg" alt="Web design for real estate, shown with a bright living room and staircase" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="10" height="18"/><path d="M15 9h4v12h-4M8 7h1M11 7h1M8 11h1M11 11h1M8 15h1M11 15h1"/></svg>
+            <span class="akx-icard-t">Real Estate</span>
+            <span class="akx-icard-s">Agents, brokerages, and property services.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Beauty &amp; Personal Care: start a project">
+          <img src="/industries/beauty-personal-care.jpg" alt="Web design for salons and barbershops, shown with a salon interior" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="6" r="2.500"/><circle cx="6" cy="18" r="2.500"/><path d="M8 7.500L20 18M8 16.500L20 6"/></svg>
+            <span class="akx-icard-t">Beauty &amp; Personal Care</span>
+            <span class="akx-icard-s">Salons, barbershops, and specialty studios.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Creative &amp; Local Brands: start a project">
+          <img src="/industries/creative-local-brands.jpg" alt="Web design for photographers and creative brands, shown with a photo studio" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8h3l1.500-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.200"/></svg>
+            <span class="akx-icard-t">Creative &amp; Local Brands</span>
+            <span class="akx-icard-s">Photographers, studios, boutiques, and more.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
+        <a class="akx-icard" href="#contact" aria-label="Nonprofits &amp; Community: start a project">
+          <img src="/industries/nonprofits-community.jpg" alt="Web design for nonprofits, shown with a group of volunteers" width="880" height="550" loading="lazy" decoding="async">
+          <span class="akx-icard-body">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="2.600"/><circle cx="16" cy="8" r="2.600"/><path d="M3 19a5 5 0 0 1 10 0M11 19a5 5 0 0 1 10 0"/></svg>
+            <span class="akx-icard-t">Nonprofits &amp; Community</span>
+            <span class="akx-icard-s">Mission-driven organizations and community programs.</span>
+          </span>
+          <span class="akx-icard-go" aria-hidden="true">→</span>
+        </a>
       </div>
-      <div class="akx-note">
-        <p><strong style="color: #fff; font-weight: 600;">Also a fit:</strong> Roofers, General contractors, Home remodeling, Pest control, Dentists, Chiropractors, Fitness studios, Real estate, Beauty and salons, Automotive, Photographers, Event venues, Consultants, Nonprofits, and other service businesses. If yours isn't listed, ask.</p>
-        <a href="#concepts" class="akx-btn akx-btn-ghost">View Website Concepts <span aria-hidden="true">→</span></a>
+      <div class="akx-ind-cta">
+        <div>
+          <span class="akx-eyebrow" style="margin-bottom: .7rem;">Don't see your industry?</span>
+          <h3 class="akx-ind-cta-h">Let's create a website for <span class="akx-grad">your business.</span></h3>
+          <p>If your industry isn't listed, that doesn't mean we can't work together. Tell us about your business and we'll build a strategy that fits.</p>
+        </div>
+        <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
