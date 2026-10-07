@@ -494,6 +494,66 @@
   .akx-ind-cta p { margin: 0; max-width: 40rem; font-size: .98rem; line-height: 1.65; color: rgba(255,255,255,.82); }
   @media (max-width: 1020px) { .akx-ind-top { grid-template-columns: minmax(0, 1fr); } .akx-ind-art { max-width: 560px; } .akx-ind-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) { .akx-ind-grid { grid-template-columns: minmax(0, 1fr); } .akx-icard { aspect-ratio: 16 / 10; } .akx-ind-cta .akx-btn { width: 100%; } }
+
+  /* ---------- services (concept layout) ---------- */
+  .akx-svc-sec { overflow: hidden; background: radial-gradient(ellipse 46% 26% at 78% 7%, rgba(var(--akx-pink),.26), transparent 70%), radial-gradient(ellipse 34% 22% at 0% 0%, rgba(var(--akx-coral),.12), transparent 70%), rgb(var(--ak-bg2-rgb)); }
+  .akx-svc-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; margin-bottom: clamp(2.2rem, 4vw, 3.2rem); }
+  .akx-svc-h2 { font-size: clamp(2.2rem, 4.6vw, 3.8rem); line-height: 1.05; }
+  .akx-btn-play { gap: .6rem; padding-left: 1.1rem; border-color: rgba(255,255,255,.35); }
+  .akx-btn-play svg { width: 22px; height: 22px; }
+  .akx-svc-art { position: relative; padding: 6% 8% 8% 4%; perspective: 1400px; }
+  .akx-svc-glow { position: absolute; left: -6%; right: 2%; top: 10%; bottom: 0; border-radius: 50%; box-shadow: 0 0 0 2px rgba(255,90,140,.7), 0 0 60px 10px rgba(var(--akx-pink),.45); transform: rotate(-14deg) scaleY(.5); pointer-events: none; }
+  .akx-svc-screen { position: relative; aspect-ratio: 16 / 10.500; overflow: hidden; border-radius: 16px; border: 1px solid rgba(255,120,170,.75); background: #0c0c10; box-shadow: 0 30px 80px rgba(0,0,0,.65), 0 0 50px rgba(var(--akx-pink),.4), inset 0 0 0 1px rgba(255,255,255,.06); transform: rotateY(-16deg) rotateX(6deg) rotateZ(2deg); container-type: inline-size; color: #fff; }
+  .akx-svc-photo { position: absolute; right: 0; top: 0; width: 72%; height: 78%; object-fit: cover; }
+  .akx-svc-shade { position: absolute; inset: 0; background: linear-gradient(90deg, #0c0c10 30%, rgba(12,12,16,.75) 52%, rgba(12,12,16,.1) 100%), linear-gradient(0deg, #0c0c10 20%, rgba(12,12,16,0) 46%); }
+  .akx-svc-bar { position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 4cqw 5cqw; font-size: 8px; font-size: 2.100cqw; }
+  .akx-svc-brand { display: inline-flex; align-items: center; gap: 1.400cqw; font-weight: 700; font-size: 9px; font-size: 2.600cqw; }
+  .akx-svc-brand img { width: 4.400cqw; height: 4.400cqw; border-radius: 22%; }
+  .akx-svc-nav { display: flex; gap: 3cqw; opacity: .88; }
+  .akx-svc-copy { position: absolute; left: 5cqw; top: 15cqw; width: 52cqw; }
+  .akx-svc-big { font-size: 20px; font-size: 6.800cqw; font-weight: 800; line-height: 1.06; letter-spacing: -.02em; margin-bottom: 2.200cqw; }
+  .akx-svc-big b { font-weight: 800; color: rgb(var(--akx-pink)); }
+  .akx-svc-small { font-size: 8px; font-size: 2.500cqw; line-height: 1.4; opacity: .85; margin-bottom: 3.400cqw; }
+  .akx-svc-go { display: inline-block; padding: 1.800cqw 3.600cqw; border-radius: 99px; background: var(--akx-grad); font-size: 7px; font-size: 2.200cqw; font-weight: 700; }
+  .akx-svc-thumbs { position: absolute; left: 24cqw; right: 5cqw; bottom: 4.500cqw; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.800cqw; }
+  .akx-svc-thumbs img { width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; border-radius: 1.400cqw; border: 1px solid rgba(255,255,255,.16); }
+  .akx-svc-float { position: absolute; right: 0; top: 40%; display: flex; align-items: center; gap: .8rem; padding: .85rem 1.1rem; border-radius: 12px; border: 1px solid rgba(255,120,170,.7); background: rgba(22,12,20,.9); box-shadow: 0 16px 40px rgba(0,0,0,.6), 0 0 26px rgba(var(--akx-pink),.34); font-size: .74rem; font-weight: 600; line-height: 1.75; color: #fff; }
+  .akx-svc-float svg { width: 26px; height: 26px; color: rgb(var(--akx-pink)); }
+  .akx-svc-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .8rem; margin-bottom: 1.4rem; }
+  .akx-svc-chip, a.akx-svc-chip { display: flex; align-items: center; justify-content: center; gap: .7rem; min-height: 50px; padding: .5rem .9rem; border-radius: 99px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.02); font-size: .9rem; font-weight: 500; color: #fff; white-space: nowrap; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+  .akx-svc-chip svg { flex: 0 0 auto; width: 20px; height: 20px; color: rgb(var(--akx-pink)); }
+  .akx-svc-chip:hover { color: #fff; border-color: rgba(var(--akx-pink),.85); background: rgba(var(--akx-pink),.1); transform: translateY(-2px); }
+  .akx-svc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; align-items: stretch; }
+  .akx-svc { position: relative; padding: 1.6rem 1.6rem 1.5rem; border-radius: 14px; border: 1px solid rgba(255,255,255,.1); background: radial-gradient(ellipse 80% 70% at 0% 0%, rgba(var(--akx-pink),.13), transparent 70%), rgba(255,255,255,.02); scroll-margin-top: 6.5rem; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+  .akx-svc:hover, .akx-svc:target { border-color: rgba(var(--akx-pink),.6); box-shadow: 0 0 36px rgba(var(--akx-pink),.16); }
+  .akx-svc:hover { transform: translateY(-3px); }
+  .akx-svc-top { display: flex; align-items: flex-start; gap: .9rem; margin-bottom: 1.2rem; }
+  .akx-svc-ico { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 12px; border: 1px solid rgba(var(--akx-pink),.4); background: linear-gradient(150deg, rgba(var(--akx-pink),.28), rgba(var(--akx-coral),.08)); }
+  .akx-svc-ico svg { width: 28px; height: 28px; color: rgb(255,96,140); filter: drop-shadow(0 0 8px rgba(var(--akx-pink),.6)); }
+  .akx-svc-num { padding-top: .25rem; font-size: .74rem; font-weight: 700; letter-spacing: .12em; color: rgb(var(--akx-coral)); }
+  .akx-svc-t { font-size: 1.36rem; margin-bottom: .5rem; }
+  .akx-svc-d { margin: 0 0 1.1rem; font-size: .98rem; line-height: 1.6; color: rgba(255,255,255,.82); text-wrap: pretty; }
+  .akx-svc-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.1rem; }
+  .akx-svc-tags span { padding: .38rem .85rem; border-radius: 99px; border: 1px solid rgba(255,255,255,.16); background: rgba(255,255,255,.03); font-size: .78rem; color: rgba(255,255,255,.9); }
+  .akx-svc-more summary { display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; cursor: pointer; list-style: none; font-size: .95rem; font-weight: 700; color: rgb(var(--akx-pink)); transition: color .2s ease; }
+  .akx-svc-more summary::-webkit-details-marker { display: none; }
+  .akx-svc-more summary:hover { color: rgb(var(--akx-coral)); }
+  .akx-svc-close, .akx-svc-more[open] .akx-svc-open { display: none; }
+  .akx-svc-more[open] .akx-svc-close { display: inline; }
+  .akx-svc-more > p { margin: .5rem 0 1.1rem; font-size: .93rem; line-height: 1.68; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty; }
+  .akx-svc-more .akx-link { display: inline-block; }
+  .akx-svc-cta { position: relative; overflow: hidden; margin-top: 1.4rem; padding: clamp(1.8rem, 3.4vw, 2.8rem) clamp(1.5rem, 3.4vw, 3rem); border-radius: 16px; border: 1px solid rgba(255,120,170,.6); background: radial-gradient(ellipse 55% 130% at 100% 60%, rgba(var(--akx-pink),.34), transparent 70%), linear-gradient(100deg, rgba(var(--akx-coral),.1), rgba(255,255,255,.02)); box-shadow: 0 0 40px rgba(var(--akx-pink),.16); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 2rem 3rem; align-items: center; }
+  .akx-svc-cta-h { margin: 0 0 .7rem; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.08; letter-spacing: -.025em; color: #fff; }
+  .akx-svc-cta p { margin: 0 0 1.5rem; max-width: 30rem; font-size: 1.02rem; line-height: 1.6; color: rgba(255,255,255,.86); }
+  .akx-steps3 { margin: 0; padding: 0; list-style: none; display: grid; gap: .6rem; }
+  .akx-steps3 li { display: flex; align-items: center; gap: .9rem; padding: .95rem 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(16,10,16,.82); font-size: .98rem; font-weight: 500; color: #fff; }
+  .akx-steps3 li:nth-child(2) { margin-left: 8%; border-color: rgba(var(--akx-pink),.4); }
+  .akx-steps3 li:nth-child(3) { margin-left: 16%; border-color: rgba(255,120,170,.85); box-shadow: 0 0 26px rgba(var(--akx-pink),.3); }
+  .akx-steps3 svg { flex: 0 0 auto; width: 26px; height: 26px; color: rgb(var(--akx-pink)); }
+  @media (max-width: 1100px) { .akx-svc-chips { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 1020px) { .akx-svc-head, .akx-svc-cta { grid-template-columns: minmax(0, 1fr); } .akx-svc-art { max-width: 560px; } .akx-svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .akx-svc-grid { grid-template-columns: minmax(0, 1fr); } .akx-svc-chips { grid-template-columns: repeat(2, minmax(0, 1fr)); } .akx-svc-chip { font-size: .84rem; padding: .5rem .6rem; gap: .5rem; } .akx-steps3 li:nth-child(2) { margin-left: 4%; } .akx-steps3 li:nth-child(3) { margin-left: 8%; } .akx-svc-float { top: auto; bottom: 0; right: 2%; font-size: .68rem; padding: .6rem .8rem; } .akx-svc-cta .akx-btn { width: 100%; } }
+  .akx-svc-grid:has(details[open]) { align-items: start; }
 </style>
 </head>
 <body>
@@ -624,80 +684,141 @@
     </div>
   </section>
 
-  <section id="services" class="akx-sec akx-sec--alt">
+  <section id="services" class="akx-sec akx-sec--alt akx-svc-sec">
     <div class="akx-wrap">
-      <div class="akx-head">
-        <span class="akx-eyebrow">Services</span>
-        <h2 class="akx-h2">Web design, development, and local SEO for <span class="akx-grad">small businesses</span></h2>
-        <p class="akx-p" style="margin-bottom: 0;">Most projects use more than one of these. Here's what each one is, who it's for, and what you walk away with.</p>
+      <div class="akx-svc-head">
+        <div>
+          <span class="akx-eyebrow">Services</span>
+          <h2 class="akx-h2 akx-svc-h2">Strategic website services for <span class="akx-grad">small businesses.</span></h2>
+          <p class="akx-p" style="max-width: 33rem; margin-bottom: 1.8rem; color: rgba(255,255,255,.86);">From custom web design to local SEO, we help service businesses look established, get found online, and turn visits into real inquiries.</p>
+          <div class="akx-hero-ctas" style="animation: none;">
+            <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
+            <a href="#concepts" class="akx-btn akx-btn-ghost akx-btn-play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M10.500 8.500l5 3.500-5 3.500z"/></svg><span>View Concepts</span></a>
+          </div>
+        </div>
+        <div class="akx-svc-art" aria-hidden="true">
+          <div class="akx-svc-glow"></div>
+          <div class="akx-svc-screen">
+            <img class="akx-svc-photo" src="/concepts/havenwood-custom-homes.jpg" alt="" width="1000" height="625" loading="lazy" decoding="async">
+            <div class="akx-svc-shade"></div>
+            <div class="akx-svc-bar"><span class="akx-svc-brand"><img src="/ad-icon-256.png" alt="" width="256" height="256" loading="lazy" decoding="async">Akira Digital</span><span class="akx-svc-nav"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></span></div>
+            <div class="akx-svc-copy"><div class="akx-svc-big">Your Business Looks <b>Bigger</b> Here.</div><div class="akx-svc-small">Modern websites for growing service businesses.</div><span class="akx-svc-go">Get Started →</span></div>
+            <div class="akx-svc-thumbs"><img src="/concepts/northline-plumbing.jpg" alt="" width="1000" height="625" loading="lazy" decoding="async"><img src="/concepts/ember-oak-med-spa.jpg" alt="" width="1000" height="625" loading="lazy" decoding="async"><img src="/concepts/verdant-grounds.jpg" alt="" width="1000" height="625" loading="lazy" decoding="async"><img src="/concepts/copper-table-bistro.jpg" alt="" width="1000" height="625" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="akx-svc-float"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 20V14M10 20V9M15 20v-7M20 20V5"/></svg><span>Easier to find<br>More inquiries<br>A stronger business</span></div>
+        </div>
       </div>
-      <div class="akx-grid3">
-        <article class="akx-tile">
-          <div class="akx-tile-num">01</div>
-          <h3 class="akx-h3">Custom Web Design</h3>
-          <p>A site designed from scratch around your business. No template with your logo dropped in. We plan the pages, shape the message, and design every screen for the way your customers actually look for a company like yours.</p>
-          <dl class="akx-dl">
-            <div><dt>Who it's for</dt><dd>Service businesses with no website, or one that no longer looks like the company they&#x27;ve become.</dd></div>
-            <div><dt>The problem it solves</dt><dd>People size you up online before they call, and what they find doesn&#x27;t match the quality of your work.</dd></div>
-            <div><dt>What you get</dt><dd>A custom website design, phone layouts for every page, and the source files. You own all of it.</dd></div>
-          </dl>
-          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+      <nav class="akx-svc-chips" aria-label="Jump to a service"><a class="akx-svc-chip" href="#service-web-design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.500"/><path d="M8 20h8M12 16v4"/></svg><span>Web Design</span></a><a class="akx-svc-chip" href="#service-development"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.500 5l-3 14"/></svg><span>Development</span></a><a class="akx-svc-chip" href="#service-redesign"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 11a8 8 0 0 0-14.500-4.500L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.500 4.500L20 16"/><path d="M20 20v-4h-4"/></svg><span>Redesign</span></a><a class="akx-svc-chip" href="#service-local-seo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.600-6-10.200a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.500" r="2.200"/></svg><span>Local SEO</span></a><a class="akx-svc-chip" href="#service-strategy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 20V14M10 20V9M15 20v-7M20 20V5"/></svg><span>Strategy</span></a><a class="akx-svc-chip" href="#service-landing-pages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg><span>Landing Pages</span></a></nav>
+      <div class="akx-svc-grid">
+        <article class="akx-svc" id="service-web-design">
+          <div class="akx-svc-top"><span class="akx-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.500"/><path d="M8 20h8M12 16v4"/></svg></span><span class="akx-svc-num">01</span></div>
+          <h3 class="akx-h3 akx-svc-t">Custom Web Design</h3>
+          <p class="akx-svc-d">Custom websites designed around your business, your customers, and your goals.</p>
+          <div class="akx-svc-tags"><span>Messaging</span><span>User Experience</span><span>Mobile Ready</span></div>
+          <details class="akx-svc-more">
+            <summary><span class="akx-svc-open">Learn more</span><span class="akx-svc-close">Show less</span> <span aria-hidden="true">→</span></summary>
+            <p>A site designed from scratch around your business. No template with your logo dropped in. We plan the pages, shape the message, and design every screen for the way your customers actually look for a company like yours.</p>
+            <dl class="akx-dl">
+              <div><dt>Who it's for</dt><dd>Service businesses with no website, or one that no longer looks like the company they&#x27;ve become.</dd></div>
+              <div><dt>The problem it solves</dt><dd>People size you up online before they call, and what they find doesn&#x27;t match the quality of your work.</dd></div>
+              <div><dt>What you get</dt><dd>A custom website design, phone layouts for every page, and the source files. You own all of it.</dd></div>
+            </dl>
+            <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          </details>
         </article>
-        <article class="akx-tile">
-          <div class="akx-tile-num">02</div>
-          <h3 class="akx-h3">Website Development</h3>
-          <p>The build itself. Clean, fast code, forms that actually reach your inbox, and tap-to-call wherever someone might want it.</p>
-          <dl class="akx-dl">
-            <div><dt>Who it's for</dt><dd>Businesses that have a design or a clear plan and need it built properly.</dd></div>
-            <div><dt>The problem it solves</dt><dd>A slow or fragile site that breaks on phones or quietly loses leads.</dd></div>
-            <div><dt>What you get</dt><dd>A tested, launched website running on your own domain and hosting.</dd></div>
-          </dl>
-          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        <article class="akx-svc" id="service-development">
+          <div class="akx-svc-top"><span class="akx-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.500 5l-3 14"/></svg></span><span class="akx-svc-num">02</span></div>
+          <h3 class="akx-h3 akx-svc-t">Website Development</h3>
+          <p class="akx-svc-d">Clean, responsive builds that work smoothly on every device.</p>
+          <div class="akx-svc-tags"><span>Fast Load Times</span><span>Contact Forms</span><span>Reliable Build</span></div>
+          <details class="akx-svc-more">
+            <summary><span class="akx-svc-open">Learn more</span><span class="akx-svc-close">Show less</span> <span aria-hidden="true">→</span></summary>
+            <p>The build itself. Clean, fast code, forms that actually reach your inbox, and tap-to-call wherever someone might want it.</p>
+            <dl class="akx-dl">
+              <div><dt>Who it's for</dt><dd>Businesses that have a design or a clear plan and need it built properly.</dd></div>
+              <div><dt>The problem it solves</dt><dd>A slow or fragile site that breaks on phones or quietly loses leads.</dd></div>
+              <div><dt>What you get</dt><dd>A tested, launched website running on your own domain and hosting.</dd></div>
+            </dl>
+            <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          </details>
         </article>
-        <article class="akx-tile">
-          <div class="akx-tile-num">03</div>
-          <h3 class="akx-h3">Website Redesign</h3>
-          <p>We keep what&#x27;s working, fix what isn&#x27;t, and rebuild the rest. That starts with looking at where visitors lose interest on the site you have now.</p>
-          <dl class="akx-dl">
-            <div><dt>Who it's for</dt><dd>Businesses with a site that&#x27;s a few years old and no longer pulling its weight.</dd></div>
-            <div><dt>The problem it solves</dt><dd>Dated design, confusing navigation, and pages that never ask anyone to do anything.</dd></div>
-            <div><dt>What you get</dt><dd>A restructured, redesigned site, with your old pages pointed to the new ones so existing search traffic isn&#x27;t thrown away.</dd></div>
-          </dl>
-          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        <article class="akx-svc" id="service-redesign">
+          <div class="akx-svc-top"><span class="akx-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 11a8 8 0 0 0-14.500-4.500L4 8"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.500 4.500L20 16"/><path d="M20 20v-4h-4"/></svg></span><span class="akx-svc-num">03</span></div>
+          <h3 class="akx-h3 akx-svc-t">Website Redesign</h3>
+          <p class="akx-svc-d">Refresh an outdated site and make it easier for people to trust you and get in touch.</p>
+          <div class="akx-svc-tags"><span>Better Structure</span><span>Updated Look</span><span>Conversion Focus</span></div>
+          <details class="akx-svc-more">
+            <summary><span class="akx-svc-open">Learn more</span><span class="akx-svc-close">Show less</span> <span aria-hidden="true">→</span></summary>
+            <p>We keep what&#x27;s working, fix what isn&#x27;t, and rebuild the rest. That starts with looking at where visitors lose interest on the site you have now.</p>
+            <dl class="akx-dl">
+              <div><dt>Who it's for</dt><dd>Businesses with a site that&#x27;s a few years old and no longer pulling its weight.</dd></div>
+              <div><dt>The problem it solves</dt><dd>Dated design, confusing navigation, and pages that never ask anyone to do anything.</dd></div>
+              <div><dt>What you get</dt><dd>A restructured, redesigned site, with your old pages pointed to the new ones so existing search traffic isn&#x27;t thrown away.</dd></div>
+            </dl>
+            <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          </details>
         </article>
-        <article class="akx-tile">
-          <div class="akx-tile-num">04</div>
-          <h3 class="akx-h3">Local SEO</h3>
-          <p>Local SEO services for businesses that depend on nearby customers. We set up or clean up your Google Business Profile, tighten your service and location pages, and make sure your details match everywhere they appear. Nobody can promise a ranking. What we can do is give Google every reason to show you.</p>
-          <dl class="akx-dl">
-            <div><dt>Who it's for</dt><dd>Small businesses whose customers search by city, by neighborhood, or with &quot;near me.&quot;</dd></div>
-            <div><dt>The problem it solves</dt><dd>Competitors show up in the map results and you don&#x27;t.</dd></div>
-            <div><dt>What you get</dt><dd>A Google Business Profile setup or cleanup, on-page SEO for your key pages, and a plain-English list of what to keep doing.</dd></div>
-          </dl>
-          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        <article class="akx-svc" id="service-local-seo">
+          <div class="akx-svc-top"><span class="akx-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.600-6-10.200a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.500" r="2.200"/></svg></span><span class="akx-svc-num">04</span></div>
+          <h3 class="akx-h3 akx-svc-t">Local SEO</h3>
+          <p class="akx-svc-d">Help your business show up where nearby customers are already searching.</p>
+          <div class="akx-svc-tags"><span>Google Business Profile</span><span>On-Page SEO</span><span>Local Visibility</span></div>
+          <details class="akx-svc-more">
+            <summary><span class="akx-svc-open">Learn more</span><span class="akx-svc-close">Show less</span> <span aria-hidden="true">→</span></summary>
+            <p>Local SEO services for businesses that depend on nearby customers. We set up or clean up your Google Business Profile, tighten your service and location pages, and make sure your details match everywhere they appear. Nobody can promise a ranking. What we can do is give Google every reason to show you.</p>
+            <dl class="akx-dl">
+              <div><dt>Who it's for</dt><dd>Small businesses whose customers search by city, by neighborhood, or with &quot;near me.&quot;</dd></div>
+              <div><dt>The problem it solves</dt><dd>Competitors show up in the map results and you don&#x27;t.</dd></div>
+              <div><dt>What you get</dt><dd>A Google Business Profile setup or cleanup, on-page SEO for your key pages, and a plain-English list of what to keep doing.</dd></div>
+            </dl>
+            <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          </details>
         </article>
-        <article class="akx-tile">
-          <div class="akx-tile-num">05</div>
-          <h3 class="akx-h3">Website Strategy</h3>
-          <p>A working session and a written plan for owners who aren&#x27;t sure what they need yet. We look at your customers, your competitors, and your current site, then map out what to build and in what order.</p>
-          <dl class="akx-dl">
-            <div><dt>Who it's for</dt><dd>Owners who want a clear plan before they spend money on a build.</dd></div>
-            <div><dt>The problem it solves</dt><dd>Guessing at what the website should say or do.</dd></div>
-            <div><dt>What you get</dt><dd>A page-by-page plan, messaging notes, and priorities you can hand to us or to anyone else.</dd></div>
-          </dl>
-          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        <article class="akx-svc" id="service-strategy">
+          <div class="akx-svc-top"><span class="akx-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 20V14M10 20V9M15 20v-7M20 20V5"/></svg></span><span class="akx-svc-num">05</span></div>
+          <h3 class="akx-h3 akx-svc-t">Website Strategy</h3>
+          <p class="akx-svc-d">A clear plan for what your site should say, do, and put first.</p>
+          <div class="akx-svc-tags"><span>Page Planning</span><span>Messaging</span><span>Customer Journey</span></div>
+          <details class="akx-svc-more">
+            <summary><span class="akx-svc-open">Learn more</span><span class="akx-svc-close">Show less</span> <span aria-hidden="true">→</span></summary>
+            <p>A working session and a written plan for owners who aren&#x27;t sure what they need yet. We look at your customers, your competitors, and your current site, then map out what to build and in what order.</p>
+            <dl class="akx-dl">
+              <div><dt>Who it's for</dt><dd>Owners who want a clear plan before they spend money on a build.</dd></div>
+              <div><dt>The problem it solves</dt><dd>Guessing at what the website should say or do.</dd></div>
+              <div><dt>What you get</dt><dd>A page-by-page plan, messaging notes, and priorities you can hand to us or to anyone else.</dd></div>
+            </dl>
+            <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          </details>
         </article>
-        <article class="akx-tile">
-          <div class="akx-tile-num">06</div>
-          <h3 class="akx-h3">Landing Pages</h3>
-          <p>One focused page for one service, one offer, or one ad campaign. One message and one action.</p>
-          <dl class="akx-dl">
-            <div><dt>Who it's for</dt><dd>Businesses running ads, promoting something seasonal, or launching a new service.</dd></div>
-            <div><dt>The problem it solves</dt><dd>Paying for clicks that land on a homepage trying to say everything at once.</dd></div>
-            <div><dt>What you get</dt><dd>A designed and built landing page with a working lead form and tracking set up.</dd></div>
-          </dl>
-          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        <article class="akx-svc" id="service-landing-pages">
+          <div class="akx-svc-top"><span class="akx-svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span><span class="akx-svc-num">06</span></div>
+          <h3 class="akx-h3 akx-svc-t">Landing Pages</h3>
+          <p class="akx-svc-d">Focused pages built to support one service, offer, or campaign.</p>
+          <div class="akx-svc-tags"><span>Lead Capture</span><span>Clear CTA</span><span>Campaign Support</span></div>
+          <details class="akx-svc-more">
+            <summary><span class="akx-svc-open">Learn more</span><span class="akx-svc-close">Show less</span> <span aria-hidden="true">→</span></summary>
+            <p>One focused page for one service, one offer, or one ad campaign. One message and one action.</p>
+            <dl class="akx-dl">
+              <div><dt>Who it's for</dt><dd>Businesses running ads, promoting something seasonal, or launching a new service.</dd></div>
+              <div><dt>The problem it solves</dt><dd>Paying for clicks that land on a homepage trying to say everything at once.</dd></div>
+              <div><dt>What you get</dt><dd>A designed and built landing page with a working lead form and tracking set up.</dd></div>
+            </dl>
+            <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+          </details>
         </article>
+      </div>
+      <div class="akx-svc-cta">
+        <div>
+          <span class="akx-eyebrow" style="margin-bottom: .6rem;">Ready to get started?</span>
+          <h3 class="akx-svc-cta-h">Not sure <span class="akx-grad">what you need yet?</span></h3>
+          <p>We can help you figure out the right starting point based on your business, your goals, and your budget.</p>
+          <a href="#contact" class="akx-btn akx-btn-primary">Talk About Your Project <span aria-hidden="true">→</span></a>
+        </div>
+        <ol class="akx-steps3" aria-label="How we help you decide">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.500"/><circle cx="12" cy="12" r="4.500"/><circle cx="12" cy="12" r="1"/></svg><span>Your Goals</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.600 10.800c.700.600 1.100 1.300 1.100 2.200h5c0-.900.400-1.600 1.100-2.200A6 6 0 0 0 12 3z"/></svg><span>Our Recommendations</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.300l2.700 2.700L16 9.500"/></svg><span>A Clear Path Forward</span></li>
+        </ol>
       </div>
     </div>
   </section>
