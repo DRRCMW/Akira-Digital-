@@ -275,8 +275,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Archivo+Black&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/concepts/northline-plumbing.jpg" fetchpriority="high">
-<link rel="preload" as="image" href="/rock.webp" type="image/webp">
+<link rel="preload" as="image" href="/hero-devices.webp" imagesrcset="/hero-devices-900.webp 900w, /hero-devices.webp 1448w" imagesizes="(max-width: 1020px) 100vw, 58vw" type="image/webp" fetchpriority="high">
 <!-- Akira Digital AI Assistant: external (CSP 'self') so it runs; the app framework blocks inline scripts -->
 <script src="/akira-widget-init.js"></script>
 <script src="./resources.js"></script>
@@ -651,6 +650,14 @@
   }
   @media (prefers-reduced-motion: reduce) { .akx-marq { overflow-x: auto; } }
   .akx-hero2 .akx-h1 { font-size: clamp(2.4rem, 4.1vw, 3.8rem); }
+
+  /* ---------- hero v3: supplied device photo ---------- */
+  .akx-hero2 { background: radial-gradient(ellipse 45% 50% at 8% 0%, rgba(var(--akx-coral),.14), transparent 70%), rgb(8,6,9); }
+  .akx-hero2 .akx-hero-grid { padding-bottom: 0; }
+  @media (min-width: 1021px) { .akx-hero2 .akx-hero-grid { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); } }
+  .akx-shot { position: relative; z-index: 1; margin: clamp(-5rem, -6vw, -2rem) clamp(-3rem, -4vw, -1.25rem) 0 -20%; }
+  .akx-shot img { display: block; width: 100%; height: auto; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%), linear-gradient(0deg, transparent 0%, #000 16%), linear-gradient(180deg, transparent 0%, #000 12%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 20%), linear-gradient(0deg, transparent 0%, #000 16%), linear-gradient(180deg, transparent 0%, #000 12%); mask-composite: intersect; }
+  @media (max-width: 1020px) { .akx-shot { margin: 0 clamp(-3rem, -4vw, -1.25rem); } .akx-shot img { -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 16%), linear-gradient(180deg, transparent 0%, #000 12%); mask-image: linear-gradient(0deg, transparent 0%, #000 16%), linear-gradient(180deg, transparent 0%, #000 12%); } }
 </style>
 </head>
 <body>
@@ -698,36 +705,8 @@
             <a href="#concepts" class="akx-btn akx-btn-ghost">View Website Concepts <span aria-hidden="true">→</span></a>
           </div>
         </div>
-        <div class="akx-stage akx-stage2" aria-hidden="true">
-          <div class="akx-arc"></div>
-          <img class="akx-rock" src="/rock.webp" alt="" width="1800" height="620" decoding="async" fetchpriority="high">
-          <div class="akx-mac">
-            <div class="akx-mac-lid">
-              <div class="akx-mac-screen">
-                <img class="akx-ns-photo" src="/concepts/northline-plumbing.jpg" alt="" width="1000" height="625" decoding="async" fetchpriority="high">
-                <div class="akx-ns-shade"></div>
-                <div class="akx-ns-bar"><span class="akx-ns-logo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 17h-5l-4-8-4 8H3z" fill="#3B7BFF"/><path d="M12 12l2.600 5h-5.200z" fill="#9CC0FF"/></svg><span>Northline<small>Plumbing</small></span></span><span class="akx-ns-nav"><span class="on">Home</span><span>Services</span><span>About</span><span>Reviews</span><span>Contact</span></span><span class="akx-ns-pill">Get a Free Quote</span></div>
-                <div class="akx-ns-body"><div class="akx-ns-eb">Local plumbing experts</div><div class="akx-ns-h">Reliable Plumbing for a Brighter Home.</div><div class="akx-ns-sub">Fast. Professional. Local.</div><div class="akx-ns-row"><span class="akx-ns-cta">Get a Free Quote →</span><span class="akx-ns-play"><i></i>Watch Our Story</span></div></div>
-                <div class="akx-ns-strip"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.500 6.500a4 4 0 0 0-5.300 5.300L3.500 17.500 6.500 20.500l5.700-5.700a4 4 0 0 0 5.300-5.300l-2.600 2.600-2.400-.600-.600-2.400z"/></svg><span><b>Repairs</b><em>Fixing problems fast</em></span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="3" width="8" height="18" rx="3"/><path d="M12 9v4M11 17h2"/></svg><span><b>Water Heaters</b><em>Expert installation</em></span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.500"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg><span><b>Drain Cleaning</b><em>Keep things flowing</em></span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 3L6 13h5l-1 8 7-10h-5z"/></svg><span><b>Emergency Service</b><em>Available 24/7</em></span></span></div>
-                <div class="akx-glare"></div>
-              </div>
-            </div>
-            <div class="akx-mac-deck"><i class="akx-mac-keys"></i><i class="akx-mac-pad"></i></div>
-          </div>
-          <div class="akx-iph">
-            <div class="akx-iph-in">
-              <div class="akx-iph-screen">
-                <img src="/concepts/northline-plumbing-mobile.jpg" alt="" width="480" height="640" decoding="async">
-                <div class="akx-iph-island"></div>
-                <div class="akx-iph-top"><span class="akx-ns-logo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 17h-5l-4-8-4 8H3z" fill="#3B7BFF"/><path d="M12 12l2.600 5h-5.200z" fill="#9CC0FF"/></svg><span>Northline<small>Plumbing</small></span></span><span class="akx-phone-burger"></span></div>
-                <div class="akx-iph-body"><div class="akx-ns-eb">Local plumbing experts</div><div class="akx-iph-h">Reliable Plumbing for a Brighter Home.</div><div class="akx-iph-s">Fast. Professional. Local.</div><span class="akx-iph-cta">Get a Free Quote →</span>
-                  <div class="akx-iph-grid"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.500 6.500a4 4 0 0 0-5.300 5.300L3.500 17.500 6.500 20.500l5.700-5.700a4 4 0 0 0 5.300-5.300l-2.600 2.600-2.400-.600-.600-2.400z"/></svg>Repairs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="3" width="8" height="18" rx="3"/><path d="M12 9v4M11 17h2"/></svg>Water Heaters</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.500"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg>Drain Cleaning</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 3L6 13h5l-1 8 7-10h-5z"/></svg>Emergency Service</span></div></div>
-                <div class="akx-glare"></div>
-              </div>
-            </div>
-          </div>
-          <div class="akx-glass akx-glass--a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="2.800"/><circle cx="5.500" cy="9.500" r="2"/><circle cx="18.500" cy="9.500" r="2"/><path d="M7 19a5 5 0 0 1 10 0M2 18a3.500 3.500 0 0 1 4.500-3.300M22 18a3.500 3.500 0 0 0-4.500-3.300"/></svg><span>Websites<br>that build<br>trust<i></i></span></div>
-          <div class="akx-glass akx-glass--b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 16l5-5 3.500 3.500L20 7"/><path d="M15 7h5v5"/></svg><span>Get found<br>Get chosen</span><em><i></i><i></i><i></i><i></i></em></div>
+        <div class="akx-shot">
+          <img src="/hero-devices.webp" srcset="/hero-devices-900.webp 900w, /hero-devices.webp 1448w" sizes="(max-width: 1020px) 100vw, 58vw" alt="A plumbing company website designed by Akira Digital, shown on a laptop and a phone" width="1448" height="1086" decoding="async" fetchpriority="high">
         </div>
       </div>
     </div>
