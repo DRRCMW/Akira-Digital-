@@ -1,155 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Akira Digital AI Assistant — external (CSP 'self') so it runs; the app framework blocks inline scripts -->
-<script src="/akira-widget-init.js"></script>
-<script src="./resources.js"></script>
-<script src="./support.js"></script>
-<style id="ak-contact-css">.ak-tel-num{display:inline}@media (max-width:560px){.ak-tel-num{display:none}}</style>
-</head>
-<body>
-<x-dc>
-<helmet>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Web Design Agency for Local Businesses | Akira Digital</title>
-<meta name="description" content="LA web design agency for local service businesses. Custom, mobile-first sites built to rank locally and book more jobs. From $1,000 — book a free call.">
+<title>Web Design &amp; Local SEO for Service Businesses | Akira Digital</title>
+<meta name="description" content="Akira Digital designs strategic websites and local SEO for service businesses that want to get found, build trust, and turn more visitors into customers.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://akiradigital.net/">
 <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="/ad-icon-256.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="/ad-icon-256.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0a0a0c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Akira Digital">
-<meta property="og:title" content="Web Design Agency for Local Businesses | Akira Digital">
-<meta property="og:description" content="Custom web design and development for businesses of every kind — trades, law firms, clinics, studios, retail and B2B. Built to rank locally and turn visitors into booked jobs. Packages from $1,000.">
+<meta property="og:title" content="Web Design &amp; Local SEO for Service Businesses | Akira Digital">
+<meta property="og:description" content="Akira Digital designs strategic websites and local SEO for service businesses that want to get found, build trust, and turn more visitors into customers.">
 <meta property="og:url" content="https://akiradigital.net/">
 <meta property="og:image" content="https://akiradigital.net/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Akira Digital — web design for local service businesses in Los Angeles">
+<meta property="og:image:alt" content="Akira Digital. Web design and local SEO for service businesses.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Web Design Agency for Local Businesses | Akira Digital">
-<meta name="twitter:description" content="Custom websites for local service businesses. Built to rank locally and convert. Packages from $1,000.">
+<meta name="twitter:title" content="Web Design &amp; Local SEO for Service Businesses | Akira Digital">
+<meta name="twitter:description" content="Akira Digital designs strategic websites and local SEO for service businesses that want to get found, build trust, and turn more visitors into customers.">
 <meta name="twitter:image" content="https://akiradigital.net/og-image.png">
-<meta name="twitter:image:alt" content="Akira Digital — web design for local service businesses in Los Angeles">
+<meta name="twitter:image:alt" content="Akira Digital. Web design and local SEO for service businesses.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": [
-        "ProfessionalService",
-        "Organization"
-      ],
+      "@type": "Organization",
       "@id": "https://akiradigital.net/#organization",
       "name": "Akira Digital",
-      "alternateName": "Akira Digital Web Design Agency",
-      "description": "Web design agency building custom, conversion-focused websites for businesses of every kind — trades and home services, law firms, clinics, studios, retail, nonprofits and B2B. Based in Los Angeles and working with clients anywhere in the United States, remotely.",
       "url": "https://akiradigital.net/",
-      "logo": "https://akiradigital.net/ad-icon-256.png",
-      "image": "https://akiradigital.net/laptop-photo.png",
-      "priceRange": "$500–$5,000+",
-      "areaServed": [
-        {
-          "@type": "Country",
-          "name": "United States"
-        },
-        {
-          "@type": "City",
-          "name": "Los Angeles",
-          "addressRegion": "CA",
-          "addressCountry": "US"
-        },
-        {
-          "@type": "AdministrativeArea",
-          "name": "Los Angeles County, CA"
-        }
-      ],
-      "knowsAbout": [
-        "Web design",
-        "Web development",
-        "Local SEO",
-        "Conversion rate optimization",
-        "Mobile-first design"
-      ],
-      "slogan": "We build websites that win business.",
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "name": "Starter Website",
-          "price": "1000",
-          "priceCurrency": "USD",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Custom 3-page website design and development",
-            "serviceType": "Web design"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Growth Website",
-          "price": "2500",
-          "priceCurrency": "USD",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Lead-generating 5-page website with analytics and call tracking",
-            "serviceType": "Web design"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Authority Package",
-          "price": "5000",
-          "priceCurrency": "USD",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Full brand refresh with local SEO and Google Ads landing pages",
-            "serviceType": "Web design"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Care Plan",
-          "price": "300",
-          "priceCurrency": "USD",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Monthly website maintenance, security, and SEO health reporting",
-            "serviceType": "Website maintenance"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Design Day (Half Day)",
-          "price": "500",
-          "priceCurrency": "USD",
-          "url": "https://buy.stripe.com/5kQ00lfzgcXB6yYdWFfw408",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Half-day (4 hours) focused design working session",
-            "serviceType": "Web design"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Design Day (Full Day)",
-          "price": "1000",
-          "priceCurrency": "USD",
-          "url": "https://buy.stripe.com/14AcN79aSg9N6yY9Gpfw407",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Full-day (8 hours) focused design working session",
-            "serviceType": "Web design"
-          }
-        }
-      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://akiradigital.net/ad-icon-256.png",
+        "width": 256,
+        "height": 256
+      },
+      "image": "https://akiradigital.net/og-image.png",
+      "description": "Akira Digital is a founder-led web design, website development, and local SEO company for small and growing service businesses. Based in Los Angeles and working with clients across the United States.",
+      "slogan": "Your business deserves a website people remember.",
       "telephone": "(323) 405-4959",
       "email": "contact@akiradigital.net",
       "sameAs": [
@@ -164,24 +60,25 @@
           "email": "contact@akiradigital.net",
           "areaServed": "US",
           "availableLanguage": [
-            "English",
-            "Spanish"
+            "English"
           ]
         }
       ],
-      "openingHoursSpecification": [
+      "areaServed": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "18:00"
+          "@type": "Country",
+          "name": "United States"
         }
+      ],
+      "knowsAbout": [
+        "Web design for service businesses",
+        "Small business web design",
+        "Custom website design",
+        "Website development",
+        "Website redesign",
+        "Local SEO",
+        "Website strategy",
+        "Landing pages"
       ]
     },
     {
@@ -195,27 +92,182 @@
       "inLanguage": "en-US"
     },
     {
+      "@type": "WebPage",
+      "@id": "https://akiradigital.net/#webpage",
+      "url": "https://akiradigital.net/",
+      "name": "Web Design & Local SEO for Service Businesses | Akira Digital",
+      "description": "Akira Digital designs strategic websites and local SEO for service businesses that want to get found, build trust, and turn more visitors into customers.",
+      "isPartOf": {
+        "@id": "https://akiradigital.net/#website"
+      },
+      "about": {
+        "@id": "https://akiradigital.net/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
       "@type": "Service",
-      "name": "Custom web design for local businesses",
-      "serviceType": "Web design agency services",
+      "name": "Custom Web Design",
+      "serviceType": "Custom Web Design",
+      "description": "A site designed from scratch around your business. No template with your logo dropped in. We plan the pages, shape the message, and design every screen for the way your customers actually look for a company like yours.",
       "provider": {
         "@id": "https://akiradigital.net/#organization"
       },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
       "audience": {
         "@type": "BusinessAudience",
-        "name": "Small and mid-sized businesses of any industry — including trades and home services, law firms, dental and medical practices, med spas, fitness studios, restaurants, real estate, retail, nonprofits, consultants and B2B"
-      },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "USD",
-        "price": "1000",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "minPrice": "1000",
-          "priceCurrency": "USD",
-          "valueAddedTaxIncluded": false
-        }
+        "name": "Small and growing service businesses"
       }
+    },
+    {
+      "@type": "Service",
+      "name": "Website Development",
+      "serviceType": "Website Development",
+      "description": "The build itself. Clean, fast code, forms that actually reach your inbox, and tap-to-call wherever someone might want it.",
+      "provider": {
+        "@id": "https://akiradigital.net/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Small and growing service businesses"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Website Redesign",
+      "serviceType": "Website Redesign",
+      "description": "We keep what's working, fix what isn't, and rebuild the rest. That starts with looking at where visitors lose interest on the site you have now.",
+      "provider": {
+        "@id": "https://akiradigital.net/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Small and growing service businesses"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Local SEO",
+      "serviceType": "Local SEO",
+      "description": "Local SEO services for businesses that depend on nearby customers. We set up or clean up your Google Business Profile, tighten your service and location pages, and make sure your details match everywhere they appear. Nobody can promise a ranking. What we can do is give Google every reason to show you.",
+      "provider": {
+        "@id": "https://akiradigital.net/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Small and growing service businesses"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Website Strategy",
+      "serviceType": "Website Strategy",
+      "description": "A working session and a written plan for owners who aren't sure what they need yet. We look at your customers, your competitors, and your current site, then map out what to build and in what order.",
+      "provider": {
+        "@id": "https://akiradigital.net/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Small and growing service businesses"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Landing Pages",
+      "serviceType": "Landing Pages",
+      "description": "One focused page for one service, one offer, or one ad campaign. One message and one action.",
+      "provider": {
+        "@id": "https://akiradigital.net/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Small and growing service businesses"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://akiradigital.net/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a small business website cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our packages start at $1,000 for a three-page site and go up with the number of pages and how much strategy and SEO work is involved. Every package is listed with its price in the pricing section, so you'll know the number before we ever talk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a business website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the size of the site and how quickly content and feedback come together. You'll get a realistic timeline in writing before anything starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you only work with businesses in Los Angeles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We're based in Los Angeles and work remotely with service businesses anywhere in the United States."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a small business need local SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your customers search for what you do by city, by neighborhood, or with \"near me,\" then yes. Local SEO is what helps you show up in map results and local listings when they do."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I own my website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Your domain, your hosting account, and your files are yours. If you ever move on, all of it goes with you."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the website concepts real client sites?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They're original design concepts built around fictional businesses. We made them to show how we'd approach different industries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I need to get started?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A short conversation. Tell us about the business and what you want the site to do, and we'll take it from there."
+          }
+        }
+      ]
     }
   ]
 }
@@ -223,18 +275,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Archivo+Black&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet">
-<style>
-  html { scroll-behavior: smooth; }
+<link rel="preload" as="image" href="/concepts/northline-plumbing.jpg" fetchpriority="high">
+<!-- Akira Digital AI Assistant: external (CSP 'self') so it runs; the app framework blocks inline scripts -->
+<script src="/akira-widget-init.js"></script>
+<script src="./resources.js"></script>
+<script src="./support.js"></script>
+<style id="ak-contact-css">.ak-tel-num{display:inline}@media (max-width:560px){.ak-tel-num{display:none}}</style>
+<style id="akx-css">
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
   :root {
-    --ak-bg-rgb: 247,243,234; --ak-bg2-rgb: 239,232,216; --ak-surface-rgb: 255,255,255;
-    --ak-ink-rgb: 33,29,23; --ak-secondary-rgb: 110,101,88; --ak-border-rgb: 28,25,18;
-    --ak-accent-rgb: 155,59,84; --ak-accent2-rgb: 184,80,107; --ak-accent3-rgb: 184,80,107; --ak-accent4-rgb: 155,59,84; --ak-accent4-text-rgb: 155,59,84;
-    --ak-hero-font: 'Bodoni Moda', Georgia, serif;
+    --ak-bg-rgb: 10,10,12; --ak-bg2-rgb: 18,18,20; --ak-surface-rgb: 16,16,18;
+    --ak-ink-rgb: 245,245,245; --ak-secondary-rgb: 176,176,182; --ak-border-rgb: 255,255,255;
+    --ak-accent-rgb: 255,46,126; --ak-accent2-rgb: 255,107,74; --ak-accent3-rgb: 255,138,110; --ak-accent4-rgb: 255,107,74; --ak-accent4-text-rgb: 255,150,120;
+    --akx-coral: 255,107,74; --akx-pink: 255,46,126; --akx-live: 57,255,20;
+    --akx-grad: linear-gradient(100deg, rgb(244,96,62), rgb(240,36,116));
+    --ak-hero-font: 'Archivo', system-ui, sans-serif;
   }
-  body { margin: 0; background: rgb(var(--ak-bg-rgb)); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; transition: background .3s ease, color .3s ease; }
+  body { margin: 0; background: rgb(var(--ak-bg-rgb)); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: rgb(var(--ak-accent-rgb)); text-decoration: none; transition: color .2s ease; }
   a:hover { color: rgb(var(--ak-accent2-rgb)); }
-  ::selection { background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); }
+  ::selection { background: rgb(var(--ak-accent-rgb)); color: #fff; }
   input, textarea, select, button { font-family: inherit; }
   input:focus, textarea:focus, select:focus { border-color: rgb(var(--ak-accent-rgb)) !important; }
   :focus-visible { outline: 2px solid rgb(var(--ak-accent-rgb)); outline-offset: 3px; }
@@ -244,35 +304,172 @@
   @media (max-width: 760px) { [data-steps-grid] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
   @media (max-width: 520px) { [data-steps-grid] { grid-template-columns: minmax(0, 1fr) !important; } }
   form[data-rgrid] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  @media (max-width: 720px) { [data-nav-hide] { display: none !important; } }
+  @media (max-width: 1240px) { [data-nav-hide] { display: none !important; } }
+  @media (max-width: 780px) { [data-nav-badge] { display: none !important; } }
   @media (max-width: 720px) { [data-rgrid] { grid-template-columns: 1fr !important; } }
   @media (max-width: 720px) { form[data-rgrid] > * { grid-column: 1 / -1 !important; } }
   @keyframes akRise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
   @keyframes akFade { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes akScan { 0% { transform: translateY(-10%); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(1100%); opacity: 0; } }
-  @keyframes akTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes akBlink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
   @keyframes akDrift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(2%, -3%); } }
-  @keyframes akNudge { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
   @keyframes akGlowPulse { 0%, 100% { box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4); } 50% { box-shadow: 0 0 34px rgba(var(--ak-accent4-rgb),.5); } }
   @keyframes akBlobA { 0%, 100% { transform: translate(-6%, -4%) scale(1); } 33% { transform: translate(8%, 6%) scale(1.18); } 66% { transform: translate(-2%, 10%) scale(.92); } }
   @keyframes akBlobB { 0%, 100% { transform: translate(5%, 6%) scale(1.05); } 40% { transform: translate(-9%, -6%) scale(.9); } 70% { transform: translate(4%, -10%) scale(1.2); } }
-  @keyframes akBlobC { 0%, 100% { transform: translate(0, 8%) scale(.95); } 50% { transform: translate(-8%, -8%) scale(1.15); } }
-  @keyframes akTextSweep { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
-  @keyframes akSheen { 0% { transform: translateX(-120%) skewX(-18deg); opacity: 0; } 12% { opacity: .5; } 40% { opacity: 0; } 100% { transform: translateX(320%) skewX(-18deg); opacity: 0; } }
-  @keyframes akWords {
-    0%, 18% { transform: translateY(0); }
-    23%, 41% { transform: translateY(-20%); }
-    46%, 64% { transform: translateY(-40%); }
-    69%, 87% { transform: translateY(-60%); }
-    92%, 100% { transform: translateY(-80%); }
-  }
   @keyframes akHaloPulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
-  @keyframes akHaloPulse { 0%, 100% { opacity: .5; transform: translate(-50%,-50%) scale(1); } 50% { opacity: .85; transform: translate(-50%,-50%) scale(1.08); } }
+  @keyframes akxArc { 0%, 100% { opacity: .85; } 50% { opacity: 1; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; } }
-</style>
-</helmet>
 
+  /* ---------- shared pieces ---------- */
+  .akx-wrap { max-width: 1400px; margin: 0 auto; }
+  .akx-sec { position: relative; padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 3rem); }
+  .akx-sec--alt { background: rgb(var(--ak-bg2-rgb)); }
+  .akx-eyebrow { display: block; margin: 0 0 1.1rem; font-size: .72rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgb(var(--akx-pink)); }
+  .akx-h2 { margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(2.1rem, 4.4vw, 3.5rem); line-height: 1.05; letter-spacing: -.02em; color: rgb(var(--ak-ink-rgb)); text-wrap: balance; }
+  .akx-h3 { margin: 0 0 .6rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.3rem; line-height: 1.2; letter-spacing: -.005em; color: rgb(var(--ak-ink-rgb)); }
+  .akx-grad { background: linear-gradient(100deg, rgb(255,120,88), rgb(255,46,126)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: rgb(var(--akx-pink)); }
+  .akx-lead { margin: 0 0 1.4rem; font-size: 1.08rem; line-height: 1.7; color: rgb(var(--ak-ink-rgb)); text-wrap: pretty; }
+  .akx-p { margin: 0 0 1.2rem; font-size: 1rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty; }
+  .akx-btn { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; min-height: 50px; box-sizing: border-box; padding: .95rem 1.7rem; border-radius: 10px; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .82rem; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease; }
+  .akx-btn-primary, a.akx-btn-primary { border: 0; background: var(--akx-grad); color: #fff; text-shadow: 0 1px 1px rgba(90,0,30,.35); box-shadow: 0 0 26px rgba(var(--akx-pink),.34); }
+  .akx-btn-primary:hover, a.akx-btn-primary:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 0 40px rgba(var(--akx-pink),.6); }
+  .akx-btn-ghost, a.akx-btn-ghost { border: 1px solid rgba(var(--akx-pink),.75); background: rgba(10,10,12,.55); color: #fff; }
+  .akx-btn-ghost:hover, a.akx-btn-ghost:hover { color: #fff; transform: translateY(-2px); border-color: rgb(var(--akx-coral)); box-shadow: 0 0 26px rgba(var(--akx-pink),.3); }
+  .akx-btn-sm { min-height: 44px; padding: .7rem 1.2rem; font-size: .74rem; letter-spacing: .1em; border-radius: 8px; }
+  .akx-live { display: inline-flex; align-items: center; gap: .45rem; padding: .35rem .7rem; border-radius: 99px; border: 1px solid rgba(var(--akx-live),.4); background: rgba(var(--akx-live),.1); white-space: nowrap; }
+  .akx-live i { width: 6px; height: 6px; border-radius: 50%; background: rgb(var(--akx-live)); box-shadow: 0 0 8px rgb(var(--akx-live)); animation: akHaloPulseDot 2s ease-in-out infinite; }
+  .akx-live b { font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgb(var(--akx-live)); }
+
+  /* ---------- nav ---------- */
+  .akx-nav-logo { height: 40px; width: auto; display: block; }
+  .akx-nav-cta-arrow { display: inline; }
+  @media (max-width: 560px) { .akx-nav-logo { height: 30px; } .akx-nav-cta-arrow { display: none; } .akx-nav-cta { padding: .6rem .8rem !important; font-size: .68rem !important; letter-spacing: .06em !important; } .akx-nav { padding-left: .9rem !important; padding-right: .9rem !important; gap: .5rem !important; } .akx-nav-right { gap: .45rem !important; } }
+  @media (max-width: 380px) { .akx-nav-logo { height: 26px; } }
+
+  /* ---------- hero ---------- */
+  .akx-hero { position: relative; overflow: hidden; padding: clamp(7.5rem, 13vw, 10.5rem) clamp(1.25rem, 4vw, 3rem) 0; background: radial-gradient(ellipse 60% 55% at 78% 38%, rgba(var(--akx-pink),.2), transparent 70%), radial-gradient(ellipse 45% 50% at 8% 0%, rgba(var(--akx-coral),.16), transparent 70%), rgb(var(--ak-bg-rgb)); }
+  .akx-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+  .akx-hero-badge { display: none; margin-bottom: 1.2rem; }
+  .akx-h1 { margin: 0 0 1.5rem; font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(2.4rem, 4.5vw, 4.1rem); line-height: 1.04; letter-spacing: -.028em; color: #fff; animation: akRise .8s ease both; }
+  .akx-hero-sub { max-width: 33rem; margin: 0 0 1.5rem; font-size: 1.12rem; line-height: 1.65; color: rgba(255,255,255,.9); text-wrap: pretty; animation: akRise .8s ease .1s both; }
+  .akx-hero-tags { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .9rem; margin: 0 0 2.1rem; padding: 0; list-style: none; font-size: .92rem; color: rgba(255,255,255,.86); animation: akRise .8s ease .16s both; }
+  .akx-hero-tags li { display: inline-flex; align-items: center; gap: .9rem; }
+  .akx-hero-tags li + li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: rgb(var(--akx-pink)); }
+  .akx-hero-ctas { display: flex; flex-wrap: wrap; gap: .9rem; animation: akRise .8s ease .22s both; }
+  .akx-stage { position: relative; padding: 4% 6% 10% 0; animation: akFade 1.1s ease .15s both; }
+  .akx-arc { position: absolute; right: -34%; top: -30%; width: 108%; aspect-ratio: 1; border-radius: 50%; box-shadow: 0 0 0 2px rgba(255,90,120,.95), 0 0 46px 8px rgba(var(--akx-pink),.55), inset 0 0 60px 10px rgba(var(--akx-coral),.3); pointer-events: none; animation: akxArc 6s ease-in-out infinite; }
+  .akx-laptop { position: relative; z-index: 1; }
+  .akx-laptop-screen { padding: 2.2% 2.2% 2.6%; border-radius: 16px 16px 4px 4px; background: linear-gradient(160deg, #2a2a30, #121215); border: 1px solid rgba(255,255,255,.16); box-shadow: 0 34px 90px rgba(0,0,0,.65), 0 0 70px rgba(var(--akx-pink),.2); }
+  .akx-laptop-screen > .akx-site { border-radius: 6px; }
+  .akx-laptop-base { position: relative; height: 0; padding-top: 2.4%; margin: 0 -7%; border-radius: 2px 2px 16px 16px; background: linear-gradient(#4a4a52, #1a1a1e 70%); box-shadow: 0 18px 40px rgba(0,0,0,.6); }
+  .akx-laptop-base::after { content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%); width: 14%; height: 34%; border-radius: 0 0 8px 8px; background: #0f0f12; }
+  .akx-phone { position: absolute; z-index: 2; right: 0; bottom: 0; width: 26%; padding: 1.2%; border-radius: 12% / 6%; background: linear-gradient(160deg, #34343a, #101013); border: 1px solid rgba(255,255,255,.22); box-shadow: 0 26px 60px rgba(0,0,0,.7), 0 0 44px rgba(var(--akx-pink),.26); }
+  .akx-phone-screen { position: relative; aspect-ratio: 9 / 18; overflow: hidden; border-radius: 10% / 5%; background: #0b1424; container-type: inline-size; color: #fff; }
+  .akx-phone-screen img { position: absolute; left: 0; top: 0; width: 100%; height: 46%; object-fit: cover; }
+  .akx-phone-top { position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 6cqw 7cqw; background: linear-gradient(rgba(8,16,32,.9), rgba(8,16,32,0)); font-size: 10px; font-size: 5.6cqw; font-weight: 800; letter-spacing: .08em; }
+  .akx-phone-top small { display: block; font-size: 6px; font-size: 3.4cqw; font-weight: 600; letter-spacing: .2em; opacity: .8; }
+  .akx-phone-burger { width: 9cqw; height: 6cqw; border-top: 1.4cqw solid #fff; border-bottom: 1.4cqw solid #fff; box-sizing: border-box; }
+  .akx-phone-body { position: absolute; left: 0; right: 0; top: 44%; bottom: 0; padding: 8cqw 8cqw 0; background: linear-gradient(rgba(11,20,36,0), #0b1424 12%); }
+  .akx-phone-h { font-size: 15px; font-size: 11cqw; font-weight: 700; line-height: 1.08; margin-bottom: 4cqw; }
+  .akx-phone-s { font-size: 7px; font-size: 5cqw; opacity: .82; margin-bottom: 7cqw; }
+  .akx-phone-cta { display: block; text-align: center; padding: 4.6cqw 0; border-radius: 3cqw; background: #FF5A5F; font-size: 7px; font-size: 5cqw; font-weight: 700; }
+  .akx-feats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; margin: clamp(3rem, 6vw, 5rem) 0 0; padding: 2.4rem 0 2.8rem; border-top: 1px solid rgba(255,255,255,.08); list-style: none; }
+  .akx-feats li { display: flex; flex-direction: column; align-items: center; gap: .9rem; text-align: center; font-size: 1rem; font-weight: 500; color: #fff; }
+  .akx-feats svg { width: 38px; height: 38px; color: rgb(var(--akx-pink)); filter: drop-shadow(0 0 10px rgba(var(--akx-pink),.55)); }
+
+  /* ---------- concept mini sites ---------- */
+  .akx-site { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; container-type: inline-size; background: #0e0e11; color: #fff; font-family: 'Archivo', system-ui, sans-serif; text-align: left; }
+  .akx-site-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .akx-site-shade { position: absolute; inset: 0; }
+  .akx-site-bar { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; gap: 2cqw; padding: 3.2cqw 4.4cqw; }
+  .akx-site-logo { font-size: 9px; font-size: 3cqw; font-weight: 800; letter-spacing: .1em; line-height: 1.1; text-transform: uppercase; }
+  .akx-site-logo small { display: block; font-size: 6px; font-size: 1.75cqw; font-weight: 600; letter-spacing: .24em; opacity: .82; }
+  .akx-site-nav { display: flex; gap: 2.6cqw; font-size: 6px; font-size: 1.8cqw; font-weight: 500; opacity: .86; }
+  .akx-site-pill { padding: 1.1cqw 2.5cqw; border-radius: 99px; font-size: 6px; font-size: 1.8cqw; font-weight: 700; white-space: nowrap; }
+  .akx-site-body { position: absolute; left: 4.4cqw; right: 40cqw; bottom: 7cqw; }
+  .akx-site-h { margin-bottom: 1.8cqw; font-size: 18px; font-size: 6.3cqw; font-weight: 700; line-height: 1.07; letter-spacing: -.01em; }
+  .akx-site-sub { margin-bottom: 3.2cqw; font-size: 8px; font-size: 2.45cqw; opacity: .88; }
+  .akx-site-cta { display: inline-block; padding: 1.7cqw 3.3cqw; border-radius: 1.1cqw; font-size: 7px; font-size: 2.15cqw; font-weight: 700; white-space: nowrap; }
+  .akx-site-strip { position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(4, 1fr); background: rgba(8,16,32,.92); border-top: 1px solid rgba(255,255,255,.1); font-size: 6px; font-size: 1.7cqw; text-align: center; }
+  .akx-site-strip span { padding: 2.2cqw 1cqw; border-left: 1px solid rgba(255,255,255,.08); opacity: .9; }
+  .akx-site--strip .akx-site-body { bottom: 11cqw; }
+
+  /* ---------- approach ---------- */
+  .akx-approach { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(2.5rem, 5vw, 5rem); align-items: center; }
+  .akx-approach-art { position: relative; padding: 9% 7% 11%; border-radius: 14px; overflow: hidden; border: 1px solid rgba(var(--akx-pink),.3); background: radial-gradient(ellipse 80% 70% at 30% 20%, rgba(var(--akx-pink),.3), transparent 70%), radial-gradient(ellipse 60% 60% at 90% 100%, rgba(var(--akx-coral),.24), transparent 70%), #0d0d10; }
+  .akx-checks { margin: 0 0 2.2rem; padding: 0; list-style: none; display: grid; gap: .85rem; }
+  .akx-checks li { display: flex; align-items: flex-start; gap: .85rem; font-size: 1.02rem; line-height: 1.5; color: #fff; }
+  .akx-checks svg { flex: 0 0 auto; width: 22px; height: 22px; margin-top: .08rem; color: rgb(var(--akx-pink)); }
+
+  /* ---------- concepts ---------- */
+  .akx-chips { display: flex; flex-wrap: wrap; gap: .7rem; margin: 0 0 2.4rem; }
+  .akx-chip { min-height: 44px; padding: .6rem 1.25rem; border-radius: 99px; font-size: .86rem; font-weight: 600; cursor: pointer; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+  .akx-concepts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem 1.4rem; }
+  .akx-card { flex-direction: column; }
+  .akx-card-frame { border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,.14); background: #17171a; box-shadow: 0 18px 44px rgba(0,0,0,.5); transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .akx-card:hover .akx-card-frame { transform: translateY(-4px); border-color: rgba(var(--akx-pink),.7); box-shadow: 0 22px 54px rgba(0,0,0,.55), 0 0 34px rgba(var(--akx-pink),.22); }
+  .akx-card-dots { display: flex; gap: 5px; padding: 8px 10px; }
+  .akx-card-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.22); }
+  .akx-card-dots i:first-child { background: rgb(var(--akx-coral)); }
+  .akx-card-dots i:nth-child(2) { background: rgb(var(--akx-pink)); }
+  .akx-card-name { margin: 1.1rem 0 .2rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.18rem; color: #fff; }
+  .akx-card-kind { margin: 0 0 .6rem; font-size: .92rem; color: rgba(255,255,255,.78); }
+  .akx-card-why { margin: 0 0 .9rem; font-size: .9rem; line-height: 1.6; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty; }
+  .akx-tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+  .akx-tags span { padding: .32rem .8rem; border-radius: 6px; background: rgba(255,255,255,.07); font-size: .76rem; color: rgba(255,255,255,.82); }
+  .akx-note { margin: 2.6rem 0 0; padding: 1.3rem 1.5rem; border-radius: 10px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.03); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; }
+  .akx-note p { margin: 0; max-width: 46rem; font-size: .95rem; line-height: 1.65; color: rgb(var(--ak-secondary-rgb)); }
+
+  /* ---------- services / industries / about / faq ---------- */
+  .akx-head { max-width: 46rem; margin: 0 0 3rem; }
+  .akx-grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+  .akx-grid4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+  .akx-tile { position: relative; display: flex; flex-direction: column; padding: 1.8rem 1.6rem 1.6rem; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: linear-gradient(160deg, rgba(var(--akx-pink),.07), rgba(255,255,255,.015) 55%); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  .akx-tile:hover { transform: translateY(-3px); border-color: rgba(var(--akx-pink),.6); box-shadow: 0 0 34px rgba(var(--akx-pink),.14); }
+  .akx-tile-num { margin-bottom: 1rem; font-size: .7rem; font-weight: 700; letter-spacing: .2em; color: rgb(var(--akx-coral)); }
+  .akx-tile p { margin: 0 0 1rem; font-size: .95rem; line-height: 1.68; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty; }
+  .akx-dl { margin: 0 0 1.3rem; display: grid; gap: .7rem; }
+  .akx-dl div { padding-left: .9rem; border-left: 2px solid rgba(var(--akx-pink),.5); }
+  .akx-dl dt { margin: 0 0 .15rem; font-size: .64rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb)); }
+  .akx-dl dd { margin: 0; font-size: .9rem; line-height: 1.6; color: rgba(255,255,255,.88); }
+  .akx-link { margin-top: auto; align-self: flex-start; padding: .5rem 0; font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--akx-pink)); }
+  .akx-link:hover { color: rgb(var(--akx-coral)); }
+  .akx-ind { padding: 1.4rem 1.3rem; }
+  .akx-ind .akx-h3 { font-size: 1.08rem; }
+  .akx-ind p { margin: 0; font-size: .9rem; }
+  .akx-about { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2.5rem, 5vw, 5rem); align-items: start; }
+  .akx-pillars { display: grid; gap: .9rem; }
+  .akx-pillar { padding: 1.5rem 1.6rem; border-radius: 12px; border: 1px solid rgba(var(--akx-pink),.26); background: linear-gradient(110deg, rgba(var(--akx-coral),.1), rgba(255,255,255,.015) 60%); }
+  .akx-pillar p { margin: 0; font-size: .95rem; line-height: 1.65; color: rgb(var(--ak-secondary-rgb)); }
+  .akx-faq { max-width: 54rem; margin: 0 auto; display: grid; gap: .7rem; }
+  .akx-faq details { border-radius: 10px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.025); transition: border-color .2s ease; }
+  .akx-faq details[open] { border-color: rgba(var(--akx-pink),.5); }
+  .akx-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem 1.4rem; cursor: pointer; list-style: none; font-size: 1.05rem; font-weight: 600; color: #fff; }
+  .akx-faq summary::-webkit-details-marker { display: none; }
+  .akx-faq summary::after { content: "+"; flex: 0 0 auto; font-size: 1.4rem; font-weight: 400; line-height: 1; color: rgb(var(--akx-pink)); transition: transform .2s ease; }
+  .akx-faq details[open] summary::after { transform: rotate(45deg); }
+  .akx-faq details p { margin: 0; padding: 0 1.4rem 1.3rem; font-size: .98rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb)); }
+
+  @media (max-width: 1020px) {
+    .akx-hero-grid, .akx-approach, .akx-about { grid-template-columns: minmax(0, 1fr); }
+    .akx-stage { max-width: 640px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+    .akx-concepts, .akx-grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .akx-grid4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .akx-feats { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 2rem; }
+    .akx-approach-art { order: 2; }
+  }
+  @media (max-width: 720px) {
+    .akx-arc { right: -62%; top: 4%; width: 140%; }
+
+    .akx-concepts, .akx-grid3, .akx-grid4 { grid-template-columns: minmax(0, 1fr); }
+    .akx-feats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .akx-feats li { font-size: .92rem; }
+    .akx-hero-ctas .akx-btn, .akx-note .akx-btn { width: 100%; }
+  }
+  @media (max-width: 780px) { .akx-hero-badge { display: inline-flex; } }
+</style>
+</head>
+<body>
+<x-dc>
 <div style="position: relative; overflow-x: hidden; background: rgb(var(--ak-bg-rgb));">
 
   
@@ -280,115 +477,213 @@
   <div id="ak-cursor-glow" style="position: fixed; top: 0; left: 0; width: 340px; height: 340px; margin: -170px 0 0 -170px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.16), rgba(var(--ak-accent4-rgb),.08) 45%, transparent 70%); filter: blur(20px); pointer-events: none; opacity: 0; transition: opacity .3s ease; z-index: 9998; will-change: transform;"></div>
   <div id="ak-cursor-ring" style="position: fixed; top: 0; left: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 1.5px solid rgba(var(--ak-accent-rgb),.9); box-shadow: 0 0 14px rgba(var(--ak-accent-rgb),.55), inset 0 0 10px rgba(var(--ak-accent-rgb),.25); pointer-events: none; opacity: 0; transition: opacity .3s ease, width .22s ease, height .22s ease, margin .22s ease, border-color .22s ease, background .22s ease; z-index: 9999; will-change: transform;"></div>
 
-  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 800; min-height: 4.4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; padding: 1rem clamp(1.25rem, 4vw, 3rem); background: rgba(var(--ak-bg-rgb),.72); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);">
-    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(var(--ak-accent-rgb),.55) 25%, rgba(var(--ak-accent4-rgb),.55) 55%, rgba(201,148,26,.4) 80%, transparent);"></div>
+  <nav class="akx-nav" aria-label="Main" style="position: fixed; top: 0; left: 0; right: 0; z-index: 800; min-height: 4.4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem 1.5rem; padding: .9rem clamp(1.25rem, 2.6vw, 3rem); box-sizing: border-box; background: rgba(var(--ak-bg-rgb),.76); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);">
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(var(--akx-coral),.55) 25%, rgba(var(--akx-pink),.6) 60%, transparent);"></div>
 
-    <a href="#top" style="position: relative; display: inline-flex; align-items: center;">
-      <img src="/ad-lockup.png" alt="Akira Digital" width="496" height="120" decoding="async" style="height: 40px; width: auto; display: block;">
+    <a href="#top" aria-label="Akira Digital home" style="position: relative; display: inline-flex; align-items: center; flex: 0 0 auto;">
+      <img class="akx-nav-logo" src="/ad-lockup.png" alt="Akira Digital" width="496" height="120" decoding="async">
     </a>
 
-    <div style="position: relative; display: flex; align-items: center; gap: clamp(.5rem, 1.6vw, 1.4rem);">
-      <a href="#preview" data-nav-hide="" style="padding: .45rem .2rem; font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Preview</a>
-      <a href="#work" data-nav-hide="" style="padding: .45rem .2rem; font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--ak-accent4-text-rgb)), rgb(var(--ak-accent3-rgb))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Work</a>
-      <a href="#process" data-nav-hide="" style="padding: .45rem .2rem; font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--ak-accent3-rgb)), rgb(201,148,26)); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Process</a>
-      <a href="#pricing" data-nav-hide="" style="padding: .45rem .2rem; font-size: .76rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(201,148,26), rgb(var(--ak-accent-rgb))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Pricing</a>
+    <div class="akx-nav-right" style="position: relative; display: flex; align-items: center; gap: clamp(.5rem, 1.15vw, 1.2rem);">
+      <a href="#services" data-nav-hide="" style="padding: .45rem .1rem; font-size: .74rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--akx-coral)), rgb(var(--akx-pink))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Services</a>
+      <a href="#concepts" data-nav-hide="" style="padding: .45rem .1rem; font-size: .74rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--akx-coral)), rgb(var(--akx-pink))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Concepts</a>
+      <a href="#industries" data-nav-hide="" style="padding: .45rem .1rem; font-size: .74rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--akx-coral)), rgb(var(--akx-pink))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Industries</a>
+      <a href="#about" data-nav-hide="" style="padding: .45rem .1rem; font-size: .74rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--akx-coral)), rgb(var(--akx-pink))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">About</a>
+      <a href="#contact" data-nav-hide="" style="padding: .45rem .1rem; font-size: .74rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); background-image: linear-gradient(90deg, rgb(var(--akx-coral)), rgb(var(--akx-pink))); background-repeat: no-repeat; background-position: left bottom; background-size: 0% 2px; transition: color .2s ease, background-size .28s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); background-size: 100% 2px;">Contact</a>
 
-      <span data-nav-hide="" style="display: inline-flex; align-items: center; gap: .45rem; margin-left: .3rem; padding: .35rem .7rem; border-radius: 99px; border: 1px solid rgba(var(--ak-accent3-rgb),.4); background: rgba(var(--ak-accent3-rgb),.1); white-space: nowrap;">
-        <span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(var(--ak-accent3-rgb)); box-shadow: 0 0 8px rgb(var(--ak-accent3-rgb)); animation: akHaloPulseDot 2s ease-in-out infinite;"></span>
-        <span style="font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">Taking projects</span>
-      </span>
+      <span class="akx-live" data-nav-badge="" style="margin-left: .3rem;"><i></i><b>Taking projects</b></span>
 
-      <a href="tel:+13234054959" aria-label="Call Akira Digital on (323) 405-4959" style="display: inline-flex; align-items: center; gap: .5rem; padding: .65rem 1rem; min-height: 44px; box-sizing: border-box; border-radius: 6px; border: 1px solid rgba(var(--ak-accent-rgb),.45); background: rgba(var(--ak-accent-rgb),.08); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .76rem; letter-spacing: .04em; white-space: nowrap; transition: all .18s ease;" style-hover="border-color: rgba(var(--ak-accent-rgb),.9); background: rgba(var(--ak-accent-rgb),.16);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="ak-tel-num">(323) 405-4959</span></a> <a href="#contact" style="position: relative; overflow: hidden; padding: .7rem 1.3rem; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .76rem; letter-spacing: .08em; white-space: nowrap; box-shadow: 0 0 20px rgba(var(--ak-accent-rgb),.35); transition: all .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 32px rgba(var(--ak-accent-rgb),.6); color: rgb(var(--ak-bg-rgb));">BOOK FREE CALL</a>
+      <a href="tel:+13234054959" aria-label="Call Akira Digital on (323) 405-4959" style="display: inline-flex; align-items: center; gap: .5rem; padding: .65rem 1rem; min-height: 44px; box-sizing: border-box; border-radius: 8px; border: 1px solid rgba(var(--akx-pink),.45); background: rgba(var(--akx-pink),.08); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .76rem; letter-spacing: .04em; white-space: nowrap; transition: all .18s ease;" style-hover="border-color: rgba(var(--akx-pink),.9); background: rgba(var(--akx-pink),.16);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="ak-tel-num">(323) 405-4959</span></a>
+      <a href="#contact" class="akx-btn akx-btn-primary akx-btn-sm akx-nav-cta">Start a Project <span class="akx-nav-cta-arrow" aria-hidden="true">→</span></a>
     </div>
   </nav>
 
-  <section id="top" style="position: relative; min-height: 100svh; display: flex; align-items: center; padding: 9rem clamp(1.25rem, 4vw, 3rem) 5rem; overflow: hidden;">
-
-    <div style="position: absolute; inset: 0; background-image: url('laptop-photo.png'); background-size: cover; background-position: center 35%; pointer-events: none; z-index: 0;"></div>
-    <div style="position: absolute; inset: 0; background: rgba(6,6,6,.82); pointer-events: none; z-index: 0;"></div>
-    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(var(--ak-border-rgb),.035) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--ak-border-rgb),.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);"></div>
-    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(var(--ak-accent-rgb),.13), transparent 70%); animation: akDrift 18s ease-in-out infinite;"></div>
-
-    <div style="position: absolute; top: -10%; left: -8%; width: 46vw; height: 46vw; max-width: 720px; max-height: 720px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.4), transparent 65%); filter: blur(90px); pointer-events: none; z-index: 0; animation: akBlobA 22s ease-in-out infinite;"></div>
-    <div style="position: absolute; bottom: -14%; right: -10%; width: 42vw; height: 42vw; max-width: 660px; max-height: 660px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent4-rgb),.36), transparent 65%); filter: blur(100px); pointer-events: none; z-index: 0; animation: akBlobB 27s ease-in-out infinite;"></div>
-    <div style="position: absolute; top: 30%; right: 22%; width: 26vw; height: 26vw; max-width: 420px; max-height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent3-rgb),.22), transparent 65%); filter: blur(110px); pointer-events: none; z-index: 0; animation: akBlobC 19s ease-in-out infinite;"></div>
-
-    <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;">
-      <div style="position: absolute; top: 0; bottom: 0; width: 22%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.07), transparent); animation: akSheen 9s ease-in-out infinite;"></div>
-    </div>
-
-    <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, rgba(0,0,0,.55)); pointer-events: none; z-index: 0;"></div>
-
-    <div style="position: relative; z-index: 1; width: 100%; max-width: 900px; margin: 0 auto; text-align: center;">
-
-      <div>
-        <div style="display: flex; align-items: center; justify-content: center; gap: .75rem; margin-bottom: 1.8rem; animation: akFade .8s ease both;">
-          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent-rgb));"></span>
-          <span style="display: inline-flex; align-items: baseline; gap: .4em; font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;">
-            <span style="color: rgb(var(--ak-secondary-rgb));">More</span>
-            <span style="display: inline-block; height: 1.3em; overflow: hidden; text-align: left; min-width: 8.5em;">
-              <span style="display: block; animation: akWords 13s cubic-bezier(.7,0,.3,1) infinite;">
-                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent-rgb));">phone calls</span>
-                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent4-text-rgb));">booked jobs</span>
-                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent3-rgb));">new customers</span>
-                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(201,148,26);">revenue</span>
-                <span style="display: block; height: 1.3em; line-height: 1.3em; color: rgb(var(--ak-accent-rgb));">phone calls</span>
-              </span>
-            </span>
-          </span>
-          <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent-rgb));"></span>
+  <main>
+  <section id="top" class="akx-hero">
+    <div class="akx-wrap">
+      <div class="akx-hero-grid">
+        <div>
+          <span class="akx-live akx-hero-badge"><i></i><b>Taking projects</b></span>
+          <span class="akx-eyebrow" style="animation: akFade .8s ease both;">Web design for service businesses</span>
+          <h1 class="akx-h1">Your business deserves a website people <span class="akx-grad">remember.</span></h1>
+          <p class="akx-hero-sub">Akira Digital designs websites for service businesses that want to look established, get found online, earn trust, and make it easy for people to choose them.</p>
+          <ul class="akx-hero-tags"><li>Web Design</li><li>Local SEO</li><li>Strategy</li><li>Development</li></ul>
+          <div class="akx-hero-ctas">
+            <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
+            <a href="#concepts" class="akx-btn akx-btn-ghost">View Website Concepts <span aria-hidden="true">→</span></a>
+          </div>
         </div>
-
-        <div style="position: relative;">
-          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 70%; height: 120%; border-radius: 50%; background: radial-gradient(ellipse, rgba(var(--ak-accent-rgb),.28), transparent 65%); filter: blur(60px); pointer-events: none; animation: akHaloPulse 7s ease-in-out infinite;"></div>
-          <h1 style="position: relative; margin: 0 0 1.75rem; font-family: var(--ak-hero-font); font-style: italic; font-weight: 800; font-size: clamp(3rem, 7.2vw, 6.4rem); line-height: .95; letter-spacing: -.02em; text-wrap: balance;">
-            <span style="display: block; animation: akRise .8s ease both;">We build websites</span>
-            <span style="display: block; animation: akRise .8s ease .12s both;">that <span style="color: rgb(var(--ak-accent-rgb)); text-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.55);">win</span> <span style="background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 25%, rgb(201,148,26) 50%, rgb(var(--ak-accent3-rgb)) 75%, rgb(var(--ak-accent-rgb))); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: akTextSweep 9s linear infinite;">business.</span></span>
-          </h1>
+        <div class="akx-stage" aria-hidden="true">
+          <div class="akx-arc"></div>
+          <div class="akx-laptop">
+            <div class="akx-laptop-screen"><div class="akx-site akx-site--strip" style="font-family: 'Archivo', system-ui, sans-serif; color: #ffffff;"><img class="akx-site-photo" src="/concepts/northline-plumbing.jpg" alt="Plumbing website concept showing a white service van parked outside a building" width="1000" height="625" decoding="async" fetchpriority="high"><div class="akx-site-shade" style="background: linear-gradient(90deg, rgba(8,16,32,.94) 0%, rgba(8,16,32,.78) 46%, rgba(8,16,32,.12) 100%);"></div><div class="akx-site-bar"><span class="akx-site-logo">Northline<small>Plumbing</small></span><span class="akx-site-nav"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></span><span class="akx-site-pill" style="background: #ffffff; color: #0b1424;">Call Now</span></div><div class="akx-site-body"><div class="akx-site-h">Reliable Plumbing for a Brighter Home.</div><div class="akx-site-sub">Fast. Professional. Local.</div><span class="akx-site-cta" style="background: #FF5A5F; color: #ffffff;">Get a Free Quote →</span></div><div class="akx-site-strip"><span>Repairs</span><span>Water Heaters</span><span>Drain Cleaning</span><span>Emergency Service</span></div></div></div>
+            <div class="akx-laptop-base"></div>
+          </div>
+          <div class="akx-phone">
+            <div class="akx-phone-screen">
+              <img src="/concepts/northline-plumbing-mobile.jpg" alt="" width="480" height="640" decoding="async">
+              <div class="akx-phone-top"><span>NORTHLINE<small>PLUMBING</small></span><span class="akx-phone-burger"></span></div>
+              <div class="akx-phone-body"><div class="akx-phone-h">Reliable Plumbing for a Brighter Home</div><div class="akx-phone-s">Fast. Professional. Local.</div><span class="akx-phone-cta">Get a Free Quote →</span></div>
+            </div>
+          </div>
         </div>
-
-        <p style="max-width: 40rem; margin: 0 auto 1.2rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); text-wrap: pretty; animation: akRise .8s ease .2s both;">
-          Akira Digital is a <strong style="font-weight: 700; color: rgb(var(--ak-ink-rgb));">web design agency for businesses that live or die by their local reputation</strong> — trades and home services, law firms, clinics and med spas, studios, restaurants, and plenty that don't fit a category.
-        </p>
-        <p style="max-width: 34rem; margin: 0 auto 2.4rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty; animation: akRise .8s ease .24s both;">
-          Customers check you out online before they ever call. If what they find looks dated, they call someone else. We design, write and build the site that keeps them — mobile-first, fast, and tuned for local search. Packages from $1,000.
-        </p>
-
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; animation: akRise .8s ease .34s both;">
-          <a href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1rem 1.8rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); animation: akGlowPulse 3s ease-in-out infinite; color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.4);">BOOK A FREE CALL →</a>
-          <a href="#preview" style="display: inline-flex; align-items: center; padding: 1rem 1.8rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.15rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">SEE YOUR WEBSITE DESIGN FIRST</a>
-        </div>
-
       </div>
-
+      <ul class="akx-feats"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span>Custom Web Design</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-10.2a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg><span>Local SEO</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span>Conversion Focused</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.100 1.300 1.100 2.200h5c0-.9.400-1.600 1.100-2.200A6 6 0 0 0 12 3z"/></svg><span>Strategy &amp; Consulting</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8.5" r="3"/><path d="M3.500 19a5.500 5.500 0 0 1 11 0"/><circle cx="17" cy="9.500" r="2.300"/><path d="M16 14.200a4.500 4.500 0 0 1 4.800 4.800"/></svg><span>Ongoing Support</span></li></ul>
     </div>
-
-    <a href="#problem" style="position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); font-size: .6rem; letter-spacing: .24em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); animation: akNudge 2s ease-in-out infinite;">Scroll</a>
   </section>
 
-  <div style="border-top: 1px solid rgba(var(--ak-accent-rgb),.25); border-bottom: 1px solid rgba(var(--ak-accent-rgb),.25); background: rgb(var(--ak-bg2-rgb)); overflow: hidden; padding: .85rem 0;">
-    <div style="display: flex; width: max-content; animation: akTicker 28s linear infinite;">
-      <div style="display: flex; gap: 2.5rem; padding-right: 2.5rem; font-family: 'Archivo', sans-serif; font-size: 1.05rem; letter-spacing: .14em; color: rgb(var(--ak-accent-rgb)); white-space: nowrap;">
-        <span>MORE CALLS</span><span>◆</span><span>MORE BOOKED JOBS</span><span>◆</span><span>MORE CUSTOMERS</span><span>◆</span><span>PREMIUM CRAFT</span><span>◆</span><span>NO PLATFORM LOCK-IN</span><span>◆</span><span>BUILT TO CONVERT</span><span>◆</span><span>YOU OWN EVERYTHING</span><span>◆</span>
+  <section id="approach" class="akx-sec akx-sec--alt">
+    <div class="akx-wrap akx-approach">
+      <div class="akx-approach-art" aria-hidden="true">
+        <div class="akx-laptop">
+          <div class="akx-laptop-screen"><div class="akx-site" style="font-family: 'Cormorant Garamond', Georgia, serif; color: #ffffff;"><img class="akx-site-photo" src="/concepts/ember-oak-med-spa.jpg" alt="Med spa website concept showing a softly lit treatment room" width="1000" height="625" decoding="async" loading="lazy"><div class="akx-site-shade" style="background: linear-gradient(90deg, rgba(46,27,18,.9) 0%, rgba(46,27,18,.62) 48%, rgba(46,27,18,.05) 100%);"></div><div class="akx-site-bar"><span class="akx-site-logo">Ember &amp; Oak<small>Med Spa</small></span><span class="akx-site-nav"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></span><span class="akx-site-pill" style="background: #f6ede4; color: #3a2418;">Book Appointment</span></div><div class="akx-site-body"><div class="akx-site-h">Advanced Aesthetics. Natural Results.</div><div class="akx-site-sub">Confidence looks good on you.</div><span class="akx-site-cta" style="background: #E5604F; color: #ffffff;">Book a Consultation →</span></div></div></div>
+          <div class="akx-laptop-base"></div>
+        </div>
       </div>
-      <div style="display: flex; gap: 2.5rem; padding-right: 2.5rem; font-family: 'Archivo', sans-serif; font-size: 1.05rem; letter-spacing: .14em; color: rgb(var(--ak-accent-rgb)); white-space: nowrap;" aria-hidden="true">
-        <span>MORE CALLS</span><span>◆</span><span>MORE BOOKED JOBS</span><span>◆</span><span>MORE CUSTOMERS</span><span>◆</span><span>PREMIUM CRAFT</span><span>◆</span><span>NO PLATFORM LOCK-IN</span><span>◆</span><span>BUILT TO CONVERT</span><span>◆</span><span>YOU OWN EVERYTHING</span><span>◆</span>
+      <div>
+        <span class="akx-eyebrow">Design with purpose</span>
+        <h2 class="akx-h2">A better website starts with <span class="akx-grad">understanding your business.</span></h2>
+        <p class="akx-p">Before anything gets designed, we get to know your customers, your competition, what sets you apart, and what someone needs to see before they feel good about choosing you. Then the site gets built around those answers.</p>
+        <ul class="akx-checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.300l2.700 2.700L16 9.500"/></svg><span>Strategy shaped around your industry</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.300l2.700 2.700L16 9.500"/></svg><span>Fast and easy to use on a phone</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.300l2.700 2.700L16 9.500"/></svg><span>Local SEO planned into the structure</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.300l2.700 2.700L16 9.500"/></svg><span>Designed to turn visitors into customers</span></li>
+        </ul>
+        <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
       </div>
     </div>
-  </div>
+  </section>
 
-  <section id="problem" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb));">
+  <section id="concepts" class="akx-sec">
+    <div class="akx-wrap">
+      <div class="akx-head">
+        <span class="akx-eyebrow">Concept websites</span>
+        <h2 class="akx-h2">Website Concepts</h2>
+        <p class="akx-lead">Original website concepts for service businesses.</p>
+        <p class="akx-p" style="margin-bottom: 0;">These are sample design directions we created to show how the thinking changes from one industry to the next. The businesses are fictional. The strategy behind each one is real.</p>
+      </div>
+      <div class="akx-chips" role="group" aria-label="Filter concepts by industry">
+        <sc-for list="{{ conceptChips }}" as="f" hint-placeholder-count="6">
+          <button type="button" class="akx-chip" aria-pressed="{{ f.pressed }}" onClick="{{ f.pick }}" style="border: 1px solid {{ f.border }}; background: {{ f.bg }}; color: {{ f.color }};">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div class="akx-concepts">
+        <sc-for list="{{ concepts }}" as="c" hint-placeholder-count="9">
+          <article class="akx-card" style="display: {{ c.display }};">
+            <div class="akx-card-frame">
+              <div class="akx-card-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="akx-site" style="font-family: {{ c.font }}; color: {{ c.ink }};">
+                <img class="akx-site-photo" src="{{ c.img }}" alt="{{ c.alt }}" width="1000" height="625" loading="lazy" decoding="async">
+                <div class="akx-site-shade" style="background: {{ c.shade }};"></div>
+                <div class="akx-site-bar" aria-hidden="true"><span class="akx-site-logo">{{ c.logo }}<small>{{ c.logoSub }}</small></span><span class="akx-site-nav"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></span><span class="akx-site-pill" style="background: {{ c.pillBg }}; color: {{ c.pillInk }};">{{ c.pill }}</span></div>
+                <div class="akx-site-body" aria-hidden="true"><div class="akx-site-h">{{ c.h }}</div><div class="akx-site-sub">{{ c.sub }}</div><span class="akx-site-cta" style="background: {{ c.accent }}; color: {{ c.accentInk }};">{{ c.cta }} →</span></div>
+              </div>
+            </div>
+            <h3 class="akx-card-name">{{ c.name }}</h3>
+            <p class="akx-card-kind">{{ c.kind }}</p>
+            <p class="akx-card-why">{{ c.why }}</p>
+            <div class="akx-tags">
+              <sc-for list="{{ c.tags }}" as="t" hint-placeholder-count="3"><span>{{ t }}</span></sc-for>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+      <div class="akx-note">
+        <p>Every concept here is a design study built around a fictional business. None of them are client projects. They show how we'd think through a website for your industry.</p>
+        <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="akx-sec akx-sec--alt">
+    <div class="akx-wrap">
+      <div class="akx-head">
+        <span class="akx-eyebrow">Services</span>
+        <h2 class="akx-h2">Web design, development, and local SEO for <span class="akx-grad">small businesses</span></h2>
+        <p class="akx-p" style="margin-bottom: 0;">Most projects use more than one of these. Here's what each one is, who it's for, and what you walk away with.</p>
+      </div>
+      <div class="akx-grid3">
+        <article class="akx-tile">
+          <div class="akx-tile-num">01</div>
+          <h3 class="akx-h3">Custom Web Design</h3>
+          <p>A site designed from scratch around your business. No template with your logo dropped in. We plan the pages, shape the message, and design every screen for the way your customers actually look for a company like yours.</p>
+          <dl class="akx-dl">
+            <div><dt>Who it's for</dt><dd>Service businesses with no website, or one that no longer looks like the company they&#x27;ve become.</dd></div>
+            <div><dt>The problem it solves</dt><dd>People size you up online before they call, and what they find doesn&#x27;t match the quality of your work.</dd></div>
+            <div><dt>What you get</dt><dd>A custom website design, phone layouts for every page, and the source files. You own all of it.</dd></div>
+          </dl>
+          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="akx-tile">
+          <div class="akx-tile-num">02</div>
+          <h3 class="akx-h3">Website Development</h3>
+          <p>The build itself. Clean, fast code, forms that actually reach your inbox, and tap-to-call wherever someone might want it.</p>
+          <dl class="akx-dl">
+            <div><dt>Who it's for</dt><dd>Businesses that have a design or a clear plan and need it built properly.</dd></div>
+            <div><dt>The problem it solves</dt><dd>A slow or fragile site that breaks on phones or quietly loses leads.</dd></div>
+            <div><dt>What you get</dt><dd>A tested, launched website running on your own domain and hosting.</dd></div>
+          </dl>
+          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="akx-tile">
+          <div class="akx-tile-num">03</div>
+          <h3 class="akx-h3">Website Redesign</h3>
+          <p>We keep what&#x27;s working, fix what isn&#x27;t, and rebuild the rest. That starts with looking at where visitors lose interest on the site you have now.</p>
+          <dl class="akx-dl">
+            <div><dt>Who it's for</dt><dd>Businesses with a site that&#x27;s a few years old and no longer pulling its weight.</dd></div>
+            <div><dt>The problem it solves</dt><dd>Dated design, confusing navigation, and pages that never ask anyone to do anything.</dd></div>
+            <div><dt>What you get</dt><dd>A restructured, redesigned site, with your old pages pointed to the new ones so existing search traffic isn&#x27;t thrown away.</dd></div>
+          </dl>
+          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="akx-tile">
+          <div class="akx-tile-num">04</div>
+          <h3 class="akx-h3">Local SEO</h3>
+          <p>Local SEO services for businesses that depend on nearby customers. We set up or clean up your Google Business Profile, tighten your service and location pages, and make sure your details match everywhere they appear. Nobody can promise a ranking. What we can do is give Google every reason to show you.</p>
+          <dl class="akx-dl">
+            <div><dt>Who it's for</dt><dd>Small businesses whose customers search by city, by neighborhood, or with &quot;near me.&quot;</dd></div>
+            <div><dt>The problem it solves</dt><dd>Competitors show up in the map results and you don&#x27;t.</dd></div>
+            <div><dt>What you get</dt><dd>A Google Business Profile setup or cleanup, on-page SEO for your key pages, and a plain-English list of what to keep doing.</dd></div>
+          </dl>
+          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="akx-tile">
+          <div class="akx-tile-num">05</div>
+          <h3 class="akx-h3">Website Strategy</h3>
+          <p>A working session and a written plan for owners who aren&#x27;t sure what they need yet. We look at your customers, your competitors, and your current site, then map out what to build and in what order.</p>
+          <dl class="akx-dl">
+            <div><dt>Who it's for</dt><dd>Owners who want a clear plan before they spend money on a build.</dd></div>
+            <div><dt>The problem it solves</dt><dd>Guessing at what the website should say or do.</dd></div>
+            <div><dt>What you get</dt><dd>A page-by-page plan, messaging notes, and priorities you can hand to us or to anyone else.</dd></div>
+          </dl>
+          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="akx-tile">
+          <div class="akx-tile-num">06</div>
+          <h3 class="akx-h3">Landing Pages</h3>
+          <p>One focused page for one service, one offer, or one ad campaign. One message and one action.</p>
+          <dl class="akx-dl">
+            <div><dt>Who it's for</dt><dd>Businesses running ads, promoting something seasonal, or launching a new service.</dd></div>
+            <div><dt>The problem it solves</dt><dd>Paying for clicks that land on a homepage trying to say everything at once.</dd></div>
+            <div><dt>What you get</dt><dd>A designed and built landing page with a working lead form and tracking set up.</dd></div>
+          </dl>
+          <a class="akx-link" href="#contact">Start a project <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-it-matters" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb));">
     <div data-rgrid="" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: clamp(2.5rem, 6vw, 6rem); align-items: center;">
       <div data-reveal="" style="animation: akRise .7s ease both;">
         <div style="display: flex; align-items: center; gap: .75rem; margin-bottom: 1.4rem;">
           <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
-          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">The Problem</span>
+          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Why it matters</span>
         </div>
-        <h2 style="margin: 0 0 1.5rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: .98; letter-spacing: .01em;">
-          Your competitors are taking your customers <span style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .82em; color: rgb(var(--ak-accent-rgb));">right now</span>
-        </h2>
+        <h2 style="margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance;">Most customers look you up <span class="akx-grad">before they call</span></h2>
         <p style="margin: 0 0 2.4rem; max-width: 32rem; font-size: 1rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">
-          87% of people research a business online before they call. When your site is dated — or missing — you never even make the shortlist. It happens quietly, every day, and nothing on your end tells you it's happening.
+          They search, compare two or three options, and pick the one that looks trustworthy and makes it easy to get in touch. If your site is slow, dated, or hard to find, you never hear about the jobs you missed.
         </p>
         <div style="display: flex; flex-direction: column; gap: .7rem;">
           <sc-for list="{{ problems }}" as="p" hint-placeholder-count="3">
@@ -412,7 +707,7 @@
           <div style="padding: 1rem 1.25rem 1.35rem;">
             <div style="display: flex; align-items: center; gap: .5rem; margin-bottom: 1rem; padding: .25rem; border-radius: 99px; border: 1px solid rgba(var(--ak-border-rgb),.1); background: rgba(255,255,255,.02);">
               <button type="button" onClick="{{ serpToggle }}" style="flex: 1; padding: .5rem .8rem; border: 0; border-radius: 99px; cursor: pointer; font-size: .64rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; background: {{ serpTabABg }}; color: {{ serpTabA }}; transition: background .25s ease, color .25s ease;">Today</button>
-              <button type="button" onClick="{{ serpToggle }}" style="flex: 1; padding: .5rem .8rem; border: 0; border-radius: 99px; cursor: pointer; font-size: .64rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; background: {{ serpTabBBg }}; color: {{ serpTabB }}; transition: background .25s ease, color .25s ease;">With Akira</button>
+              <button type="button" onClick="{{ serpToggle }}" style="flex: 1; padding: .5rem .8rem; border: 0; border-radius: 99px; cursor: pointer; font-size: .64rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; background: {{ serpTabBBg }}; color: {{ serpTabB }}; transition: background .25s ease, color .25s ease;">Built to be found</button>
             </div>
 
             <div style="position: relative; height: 416px;">
@@ -432,7 +727,7 @@
               <span style="width: 7px; height: 7px; border-radius: 99px; background: {{ serpFootHue }}; animation: akBlink 1.6s ease-in-out infinite;"></span>
               <span>{{ serpFoot }}</span>
             </div>
-            <div style="margin-top: .55rem; font-size: .72rem; color: rgb(var(--ak-secondary-rgb));">{{ searchCount }} searches like this since you opened the page.</div>
+            <div style="margin-top: .55rem; font-size: .72rem; color: rgb(var(--ak-secondary-rgb));">This is an illustration, not a promise. Nobody can guarantee a ranking, and we won't pretend to.</div>
           </div>
         </div>
       </div>
@@ -443,11 +738,9 @@
     <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(var(--ak-accent-rgb),.08), transparent 70%);"></div>
     <div style="position: relative; max-width: 1250px; margin: 0 auto;">
       <div data-reveal="" style="animation: akRise .7s ease both; text-align: center; margin-bottom: 3.5rem;">
-        <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb)); margin-bottom: 1rem;">◆ Free website design preview ◆</div>
-        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">
-          Type your business name. <span style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; color: rgb(var(--ak-accent-rgb));">Watch it appear.</span>
-        </h2>
-        <p style="max-width: 34rem; margin: 0 auto; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">A rough sketch, not the real thing — but it's the same idea we start every project with. Change it and the page updates as you type.</p>
+        <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb)); margin-bottom: 1rem;">Free website design preview</div>
+        <h2 style="margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance;">Type your business name. <span class="akx-grad">Watch it appear.</span></h2>
+        <p style="max-width: 34rem; margin: 0 auto; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">It's a rough sketch, not the real thing. But it's the same idea every project starts with. Change anything and the page updates as you type.</p>
       </div>
 
       <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-bottom: 2rem;">
@@ -511,8 +804,8 @@
           </div>
 
           <div style="display: flex; flex-direction: column; gap: .6rem;">
-            <button type="button" onClick="{{ shuffle }}" style="padding: .8rem 1rem; border-radius: 4px; cursor: pointer; background: transparent; border: 1px dashed rgba(var(--ak-border-rgb),.28); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: .95rem; letter-spacing: .1em; transition: all .18s ease;" style-hover="border-color: rgb(0,255,200); color: rgb(0,255,200); transform: translateY(-1px);">SURPRISE ME ⟳</button>
-            <a href="#contact" style="display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px);">BUILD ME THE REAL ONE →</a>
+            <button type="button" onClick="{{ shuffle }}" style="padding: .8rem 1rem; border-radius: 4px; cursor: pointer; background: transparent; border: 1px dashed rgba(var(--ak-border-rgb),.28); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: .95rem; letter-spacing: .1em; transition: all .18s ease;" style-hover="border-color: rgb(255,150,120); color: rgb(255,150,120); transform: translateY(-1px);">SURPRISE ME ⟳</button>
+            <a href="#contact" style="display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; background: var(--akx-grad); color: #fff; font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="color: #fff; transform: translateY(-1px);">BUILD ME THE REAL ONE →</a>
           </div>
         </div>
 
@@ -561,60 +854,58 @@
         </div>
 
         <div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center;">
-          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(138,43,255); border: 1px solid rgba(138,43,255,.4);">Type · {{ specPair }}</span>
-          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(0,255,200); border: 1px solid rgba(0,255,200,.4);">Layout · {{ specLayout }}</span>
-          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(255,20,147); border: 1px solid rgba(255,20,147,.4);">Accent · {{ specAccent }}</span>
+          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(255,107,74); border: 1px solid rgba(255,107,74,.4);">Type · {{ specPair }}</span>
+          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(255,150,120); border: 1px solid rgba(255,150,120,.4);">Layout · {{ specLayout }}</span>
+          <span style="padding: .35rem .8rem; border-radius: 99px; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(255,46,126); border: 1px solid rgba(255,46,126,.4);">Accent · {{ specAccent }}</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="work" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb));">
-    <div style="max-width: 1400px; margin: 0 auto;">
-      <div data-reveal="" style="animation: akRise .7s ease both; text-align: center; margin-bottom: 3.5rem;">
-        <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb)); margin-bottom: 1rem;">◆ Web design portfolio ◆</div>
-        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">
-          Not a screenshot — the <span style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; color: rgb(var(--ak-accent-rgb));">real site</span>
-        </h2>
-        <p style="max-width: 36rem; margin: 0 auto; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">Atlanta Pro Plumbing is running live below, in a real browser, on both screens at once. Scroll it, click it, resize it. That's the standard.</p>
+  <section id="industries" class="akx-sec">
+    <div class="akx-wrap">
+      <div class="akx-head">
+        <span class="akx-eyebrow">Industries</span>
+        <h2 class="akx-h2">Industries we <span class="akx-grad">design for</span></h2>
+        <p class="akx-p" style="margin-bottom: 0;">Every industry wins a customer differently. A plumber needs the phone to ring tonight. A med spa needs someone to feel comfortable booking a consultation. Here's how the approach shifts.</p>
       </div>
-
-      <div data-reveal="" data-work-grid="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, .85fr); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: end;">
-        <div>
-          <div style="display: flex; align-items: center; gap: .6rem; margin-bottom: .9rem;">
-            <span style="width: 7px; height: 7px; border-radius: 99px; background: rgb(0,255,200); animation: akBlink 1.6s ease-in-out infinite;"></span>
-            <span style="font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(0,255,200);">Live right now, in your browser</span>
-          </div>
-          <div style="padding: 14px 14px 16px; border-radius: 16px; border: 1px solid rgba(var(--ak-border-rgb),.14); background: linear-gradient(180deg, #1b1b20, #101014); box-shadow: 0 40px 90px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.06);">
-            <div style="border: 1px solid rgba(var(--ak-border-rgb),.12); border-radius: 6px; overflow: hidden; background: rgb(var(--ak-surface-rgb));">
-              <div style="display: flex; align-items: center; gap: .55rem; padding: .7rem .9rem; border-bottom: 1px solid rgba(var(--ak-border-rgb),.08); background: rgb(var(--ak-surface-rgb));">
-                <span style="width: 9px; height: 9px; border-radius: 99px; background: #FF5F57;"></span>
-                <span style="width: 9px; height: 9px; border-radius: 99px; background: #FEBC2E;"></span>
-                <span style="width: 9px; height: 9px; border-radius: 99px; background: #28C840;"></span>
-                <div style="flex: 1; margin-left: .6rem; padding: .3rem .7rem; border-radius: 3px; background: rgba(var(--ak-border-rgb),.045); font-size: .68rem; color: rgb(var(--ak-secondary-rgb));">atlanta-pro-plumbing.vercel.app</div>
-              </div>
-              <iframe src="https://atlanta-pro-plumbing.vercel.app/" title="Atlanta Pro Plumbing — live client site" loading="lazy" style="display: block; width: 100%; height: 600px; border: 0; background: #fff;"></iframe>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <div style="width: 104px; height: 26px; background: linear-gradient(180deg, #1b1b20, #14141a); border-left: 1px solid rgba(var(--ak-border-rgb),.1); border-right: 1px solid rgba(var(--ak-border-rgb),.1);"></div>
-            <div style="width: 240px; height: 11px; border-radius: 0 0 99px 99px; background: linear-gradient(180deg, #22222a, #0f0f13); box-shadow: 0 14px 30px rgba(0,0,0,.5);"></div>
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div style="width: 284px; max-width: 100%; height: 614px; border: 8px solid #E3DAC4; border-radius: 28px; overflow: hidden; background: #000; box-shadow: 0 24px 64px rgba(0,0,0,.6); align-self: center;">
-            <iframe src="https://atlanta-pro-plumbing.vercel.app/" title="Atlanta Pro Plumbing on mobile" loading="lazy" scrolling="no" style="display: block; width: 390px; height: 844px; border: 0; background: #fff; transform: scale(.727); transform-origin: top left;"></iframe>
-          </div>
-          <div style="display: flex; flex-direction: column; gap: .5rem;">
-            <sc-for list="{{ workPoints }}" as="w" hint-placeholder-count="4">
-              <div style="display: flex; gap: .6rem; align-items: baseline; padding: .7rem .85rem; border-radius: 6px; font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); border: 1px solid {{ w.soft }}; background: linear-gradient(110deg, {{ w.soft }}, rgba(255,255,255,.012) 65%); transition: transform .2s ease, border-color .2s ease;" style-hover="transform: translateX(5px); border-color: {{ w.hue }};">
-                <span style="color: {{ w.hue }}; font-size: .7rem;">◆</span><span>{{ w.t }}</span>
-              </div>
-            </sc-for>
-            <a href="https://atlanta-pro-plumbing.vercel.app/" target="_blank" rel="noopener" style="margin-top: .6rem; display: block; text-align: center; padding: .85rem 1rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.2); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(0,255,200); color: rgb(0,255,200); transform: translateY(-1px);">OPEN THE FULL SITE →</a>
-          </div>
-        </div>
+      <div class="akx-grid4">
+        <article class="akx-tile akx-ind">
+          <h3 class="akx-h3">Plumber web design</h3>
+          <p>Emergency service, a phone number that stays in reach, service areas, and quick quote requests.</p>
+        </article>
+        <article class="akx-tile akx-ind">
+          <h3 class="akx-h3">HVAC web design</h3>
+          <p>Repairs and new installs on separate paths, with seasonal tune-ups and maintenance plans where people look for them.</p>
+        </article>
+        <article class="akx-tile akx-ind">
+          <h3 class="akx-h3">Electrician web design</h3>
+          <p>Safety and licensing details up front, with residential and commercial work clearly split.</p>
+        </article>
+        <article class="akx-tile akx-ind">
+          <h3 class="akx-h3">Med spa web design</h3>
+          <p>Treatment pages that educate, visuals that feel calm and credible, and an easy consultation request.</p>
+        </article>
+        <article class="akx-tile akx-ind">
+          <h3 class="akx-h3">Law firm web design</h3>
+          <p>Practice areas people can scan quickly, attorney background, and a consultation form that feels private.</p>
+        </article>
+        <article class="akx-tile akx-ind">
+          <h3 class="akx-h3">Cleaning company web design</h3>
+          <p>Simple quote requests, recurring service options, and clear residential and commercial pages.</p>
+        </article>
+        <article class="akx-tile akx-ind">
+          <h3 class="akx-h3">Landscaping web design</h3>
+          <p>Project photos that do the selling, with design, build, and maintenance each explained on their own.</p>
+        </article>
+        <article class="akx-tile akx-ind">
+          <h3 class="akx-h3">Restaurant web design</h3>
+          <p>Menu, hours, location, and reservations, all easy to reach from a phone.</p>
+        </article>
+      </div>
+      <div class="akx-note">
+        <p><strong style="color: #fff; font-weight: 600;">Also a fit:</strong> Roofers, General contractors, Home remodeling, Pest control, Dentists, Chiropractors, Fitness studios, Real estate, Beauty and salons, Automotive, Photographers, Event venues, Consultants, Nonprofits, and other service businesses. If yours isn't listed, ask.</p>
+        <a href="#concepts" class="akx-btn akx-btn-ghost">View Website Concepts <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -624,11 +915,11 @@
       <div data-reveal="" style="animation: akRise .7s ease both; margin-bottom: 3.5rem; max-width: 46rem;">
         <div style="display: flex; align-items: center; gap: .75rem; margin-bottom: 1.2rem;">
           <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent3-rgb));"></span>
-          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">How our web design process works</span>
+          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">How a project works</span>
         </div>
-        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">From first call to <span style="display: inline-block; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; background: linear-gradient(100deg, rgb(255,20,147), rgb(138,43,255) 45%, rgb(0,255,200)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">launch.</span></h2>
-        <p style="margin: 0 0 1.4rem; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">You work directly with the team building your site. No account managers, no ticket queue, no handoffs.</p>
-        <div style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; border-radius: 4px; background: rgb(0,255,200); color: #0a0a0c; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five steps, one team</div>
+        <h2 style="margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance;">From first call to <span class="akx-grad">launch.</span></h2>
+        <p style="margin: 0 0 1.4rem; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">You work directly with the person leading your project, from the first conversation to launch day. No account managers and no ticket queue.</p>
+        <div style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; border-radius: 4px; background: var(--akx-grad); color: #fff; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five steps, one point of contact</div>
       </div>
       <div data-reveal="" data-steps-grid="" style="animation: akRise .7s ease both; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .8rem; align-items: stretch;">
         <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
@@ -646,24 +937,23 @@
     </div>
   </section>
 
-  <section style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb));">
+  <section id="why" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb));">
     <div data-rgrid="" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: center;">
       <div data-reveal="" style="animation: akRise .7s ease both;">
         <div style="display: flex; align-items: center; gap: .75rem; margin-bottom: 1.2rem;">
           <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
           <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Why Akira Digital</span>
         </div>
-        <h2 style="margin: 0 0 1.5rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">Designed like it <span style="display: inline-block; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; background: linear-gradient(100deg, rgb(255,20,147), rgb(138,43,255) 45%, rgb(0,255,200)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">matters</span></h2>
-        <div style="display: inline-block; transform: rotate(-2.5deg); padding: .4rem .85rem; margin-bottom: 1.4rem; border-radius: 4px; background: rgb(255,20,147); color: #0a0a0c; font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;">Five things a template can't do</div>
-        <p style="margin: 0 0 1.4rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); max-width: 32rem; text-wrap: pretty;">Akira Digital designs, writes, and builds every site in-house — one team, one set of hands on the type and the code.</p>
-        <p style="margin: 0 0 2rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); max-width: 32rem; text-wrap: pretty;">No junior handoff, no template dressed up to look expensive. And when it's done you get the source, not a subscription — so your designer, or the next one, can keep building on it.</p>
+        <h2 style="margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance;">You're not just buying <span class="akx-grad">a website</span></h2>
+        <p style="margin: 0 0 1.4rem; font-size: 1.05rem; line-height: 1.75; color: rgb(var(--ak-ink-rgb)); max-width: 32rem; text-wrap: pretty;">Akira Digital is founder-led. The person who learns your business is the same person who plans your site and leads the work.</p>
+        <p style="margin: 0 0 2rem; font-size: .98rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); max-width: 32rem; text-wrap: pretty;">That keeps things simple. You get straight answers, decisions happen quickly, and nothing gets lost between a salesperson and a designer. When a project needs a specialist, we bring one in for that piece and you still deal with one person.</p>
         <div style="display: flex; flex-wrap: wrap; gap: .9rem;">
-          <a href="#contact" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid rgba(var(--ak-border-rgb),.18); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="border-color: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-accent-rgb)); transform: translateY(-1px);">TALK TO OUR TEAM →</a>
-          <a href="#work" style="display: inline-flex; align-items: center; gap: .6rem; padding: .95rem 1.7rem; border-radius: 4px; border: 1px solid transparent; color: rgb(var(--ak-secondary-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.1rem; letter-spacing: .1em; transition: all .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-border-rgb),.18);">SEE THE WORK</a>
+          <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
+          <a href="#concepts" class="akx-btn akx-btn-ghost">View Website Concepts <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-direction: column; gap: .85rem;">
-        <sc-for list="{{ whys }}" as="w" hint-placeholder-count="5">
+        <sc-for list="{{ whys }}" as="w" hint-placeholder-count="6">
           <div style="position: relative; overflow: hidden; display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: clamp(.9rem, 2vw, 1.6rem); padding: 1.5rem 1.6rem; border-radius: 8px; border: 1px solid {{ w.soft }}; background: linear-gradient(110deg, {{ w.soft }}, rgba(255,255,255,.015) 55%); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;" style-hover="transform: translateX(6px) translateY(-2px); border-color: {{ w.hue }}; box-shadow: 0 0 34px {{ w.soft }}, 0 16px 40px rgba(0,0,0,.45);">
             <div style="position: absolute; right: 1rem; bottom: .35rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 4.4rem; line-height: .8; color: {{ w.hue }}; opacity: .09; pointer-events: none;">{{ w.n }}</div>
             <div style="display: flex; flex-direction: column; align-items: flex-start; gap: .55rem;">
@@ -680,12 +970,32 @@
     </div>
   </section>
 
+  <section id="about" class="akx-sec">
+    <div class="akx-wrap akx-about">
+      <div>
+        <span class="akx-eyebrow">About Akira Digital</span>
+        <h2 class="akx-h2">Founder-led, and <span class="akx-grad">built that way on purpose</span></h2>
+        <p class="akx-lead">Akira Digital is a web design and local SEO company for small and growing service businesses. It's founder-led, so the person you talk to on the first call is the person leading your project.</p>
+        <p class="akx-p">The thinking here comes from two places. One is creative. That's design, messaging, and how a brand should feel. The other is business. That's how people decide who to hire, what earns their trust, and what finally gets them to pick up the phone. A good website needs both.</p>
+        <p class="akx-p">So every project starts with questions about your business and your customers, long before anyone picks a font. The goal is a site that looks like you, explains what you do in plain language, and gives people an easy way to reach you.</p>
+        <p class="akx-p" style="margin-bottom: 2rem;">We're based in Los Angeles and work with service businesses across the United States.</p>
+        <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="akx-pillars">
+        <div class="akx-pillar"><h3 class="akx-h3">Business thinking</h3><p>A website is a sales tool. We care about what it does for your calendar and your phone, and we plan it that way.</p></div>
+        <div class="akx-pillar"><h3 class="akx-h3">Creative strategy</h3><p>Looking good is the starting point. The design also has to say the right thing to the right person in the first few seconds.</p></div>
+        <div class="akx-pillar"><h3 class="akx-h3">Understanding people</h3><p>Customers have questions before they call. The site should answer them in the order people actually ask.</p></div>
+        <div class="akx-pillar"><h3 class="akx-h3">Relationships over transactions</h3><p>You'll know who you're working with, and you can reach them. That doesn't change after launch.</p></div>
+      </div>
+    </div>
+  </section>
+
   <section id="pricing" style="padding: clamp(5rem, 10vw, 9rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg-rgb));">
     <div style="max-width: 1400px; margin: 0 auto;">
       <div data-reveal="" style="animation: akRise .7s ease both; text-align: center; margin-bottom: 3.5rem;">
-        <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: 1rem;">◆ Web design pricing ◆</div>
-        <h2 style="margin: 0 0 1rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: .01em;">One price. <span style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: .8em; color: rgb(var(--ak-accent-rgb));">Everything listed.</span></h2>
-        <p style="max-width: 34rem; margin: 0 auto; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">No hidden fees, no surprise invoices, no platform tax. You own the site and the domain outright.</p>
+        <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: 1rem;">Web design pricing</div>
+        <h2 style="margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance;">One price. <span class="akx-grad">Everything listed.</span></h2>
+        <p style="max-width: 34rem; margin: 0 auto; font-size: 1rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">No hidden fees and no surprise invoices. You own the site and the domain outright.</p>
       </div>
 
       <div data-reveal="" style="animation: akRise .7s ease both; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.6rem;">
@@ -717,15 +1027,15 @@
         </sc-for>
       </div>
 
-      <div data-reveal="" style="animation: akRise .7s ease both; position: relative; border-radius: 10px; padding: 2px; margin-bottom: 4.5rem; background: linear-gradient(115deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 35%, rgb(201,148,26) 65%, rgb(var(--ak-accent3-rgb))); box-shadow: 0 0 60px rgba(var(--ak-accent-rgb),.28), 0 24px 60px rgba(0,0,0,.4);">
-        <div data-rgrid="" style="border-radius: 8px; background: linear-gradient(150deg, rgba(var(--ak-accent-rgb),.14), rgba(var(--ak-accent4-rgb),.08) 45%, rgba(201,148,26,.1)), rgb(var(--ak-bg-rgb)); padding: clamp(1.75rem, 4vw, 3rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(1.75rem, 4vw, 3.5rem); align-items: center;">
+      <div data-reveal="" style="animation: akRise .7s ease both; position: relative; border-radius: 10px; padding: 2px; margin-bottom: 4.5rem; background: linear-gradient(115deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 35%, rgb(255,170,110) 65%, rgb(var(--ak-accent3-rgb))); box-shadow: 0 0 60px rgba(var(--ak-accent-rgb),.28), 0 24px 60px rgba(0,0,0,.4);">
+        <div data-rgrid="" style="border-radius: 8px; background: linear-gradient(150deg, rgba(var(--ak-accent-rgb),.14), rgba(var(--ak-accent4-rgb),.08) 45%, rgba(255,170,110,.1)), rgb(var(--ak-bg-rgb)); padding: clamp(1.75rem, 4vw, 3rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(1.75rem, 4vw, 3.5rem); align-items: center;">
 
           <div>
-            <div style="display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .8rem; border-radius: 99px; background: rgba(201,148,26,.16); border: 1px solid rgba(201,148,26,.5); margin-bottom: 1.2rem;">
-              <span style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(201,148,26);">Not a website? Book a day</span>
+            <div style="display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .8rem; border-radius: 99px; background: rgba(255,170,110,.16); border: 1px solid rgba(255,170,110,.5); margin-bottom: 1.2rem;">
+              <span style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(255,170,110);">Not a website? Book a day</span>
             </div>
-            <h3 style="margin: 0 0 .9rem; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 700; font-size: clamp(2.1rem, 4vw, 3.2rem); line-height: 1;">The <span style="background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb)) 55%, rgb(201,148,26)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Design Day</span></h3>
-            <p style="margin: 0 0 1.5rem; max-width: 32rem; font-size: .98rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">Book our time directly and point it at whatever needs designing. No scoping call, no project timeline — you get a focused working session and the files we produce in it.</p>
+            <h3 style="margin: 0 0 .9rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.05; letter-spacing: -.02em;">The <span class="akx-grad">Design Day</span></h3>
+            <p style="margin: 0 0 1.5rem; max-width: 32rem; font-size: .98rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">Book our time directly and point it at whatever needs designing. There's no scoping call and no project timeline. You get a focused working session and the files produced in it.</p>
             <div style="display: flex; flex-wrap: wrap; gap: .5rem;">
               <sc-for list="{{ designChips }}" as="c" hint-placeholder-count="7">
                 <span style="padding: .4rem .8rem; border-radius: 99px; font-size: .78rem; color: {{ c.hue }}; border: 1px solid {{ c.hue }}; background: rgba(255,255,255,.03);">{{ c.label }}</span>
@@ -735,11 +1045,11 @@
 
           <div style="display: flex; flex-direction: column; gap: .9rem;">
             <div data-rgrid="" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: .9rem;">
-              <a href="https://buy.stripe.com/5kQ00lfzgcXB6yYdWFfw408" target="_blank" rel="noopener" style="display: block; padding: 1.4rem 1.2rem; border-radius: 8px; border: 1px solid rgba(201,148,26,.45); background: linear-gradient(160deg, rgba(201,148,26,.14), rgba(201,148,26,.03)); text-align: center; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;" style-hover="transform: translateY(-2px); border-color: rgba(201,148,26,.85); box-shadow: 0 0 26px rgba(201,148,26,.35);">
-                <div style="font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(201,148,26); margin-bottom: .5rem;">Half day</div>
-                <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 2.6rem; line-height: 1; color: rgb(201,148,26);">$500</div>
+              <a href="https://buy.stripe.com/5kQ00lfzgcXB6yYdWFfw408" target="_blank" rel="noopener" style="display: block; padding: 1.4rem 1.2rem; border-radius: 8px; border: 1px solid rgba(255,170,110,.45); background: linear-gradient(160deg, rgba(255,170,110,.14), rgba(255,170,110,.03)); text-align: center; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;" style-hover="transform: translateY(-2px); border-color: rgba(255,170,110,.85); box-shadow: 0 0 26px rgba(255,170,110,.35);">
+                <div style="font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(255,170,110); margin-bottom: .5rem;">Half day</div>
+                <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 2.6rem; line-height: 1; color: rgb(255,170,110);">$500</div>
                 <div style="font-size: .72rem; color: rgb(var(--ak-secondary-rgb)); margin-top: .35rem;">4 hours</div>
-                <div style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(201,148,26); margin-top: .8rem;">Book with Stripe →</div>
+                <div style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(255,170,110); margin-top: .8rem;">Book with Stripe →</div>
               </a>
               <a href="https://buy.stripe.com/14AcN79aSg9N6yY9Gpfw407" target="_blank" rel="noopener" style="display: block; padding: 1.4rem 1.2rem; border-radius: 8px; border: 2px solid rgb(var(--ak-accent-rgb)); background: linear-gradient(160deg, rgba(var(--ak-accent-rgb),.2), rgba(var(--ak-accent4-rgb),.06)); box-shadow: 0 0 30px rgba(var(--ak-accent-rgb),.3); text-align: center; text-decoration: none; transition: transform .18s ease, box-shadow .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 40px rgba(var(--ak-accent-rgb),.55);">
                 <div style="font-size: .6rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: .5rem;">Full day</div>
@@ -748,8 +1058,8 @@
                 <div style="font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-top: .8rem;">Book with Stripe →</div>
               </a>
             </div>
-            <a href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 6px; background: transparent; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.18); font-family: 'Archivo', sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; transition: all .15s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent-rgb),.55);">Prefer to talk first? Book a call →</a>
-            <div style="text-align: center; font-size: .7rem; color: rgb(var(--ak-secondary-rgb));">Buy several days at once — book once per day, or reach out and we'll block the time out for you.</div>
+            <a href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 6px; background: transparent; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.18); font-family: 'Archivo', sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; transition: all .15s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent-rgb),.55);">Prefer to talk first? Start a project →</a>
+            <div style="text-align: center; font-size: .7rem; color: rgb(var(--ak-secondary-rgb));">Need several days? Book one per day, or reach out and we'll block the time out for you.</div>
           </div>
         </div>
       </div>
@@ -765,7 +1075,7 @@
           <span style="display:inline-flex; align-items:center; padding:.42rem .85rem; border-radius:3px; border:1px solid rgba(var(--ak-border-rgb),.28); background:rgba(var(--ak-bg-rgb),.6); font-family:'Archivo', sans-serif; font-size:.78rem; letter-spacing:.06em; color:rgb(var(--ak-ink-rgb)); white-space:nowrap;">Afterpay</span>
           <span style="display:inline-flex; align-items:center; padding:.42rem .85rem; border-radius:3px; border:1px solid rgba(var(--ak-border-rgb),.28); background:rgba(var(--ak-bg-rgb),.6); font-family:'Archivo', sans-serif; font-size:.78rem; letter-spacing:.06em; color:rgb(var(--ak-ink-rgb)); white-space:nowrap;">Klarna</span>
         </div>
-        <p style="flex: 1 1 24rem; min-width: 0; margin: 0; font-size: .88rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">Pay in full by card, or split the cost with <span style="color: rgb(var(--ak-ink-rgb));">Afterpay</span> or <span style="color: rgb(var(--ak-ink-rgb));">Klarna</span> if they're offered to you at checkout &mdash; approval and the payment plan are set by them, not by us. Every payment is handled by Stripe, and your project starts once it clears.</p>
+        <p style="flex: 1 1 24rem; min-width: 0; margin: 0; font-size: .88rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">Pay in full by card, or split the cost with <span style="color: rgb(var(--ak-ink-rgb));">Afterpay</span> or <span style="color: rgb(var(--ak-ink-rgb));">Klarna</span> if they're offered to you at checkout. Approval and the payment plan are set by them, not by us. Every payment is handled by Stripe, and your project starts once it clears.</p>
       </div>
 
       <div data-reveal="" style="animation: akRise .7s ease both; max-width: 1000px; margin: 0 auto; border: 1px solid rgba(var(--ak-accent-rgb),.25); border-radius: 4px; background: linear-gradient(135deg, rgba(var(--ak-accent-rgb),.08), rgba(var(--ak-accent-rgb),.02)); position: relative; overflow: hidden;">
@@ -773,7 +1083,7 @@
         <div data-rgrid="" style="padding: clamp(1.75rem, 4vw, 2.75rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: clamp(1.5rem, 4vw, 3rem); align-items: start;">
           <div>
             <div style="font-size: .66rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: .8rem;">Not sure which one</div>
-            <h3 style="margin: 0 0 1.6rem; font-family: 'Archivo', sans-serif; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 400; letter-spacing: .02em; line-height: 1;">Build your quote</h3>
+            <h3 style="margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; font-size: clamp(1.6rem, 2.8vw, 2.2rem);">Build your quote</h3>
 
             <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .7rem;">How many pages</div>
             <div style="display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.6rem;">
@@ -797,8 +1107,8 @@
             <div style="font-size: .66rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin: 1.6rem 0 .7rem;">Add a design day</div>
             <div style="display: flex; flex-wrap: wrap; gap: .6rem;">
               <sc-for list="{{ designHourOptions }}" as="d" hint-placeholder-count="3">
-                <button type="button" onClick="{{ d.pick }}" style="display: flex; align-items: center; gap: .5rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ d.bg }}; border: 1px solid {{ d.border }}; color: {{ d.color }}; transition: all .15s ease;" style-hover="border-color: rgb(201,148,26);">
-                  <span>{{ d.label }}</span><span style="color: rgb(201,148,26); font-size: .78rem;">{{ d.priceLabel }}</span>
+                <button type="button" onClick="{{ d.pick }}" style="display: flex; align-items: center; gap: .5rem; padding: .65rem 1rem; border-radius: 4px; cursor: pointer; font-size: .85rem; background: {{ d.bg }}; border: 1px solid {{ d.border }}; color: {{ d.color }}; transition: all .15s ease;" style-hover="border-color: rgb(255,170,110);">
+                  <span>{{ d.label }}</span><span style="color: rgb(255,170,110); font-size: .78rem;">{{ d.priceLabel }}</span>
                 </button>
               </sc-for>
             </div>
@@ -816,7 +1126,7 @@
                 </div>
               </sc-for>
             </div>
-            <a href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px);">SEND ME THIS QUOTE →</a>
+            <a href="#contact" style="display: block; text-align: center; padding: .8rem 1rem; border-radius: 4px; background: var(--akx-grad); color: #fff; font-family: 'Archivo', sans-serif; font-size: 1rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="color: #fff; transform: translateY(-1px);">SEND ME THIS QUOTE →</a>
             <div style="margin-top: .8rem; font-size: .68rem; line-height: 1.5; color: rgb(var(--ak-secondary-rgb)); text-align: center;">An estimate, not an invoice. We confirm scope on the call.<br>Card, or Afterpay / Klarna at checkout if offered.</div>
           </div>
         </div>
@@ -824,14 +1134,32 @@
     <div id="ak-grain" style="position: fixed; inset: 0; pointer-events: none; z-index: 700; opacity: .55; left: -85px; top: 10px"></div></div>
   </section>
 
+  <section id="faq" class="akx-sec akx-sec--alt">
+    <div class="akx-wrap">
+      <div class="akx-head" style="margin-left: auto; margin-right: auto; text-align: center;">
+        <span class="akx-eyebrow">Questions</span>
+        <h2 class="akx-h2">What people ask <span class="akx-grad">before they start</span></h2>
+      </div>
+      <div class="akx-faq">
+        <details><summary>How much does a small business website cost?</summary><p>Our packages start at $1,000 for a three-page site and go up with the number of pages and how much strategy and SEO work is involved. Every package is listed with its price in the pricing section, so you&#x27;ll know the number before we ever talk.</p></details>
+        <details><summary>How long does it take to build a business website?</summary><p>It depends on the size of the site and how quickly content and feedback come together. You&#x27;ll get a realistic timeline in writing before anything starts.</p></details>
+        <details><summary>Do you only work with businesses in Los Angeles?</summary><p>No. We&#x27;re based in Los Angeles and work remotely with service businesses anywhere in the United States.</p></details>
+        <details><summary>Does a small business need local SEO?</summary><p>If your customers search for what you do by city, by neighborhood, or with &quot;near me,&quot; then yes. Local SEO is what helps you show up in map results and local listings when they do.</p></details>
+        <details><summary>Will I own my website?</summary><p>Yes. Your domain, your hosting account, and your files are yours. If you ever move on, all of it goes with you.</p></details>
+        <details><summary>Are the website concepts real client sites?</summary><p>No. They&#x27;re original design concepts built around fictional businesses. We made them to show how we&#x27;d approach different industries.</p></details>
+        <details><summary>What do I need to get started?</summary><p>A short conversation. Tell us about the business and what you want the site to do, and we&#x27;ll take it from there.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section style="position: relative; padding: clamp(5rem, 10vw, 8rem) clamp(1.25rem, 4vw, 3rem); background: rgb(var(--ak-bg2-rgb)); overflow: hidden; text-align: center;">
     <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(var(--ak-accent-rgb),.12), transparent 70%);"></div>
     <div data-reveal="" style="animation: akRise .7s ease both; position: relative; max-width: 780px; margin: 0 auto;">
-      <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb)); margin-bottom: 1.4rem;">◆ Ready to start ◆</div>
-      <h2 style="margin: 0 0 1.4rem; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1; letter-spacing: -.01em;">Stop losing customers to competitors.</h2>
-      <p style="margin: 0 0 2.4rem; font-size: 1.05rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">Book a free web design consultation. We'll show you what your site would look like, what you'd rank for, and what to expect. No pitch, no obligation.</p>
-      <a href="#contact" style="display: inline-flex; align-items: center; gap: .7rem; padding: 1.1rem 2.2rem; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-size: 1.3rem; letter-spacing: .1em; transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 28px rgba(var(--ak-accent-rgb),.45);">BOOK FREE CALL →</a>
-      <div style="margin-top: 1.4rem; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb));">◆ No commitment ◆ No sales pitch ◆ Straight answers</div>
+      <div style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb)); margin-bottom: 1.4rem;">Ready when you are</div>
+      <h2 style="margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; font-size: clamp(2.3rem, 5.4vw, 4.2rem);">Let's build a website people <span class="akx-grad">remember.</span></h2>
+      <p style="margin: 0 0 2.4rem; font-size: 1.05rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb));">Tell us about your business and what you want more of. You'll get straight answers about what we'd build, what it would cost, and whether we're the right fit.</p>
+      <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
+      <div style="margin-top: 1.4rem; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb));">No commitment · No sales pitch · Straight answers</div>
     </div>
   </section>
 
@@ -841,16 +1169,16 @@
       <div data-reveal="" style="animation: akRise .7s ease both;">
         <div style="display: flex; align-items: center; justify-content: center; gap: .75rem; margin-bottom: 1.3rem;">
           <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
-          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Get started</span>
+          <span style="font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Start a project</span>
           <span style="width: 34px; height: 1px; background: rgb(var(--ak-accent4-text-rgb));"></span>
         </div>
-        <h2 style="margin: 0 0 1.1rem; text-align: center; font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 700; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.02; letter-spacing: -.01em;">Tell us about your business</h2>
-        <p style="margin: 0 auto 3rem; max-width: 34rem; text-align: center; font-size: 1rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">A few lines is plenty. We read every message ourselves and reply with straight answers — plus a free call if you want one.</p>
+        <h2 style="margin: 0 0 1.2rem; font-family: 'Archivo', sans-serif; font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-weight: 700; line-height: 1.05; letter-spacing: -.02em; text-wrap: balance; text-align: center;">Tell us about <span class="akx-grad">your business</span></h2>
+        <p style="margin: 0 auto 3rem; max-width: 34rem; text-align: center; font-size: 1rem; line-height: 1.75; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">A few lines is plenty. Every message gets read and answered by a real person, and a free call is yours if you want one.</p>
 
         <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
           <div style="padding: 3rem 2rem; border: 1px solid rgba(var(--ak-accent-rgb),.3); border-radius: 4px; background: linear-gradient(135deg, rgba(var(--ak-accent-rgb),.08), rgba(var(--ak-accent-rgb),.02)); text-align: center;">
-            <div style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 800; font-size: 2.4rem; color: rgb(var(--ak-accent-rgb)); margin-bottom: .6rem;">Got it.</div>
-            <p style="margin: 0; color: rgb(var(--ak-ink-rgb));">We'll read it ourselves and reply with straight answers.</p>
+            <div style="font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 2.2rem; letter-spacing: -.02em; color: rgb(var(--ak-accent-rgb)); margin-bottom: .6rem;">Got it.</div>
+            <p style="margin: 0; color: rgb(var(--ak-ink-rgb));">Your message came through. You'll hear back with straight answers.</p>
           </div>
         </sc-if>
 
@@ -882,8 +1210,8 @@
               <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">Where you are today</span>
               <select name="status" style="width: 100%; box-sizing: border-box; padding: .85rem 1rem; font-size: .95rem; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none;">
                 <option style="background: rgb(var(--ak-surface-rgb));">No website at all</option>
-                <option style="background: rgb(var(--ak-surface-rgb));">Have one — it needs a full rebuild</option>
-                <option style="background: rgb(var(--ak-surface-rgb));">Have one — it just needs updates</option>
+                <option style="background: rgb(var(--ak-surface-rgb));">Have one, and it needs a full rebuild</option>
+                <option style="background: rgb(var(--ak-surface-rgb));">Have one, and it just needs updates</option>
                 <option style="background: rgb(var(--ak-surface-rgb));">Not sure yet</option>
               </select>
             </label>
@@ -891,14 +1219,14 @@
               <span style="display: block; font-size: .64rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: rgb(var(--ak-secondary-rgb)); margin-bottom: .5rem;">What do you want the site to do</span>
               <textarea name="message" placeholder="More booked jobs. Right now people call the shop down the street." style="width: 100%; box-sizing: border-box; min-height: 120px; resize: vertical; padding: .85rem 1rem; font-size: .95rem; line-height: 1.6; color: rgb(var(--ak-ink-rgb)); background: rgba(var(--ak-border-rgb),.06); border: 1px solid rgba(var(--ak-border-rgb),.18); border-radius: 4px; outline: none; transition: border-color .2s ease, box-shadow .2s ease;" style-focus="box-shadow: 0 0 0 3px rgba(var(--ak-accent-rgb),.18);"></textarea>
             </label>
-            <button type="submit" style="grid-column: span 2; padding: 1rem 1.5rem; border: 0; border-radius: 4px; background: rgb(var(--ak-accent-rgb)); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .08em; cursor: pointer; box-shadow: 0 0 24px rgba(var(--ak-accent-rgb),.3); transition: all .15s ease;" style-hover="background: rgb(var(--ak-accent2-rgb)); color: rgb(var(--ak-bg-rgb)); transform: translateY(-1px); box-shadow: 0 0 32px rgba(var(--ak-accent-rgb),.45);">SEND MY PROJECT DETAILS</button>
+            <button type="submit" class="akx-btn akx-btn-primary" style="grid-column: 1 / -1; width: 100%; min-height: 56px; font-size: .9rem;">Start My Project →</button>
           </form>
         </sc-if>
       </div>
 
       <div data-reveal="" style="animation: akRise .7s ease both; display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem 2rem; margin-top: 1.8rem;">
         <div style="display: flex; align-items: baseline; gap: .5rem; font-size: .8rem; color: rgb(var(--ak-secondary-rgb));">
-          <span style="color: rgb(var(--ak-accent-rgb)); font-size: .68rem;">◆</span><span>We answer our own inbox, Mon–Sat</span>
+          <span style="color: rgb(var(--ak-accent-rgb)); font-size: .68rem;">◆</span><span>We answer our own inbox, Monday to Saturday</span>
         </div>
         <div style="display: flex; align-items: baseline; gap: .5rem; font-size: .8rem; color: rgb(var(--ak-secondary-rgb));">
           <span style="color: rgb(var(--ak-accent3-rgb)); font-size: .68rem;">◆</span><span>No commitment, no sales pitch</span>
@@ -910,8 +1238,10 @@
     </div>
   </section>
 
+  </main>
+
   <footer style="position: relative; overflow: hidden; padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 4vw, 3rem) 0; background: rgb(var(--ak-bg2-rgb));">
-    <div style="position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(var(--ak-accent-rgb),.6) 25%, rgba(var(--ak-accent4-rgb),.6) 55%, rgba(201,148,26,.45) 80%, transparent);"></div>
+    <div style="position: absolute; left: 0; right: 0; top: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(var(--ak-accent-rgb),.6) 25%, rgba(var(--ak-accent4-rgb),.6) 55%, rgba(255,170,110,.45) 80%, transparent);"></div>
     <div style="position: absolute; bottom: -34%; left: 50%; width: 70vw; height: 60vw; max-width: 1000px; max-height: 640px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle, rgba(var(--ak-accent-rgb),.2), rgba(var(--ak-accent4-rgb),.08) 45%, transparent 70%); filter: blur(90px); pointer-events: none;"></div>
 
     <div style="position: absolute; left: 50%; bottom: -.18em; transform: translateX(-50%); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: clamp(4rem, 15vw, 13rem); line-height: .8; letter-spacing: -.03em; white-space: nowrap; color: rgba(var(--ak-ink-rgb),.035); pointer-events: none; user-select: none;">AKIRA DIGITAL</div>
@@ -924,21 +1254,21 @@
           <a href="#top" style="display: inline-flex; align-items: center; margin-bottom: 1.2rem;">
             <img src="/ad-lockup.png" alt="Akira Digital" width="496" height="120" loading="lazy" decoding="async" style="height: 46px; width: auto; display: block;">
           </a>
-          <p style="margin: 0 0 1.4rem; max-width: 24rem; font-size: .92rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">A web design agency for local service businesses. Custom website design, development and local SEO, built to turn visitors into paying customers. You own everything we build.</p>
-          <span style="display: inline-flex; align-items: center; gap: .45rem; padding: .35rem .75rem; border-radius: 99px; border: 1px solid rgba(var(--ak-accent3-rgb),.4); background: rgba(var(--ak-accent3-rgb),.1);">
-            <span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(var(--ak-accent3-rgb)); box-shadow: 0 0 8px rgb(var(--ak-accent3-rgb)); animation: akHaloPulseDot 2s ease-in-out infinite;"></span>
-            <span style="font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">Taking projects</span>
-          </span>
+          <p style="margin: 0 0 1.4rem; max-width: 24rem; font-size: .92rem; line-height: 1.7; color: rgb(var(--ak-secondary-rgb)); text-wrap: pretty;">Web design, website development, and local SEO for service businesses. Founder-led, based in Los Angeles, and working with clients across the United States. You own everything we build.</p>
+          <span class="akx-live"><i></i><b>Taking projects</b></span>
         </div>
 
         <div data-rgrid="" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: 2rem;">
           <div><div style="font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb)); margin-bottom: 1rem;">Contact</div><div style="display: flex; flex-direction: column; gap: .7rem;"><a href="tel:+13234054959" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">(323) 405-4959</a><a href="mailto:contact@akiradigital.net" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">contact@akiradigital.net</a><a href="https://www.instagram.com/akiradigitalagency/" target="_blank" rel="noopener" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Instagram</a><a href="https://www.facebook.com/profile.php?id=61594256908946" target="_blank" rel="noopener" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Facebook</a></div></div> <div>
             <div style="font-size: .6rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent-rgb)); margin-bottom: 1rem;">Explore</div>
             <div style="display: flex; flex-direction: column; gap: .7rem;">
+              <a href="#services" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Web design services</a>
+              <a href="#concepts" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Website concepts</a>
+              <a href="#industries" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Industries we design for</a>
+              <a href="#about" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">About Akira Digital</a>
               <a href="#preview" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Free design preview</a>
-              <a href="#work" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Web design portfolio</a>
-              <a href="#process" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Our design process</a>
               <a href="#pricing" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Web design pricing</a>
+              <a href="#faq" style="font-size: .85rem; color: rgb(var(--ak-secondary-rgb)); transition: color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb));">Common questions</a>
             </div>
           </div>
           <div>
@@ -952,14 +1282,14 @@
         </div>
 
         <div>
-          <div style="font-family: 'Bodoni Moda', Georgia, serif; font-style: italic; font-weight: 700; font-size: clamp(1.5rem, 2.6vw, 2rem); line-height: 1.1; margin-bottom: 1.2rem;">Ready to stop losing customers?</div>
-          <a href="#contact" style="display: inline-block; padding: .85rem 1.6rem; border-radius: 6px; background: linear-gradient(100deg, rgb(var(--ak-accent-rgb)), rgb(var(--ak-accent4-text-rgb))); color: rgb(var(--ak-bg-rgb)); font-family: 'Archivo', sans-serif; font-weight: 800; font-size: .85rem; letter-spacing: .08em; box-shadow: 0 0 22px rgba(var(--ak-accent-rgb),.35); transition: all .18s ease;" style-hover="transform: translateY(-2px); box-shadow: 0 0 34px rgba(var(--ak-accent-rgb),.6); color: rgb(var(--ak-bg-rgb));">BOOK A FREE CALL →</a>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(1.4rem, 2.4vw, 1.8rem); line-height: 1.15; letter-spacing: -.015em; margin-bottom: 1.2rem;">Ready to start?</div>
+          <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
       <div data-rgrid="" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(1.5rem, 4vw, 3rem); padding: clamp(1.5rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(var(--ak-border-rgb),.1);">
         <div>
-          <h2 style="margin: 0 0 .5rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">What we design — and anything adjacent</h2>
+          <h3 style="margin: 0 0 .5rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent3-rgb));">What we design</h3>
           <p style="margin: 0 0 .9rem; max-width: 30rem; font-size: .78rem; line-height: 1.6; color: rgb(var(--ak-secondary-rgb));">A starting list, not a menu. If it lives on a screen or a page, ask us.</p>
           <div style="display: flex; flex-wrap: wrap; gap: .4rem;">
             <sc-for list="{{ seoServices }}" as="s" hint-placeholder-count="12">
@@ -969,13 +1299,13 @@
           </div>
         </div>
         <div>
-          <h2 style="margin: 0 0 .5rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Industries we've built for</h2>
-          <p style="margin: 0 0 .9rem; max-width: 30rem; font-size: .78rem; line-height: 1.6; color: rgb(var(--ak-secondary-rgb));">We work with any business that needs to be found and chosen online — these are just the ones we've done most.</p>
+          <h3 style="margin: 0 0 .5rem; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgb(var(--ak-accent4-text-rgb));">Industries we design for</h3>
+          <p style="margin: 0 0 .9rem; max-width: 30rem; font-size: .78rem; line-height: 1.6; color: rgb(var(--ak-secondary-rgb));">We work with any service business that needs to be found and chosen online. These are some of the industries we design for.</p>
           <div style="display: flex; flex-wrap: wrap; gap: .4rem;">
             <sc-for list="{{ seoIndustries }}" as="i" hint-placeholder-count="22">
               <span style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-secondary-rgb)); border: 1px solid rgba(var(--ak-border-rgb),.12); transition: color .2s ease, border-color .2s ease;" style-hover="color: rgb(var(--ak-ink-rgb)); border-color: rgba(var(--ak-accent4-rgb),.5);">{{ i }}</span>
             </sc-for>
-            <a href="#contact" style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-accent4-text-rgb)); border: 1px dashed rgba(var(--ak-accent4-rgb),.55); transition: all .2s ease;" style-hover="color: rgb(var(--ak-accent4-text-rgb)); border-style: solid; background: rgba(var(--ak-accent4-rgb),.08);">Not listed? Still yes →</a>
+            <a href="#contact" style="padding: .28rem .65rem; border-radius: 99px; font-size: .72rem; color: rgb(var(--ak-accent4-text-rgb)); border: 1px dashed rgba(var(--ak-accent4-rgb),.55); transition: all .2s ease;" style-hover="color: rgb(var(--ak-accent4-text-rgb)); border-style: solid; background: rgba(var(--ak-accent4-rgb),.08);">Not listed? Ask us →</a>
           </div>
         </div>
       </div>
@@ -995,7 +1325,7 @@ class Component extends DCLogic {
   state = {
     bizName: '', bizWhat: '', bizCity: '', accent: 'rgb(var(--ak-accent-rgb))',
     size: 1, addons: { calls: false, seo: false, brand: false, logo: false, aiSetup: false, aiMonthly: false, care: false }, designHours: 0,
-    sent: false, serpFixed: false, searchTicks: 1,
+    sent: false, serpFixed: false, conceptFilter: 'all',
     preset: 0, pairing: 0, layout: 0, previewLight: false
   };
 
@@ -1034,25 +1364,23 @@ class Component extends DCLogic {
     const neon = !!this.props.neonMode;
     const vars = neon
       ? { '--ak-bg-rgb': '10,10,12', '--ak-bg2-rgb': '18,18,20', '--ak-surface-rgb': '16,16,18',
-          '--ak-ink-rgb': '245,245,245', '--ak-secondary-rgb': '170,170,175', '--ak-border-rgb': '255,255,255',
-          '--ak-accent-rgb': '255,20,147', '--ak-accent2-rgb': '0,255,200',
-          '--ak-accent3-rgb': '57,255,20', '--ak-accent4-rgb': '138,43,255',
-          '--ak-accent4-text-rgb': '185,120,255' }
+          '--ak-ink-rgb': '245,245,245', '--ak-secondary-rgb': '176,176,182', '--ak-border-rgb': '255,255,255',
+          '--ak-accent-rgb': '255,46,126', '--ak-accent2-rgb': '255,107,74',
+          '--ak-accent3-rgb': '255,138,110', '--ak-accent4-rgb': '255,107,74',
+          '--ak-accent4-text-rgb': '255,150,120' }
       : { '--ak-bg-rgb': '247,243,234', '--ak-bg2-rgb': '239,232,216', '--ak-surface-rgb': '255,255,255',
           '--ak-ink-rgb': '33,29,23', '--ak-secondary-rgb': '110,101,88', '--ak-border-rgb': '28,25,18',
           '--ak-accent-rgb': '155,59,84', '--ak-accent2-rgb': '184,80,107',
           '--ak-accent3-rgb': '184,80,107', '--ak-accent4-rgb': '155,59,84',
           '--ak-accent4-text-rgb': '155,59,84' };
     Object.entries(vars).forEach(([k, v]) => root.setProperty(k, v));
-    const heroKey = this.props.heroFont && this.FONT_STACKS[this.props.heroFont] ? this.props.heroFont : 'Bodoni Moda';
-    root.setProperty('--ak-hero-font', this.FONT_STACKS[heroKey]);
+    root.setProperty('--ak-hero-font', "'Archivo', system-ui, sans-serif");
   }
 
   componentDidMount() {
     this.applyTheme();
     this.initGrain();
     this.initCursor();
-    this.searchTimer = setInterval(() => this.setState(s => ({ searchTicks: s.searchTicks + 1 })), 2400);
   }
 
   initGrain() {
@@ -1067,7 +1395,6 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount() {
-    if (this.searchTimer) clearInterval(this.searchTimer);
     if (this.raf) cancelAnimationFrame(this.raf);
     window.removeEventListener('mousemove', this.onMove);
     window.removeEventListener('mouseover', this.onOver);
@@ -1142,7 +1469,7 @@ class Component extends DCLogic {
     const SIZES = [
       { label: '3 pages', note: 'Starter', price: 1000 },
       { label: '5 pages', note: 'Growth', price: 2500 },
-      { label: '8–10 pages', note: 'Authority', price: 5000 }
+      { label: '8 to 10 pages', note: 'Authority', price: 5000 }
     ];
     const ADDONS = [
       { key: 'calls', label: 'Call tracking', price: 250 },
@@ -1184,19 +1511,18 @@ class Component extends DCLogic {
     return {
       serpFixed: fixed,
       serpToggle: () => this.setState(s => ({ serpFixed: !s.serpFixed })),
-      serpLabel: fixed ? 'With a site we built' : 'Your search results today',
+      serpLabel: fixed ? 'With a site built to be found' : 'Your search results today',
       serpTabA: fixed ? 'rgb(var(--ak-secondary-rgb))' : 'rgb(var(--ak-ink-rgb))',
-      serpTabABg: fixed ? 'transparent' : 'rgba(255,20,147,.16)',
+      serpTabABg: fixed ? 'transparent' : 'rgba(255,46,126,.16)',
       serpTabB: fixed ? '#0a0a0c' : 'rgb(var(--ak-secondary-rgb))',
-      serpTabBBg: fixed ? 'rgb(0,255,200)' : 'transparent',
-      serpFoot: fixed ? 'Same searcher. Different first result.' : "Right now, you're not on this list at all.",
-      serpFootHue: fixed ? 'rgb(0,255,200)' : 'rgb(255,20,147)',
-      searchCount: this.state.searchTicks,
+      serpTabBBg: fixed ? 'rgb(255,150,120)' : 'transparent',
+      serpFoot: fixed ? "Same search. This time you're in it." : "Right now, you're not on this list at all.",
+      serpFootHue: fixed ? 'rgb(255,150,120)' : 'rgb(255,46,126)',
       serpRows: [
-        { domain: 'citysideplumbing.com', title: 'Cityside Plumbing — Fast & Reliable', desc: '24/7 emergency service. Licensed & insured. ★★★★★ 214 reviews.', rank: '1', mine: false },
-        { domain: 'metroplumbingco.net', title: 'Metro Plumbing Services', desc: 'Quality service at fair prices. Serving the metro area since 2009.', rank: '2', mine: false },
+        { domain: 'citysideplumbing.com', title: 'Cityside Plumbing', desc: '24/7 emergency service. Same-day appointments.', rank: '1', mine: false },
+        { domain: 'metroplumbingco.net', title: 'Metro Plumbing Services', desc: 'Quality service at fair prices. Serving the metro area.', rank: '2', mine: false },
         { domain: 'atlantadrainpros.com', title: 'Atlanta Drain Pros', desc: 'Drain cleaning, water heaters, same-day appointments.', rank: '3', mine: false },
-        { domain: 'yourbusiness.com', title: fixed ? 'Your business — first result, first call' : 'Your business — nowhere on page one', desc: fixed ? 'Loads in under a second, ranks locally, asks for the call on every screen.' : 'Buried past the fold, or no site for Google to rank at all.', rank: fixed ? '1' : '—', mine: true }
+        { domain: 'yourbusiness.com', title: fixed ? 'Your business: in the running' : 'Your business: not on page one', desc: fixed ? 'Fast, clear about what you do and where, with the call one tap away.' : 'Too slow, too vague, or no site at all.', rank: fixed ? '1' : '··', mine: true }
       ].map((r, i) => {
         const rise = fixed && r.mine;
         const push = fixed && !r.mine;
@@ -1204,24 +1530,34 @@ class Component extends DCLogic {
           dy: rise ? 'translateY(' + (-3 * this.SERP_STEP) + 'px)' : (push ? 'translateY(' + this.SERP_STEP + 'px)' : 'none'),
           op: r.mine ? (fixed ? '1' : '.45') : (fixed ? '.5' : '1'),
           border: r.mine
-            ? (fixed ? '1px solid rgb(0,255,200)' : '1px dashed rgba(255,20,147,.5)')
+            ? (fixed ? '1px solid rgb(255,150,120)' : '1px dashed rgba(255,46,126,.5)')
             : '1px solid rgba(var(--ak-border-rgb),.08)',
           bg: r.mine
-            ? (fixed ? 'linear-gradient(120deg, rgba(0,255,200,.16), rgba(138,43,255,.08))' : 'rgba(255,20,147,.05)')
+            ? (fixed ? 'linear-gradient(120deg, rgba(255,150,120,.16), rgba(255,107,74,.08))' : 'rgba(255,46,126,.05)')
             : 'rgba(255,255,255,.02)',
-          glow: r.mine && fixed ? '0 0 30px rgba(0,255,200,.35)' : 'none',
-          rank: fixed ? (r.mine ? '1' : String(i + 2)) : (r.mine ? '—' : String(i + 1)),
-          rankHue: r.mine ? (fixed ? 'rgb(0,255,200)' : 'rgb(255,20,147)') : 'rgb(var(--ak-secondary-rgb))',
+          glow: r.mine && fixed ? '0 0 30px rgba(255,150,120,.35)' : 'none',
+          rank: fixed ? (r.mine ? '1' : String(i + 2)) : (r.mine ? '··' : String(i + 1)),
+          rankHue: r.mine ? (fixed ? 'rgb(255,150,120)' : 'rgb(255,46,126)') : 'rgb(var(--ak-secondary-rgb))',
           titleHue: r.mine && fixed ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))',
           delay: (i * 60) + 'ms'
         });
       }),
 
-      problems: [
-        { n: '01', hue: 'rgb(255,20,147)', soft: 'rgba(255,20,147,.12)', t: 'You never show up', d: 'No site, or a slow one, means Google has nothing to rank. Every search for what you do sends someone else the job.' },
-        { n: '02', hue: 'rgb(138,43,255)', soft: 'rgba(138,43,255,.12)', t: 'It breaks on a phone', d: 'Seven in ten local searches happen on a phone. A site that pinches and scrolls sideways loses the customer in four seconds.' },
-        { n: '03', hue: 'rgb(0,255,200)', soft: 'rgba(0,255,200,.12)', t: 'Nothing asks for the call', d: 'Most small-business sites describe the company and stop. No number in the corner, no form, no reason to act today.' }
-      ],
+      problems: [{"n": "01", "hue": "rgb(255,107,74)", "soft": "rgba(255,107,74,.12)", "t": "You're hard to find", "d": "If Google can't tell what you do or where you do it, it has nothing to show. Someone else gets that search."}, {"n": "02", "hue": "rgb(255,66,112)", "soft": "rgba(255,66,112,.12)", "t": "It's frustrating on a phone", "d": "Most people will look you up from their phone. If they have to pinch and zoom to find your number, they'll go back and tap the next result."}, {"n": "03", "hue": "rgb(255,46,126)", "soft": "rgba(255,46,126,.12)", "t": "It never asks for the call", "d": "A lot of small business sites describe the company and stop there. There's no number in the corner, no form, and no clear next step."}],
+
+      conceptChips: [{"id": "all", "label": "All Concepts"}, {"id": "home", "label": "Home Services"}, {"id": "pro", "label": "Professional Services"}, {"id": "health", "label": "Health & Wellness"}, {"id": "hospitality", "label": "Hospitality"}, {"id": "outdoor", "label": "Outdoor Services"}].map((f) => {
+        const on = this.state.conceptFilter === f.id;
+        return {
+          label: f.label, pressed: on ? 'true' : 'false',
+          bg: on ? 'linear-gradient(100deg, rgb(244,96,62), rgb(240,36,116))' : 'rgba(255,255,255,.02)',
+          border: on ? 'rgba(255,46,126,.9)' : 'rgba(255,46,126,.45)',
+          color: on ? '#ffffff' : 'rgb(var(--ak-ink-rgb))',
+          pick: () => this.setState({ conceptFilter: f.id })
+        };
+      }),
+      concepts: [{"id": "northline-plumbing", "cat": "home", "name": "Northline Plumbing", "kind": "Plumbing website concept", "logo": "Northline", "logoSub": "Plumbing", "h": "Reliable Plumbing for a Brighter Home.", "sub": "Fast. Professional. Local.", "cta": "Get a Free Quote", "pill": "Call Now", "font": "'Archivo', system-ui, sans-serif", "ink": "#ffffff", "shade": "linear-gradient(90deg, rgba(8,16,32,.94) 0%, rgba(8,16,32,.78) 46%, rgba(8,16,32,.12) 100%)", "accent": "#FF5A5F", "accentInk": "#ffffff", "pillBg": "#ffffff", "pillInk": "#0b1424", "tags": ["Plumbing", "Emergency Service", "Local Trust"], "why": "Puts the phone number, emergency service, and service area up front, because most plumbing visitors need help today.", "alt": "Plumbing website concept showing a white service van parked outside a building", "img": "/concepts/northline-plumbing.jpg"}, {"id": "ember-oak-med-spa", "cat": "health", "name": "Ember & Oak Med Spa", "kind": "Med spa website concept", "logo": "Ember & Oak", "logoSub": "Med Spa", "h": "Advanced Aesthetics. Natural Results.", "sub": "Confidence looks good on you.", "cta": "Book a Consultation", "pill": "Book Appointment", "font": "'Cormorant Garamond', Georgia, serif", "ink": "#ffffff", "shade": "linear-gradient(90deg, rgba(46,27,18,.9) 0%, rgba(46,27,18,.62) 48%, rgba(46,27,18,.05) 100%)", "accent": "#E5604F", "accentInk": "#ffffff", "pillBg": "#f6ede4", "pillInk": "#3a2418", "tags": ["Aesthetics", "Wellness", "Appointments"], "why": "Leads with treatments and a calm visual tone, then guides people toward a consultation once they've learned enough to feel comfortable.", "alt": "Med spa website concept showing a softly lit treatment room", "img": "/concepts/ember-oak-med-spa.jpg"}, {"id": "crestline-legal", "cat": "pro", "name": "Crestline Legal Group", "kind": "Law firm website concept", "logo": "Crestline", "logoSub": "Legal Group", "h": "Straightforward Legal Guidance for Life's Next Step.", "sub": "Clear. Accessible. Local.", "cta": "Schedule a Consultation", "pill": "Book Appointment", "font": "'Cormorant Garamond', Georgia, serif", "ink": "#ffffff", "shade": "linear-gradient(90deg, rgba(8,16,32,.94) 0%, rgba(8,16,32,.78) 46%, rgba(8,16,32,.12) 100%)", "accent": "#f3ede2", "accentInk": "#101a2c", "pillBg": "#f3ede2", "pillInk": "#101a2c", "tags": ["Legal Services", "Trust", "Local Clients"], "why": "Organized by practice area so people can find their situation quickly, with a consultation request never more than a scroll away.", "alt": "Law firm website concept showing the stone columns of a classical building", "img": "/concepts/crestline-legal.jpg"}, {"id": "blue-harbor-hvac", "cat": "home", "name": "Blue Harbor HVAC", "kind": "HVAC website concept", "logo": "Blue Harbor", "logoSub": "HVAC", "h": "Comfort in Every Season.", "sub": "Heating. Cooling. Healthier home air.", "cta": "Get a Quote", "pill": "Request Service", "font": "'Archivo', system-ui, sans-serif", "ink": "#ffffff", "shade": "linear-gradient(90deg, rgba(8,22,44,.94) 0%, rgba(8,22,44,.74) 46%, rgba(8,22,44,.06) 100%)", "accent": "#FF5A5F", "accentInk": "#ffffff", "pillBg": "#ffffff", "pillInk": "#08162c", "tags": ["HVAC", "Installation", "Maintenance"], "why": "Separates repairs from new installs, since those are two different customers with two very different levels of urgency.", "alt": "HVAC website concept showing an outdoor heating and cooling unit beside a home", "img": "/concepts/blue-harbor-hvac.jpg"}, {"id": "brightnest-cleaning", "cat": "home", "name": "BrightNest Cleaning Co.", "kind": "Cleaning company website concept", "logo": "BrightNest", "logoSub": "Cleaning Co.", "h": "A Cleaner Space for a Brighter You.", "sub": "Trusted. Detailed. Consistent.", "cta": "Get a Free Quote", "pill": "Call or Text", "font": "'Archivo', system-ui, sans-serif", "ink": "#12305a", "shade": "linear-gradient(90deg, rgba(255,255,255,.97) 0%, rgba(255,255,255,.86) 46%, rgba(255,255,255,0) 100%)", "accent": "#1F4E9E", "accentInk": "#ffffff", "pillBg": "#1F4E9E", "pillInk": "#ffffff", "tags": ["Residential", "Commercial", "Recurring Service"], "why": "Makes it simple to request a quote for a first clean and set up recurring service without a phone call.", "alt": "Cleaning company website concept showing a bright, tidy living room with a white sofa", "img": "/concepts/brightnest-cleaning.jpg"}, {"id": "verdant-grounds", "cat": "outdoor", "name": "Verdant Grounds", "kind": "Landscaping website concept", "logo": "Verdant Grounds", "logoSub": "Landscaping", "h": "Outdoor Spaces Built for Real Life.", "sub": "Design. Build. Maintain.", "cta": "Get a Quote", "pill": "Book a Visit", "font": "'Cormorant Garamond', Georgia, serif", "ink": "#ffffff", "shade": "linear-gradient(90deg, rgba(14,30,18,.93) 0%, rgba(14,30,18,.7) 46%, rgba(14,30,18,.05) 100%)", "accent": "#DCE775", "accentInk": "#18240f", "pillBg": "#DCE775", "pillInk": "#18240f", "tags": ["Landscape Design", "Outdoor Living", "Maintenance"], "why": "Lets finished projects do the selling, then explains the design and build process for the bigger jobs.", "alt": "Landscaping website concept showing a covered patio and a freshly cut lawn", "img": "/concepts/verdant-grounds.jpg"}, {"id": "copper-table-bistro", "cat": "hospitality", "name": "Copper Table Bistro", "kind": "Restaurant website concept", "logo": "Copper Table", "logoSub": "Bistro", "h": "Good Food Brings People Together.", "sub": "Seasonal ingredients. Local flavor.", "cta": "View Our Menu", "pill": "Reserve a Table", "font": "'Cormorant Garamond', Georgia, serif", "ink": "#ffffff", "shade": "linear-gradient(90deg, rgba(20,12,8,.93) 0%, rgba(20,12,8,.7) 46%, rgba(20,12,8,.08) 100%)", "accent": "#D07A3C", "accentInk": "#ffffff", "pillBg": "#D07A3C", "pillInk": "#ffffff", "tags": ["Menu", "Reservations", "Location"], "why": "Keeps the menu, hours, location, and reservations within easy reach, because most restaurant visits start on a phone.", "alt": "Restaurant website concept showing a plated dish and a glass of wine on a wooden table", "img": "/concepts/copper-table-bistro.jpg"}, {"id": "summit-current-electric", "cat": "home", "name": "Summit Current Electric", "kind": "Electrician website concept", "logo": "Summit Current", "logoSub": "Electric", "h": "Safe. Reliable. Power for What Matters.", "sub": "Residential and commercial electrical services.", "cta": "Get a Quote", "pill": "Request Service", "font": "'Archivo', system-ui, sans-serif", "ink": "#ffffff", "shade": "linear-gradient(90deg, rgba(8,8,10,.92) 0%, rgba(8,8,10,.66) 46%, rgba(8,8,10,0) 100%)", "accent": "#FF5A5F", "accentInk": "#ffffff", "pillBg": "#ffffff", "pillInk": "#0a0a0c", "tags": ["Electrical", "Residential", "Commercial"], "why": "Speaks to safety first and splits residential from commercial work, so each visitor sees their own kind of job.", "alt": "Electrician website concept showing a warm filament bulb hanging in a dark room", "img": "/concepts/summit-current-electric.jpg"}, {"id": "havenwood-custom-homes", "cat": "home", "name": "Havenwood Custom Homes", "kind": "Home builder website concept", "logo": "Havenwood", "logoSub": "Custom Homes", "h": "Thoughtful Homes. Lasting Value.", "sub": "Custom homes. Renovations. Additions.", "cta": "Start Your Project", "pill": "Get in Touch", "font": "'Cormorant Garamond', Georgia, serif", "ink": "#ffffff", "shade": "linear-gradient(90deg, rgba(16,18,26,.93) 0%, rgba(16,18,26,.68) 46%, rgba(16,18,26,.04) 100%)", "accent": "#ECC98A", "accentInk": "#1b1a16", "pillBg": "#ECC98A", "pillInk": "#1b1a16", "tags": ["Custom Homes", "Renovations", "Additions"], "why": "Takes a slower, more visual pace. People spend months choosing a builder, so the site gives them room to look and an easy way to start a conversation.", "alt": "Home builder website concept showing a modern house lit up at dusk", "img": "/concepts/havenwood-custom-homes.jpg"}].map((c) => Object.assign({}, c, {
+        display: (this.state.conceptFilter === 'all' || this.state.conceptFilter === c.cat) ? 'flex' : 'none'
+      })),
 
       bizName: this.state.bizName,
       bizWhat: this.state.bizWhat,
@@ -1241,8 +1577,8 @@ class Component extends DCLogic {
         const on = this.state.preset === i;
         return {
           label: p.label,
-          bg: on ? 'rgba(255,20,147,.16)' : 'rgba(255,255,255,.02)',
-          border: on ? 'rgb(255,20,147)' : 'rgba(var(--ak-border-rgb),.14)',
+          bg: on ? 'rgba(255,46,126,.16)' : 'rgba(255,255,255,.02)',
+          border: on ? 'rgb(255,46,126)' : 'rgba(var(--ak-border-rgb),.14)',
           color: on ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))',
           pick: () => this.setState({ preset: i, accent: p.accent, bizName: '', bizWhat: '', bizCity: '' })
         };
@@ -1251,8 +1587,8 @@ class Component extends DCLogic {
         const on = this.state.pairing === i;
         return {
           label: p.label, note: p.note, font: p.display,
-          bg: on ? 'rgba(138,43,255,.16)' : 'rgba(255,255,255,.02)',
-          border: on ? 'rgb(138,43,255)' : 'rgba(var(--ak-border-rgb),.14)',
+          bg: on ? 'rgba(255,107,74,.16)' : 'rgba(255,255,255,.02)',
+          border: on ? 'rgb(255,107,74)' : 'rgba(var(--ak-border-rgb),.14)',
           color: on ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))',
           pick: () => this.setState({ pairing: i })
         };
@@ -1261,16 +1597,16 @@ class Component extends DCLogic {
         const on = this.state.layout === i;
         return {
           label: l.label,
-          bg: on ? 'rgba(0,255,200,.14)' : 'rgba(255,255,255,.02)',
-          border: on ? 'rgb(0,255,200)' : 'rgba(var(--ak-border-rgb),.14)',
+          bg: on ? 'rgba(255,150,120,.14)' : 'rgba(255,255,255,.02)',
+          border: on ? 'rgb(255,150,120)' : 'rgba(var(--ak-border-rgb),.14)',
           color: on ? 'rgb(var(--ak-ink-rgb))' : 'rgb(var(--ak-secondary-rgb))',
           pick: () => this.setState({ layout: i })
         };
       }),
 
-      modeLightBg: light ? 'rgb(0,255,200)' : 'transparent',
+      modeLightBg: light ? 'rgb(255,150,120)' : 'transparent',
       modeLightColor: light ? '#0a0a0c' : 'rgb(var(--ak-secondary-rgb))',
-      modeDarkBg: light ? 'transparent' : 'rgba(255,20,147,.16)',
+      modeDarkBg: light ? 'transparent' : 'rgba(255,46,126,.16)',
       modeDarkColor: light ? 'rgb(var(--ak-secondary-rgb))' : 'rgb(var(--ak-ink-rgb))',
       setLight: () => this.setState({ previewLight: true }),
       setDark: () => this.setState({ previewLight: false }),
@@ -1318,38 +1654,26 @@ class Component extends DCLogic {
       ],
 
       workPoints: [
-        { t: 'Loads in under a second on 4G', hue: 'rgb(255,20,147)', soft: 'rgba(255,20,147,.12)' },
-        { t: 'Lead form above the fold', hue: 'rgb(138,43,255)', soft: 'rgba(138,43,255,.12)' },
-        { t: 'Tap-to-call on every screen', hue: 'rgb(0,255,200)', soft: 'rgba(0,255,200,.12)' },
-        { t: 'Local SEO wired in from day one', hue: 'rgb(201,148,26)', soft: 'rgba(201,148,26,.14)' }
+        { t: 'Loads in under a second on 4G', hue: 'rgb(255,46,126)', soft: 'rgba(255,46,126,.12)' },
+        { t: 'Lead form above the fold', hue: 'rgb(255,107,74)', soft: 'rgba(255,107,74,.12)' },
+        { t: 'Tap-to-call on every screen', hue: 'rgb(255,150,120)', soft: 'rgba(255,150,120,.12)' },
+        { t: 'Local SEO wired in from day one', hue: 'rgb(255,170,110)', soft: 'rgba(255,170,110,.14)' }
       ],
 
-      steps: [
-        { n: '01', hue: 'rgb(255,20,147)', soft: 'rgba(255,20,147,.12)', tag: 'Talk', t: 'Discovery call', d: 'A free call. What you sell, who buys it, what you want more of.' },
-        { n: '02', hue: 'rgb(138,43,255)', soft: 'rgba(138,43,255,.12)', tag: 'Scope', t: 'Written scope', d: 'Everything we are building, with the price on it. Nothing starts before you approve it.' },
-        { n: '03', hue: 'rgb(0,255,200)', soft: 'rgba(0,255,200,.12)', tag: 'Build', t: 'Design + build', d: 'We design and build the whole thing in-house, then send you the first draft.' },
-        { n: '04', hue: 'rgb(57,255,20)', soft: 'rgba(57,255,20,.12)', tag: 'Refine', t: 'Revisions', d: 'You mark up what you want changed. We refine until it reads right.' },
-        { n: '05', hue: 'rgb(201,148,26)', soft: 'rgba(201,148,26,.14)', tag: 'Ship', t: 'Launch', d: 'Site goes live on your domain. You own every file.' }
-      ],
+      steps: [{"n": "01", "hue": "rgb(255,107,74)", "soft": "rgba(255,107,74,.12)", "tag": "Talk", "t": "Discovery call", "d": "A free call about what you sell, who buys it, and what you want more of."}, {"n": "02", "hue": "rgb(255,88,92)", "soft": "rgba(255,88,92,.12)", "tag": "Plan", "t": "Research and scope", "d": "We look at your customers, your competitors, and your current site. Then the plan and the price go in writing. Nothing starts until you approve it."}, {"n": "03", "hue": "rgb(255,66,112)", "soft": "rgba(255,66,112,.12)", "tag": "Build", "t": "Design and build", "d": "The site gets designed and built, and you see a working first draft."}, {"n": "04", "hue": "rgb(255,46,126)", "soft": "rgba(255,46,126,.12)", "tag": "Refine", "t": "Revisions", "d": "You mark up what you'd change. We refine it until it reads right."}, {"n": "05", "hue": "rgb(236,50,140)", "soft": "rgba(236,50,140,.12)", "tag": "Ship", "t": "Launch", "d": "The site goes live on your domain. You own every file."}],
 
-      whys: [
-        { n: '01', hue: 'rgb(255,20,147)', soft: 'rgba(255,20,147,.12)', k: 'Craft', t: 'DRAWN, NOT ASSEMBLED', d: 'Every page starts on a blank canvas — real type pairing, a real grid, spacing decided on purpose. No page builder, no theme with your logo dropped in.' },
-        { n: '02', hue: 'rgb(138,43,255)', soft: 'rgba(138,43,255,.12)', k: 'Type', t: 'A TYPE SYSTEM, NOT A FONT PICK', d: 'One display face, one text face, a scale that holds from a phone to a 27-inch screen. Headlines read like headlines at every size.' },
-        { n: '03', hue: 'rgb(0,255,200)', soft: 'rgba(0,255,200,.12)', k: 'Detail', t: 'THE SMALL STUFF IS THE WORK', d: 'Hover states, focus rings, empty states, the way a form behaves when someone fumbles it. Reduced motion respected. It feels finished because it is.' },
-        { n: '04', hue: 'rgb(57,255,20)', soft: 'rgba(57,255,20,.12)', k: 'Handoff', t: 'FILES YOU CAN ACTUALLY OPEN', d: 'Clean HTML and CSS, named components, no build step you cannot see. Your designer or your next developer can pick it straight up.' },
-        { n: '05', hue: 'rgb(201,148,26)', soft: 'rgba(201,148,26,.14)', k: 'Ownership', t: 'NOTHING HELD HOSTAGE', d: 'Your domain, your hosting, your source. No licence to renew, no platform tax, no ransom on the day you leave.' }
-      ],
+      whys: [{"n": "01", "hue": "rgb(255,107,74)", "soft": "rgba(255,107,74,.12)", "k": "Direct", "t": "YOU TALK TO THE PERSON DOING THE THINKING", "d": "There is no account manager in the middle. Your questions go to the person who can actually answer them."}, {"n": "02", "hue": "rgb(255,88,92)", "soft": "rgba(255,88,92,.12)", "k": "Research", "t": "WE LEARN THE BUSINESS FIRST", "d": "Your customers, your competitors, your market, and what makes people pick you. Design starts after that, not before."}, {"n": "03", "hue": "rgb(255,66,112)", "soft": "rgba(255,66,112,.12)", "k": "Behavior", "t": "BUILT AROUND HOW CUSTOMERS DECIDE", "d": "Pages are planned around what a visitor needs to see, in the order they need to see it, before they feel ready to call."}, {"n": "04", "hue": "rgb(255,46,126)", "soft": "rgba(255,46,126,.12)", "k": "Search", "t": "SEO IS PART OF THE STRUCTURE", "d": "Page titles, headings, service pages, and local details get planned while the site is being laid out. It isn't bolted on after launch."}, {"n": "05", "hue": "rgb(236,50,140)", "soft": "rgba(236,50,140,.12)", "k": "Mobile", "t": "PHONE FIRST, WITH A CLEAR NEXT STEP", "d": "Every page is designed for a phone screen first, and every page makes it obvious how to call, book, or ask for a quote."}, {"n": "06", "hue": "rgb(214,56,158)", "soft": "rgba(214,56,158,.12)", "k": "Team", "t": "SPECIALISTS WHEN YOU NEED THEM", "d": "If your project calls for a photographer, a copywriter, or a developer with a particular skill, we bring one in. You don't pay for layers you don't need."}],
 
       tiers: [
-        { tier: 'Starter', hue: 'rgb(var(--ak-accent4-text-rgb))', pad: '2.25rem 1.75rem', border: '1px solid rgba(138,43,255,.35)', glow: '0 0 24px rgba(138,43,255,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: '', badgeColor: 'rgb(var(--ak-accent4-text-rgb))', price: '$1,000', cadence: 'One-time payment', title: 'Starter Website', desc: 'For businesses with no site, or one that is hurting more than helping.', features: ['3 custom pages', 'Mobile responsive', 'Contact form', 'Google Business setup', 'Basic SEO', '2 revision rounds', 'Post-launch support'], cta: 'GET STARTED', href: 'https://buy.stripe.com/28EaEZaeWf5J0aA3i1fw405', target: '_blank', bg: 'linear-gradient(160deg, rgba(138,43,255,.07), rgba(138,43,255,.015))', topline: 'linear-gradient(to right, transparent, rgb(138,43,255), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(138,43,255,.55)', ctaColor: 'rgb(var(--ak-accent4-text-rgb))' },
-        { tier: 'Growth', hue: 'rgb(255,20,147)', pad: 'clamp(2.5rem, 4vw, 3.25rem) 2rem', border: '2px solid rgb(255,20,147)', glow: '0 0 60px rgba(255,20,147,.45), 0 24px 60px rgba(0,0,0,.5)', scale: 'scale(1.05)', z: '2', toplineH: '4px', priceSize: '4rem', badge: '★ MOST POPULAR', badgeColor: 'rgb(255,20,147)', price: '$2,500', cadence: 'One-time payment', title: 'Growth Website', desc: 'For businesses ready to generate steady leads and track what they return.', features: ['Everything in Starter', '5 custom pages', 'Lead capture system', 'Google Analytics 4', 'Call tracking', 'Speed optimization', 'Extended post-launch support'], cta: 'GET STARTED', href: 'https://buy.stripe.com/fZuaEZfzgaPtf5ug4Nfw406', target: '_blank', bg: 'linear-gradient(160deg, rgba(255,20,147,.2), rgba(255,20,147,.05) 60%, rgba(138,43,255,.1))', topline: 'linear-gradient(to right, rgba(255,20,147,.2), rgb(255,20,147), rgba(255,20,147,.2))', ctaBg: 'rgb(255,20,147)', ctaBorder: 'rgb(255,20,147)', ctaColor: '#0a0a0c' },
-        { tier: 'Authority', hue: 'rgb(57,255,20)', pad: '2.25rem 1.75rem', border: '1px solid rgba(57,255,20,.35)', glow: '0 0 24px rgba(57,255,20,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: 'PREMIUM', badgeColor: 'rgb(57,255,20)', price: '$5,000+', cadence: 'Custom quote', title: 'Authority Package', desc: 'For established businesses ready to own their local market online.', features: ['Everything in Growth', '8–10 custom pages', 'Full brand refresh', 'Google Ads pages', 'Competitor analysis', 'Local SEO dominance', 'Priority post-launch support'], cta: "LET'S TALK", href: 'https://buy.stripe.com/cNieVf86O8Hlg9y6udfw403', target: '_blank', bg: 'linear-gradient(160deg, rgba(57,255,20,.07), rgba(57,255,20,.015))', topline: 'linear-gradient(to right, transparent, rgb(57,255,20), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(57,255,20,.55)', ctaColor: 'rgb(57,255,20)' },
-        { tier: 'Monthly', hue: 'rgb(0,255,200)', pad: '2.25rem 1.75rem', border: '1px solid rgba(0,255,200,.35)', glow: '0 0 24px rgba(0,255,200,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: 'ADD-ON', badgeColor: 'rgb(0,255,200)', price: '$300', cadence: 'Per month · cancel anytime', title: 'Care Plan', desc: 'Keep the site fast, secure, and current without lifting a finger.', features: ['Monthly updates', 'Security monitoring', 'Daily backups', 'SEO health report', 'Priority support', 'Uptime monitoring', '30-day cancel notice'], cta: 'ADD ON', href: 'https://buy.stripe.com/28E3cx3Qy0aPbTi7yhfw402', target: '_blank', bg: 'linear-gradient(160deg, rgba(0,255,200,.07), rgba(0,255,200,.015))', topline: 'linear-gradient(to right, transparent, rgb(0,255,200), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(0,255,200,.55)', ctaColor: 'rgb(0,255,200)' }
+        { tier: 'Starter', hue: 'rgb(var(--ak-accent4-text-rgb))', pad: '2.25rem 1.75rem', border: '1px solid rgba(255,107,74,.35)', glow: '0 0 24px rgba(255,107,74,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: '', badgeColor: 'rgb(var(--ak-accent4-text-rgb))', price: '$1,000', cadence: 'One-time payment', title: 'Starter Website', desc: 'For businesses with no site, or one that is hurting more than helping.', features: ['3 custom pages', 'Mobile responsive', 'Contact form', 'Google Business setup', 'Basic SEO', '2 revision rounds', 'Post-launch support'], cta: 'GET STARTED', href: 'https://buy.stripe.com/28EaEZaeWf5J0aA3i1fw405', target: '_blank', bg: 'linear-gradient(160deg, rgba(255,107,74,.07), rgba(255,107,74,.015))', topline: 'linear-gradient(to right, transparent, rgb(255,107,74), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(255,107,74,.55)', ctaColor: 'rgb(var(--ak-accent4-text-rgb))' },
+        { tier: 'Growth', hue: 'rgb(255,46,126)', pad: 'clamp(2.5rem, 4vw, 3.25rem) 2rem', border: '2px solid rgb(255,46,126)', glow: '0 0 60px rgba(255,46,126,.45), 0 24px 60px rgba(0,0,0,.5)', scale: 'scale(1.05)', z: '2', toplineH: '4px', priceSize: '4rem', badge: '★ MOST POPULAR', badgeColor: 'rgb(255,46,126)', price: '$2,500', cadence: 'One-time payment', title: 'Growth Website', desc: 'For businesses ready to generate steady leads and track what they return.', features: ['Everything in Starter', '5 custom pages', 'Lead capture system', 'Google Analytics 4', 'Call tracking', 'Speed optimization', 'Extended post-launch support'], cta: 'GET STARTED', href: 'https://buy.stripe.com/fZuaEZfzgaPtf5ug4Nfw406', target: '_blank', bg: 'linear-gradient(160deg, rgba(255,46,126,.2), rgba(255,46,126,.05) 60%, rgba(255,107,74,.1))', topline: 'linear-gradient(to right, rgba(255,46,126,.2), rgb(255,46,126), rgba(255,46,126,.2))', ctaBg: 'linear-gradient(100deg, rgb(244,96,62), rgb(240,36,116))', ctaBorder: 'rgb(255,46,126)', ctaColor: '#ffffff' },
+        { tier: 'Authority', hue: 'rgb(236,50,140)', pad: '2.25rem 1.75rem', border: '1px solid rgba(236,50,140,.35)', glow: '0 0 24px rgba(236,50,140,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: 'PREMIUM', badgeColor: 'rgb(236,50,140)', price: '$5,000+', cadence: 'Custom quote', title: 'Authority Package', desc: 'For established businesses ready to own their local market online.', features: ['Everything in Growth', '8 to 10 custom pages', 'Full brand refresh', 'Google Ads pages', 'Competitor analysis', 'Local SEO buildout', 'Priority post-launch support'], cta: "LET'S TALK", href: 'https://buy.stripe.com/cNieVf86O8Hlg9y6udfw403', target: '_blank', bg: 'linear-gradient(160deg, rgba(236,50,140,.07), rgba(236,50,140,.015))', topline: 'linear-gradient(to right, transparent, rgb(236,50,140), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(236,50,140,.55)', ctaColor: 'rgb(236,50,140)' },
+        { tier: 'Monthly', hue: 'rgb(255,150,120)', pad: '2.25rem 1.75rem', border: '1px solid rgba(255,150,120,.35)', glow: '0 0 24px rgba(255,150,120,.1)', scale: 'none', z: '1', toplineH: '2px', priceSize: '3rem', badge: 'ADD-ON', badgeColor: 'rgb(255,150,120)', price: '$300', cadence: 'Per month · cancel anytime', title: 'Care Plan', desc: 'Keep the site fast, secure, and current without lifting a finger.', features: ['Monthly updates', 'Security monitoring', 'Daily backups', 'SEO health report', 'Priority support', 'Uptime monitoring', '30-day cancel notice'], cta: 'ADD ON', href: 'https://buy.stripe.com/28E3cx3Qy0aPbTi7yhfw402', target: '_blank', bg: 'linear-gradient(160deg, rgba(255,150,120,.07), rgba(255,150,120,.015))', topline: 'linear-gradient(to right, transparent, rgb(255,150,120), transparent)', ctaBg: 'transparent', ctaBorder: 'rgba(255,150,120,.55)', ctaColor: 'rgb(255,150,120)' }
       ],
 
       designChips: ['Brand refresh', 'Sales pages', 'Landing pages', 'Dashboards', 'App screens', 'One-pagers', 'Print & collateral'].map((label, i) => ({
         label,
-        hue: ['rgb(var(--ak-accent-rgb))', 'rgb(var(--ak-accent4-text-rgb))', 'rgb(var(--ak-accent3-rgb))', 'rgb(201,148,26)'][i % 4]
+        hue: ['rgb(var(--ak-accent-rgb))', 'rgb(var(--ak-accent4-text-rgb))', 'rgb(var(--ak-accent3-rgb))', 'rgb(255,170,110)'][i % 4]
       })),
       designHourOptions: DESIGN.map((d, i) => Object.assign({}, d, sel(this.state.designHours === i), {
         priceLabel: d.price ? '+' + this.money(d.price) : '',
@@ -1370,18 +1694,12 @@ class Component extends DCLogic {
       quoteLines: lines,
 
       seoServices: [
-        'Custom website design', 'Website redesign', 'Mobile-first development',
+        'Custom website design', 'Website redesign', 'Website development',
         'Local SEO', 'Google Business Profile setup', 'Lead capture & forms',
         'Landing pages for Google Ads', 'Site speed optimization', 'E-commerce & booking',
         'Brand & identity design', 'Copywriting', 'Website care plans'
       ],
-      seoIndustries: [
-        'Plumbers', 'HVAC', 'Electricians', 'Roofers', 'General contractors',
-        'Landscaping', 'Pest control', 'Cleaning services', 'Law firms',
-        'Dentists', 'Chiropractors', 'Med spas', 'Fitness studios', 'Restaurants',
-        'Real estate', 'Financial & insurance', 'Photographers', 'Event venues',
-        'Nonprofits', 'Consultants & B2B', 'Retail & e-commerce', 'Startups'
-      ],
+      seoIndustries: ["Plumbers", "HVAC", "Electricians", "Roofers", "General contractors", "Home remodeling", "Landscaping", "Pest control", "Cleaning services", "Law firms", "Dentists", "Chiropractors", "Med spas", "Fitness studios", "Restaurants", "Real estate", "Beauty and salons", "Automotive", "Photographers", "Event venues", "Nonprofits", "Consultants"],
 
       sent: this.state.sent,
       notSent: !this.state.sent,
@@ -1390,13 +1708,13 @@ class Component extends DCLogic {
         var form = e.target;
         var fd = new FormData(form);
 
-        // Spam guard 1 — honeypot. Silently drop bots that fill hidden fields.
+        // Spam guard 1: honeypot. Silently drop bots that fill hidden fields.
         if ((fd.get('website') || '').toString().trim() !== '') {
           this.setState({ sent: true });
           return;
         }
 
-        // Spam guard 2 — time-to-submit. Bots submit in under ~2s; humans take longer.
+        // Spam guard 2: time-to-submit. Bots submit in under ~2s; humans take longer.
         // Silently accept UI-wise but drop payload if suspicious.
         var pageMountedAt = (window.__akMountedAt || Date.now());
         var elapsedMs = Date.now() - pageMountedAt;
@@ -1405,7 +1723,7 @@ class Component extends DCLogic {
           return;
         }
 
-        // Basic length sanity — reject payloads that far exceed a plausible human submission.
+        // Basic length sanity: reject payloads that far exceed a plausible human submission.
         // (Additional server-side rate limiting is required in Make.com.)
         var msg = (fd.get('message') || '').toString();
         if (msg.length > 5000) {
@@ -1431,7 +1749,7 @@ class Component extends DCLogic {
           user_agent: (typeof navigator !== 'undefined' ? navigator.userAgent : '')
         };
 
-        // Optimistic UI — show "Got it." right away so a slow/failed POST doesn't leak status.
+        // Optimistic UI: show "Got it." right away so a slow/failed POST doesn't leak status.
         this.setState({ sent: true });
         try {
           fetch('https://hook.us2.make.com/8j8ifiyri8708zz02qqnrtaiwhumqchn', {
