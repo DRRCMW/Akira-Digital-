@@ -276,6 +276,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Archivo+Black&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="/concepts/northline-plumbing.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="/rock.webp" type="image/webp">
 <!-- Akira Digital AI Assistant: external (CSP 'self') so it runs; the app framework blocks inline scripts -->
 <script src="/akira-widget-init.js"></script>
 <script src="./resources.js"></script>
@@ -554,6 +555,102 @@
   @media (max-width: 1020px) { .akx-svc-head, .akx-svc-cta { grid-template-columns: minmax(0, 1fr); } .akx-svc-art { max-width: 560px; } .akx-svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) { .akx-svc-grid { grid-template-columns: minmax(0, 1fr); } .akx-svc-chips { grid-template-columns: repeat(2, minmax(0, 1fr)); } .akx-svc-chip { font-size: .84rem; padding: .5rem .6rem; gap: .5rem; } .akx-steps3 li:nth-child(2) { margin-left: 4%; } .akx-steps3 li:nth-child(3) { margin-left: 8%; } .akx-svc-float { top: auto; bottom: 0; right: 2%; font-size: .68rem; padding: .6rem .8rem; } .akx-svc-cta .akx-btn { width: 100%; } }
   .akx-svc-grid:has(details[open]) { align-items: start; }
+
+  /* ---------- hero v2: devices on a rock, glass cards, scrolling strip ---------- */
+  @keyframes akxMarq { to { transform: translateX(-100%); } }
+  @keyframes akxFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  .akx-hero2 { padding-bottom: 0; }
+  .akx-hero2 .akx-hero-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; padding-bottom: clamp(2rem, 5vw, 4.5rem); }
+  .akx-hero-copy { position: relative; z-index: 3; }
+  .akx-hero-tags2 { gap: .7rem 1.6rem; }
+  .akx-hero-tags2 li { gap: .55rem; }
+  .akx-hero-tags2 li + li::before { content: none; }
+  .akx-hero-tags2 svg { width: 22px; height: 22px; color: rgb(var(--akx-pink)); filter: drop-shadow(0 0 6px rgba(var(--akx-pink),.5)); }
+  .akx-stage2 { padding: 0; aspect-ratio: 1.34; perspective: 1900px; perspective-origin: 30% 40%; margin-right: clamp(-3rem, -4vw, -1.25rem); }
+  .akx-stage2 .akx-arc { right: -12%; top: -16%; width: 84%; z-index: 0; }
+  .akx-rock { position: absolute; z-index: 1; left: -26%; bottom: -5%; width: 146%; max-width: none; height: auto; pointer-events: none; -webkit-user-select: none; user-select: none; }
+  .akx-mac { position: absolute; z-index: 2; left: 5%; top: 5%; width: 78%; transform-style: preserve-3d; transform: rotateY(-15deg) rotateX(3deg) rotateZ(.8deg); transform-origin: 40% 100%; }
+  .akx-mac-lid { position: relative; padding: 1.5% 1.5% 2.3%; border-radius: 2.6% / 4.200%; background: linear-gradient(180deg, #0b0b0d, #050506); box-shadow: 0 0 0 1px #0a0a0c, 0 0 0 2.500px #6e6e77, 0 0 0 3.500px #26262b, 0 0 60px rgba(var(--akx-pink),.22), -30px 40px 70px rgba(0,0,0,.6); }
+  .akx-mac-lid::before { content: ""; position: absolute; left: 50%; top: .700%; width: .7%; aspect-ratio: 1; margin-left: -.35%; border-radius: 50%; background: #23232a; box-shadow: 0 0 0 1px #111; }
+  .akx-mac-screen { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 3px; background: #08101f; container-type: inline-size; color: #fff; font-family: 'Archivo', system-ui, sans-serif; }
+  .akx-glare { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(112deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,.04) 22%, rgba(255,255,255,0) 38%); mix-blend-mode: screen; }
+  .akx-mac-deck { position: relative; height: 0; padding-top: 34%; margin: 0 -1.2%; transform-origin: 50% 0; transform: rotateX(78deg); border-radius: 0 0 2.4% 2.4% / 0 0 7% 7%; background: linear-gradient(180deg, #2c2c31 0%, #8f8f98 3%, #70707a 40%, #4b4b53 100%); box-shadow: 0 60px 60px rgba(0,0,0,.75), inset 0 -3px 0 rgba(255,255,255,.18); }
+  .akx-mac-keys { position: absolute; left: 6%; right: 6%; top: 9%; height: 50%; border-radius: 1.200%; background: repeating-linear-gradient(90deg, #17171b 0 5.600%, #2a2a30 5.600% 6.250%), #17171b; box-shadow: inset 0 0 0 1px #0d0d10; }
+  .akx-mac-keys::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 17%, #2a2a30 17% 20%); }
+  .akx-mac-pad { position: absolute; left: 34%; right: 34%; top: 66%; bottom: 6%; border-radius: 3%; background: rgba(255,255,255,.1); box-shadow: inset 0 0 0 1px rgba(0,0,0,.25); }
+  .akx-ns-photo { position: absolute; right: 0; top: 0; width: 78%; height: 100%; object-fit: cover; object-position: 60% 50%; filter: saturate(.75) brightness(.72) contrast(1.05); }
+  .akx-ns-shade { position: absolute; inset: 0; background: linear-gradient(90deg, #08101f 22%, rgba(8,16,31,.82) 44%, rgba(8,16,31,.2) 78%, rgba(8,16,31,.35) 100%), linear-gradient(0deg, #08101f 14%, rgba(8,16,31,0) 40%), linear-gradient(180deg, rgba(8,16,31,.8), rgba(8,16,31,0) 26%), radial-gradient(ellipse 60% 60% at 80% 40%, rgba(40,70,160,.25), transparent 70%); }
+  .akx-ns-bar { position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 2cqw; padding: 3.400cqw 4.400cqw; }
+  .akx-ns-logo { display: inline-flex; align-items: center; gap: 1.200cqw; font-size: 9px; font-size: 2.900cqw; font-weight: 800; letter-spacing: .06em; line-height: 1.05; text-transform: uppercase; }
+  .akx-ns-logo svg { width: 4.600cqw; height: 4.600cqw; flex: 0 0 auto; }
+  .akx-ns-logo small { display: block; font-size: 6px; font-size: 1.650cqw; font-weight: 600; letter-spacing: .3em; opacity: .85; }
+  .akx-ns-nav { display: flex; gap: 2.800cqw; font-size: 6px; font-size: 1.600cqw; opacity: .9; }
+  .akx-ns-nav .on { padding-bottom: .500cqw; border-bottom: 1px solid #fff; }
+  .akx-ns-pill { padding: 1.300cqw 2.600cqw; border-radius: 99px; background: #fff; color: #0b1424; font-size: 6px; font-size: 1.600cqw; font-weight: 700; white-space: nowrap; }
+  .akx-ns-body { position: absolute; left: 4.400cqw; top: 15.500cqw; width: 56cqw; }
+  .akx-ns-eb { margin-bottom: 1.600cqw; font-size: 5px; font-size: 1.450cqw; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; opacity: .9; }
+  .akx-ns-h { margin-bottom: 1.800cqw; font-size: 18px; font-size: 5.900cqw; font-weight: 700; line-height: 1.06; letter-spacing: -.012em; }
+  .akx-ns-sub { margin-bottom: 3cqw; font-size: 8px; font-size: 2.500cqw; opacity: .9; }
+  .akx-ns-row { display: flex; align-items: center; gap: 3cqw; }
+  .akx-ns-cta { padding: 1.900cqw 3.400cqw; border-radius: 1.100cqw; background: linear-gradient(100deg, #FF6A4D, #FF4D6D); font-size: 7px; font-size: 2.050cqw; font-weight: 700; white-space: nowrap; }
+  .akx-ns-play { display: inline-flex; align-items: center; gap: 1.400cqw; font-size: 6px; font-size: 1.600cqw; }
+  .akx-ns-play i { position: relative; width: 4.600cqw; height: 4.600cqw; border-radius: 50%; border: 1px solid rgba(255,255,255,.85); }
+  .akx-ns-play i::after { content: ""; position: absolute; left: 39%; top: 30%; border-style: solid; border-width: .950cqw 0 .950cqw 1.500cqw; border-color: transparent transparent transparent #fff; }
+  .akx-ns-strip { position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(4, 1fr); padding: 2.600cqw 3cqw; background: rgba(6,12,24,.86); border-top: 1px solid rgba(255,255,255,.08); }
+  .akx-ns-strip > span { display: flex; align-items: center; gap: 1.400cqw; padding: 0 1.400cqw; border-left: 1px solid rgba(255,255,255,.12); }
+  .akx-ns-strip > span:first-child { border-left: 0; }
+  .akx-ns-strip svg { flex: 0 0 auto; width: 3.800cqw; height: 3.800cqw; }
+  .akx-ns-strip b { display: block; font-size: 6px; font-size: 1.600cqw; font-weight: 700; }
+  .akx-ns-strip em { display: block; font-style: normal; font-size: 5px; font-size: 1.300cqw; opacity: .72; white-space: nowrap; }
+  .akx-iph { position: absolute; z-index: 3; right: 3%; bottom: 9%; width: 23.500%; padding: .9%; border-radius: 15.500% / 7.300%; background: linear-gradient(135deg, #a5a5ad 0%, #3c3c42 18%, #6d6d76 46%, #1c1c20 72%, #7d7d86 100%); box-shadow: -18px 30px 50px rgba(0,0,0,.7), 0 0 44px rgba(var(--akx-pink),.3), inset 0 0 0 1px rgba(255,255,255,.2); transform: rotateY(-13deg) rotateX(2deg) rotateZ(1.5deg); }
+  .akx-iph::before, .akx-iph::after { content: ""; position: absolute; right: -1.6%; width: 1.6%; border-radius: 0 2px 2px 0; background: linear-gradient(90deg, #55555c, #9a9aa3); }
+  .akx-iph::before { top: 24%; height: 10%; }
+  .akx-iph::after { top: 38%; height: 6%; }
+  .akx-iph-in { padding: 2.600%; border-radius: 14.500% / 6.800%; background: #030304; }
+  .akx-iph-screen { position: relative; aspect-ratio: 9 / 19; overflow: hidden; border-radius: 12.500% / 5.900%; background: #08101f; container-type: inline-size; color: #fff; font-family: 'Archivo', system-ui, sans-serif; }
+  .akx-iph-screen > img { position: absolute; left: 0; top: 0; width: 100%; height: 44%; object-fit: cover; filter: saturate(.75) brightness(.72); }
+  .akx-iph-island { position: absolute; z-index: 2; left: 50%; top: 2.200%; width: 30%; height: 3.400%; margin-left: -15%; border-radius: 99px; background: #000; }
+  .akx-iph-top { position: absolute; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 14cqw 7cqw 6cqw; background: linear-gradient(rgba(8,16,31,.92), rgba(8,16,31,0)); }
+  .akx-iph-top .akx-ns-logo { gap: 2.200cqw; font-size: 7px; font-size: 5.400cqw; }
+  .akx-iph-top .akx-ns-logo svg { width: 8cqw; height: 8cqw; }
+  .akx-iph-top .akx-ns-logo small { font-size: 5px; font-size: 3.100cqw; }
+  .akx-iph-body { position: absolute; left: 0; right: 0; top: 36%; bottom: 0; padding: 9cqw 7cqw 0; background: linear-gradient(rgba(8,16,31,0), #08101f 14%); }
+  .akx-iph-body .akx-ns-eb { font-size: 4px; font-size: 2.900cqw; margin-bottom: 3cqw; }
+  .akx-iph-h { margin-bottom: 3.400cqw; font-size: 13px; font-size: 10.400cqw; font-weight: 700; line-height: 1.08; letter-spacing: -.01em; }
+  .akx-iph-s { margin-bottom: 6cqw; font-size: 6px; font-size: 4.600cqw; opacity: .88; }
+  .akx-iph-cta { display: block; margin-bottom: 7cqw; padding: 4.400cqw 0; border-radius: 2.600cqw; background: linear-gradient(100deg, #FF6A4D, #FF4D6D); text-align: center; font-size: 6px; font-size: 4.600cqw; font-weight: 700; }
+  .akx-iph-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5cqw 2cqw; }
+  .akx-iph-grid span { display: flex; flex-direction: column; align-items: center; gap: 1.800cqw; text-align: center; font-size: 4px; font-size: 3.300cqw; line-height: 1.2; }
+  .akx-iph-grid svg { width: 8cqw; height: 8cqw; }
+  .akx-glass { position: absolute; z-index: 4; display: flex; align-items: center; gap: .8rem; padding: .85rem 1.05rem; border-radius: 14px; border: 1px solid rgba(255,255,255,.22); background: linear-gradient(140deg, rgba(70,30,52,.62), rgba(24,14,22,.72)); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 18px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.12); font-size: clamp(.5rem, .8vw, .68rem); font-weight: 600; letter-spacing: .14em; line-height: 1.55; text-transform: uppercase; color: #fff; animation: akxFloat 7s ease-in-out infinite; }
+  .akx-glass svg { flex: 0 0 auto; width: clamp(22px, 2.6vw, 34px); height: clamp(22px, 2.6vw, 34px); color: rgb(255,96,140); filter: drop-shadow(0 0 8px rgba(var(--akx-pink),.6)); }
+  .akx-glass--a { left: -5%; bottom: 20%; }
+  .akx-glass--a span i { display: block; width: 130%; height: 2px; margin: .5rem 0 0 -70%; border-radius: 2px; background: linear-gradient(90deg, rgb(var(--akx-coral)), rgba(var(--akx-pink),.1)); }
+  .akx-glass--b { right: 0; top: 1%; animation-delay: -3.5s; }
+  .akx-glass--b em { display: flex; align-items: flex-end; gap: 3px; height: 30px; margin-left: .3rem; }
+  .akx-glass--b em i { width: 6px; border-radius: 2px; background: linear-gradient(0deg, rgb(var(--akx-coral)), rgb(var(--akx-pink))); }
+  .akx-glass--b em i:nth-child(1) { height: 30%; } .akx-glass--b em i:nth-child(2) { height: 50%; } .akx-glass--b em i:nth-child(3) { height: 72%; } .akx-glass--b em i:nth-child(4) { height: 100%; }
+  .akx-marq { position: relative; z-index: 3; display: flex; overflow: hidden; border-top: 1px solid rgba(255,255,255,.08); background: rgba(10,10,12,.72); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .akx-marq-track { flex: 0 0 auto; display: flex; margin: 0; padding: 2.2rem 0 2.5rem; list-style: none; animation: akxMarq 44s linear infinite; }
+  .akx-marq:hover .akx-marq-track { animation-play-state: paused; }
+  .akx-marq-track li { flex: 0 0 auto; width: clamp(200px, 20vw, 290px); display: flex; flex-direction: column; align-items: center; gap: .9rem; text-align: center; font-size: 1rem; font-weight: 500; color: #fff; white-space: nowrap; }
+  .akx-marq-track svg { width: 36px; height: 36px; color: rgb(var(--akx-pink)); filter: drop-shadow(0 0 10px rgba(var(--akx-pink),.55)); }
+  @media (max-width: 1020px) {
+    .akx-hero2 .akx-hero-grid { grid-template-columns: minmax(0, 1fr); }
+    .akx-stage2 { max-width: 680px; margin: 1rem auto 0; }
+  }
+  @media (max-width: 720px) {
+    .akx-stage2 { margin: .5rem -6% 0 -2%; width: 108%; max-width: none; }
+    .akx-stage2 .akx-arc { right: -20%; top: -8%; width: 96%; }
+    .akx-glass { padding: .5rem .65rem; gap: .5rem; border-radius: 10px; letter-spacing: .1em; }
+    .akx-glass--a { left: 0; bottom: 8%; }
+    .akx-glass--b { right: 5%; top: -2%; }
+    .akx-glass--b em { height: 20px; } .akx-glass--b em i { width: 4px; }
+    .akx-marq-track { padding: 1.6rem 0 1.8rem; animation-duration: 34s; }
+    .akx-marq-track li { width: 170px; font-size: .9rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .akx-marq { overflow-x: auto; } }
+  .akx-hero2 .akx-h1 { font-size: clamp(2.4rem, 4.1vw, 3.8rem); }
 </style>
 </head>
 <body>
@@ -587,36 +684,56 @@
   </nav>
 
   <main>
-  <section id="top" class="akx-hero">
+  <section id="top" class="akx-hero akx-hero2">
     <div class="akx-wrap">
       <div class="akx-hero-grid">
-        <div>
+        <div class="akx-hero-copy">
           <span class="akx-live akx-hero-badge"><i></i><b>Taking projects</b></span>
           <span class="akx-eyebrow" style="animation: akFade .8s ease both;">Web design for service businesses</span>
           <h1 class="akx-h1">Your business deserves a website people <span class="akx-grad">remember.</span></h1>
           <p class="akx-hero-sub">Akira Digital designs websites for service businesses that want to look established, get found online, earn trust, and make it easy for people to choose them.</p>
-          <ul class="akx-hero-tags"><li>Web Design</li><li>Local SEO</li><li>Strategy</li><li>Development</li></ul>
+          <ul class="akx-hero-tags akx-hero-tags2"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.500"/><path d="M8 20h8M12 16v4"/></svg><span>Web Design</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.600-6-10.200a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.500" r="2.200"/></svg><span>Local SEO</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 20V14M10 20V9M15 20v-7M20 20V5"/></svg><span>Strategy</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.500 5l-3 14"/></svg><span>Development</span></li></ul>
           <div class="akx-hero-ctas">
             <a href="#contact" class="akx-btn akx-btn-primary">Start a Project <span aria-hidden="true">→</span></a>
             <a href="#concepts" class="akx-btn akx-btn-ghost">View Website Concepts <span aria-hidden="true">→</span></a>
           </div>
         </div>
-        <div class="akx-stage" aria-hidden="true">
+        <div class="akx-stage akx-stage2" aria-hidden="true">
           <div class="akx-arc"></div>
-          <div class="akx-laptop">
-            <div class="akx-laptop-screen"><div class="akx-site akx-site--strip" style="font-family: 'Archivo', system-ui, sans-serif; color: #ffffff;"><img class="akx-site-photo" src="/concepts/northline-plumbing.jpg" alt="Plumbing website concept showing a white service van parked outside a building" width="1000" height="625" decoding="async" fetchpriority="high"><div class="akx-site-shade" style="background: linear-gradient(90deg, rgba(8,16,32,.94) 0%, rgba(8,16,32,.78) 46%, rgba(8,16,32,.12) 100%);"></div><div class="akx-site-bar"><span class="akx-site-logo">Northline<small>Plumbing</small></span><span class="akx-site-nav"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></span><span class="akx-site-pill" style="background: #ffffff; color: #0b1424;">Call Now</span></div><div class="akx-site-body"><div class="akx-site-h">Reliable Plumbing for a Brighter Home.</div><div class="akx-site-sub">Fast. Professional. Local.</div><span class="akx-site-cta" style="background: #FF5A5F; color: #ffffff;">Get a Free Quote →</span></div><div class="akx-site-strip"><span>Repairs</span><span>Water Heaters</span><span>Drain Cleaning</span><span>Emergency Service</span></div></div></div>
-            <div class="akx-laptop-base"></div>
+          <img class="akx-rock" src="/rock.webp" alt="" width="1800" height="620" decoding="async" fetchpriority="high">
+          <div class="akx-mac">
+            <div class="akx-mac-lid">
+              <div class="akx-mac-screen">
+                <img class="akx-ns-photo" src="/concepts/northline-plumbing.jpg" alt="" width="1000" height="625" decoding="async" fetchpriority="high">
+                <div class="akx-ns-shade"></div>
+                <div class="akx-ns-bar"><span class="akx-ns-logo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 17h-5l-4-8-4 8H3z" fill="#3B7BFF"/><path d="M12 12l2.600 5h-5.200z" fill="#9CC0FF"/></svg><span>Northline<small>Plumbing</small></span></span><span class="akx-ns-nav"><span class="on">Home</span><span>Services</span><span>About</span><span>Reviews</span><span>Contact</span></span><span class="akx-ns-pill">Get a Free Quote</span></div>
+                <div class="akx-ns-body"><div class="akx-ns-eb">Local plumbing experts</div><div class="akx-ns-h">Reliable Plumbing for a Brighter Home.</div><div class="akx-ns-sub">Fast. Professional. Local.</div><div class="akx-ns-row"><span class="akx-ns-cta">Get a Free Quote →</span><span class="akx-ns-play"><i></i>Watch Our Story</span></div></div>
+                <div class="akx-ns-strip"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.500 6.500a4 4 0 0 0-5.300 5.300L3.500 17.500 6.500 20.500l5.700-5.700a4 4 0 0 0 5.300-5.300l-2.600 2.600-2.400-.600-.600-2.400z"/></svg><span><b>Repairs</b><em>Fixing problems fast</em></span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="3" width="8" height="18" rx="3"/><path d="M12 9v4M11 17h2"/></svg><span><b>Water Heaters</b><em>Expert installation</em></span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.500"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg><span><b>Drain Cleaning</b><em>Keep things flowing</em></span></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 3L6 13h5l-1 8 7-10h-5z"/></svg><span><b>Emergency Service</b><em>Available 24/7</em></span></span></div>
+                <div class="akx-glare"></div>
+              </div>
+            </div>
+            <div class="akx-mac-deck"><i class="akx-mac-keys"></i><i class="akx-mac-pad"></i></div>
           </div>
-          <div class="akx-phone">
-            <div class="akx-phone-screen">
-              <img src="/concepts/northline-plumbing-mobile.jpg" alt="" width="480" height="640" decoding="async">
-              <div class="akx-phone-top"><span>NORTHLINE<small>PLUMBING</small></span><span class="akx-phone-burger"></span></div>
-              <div class="akx-phone-body"><div class="akx-phone-h">Reliable Plumbing for a Brighter Home</div><div class="akx-phone-s">Fast. Professional. Local.</div><span class="akx-phone-cta">Get a Free Quote →</span></div>
+          <div class="akx-iph">
+            <div class="akx-iph-in">
+              <div class="akx-iph-screen">
+                <img src="/concepts/northline-plumbing-mobile.jpg" alt="" width="480" height="640" decoding="async">
+                <div class="akx-iph-island"></div>
+                <div class="akx-iph-top"><span class="akx-ns-logo"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 17h-5l-4-8-4 8H3z" fill="#3B7BFF"/><path d="M12 12l2.600 5h-5.200z" fill="#9CC0FF"/></svg><span>Northline<small>Plumbing</small></span></span><span class="akx-phone-burger"></span></div>
+                <div class="akx-iph-body"><div class="akx-ns-eb">Local plumbing experts</div><div class="akx-iph-h">Reliable Plumbing for a Brighter Home.</div><div class="akx-iph-s">Fast. Professional. Local.</div><span class="akx-iph-cta">Get a Free Quote →</span>
+                  <div class="akx-iph-grid"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.500 6.500a4 4 0 0 0-5.300 5.300L3.500 17.500 6.500 20.500l5.700-5.700a4 4 0 0 0 5.300-5.300l-2.600 2.600-2.400-.600-.600-2.400z"/></svg>Repairs</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="3" width="8" height="18" rx="3"/><path d="M12 9v4M11 17h2"/></svg>Water Heaters</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.500"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg>Drain Cleaning</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 3L6 13h5l-1 8 7-10h-5z"/></svg>Emergency Service</span></div></div>
+                <div class="akx-glare"></div>
+              </div>
             </div>
           </div>
+          <div class="akx-glass akx-glass--a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="2.800"/><circle cx="5.500" cy="9.500" r="2"/><circle cx="18.500" cy="9.500" r="2"/><path d="M7 19a5 5 0 0 1 10 0M2 18a3.500 3.500 0 0 1 4.500-3.300M22 18a3.500 3.500 0 0 0-4.500-3.300"/></svg><span>Websites<br>that build<br>trust<i></i></span></div>
+          <div class="akx-glass akx-glass--b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 16l5-5 3.500 3.500L20 7"/><path d="M15 7h5v5"/></svg><span>Get found<br>Get chosen</span><em><i></i><i></i><i></i><i></i></em></div>
         </div>
       </div>
-      <ul class="akx-feats"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span>Custom Web Design</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-10.2a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg><span>Local SEO</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span>Conversion Focused</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.100 1.300 1.100 2.200h5c0-.9.400-1.600 1.100-2.200A6 6 0 0 0 12 3z"/></svg><span>Strategy &amp; Consulting</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8.5" r="3"/><path d="M3.500 19a5.500 5.500 0 0 1 11 0"/><circle cx="17" cy="9.500" r="2.300"/><path d="M16 14.200a4.500 4.500 0 0 1 4.800 4.800"/></svg><span>Ongoing Support</span></li></ul>
+    </div>
+    <div class="akx-marq" role="group" aria-label="What we do">
+      <ul class="akx-marq-track"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span>Custom Web Design</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-10.2a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg><span>Local SEO</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span>Conversion Focused</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.100 1.300 1.100 2.200h5c0-.9.400-1.600 1.100-2.200A6 6 0 0 0 12 3z"/></svg><span>Strategy &amp; Consulting</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8.5" r="3"/><path d="M3.500 19a5.500 5.500 0 0 1 11 0"/><circle cx="17" cy="9.500" r="2.300"/><path d="M16 14.200a4.500 4.500 0 0 1 4.800 4.800"/></svg><span>Ongoing Support</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span>Custom Web Design</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-10.2a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg><span>Local SEO</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span>Conversion Focused</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.100 1.300 1.100 2.200h5c0-.9.400-1.600 1.100-2.200A6 6 0 0 0 12 3z"/></svg><span>Strategy &amp; Consulting</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8.5" r="3"/><path d="M3.500 19a5.500 5.500 0 0 1 11 0"/><circle cx="17" cy="9.500" r="2.300"/><path d="M16 14.200a4.500 4.500 0 0 1 4.800 4.800"/></svg><span>Ongoing Support</span></li></ul>
+      <ul class="akx-marq-track" aria-hidden="true"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span>Custom Web Design</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-10.2a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg><span>Local SEO</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span>Conversion Focused</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.100 1.300 1.100 2.200h5c0-.9.400-1.600 1.100-2.200A6 6 0 0 0 12 3z"/></svg><span>Strategy &amp; Consulting</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8.5" r="3"/><path d="M3.500 19a5.500 5.500 0 0 1 11 0"/><circle cx="17" cy="9.500" r="2.300"/><path d="M16 14.200a4.500 4.500 0 0 1 4.800 4.800"/></svg><span>Ongoing Support</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><span>Custom Web Design</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-10.2a6 6 0 0 1 12 0C18 15.400 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></svg><span>Local SEO</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span>Conversion Focused</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.100 1.300 1.100 2.200h5c0-.9.400-1.600 1.100-2.200A6 6 0 0 0 12 3z"/></svg><span>Strategy &amp; Consulting</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8.5" r="3"/><path d="M3.500 19a5.500 5.500 0 0 1 11 0"/><circle cx="17" cy="9.500" r="2.300"/><path d="M16 14.200a4.500 4.500 0 0 1 4.800 4.800"/></svg><span>Ongoing Support</span></li></ul>
     </div>
   </section>
 
