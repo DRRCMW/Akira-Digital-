@@ -275,7 +275,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Archivo+Black&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&amp;display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/hero-devices.webp" imagesrcset="/hero-devices-900.webp 900w, /hero-devices.webp 1448w" imagesizes="(max-width: 1020px) 100vw, 58vw" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/hero-devices.webp" imagesrcset="/hero-devices-900.webp 960w, /hero-devices.webp 1672w" imagesizes="(max-width: 1020px) 100vw, 68vw" type="image/webp" fetchpriority="high">
 <!-- Akira Digital AI Assistant: external (CSP 'self') so it runs; the app framework blocks inline scripts -->
 <script src="/akira-widget-init.js"></script>
 <script src="./resources.js"></script>
@@ -654,10 +654,28 @@
   /* ---------- hero v3: supplied device photo ---------- */
   .akx-hero2 { background: radial-gradient(ellipse 45% 50% at 8% 0%, rgba(var(--akx-coral),.14), transparent 70%), rgb(8,6,9); }
   .akx-hero2 .akx-hero-grid { padding-bottom: 0; }
-  @media (min-width: 1021px) { .akx-hero2 .akx-hero-grid { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); } }
-  .akx-shot { position: relative; z-index: 1; margin: clamp(-5rem, -6vw, -2rem) clamp(-3rem, -4vw, -1.25rem) 0 -20%; }
-  .akx-shot img { display: block; width: 100%; height: auto; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%), linear-gradient(0deg, transparent 0%, #000 16%), linear-gradient(180deg, transparent 0%, #000 12%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 20%), linear-gradient(0deg, transparent 0%, #000 16%), linear-gradient(180deg, transparent 0%, #000 12%); mask-composite: intersect; }
+  @media (min-width: 1021px) { .akx-hero2 .akx-hero-grid { grid-template-columns: minmax(0, .66fr) minmax(0, 1.34fr); gap: clamp(1.5rem, 3vw, 3rem); } .akx-hero2 .akx-h1 { font-size: clamp(2rem, 3.22vw, 3.15rem); } .akx-hero2 .akx-hero-sub { font-size: 1.02rem; } .akx-hero2 .akx-hero-ctas { flex-wrap: nowrap; gap: .7rem; } .akx-hero2 .akx-hero-ctas .akx-btn { padding: .85rem 1.05rem; font-size: .72rem; letter-spacing: .1em; gap: .5rem; } .akx-hero2 .akx-hero-tags2 { display: grid; grid-template-columns: auto auto; justify-content: start; gap: .7rem 2rem; } }
+  .akx-shot { position: relative; z-index: 1; margin: clamp(-3rem, -3vw, -1rem) clamp(-3rem, -4vw, -1.25rem) 0 -14%; }
+  .akx-shot img { display: block; width: 100%; height: auto; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 11%, #000 94%, transparent 100%), linear-gradient(0deg, transparent 0%, #000 14%), linear-gradient(180deg, transparent 0%, #000 10%); -webkit-mask-composite: source-in; mask-image: linear-gradient(90deg, transparent 0%, #000 11%, #000 94%, transparent 100%), linear-gradient(0deg, transparent 0%, #000 14%), linear-gradient(180deg, transparent 0%, #000 10%); mask-composite: intersect; }
   @media (max-width: 1020px) { .akx-shot { margin: 0 clamp(-3rem, -4vw, -1.25rem); } .akx-shot img { -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 16%), linear-gradient(180deg, transparent 0%, #000 12%); mask-image: linear-gradient(0deg, transparent 0%, #000 16%), linear-gradient(180deg, transparent 0%, #000 12%); } }
+
+  /* ---------- design with purpose photo ---------- */
+  .akx-approach-photo { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid rgba(var(--akx-pink),.35); box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 50px rgba(var(--akx-pink),.16); }
+  .akx-approach-photo img { display: block; width: 100%; height: auto; }
+  @media (max-width: 1020px) { .akx-approach-photo { order: 2; } }
+  /* ---------- menu for phones and tablets ---------- */
+  .akx-burger { display: none; flex: 0 0 auto; width: 44px; height: 44px; padding: 0; border-radius: 8px; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.04); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+  .akx-burger span { display: block; width: 20px; height: 2px; border-radius: 2px; background: #fff; transition: transform .22s ease, opacity .18s ease; }
+  .akx-menu { position: absolute; left: 0; right: 0; top: 100%; max-height: calc(100vh - 4.6rem); max-height: calc(100dvh - 4.6rem); overflow-y: auto; padding: .6rem clamp(1.25rem, 4vw, 3rem) 1.6rem; box-sizing: border-box; background: #0b0b0e !important; border-bottom: 1px solid rgba(var(--akx-pink),.45); box-shadow: 0 30px 60px rgba(0,0,0,.6); }
+  .akx-menu-link, a.akx-menu-link { display: flex; align-items: center; min-height: 52px; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 1.1rem; font-weight: 600; color: #fff; }
+  .akx-menu-link:hover { color: rgb(var(--akx-pink)); }
+  .akx-menu-foot { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.2rem; padding-top: 1.3rem; }
+  .akx-menu-tel, a.akx-menu-tel { display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; font-size: 1.02rem; font-weight: 700; color: #fff; }
+  .akx-menu-tel svg { width: 16px; height: 16px; color: rgb(var(--akx-pink)); }
+  .akx-menu-foot .akx-btn { flex: 1 1 100%; }
+  @media (max-width: 1240px) { .akx-burger { display: inline-flex; } }
+  @media (min-width: 1241px) { .akx-menu { display: none !important; } }
+  @media (max-width: 420px) { .akx-nav-cta { padding: .5rem .6rem !important; font-size: .62rem !important; } .akx-burger, .akx-nav a[href^="tel:"]:not(.akx-menu-tel) { width: 40px; min-width: 40px; padding-left: 0 !important; padding-right: 0 !important; justify-content: center; } .akx-nav-right { gap: .35rem !important; } .akx-nav { padding-left: .75rem !important; padding-right: .75rem !important; } }
 </style>
 </head>
 <body>
@@ -687,6 +705,15 @@
 
       <a href="tel:+13234054959" aria-label="Call Akira Digital on (323) 405-4959" style="display: inline-flex; align-items: center; gap: .5rem; padding: .65rem 1rem; min-height: 44px; box-sizing: border-box; border-radius: 8px; border: 1px solid rgba(var(--akx-pink),.45); background: rgba(var(--akx-pink),.08); color: rgb(var(--ak-ink-rgb)); font-family: 'Archivo', sans-serif; font-weight: 700; font-size: .76rem; letter-spacing: .04em; white-space: nowrap; transition: all .18s ease;" style-hover="border-color: rgba(var(--akx-pink),.9); background: rgba(var(--akx-pink),.16);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="ak-tel-num">(323) 405-4959</span></a>
       <a href="#contact" class="akx-btn akx-btn-primary akx-btn-sm akx-nav-cta">Start a Project <span class="akx-nav-cta-arrow" aria-hidden="true">→</span></a>
+      <button type="button" class="akx-burger" aria-label="Menu" aria-controls="akx-menu" aria-expanded="{{ navExpanded }}" onClick="{{ navToggle }}"><span style="transform: {{ navBar1 }};"></span><span style="opacity: {{ navBar2 }};"></span><span style="transform: {{ navBar3 }};"></span></button>
+    </div>
+    <div id="akx-menu" class="akx-menu" style="display: {{ navDisplay }};">
+      <a href="#services" class="akx-menu-link" onClick="{{ navClose }}">Services</a><a href="#concepts" class="akx-menu-link" onClick="{{ navClose }}">Concepts</a><a href="#industries" class="akx-menu-link" onClick="{{ navClose }}">Industries</a><a href="#about" class="akx-menu-link" onClick="{{ navClose }}">About</a><a href="#pricing" class="akx-menu-link" onClick="{{ navClose }}">Pricing</a><a href="#faq" class="akx-menu-link" onClick="{{ navClose }}">Questions</a><a href="#contact" class="akx-menu-link" onClick="{{ navClose }}">Contact</a>
+      <div class="akx-menu-foot">
+        <span class="akx-live"><i></i><b>Taking projects</b></span>
+        <a href="tel:+13234054959" class="akx-menu-tel" onClick="{{ navClose }}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>(323) 405-4959</span></a>
+        <a href="#contact" class="akx-btn akx-btn-primary" onClick="{{ navClose }}">Start a Project <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </nav>
 
@@ -706,7 +733,7 @@
           </div>
         </div>
         <div class="akx-shot">
-          <img src="/hero-devices.webp" srcset="/hero-devices-900.webp 900w, /hero-devices.webp 1448w" sizes="(max-width: 1020px) 100vw, 58vw" alt="A plumbing company website designed by Akira Digital, shown on a laptop and a phone" width="1448" height="1086" decoding="async" fetchpriority="high">
+          <img src="/hero-devices.webp" srcset="/hero-devices-900.webp 960w, /hero-devices.webp 1672w" sizes="(max-width: 1020px) 100vw, 68vw" alt="A plumbing company website designed by Akira Digital, shown on a laptop and a phone" width="1672" height="941" decoding="async" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -718,11 +745,8 @@
 
   <section id="approach" class="akx-sec akx-sec--alt">
     <div class="akx-wrap akx-approach">
-      <div class="akx-approach-art" aria-hidden="true">
-        <div class="akx-laptop">
-          <div class="akx-laptop-screen"><div class="akx-site" style="font-family: 'Cormorant Garamond', Georgia, serif; color: #ffffff;"><img class="akx-site-photo" src="/concepts/ember-oak-med-spa.jpg" alt="Med spa website concept showing a softly lit treatment room" width="1000" height="625" decoding="async" loading="lazy"><div class="akx-site-shade" style="background: linear-gradient(90deg, rgba(46,27,18,.9) 0%, rgba(46,27,18,.62) 48%, rgba(46,27,18,.05) 100%);"></div><div class="akx-site-bar"><span class="akx-site-logo">Ember &amp; Oak<small>Med Spa</small></span><span class="akx-site-nav"><span>Home</span><span>Services</span><span>About</span><span>Contact</span></span><span class="akx-site-pill" style="background: #f6ede4; color: #3a2418;">Book Appointment</span></div><div class="akx-site-body"><div class="akx-site-h">Advanced Aesthetics. Natural Results.</div><div class="akx-site-sub">Confidence looks good on you.</div><span class="akx-site-cta" style="background: #E5604F; color: #ffffff;">Book a Consultation →</span></div></div></div>
-          <div class="akx-laptop-base"></div>
-        </div>
+      <div class="akx-approach-photo">
+        <img src="/design-with-purpose.webp" srcset="/design-with-purpose-800.webp 800w, /design-with-purpose.webp 1448w" sizes="(max-width: 1020px) 100vw, 52vw" alt="A med spa website concept by Akira Digital, shown on a laptop on a dark marble table" width="1448" height="1086" loading="lazy" decoding="async">
       </div>
       <div>
         <span class="akx-eyebrow">Design with purpose</span>
@@ -1659,7 +1683,7 @@ class Component extends DCLogic {
   state = {
     bizName: '', bizWhat: '', bizCity: '', accent: 'rgb(var(--ak-accent-rgb))',
     size: 1, addons: { calls: false, seo: false, brand: false, logo: false, aiSetup: false, aiMonthly: false, care: false }, designHours: 0,
-    sent: false, serpFixed: false, conceptFilter: 'all',
+    sent: false, serpFixed: false, conceptFilter: 'all', navOpen: false,
     preset: 0, pairing: 0, layout: 0, previewLight: false
   };
 
@@ -1879,6 +1903,13 @@ class Component extends DCLogic {
 
       problems: [{"n": "01", "hue": "rgb(255,107,74)", "soft": "rgba(255,107,74,.12)", "t": "You're hard to find", "d": "If Google can't tell what you do or where you do it, it has nothing to show. Someone else gets that search."}, {"n": "02", "hue": "rgb(255,66,112)", "soft": "rgba(255,66,112,.12)", "t": "It's frustrating on a phone", "d": "Most people will look you up from their phone. If they have to pinch and zoom to find your number, they'll go back and tap the next result."}, {"n": "03", "hue": "rgb(255,46,126)", "soft": "rgba(255,46,126,.12)", "t": "It never asks for the call", "d": "A lot of small business sites describe the company and stop there. There's no number in the corner, no form, and no clear next step."}],
 
+      navDisplay: this.state.navOpen ? 'block' : 'none',
+      navExpanded: this.state.navOpen ? 'true' : 'false',
+      navBar1: this.state.navOpen ? 'translateY(7px) rotate(45deg)' : 'none',
+      navBar2: this.state.navOpen ? '0' : '1',
+      navBar3: this.state.navOpen ? 'translateY(-7px) rotate(-45deg)' : 'none',
+      navToggle: () => this.setState((s) => ({ navOpen: !s.navOpen })),
+      navClose: () => this.setState({ navOpen: false }),
       conceptChips: [{"id": "all", "label": "All Concepts"}, {"id": "home", "label": "Home Services"}, {"id": "pro", "label": "Professional Services"}, {"id": "health", "label": "Health & Wellness"}, {"id": "hospitality", "label": "Hospitality"}, {"id": "outdoor", "label": "Outdoor Services"}].map((f) => {
         const on = this.state.conceptFilter === f.id;
         return {
